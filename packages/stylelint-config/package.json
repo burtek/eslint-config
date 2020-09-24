@@ -1,0 +1,9 @@
+{
+  "name": "@burtek/stylelint-config",
+  "version": "13.7.0",
+  "description": "Stylelint configs by @burtek",
+  "main": "index.js",
+  "repository": "https://github.com/burtek/configs",
+  "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
+  "license": "MIT"
+}
