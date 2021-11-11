@@ -1,6 +1,9 @@
 # @dtrw/eslint-config
 
-This is repository with `eslint` configs for multiple purposes that are used in my other projects.
+![npm version](https://badge.fury.io/js/@dtrw%2Feslint-config.svg)
+![NPM License](https://img.shields.io/npm/l/@dtrw/eslint-config)
+
+This is repository with my `eslint` configs for multiple purposes that are used (or will be used) in my other projects.
 
 ## Install
 
@@ -16,12 +19,12 @@ npm i -D @dtrw/eslint-config
 
 ## Usage
 
-To use any of the configs put `@dtrw/eslint-config/<name>.js` in your eslint config's `extends` section, i.e.:
+To use any of the configs put `@dtrw/eslint-config/<name>` in your eslint config's `extends` section, i.e.:
 
 ```json
 {
     "extends": [
-        "@dtrw/eslint-config/eslint-config-base.js"
+        "@dtrw/eslint-config/eslint-config-base"
     ]
 }
 ```

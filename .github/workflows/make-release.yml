@@ -1,4 +1,4 @@
-name: 'Bump Version and Release'
+name: 'Make github and npm releases'
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   make-release:
-    name: 'Bump Version on master'
+    name: 'Make github and npm releases'
     runs-on: ubuntu-latest
 
     steps:
