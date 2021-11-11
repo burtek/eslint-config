@@ -9,12 +9,18 @@ module.exports = {
         'promise'
     ],
     env: {
-        es2018: true,
+        es2020: true,
     },
     settings: {
         'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     },
     overrides: [
+        {
+            files: ["*.test.js", "*.test.jsx", "*.test.ts", "*.test.tsx"],
+            env: {
+                jest: true,
+            }
+        },
         {
             files: ["*.ts", "*.tsx"],
             parser: "@typescript-eslint/parser",
