@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     extends: [
         "./eslint-config-react.js"
     ],

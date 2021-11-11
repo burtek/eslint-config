@@ -3,7 +3,7 @@ const linkComponents = [
     {"name": "NavLink", "linkAttribute": "to"}
 ]
 
-export default {
+module.exports = {
     extends: [
         'plugin:react-hooks/recommended',
         './eslint-config-base.js'
