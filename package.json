@@ -4,6 +4,8 @@
   "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -15,14 +17,13 @@
   "devDependencies": {
     "@types/eslint": "^7.28.2",
     "@types/node": "^16.11.7",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
     "eslint": "^8.2.0",
     "markdownlint": "^0.24.0",
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
-    "eslint": ">=7.0.0"
+    "eslint": ">=7",
+    "typescript": ">=4"
   },
   "private": false,
   "scripts": {},
