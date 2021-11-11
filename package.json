@@ -1,14 +1,36 @@
 {
-  "name": "configs",
-  "version": "1.0.0",
+  "name": "@dtrw/eslint-config",
+  "version": "0.0.0",
   "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "lerna": "^3.22.1"
+  "dependencies": {
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-lodash": "^7.3.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0"
   },
-  "private": true,
-  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "@types/eslint": "^7.28.2",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "markdownlint": "^0.24.0",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.0.0"
+  },
+  "private": false,
+  "scripts": {},
   "repository": {
-    "url": "https://github.com/burtek/configs"
-  }
+    "url": "https://github.com/burtek/eslint-config"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "type": "module"
 }

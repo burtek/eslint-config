@@ -1,9 +1,0 @@
-{
-  "name": "@burtek/eslint-config",
-  "version": "7.6.0",
-  "description": "Eslint configs by @burtek",
-  "main": "index.js",
-  "repository": "https://github.com/burtek/configs",
-  "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
-  "license": "MIT"
-}

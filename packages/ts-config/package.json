@@ -1,9 +1,0 @@
-{
-  "name": "@burtek/ts-config",
-  "version": "3.0.0",
-  "description": "tsc configs by @burtek",
-  "main": "index.js",
-  "repository": "https://github.com/burtek/configs",
-  "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
-  "license": "MIT"
-}
