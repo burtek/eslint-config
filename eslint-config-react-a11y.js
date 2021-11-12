@@ -1,15 +1,15 @@
 module.exports = {
     extends: [
-        "./eslint-config-react.js"
+        './eslint-config-react.js'
     ],
     plugins: [
-        "jsx-a11y"
+        'jsx-a11y'
     ],
     overrides: [
         {
-            files: ["*.jsx", "*.tsx"],
+            files: ['*.jsx', '*.tsx'],
             extends: [
-                "plugin:jsx-a11y/recommended"
+                'plugin:jsx-a11y/recommended'
             ]
         }
     ]

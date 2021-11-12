@@ -1,3 +1,12 @@
 {
-    "extends": "./eslint-config-base.js"
+    "extends": "./eslint-config-base.js",
+    "env": {
+        "commonjs": true
+    },
+    "rules": {
+        "no-magic-numbers": "off",
+        "object-shorthand": "off",
+        "prefer-arrow-callback": "off",
+        "quote-props": ["error", "consistent"]
+    }
 }
