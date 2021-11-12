@@ -1,5 +1,5 @@
-.markdownlint.json
-.gitignore
-.eslintrc
-node_modules/
-.github/
+/node_modules/
+/.github/
+/.gitignore
+/.markdownlint.json
+/.eslintrc

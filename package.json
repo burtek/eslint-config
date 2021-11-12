@@ -1,6 +1,6 @@
 {
   "name": "@dtrw/eslint-config",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +18,6 @@
     "@types/eslint": "^7.28.2",
     "@types/node": "^16.11.7",
     "eslint": "^8.2.0",
-    "markdownlint": "^0.24.0",
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
