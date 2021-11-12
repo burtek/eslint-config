@@ -116,6 +116,7 @@ module.exports = {
                     'allowCallbacks': 'always',
                     'allowConditionalTypes': 'always',
                     'allowConstructors': 'always',
+                    'allowGenerics': 'always',
                     'allowLiterals': 'in-unions-and-intersections',
                     'allowMappedTypes': 'always',
                     'allowTupleTypes': 'always'
@@ -156,7 +157,6 @@ module.exports = {
                 'dot-notation': 'off',
                 'func-call-spacing': 'off',
                 'indent': 'off',
-                'init-declarations': 'off',
                 'keyword-spacing': 'off',
                 'lines-between-class-members': 'off',
                 'no-array-constructor': 'off',
@@ -189,7 +189,6 @@ module.exports = {
                 '@typescript-eslint/dot-notation': 'error',
                 '@typescript-eslint/func-call-spacing': 'error',
                 '@typescript-eslint/indent': 'error',
-                '@typescript-eslint/init-declarations': ['error', 'always'],
                 '@typescript-eslint/keyword-spacing': 'error',
                 '@typescript-eslint/lines-between-class-members': 'error',
                 '@typescript-eslint/no-array-constructor': 'error',
@@ -213,6 +212,8 @@ module.exports = {
                 '@typescript-eslint/no-loop-func': 'error',
                 '@typescript-eslint/no-loss-of-precision': 'warn',
                 '@typescript-eslint/no-magic-numbers': ['warn', {
+                    'ignoreArrayIndexes': true,
+                    'ignoreDefaultValues': true,
                     'ignoreEnums': true,
                     'ignoreNumericLiteralTypes': true,
                     'ignoreReadonlyClassProperties': true
@@ -374,7 +375,6 @@ module.exports = {
         'yoda': ['error', 'never', {
             'exceptRange': true
         }],
-        'init-declarations': ['error', 'always'],
         'no-delete-var': 'error',
         'no-shadow': 'error',
         'no-shadow-restricted-names': 'error',
@@ -450,7 +450,10 @@ module.exports = {
             }
         }],
         'object-curly-spacing': ['error', 'always'],
-        'one-var': 'error',
+        'one-var': ['error', {
+            'initialized': 'never',
+            'uninitialized': 'consecutive'
+        }],
         'operator-assignment': 'error',
         'padded-blocks': ['error', 'never'],
         'prefer-exponentiation-operator': 'error',
