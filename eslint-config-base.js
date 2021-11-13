@@ -6,6 +6,8 @@ module.exports = {
     plugins: [
         '@typescript-eslint',
         'import',
+        'jest',
+        'jest-formatting',
         'promise'
     ],
     env: {
@@ -250,6 +252,11 @@ module.exports = {
         },
         {
             files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
+            extends: [
+                'plugin:jest-formatting/strict',
+                'plugin:jest/recommended',
+                'plugin:jest/style'
+            ],
             env: {
                 jest: true,
                 node: true
@@ -258,7 +265,12 @@ module.exports = {
                 'no-console': 'off',
                 '@typescript-eslint/no-explicit-any': 'off',
                 '@typescript-eslint/no-magic-numbers': 'off',
-                '@typescript-eslint/no-unsafe-assignment': 'off'
+                '@typescript-eslint/no-unsafe-assignment': 'off',
+                'jest/consistent-test-it': 'error',
+                'jest/no-test-return-statement': 'error',
+                'jest/prefer-hooks-on-top': 'error',
+                'jest/prefer-strict-equal': 'error',
+                'jest/prefer-todo': 'error'
             }
         }
     ],
