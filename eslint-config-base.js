@@ -427,7 +427,7 @@ module.exports = {
         'indent': ['error', 4],
         'key-spacing': 'error',
         'keyword-spacing': 'error',
-        'linebreak-style': ['error', 'windows'],
+        'linebreak-style': ['error', 'unix'],
         'lines-between-class-members': 'error',
         'max-len': ['error', {
             'code': 150,
