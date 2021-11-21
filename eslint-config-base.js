@@ -506,7 +506,7 @@ module.exports = {
                 ['parent', 'sibling'],
                 'index'
             ],
-            'newlines-between': 'never',
+            'newlines-between': 'always',
             'alphabetize': {
                 'order': 'asc'
             }
