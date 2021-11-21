@@ -51,7 +51,6 @@ module.exports = {
         'react/prefer-stateless-function': ['error', {
             'ignorePureComponents': true
         }],
-        'react/react-in-jsx-scope': 'error',
         'react/require-render-return': 'error',
         'react/self-closing-comp': ['error', {
             'component': true,
@@ -112,7 +111,7 @@ module.exports = {
                     {
                         'selector': 'typeLike',
                         'format': ['PascalCase']
-                    }],
+                    }]
             }
         },
         {
