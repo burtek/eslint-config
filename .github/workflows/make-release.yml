@@ -34,9 +34,11 @@ jobs:
             package.json
             yarn.lock
             eslint-config-*.js
+      - name: 'Install dependencies'
+        run: yarn
+      - name: 'Test configs'
+        run: yarn test
       - name: 'Publish package'
-        run: |
-          yarn
-          yarn publish --tag latest --access public
+        run: yarn publish --tag latest --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

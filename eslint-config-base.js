@@ -73,21 +73,9 @@ module.exports = {
                         'format': ['camelCase', 'UPPER_CASE']
                     },
                     {
-                        'selector': 'variable',
-                        'modifiers': ['const', 'global', 'exported'],
-                        'type': 'function',
-                        'format': ['camelCase', 'UPPER_CASE', 'PascalCase']
-                    },
-                    {
                         'selector': 'function',
                         'modifiers': ['global'],
                         'format': ['camelCase', 'PascalCase']
-                    },
-                    {
-                        'selector': 'function',
-                        'modifiers': ['const', 'global'],
-                        'filter': /^use/,
-                        'format': ['camelCase']
                     },
                     {
                         'selector': 'parameter',

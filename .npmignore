@@ -3,3 +3,4 @@
 /.gitignore
 /.markdownlint.json
 /.eslintrc
+/eslint.test.js
