@@ -1,3 +1,5 @@
+const makeNamingRules = require('./helpers/make-naming-config');
+
 module.exports = {
     extends: [
         'plugin:@typescript-eslint/eslint-recommended',
@@ -60,37 +62,7 @@ module.exports = {
                 }],
                 '@typescript-eslint/method-signature-style': 'error',
                 'camelcase': 'off',
-                '@typescript-eslint/naming-convention': ['error',
-                    {
-                        'selector': 'default',
-                        'format': ['camelCase'],
-                        'leadingUnderscore': 'forbid',
-                        'trailingUnderscore': 'forbid'
-                    },
-                    {
-                        'selector': 'variable',
-                        'modifiers': ['const', 'global'],
-                        'format': ['camelCase', 'UPPER_CASE']
-                    },
-                    {
-                        'selector': 'function',
-                        'modifiers': ['global'],
-                        'format': ['camelCase', 'PascalCase']
-                    },
-                    {
-                        'selector': 'parameter',
-                        'modifiers': ['unused'],
-                        'leadingUnderscore': 'allow',
-                        'format': null
-                    },
-                    {
-                        'selector': 'enumMember',
-                        'format': ['UPPER_CASE']
-                    },
-                    {
-                        'selector': 'typeLike',
-                        'format': ['PascalCase']
-                    }],
+                '@typescript-eslint/naming-convention': makeNamingRules(),
                 '@typescript-eslint/no-base-to-string': 'error',
                 '@typescript-eslint/no-confusing-non-null-assertion': 'error',
                 '@typescript-eslint/no-confusing-void-expression': 'error',
@@ -200,7 +172,9 @@ module.exports = {
                 '@typescript-eslint/no-extra-parens': ['error', 'all', {
                     'enforceForArrowConditionals': false,
                     'enforceForSequenceExpressions': false,
-                    'enforceForFunctionPrototypeMethods': false
+                    'enforceForFunctionPrototypeMethods': false,
+                    'ignoreJSX': 'multi-line',
+                    'nestedBinaryExpressions': false
                 }],
                 '@typescript-eslint/no-extra-semi': 'error',
                 '@typescript-eslint/no-implied-eval': 'error',

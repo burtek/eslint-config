@@ -1,3 +1,5 @@
+const makeNamingRules = require('./helpers/make-naming-config');
+
 const linkComponents = [
     {
         'name': 'Link', 'linkAttribute': 'to'
@@ -63,55 +65,7 @@ module.exports = {
         {
             files: ['*.tsx'],
             rules: {
-                '@typescript-eslint/naming-convention': ['error',
-                    {
-                        'selector': 'default',
-                        'format': ['camelCase'],
-                        'leadingUnderscore': 'forbid',
-                        'trailingUnderscore': 'forbid'
-                    },
-                    {
-                        'selector': 'variable',
-                        'modifiers': ['const', 'global'],
-                        'format': ['camelCase', 'UPPER_CASE']
-                    },
-                    {
-                        'selector': 'variable',
-                        'modifiers': ['const', 'global', 'exported'],
-                        'types': ['function'],
-                        'format': ['camelCase', 'UPPER_CASE', 'PascalCase']
-                    },
-                    {
-                        'selector': 'variable',
-                        'modifiers': ['const', 'global', 'exported'],
-                        'types': ['function'],
-                        'filter': '^use',
-                        'format': ['camelCase']
-                    },
-                    {
-                        'selector': 'function',
-                        'modifiers': ['global'],
-                        'format': ['camelCase', 'PascalCase']
-                    },
-                    {
-                        'selector': 'function',
-                        'filter': '^use',
-                        'format': ['camelCase']
-                    },
-                    {
-                        'selector': 'parameter',
-                        'modifiers': ['unused'],
-                        'leadingUnderscore': 'allow',
-                        'format': null
-                    },
-                    {
-                        'selector': 'enumMember',
-                        'format': ['UPPER_CASE']
-                    },
-                    {
-                        'selector': 'typeLike',
-                        'format': ['PascalCase']
-                    }]
+                '@typescript-eslint/naming-convention': makeNamingRules({ isReact: true })
             }
         },
         {
@@ -163,7 +117,6 @@ module.exports = {
                     'allow': 'literal'
                 }],
                 'react/jsx-pascal-case': 'error',
-                'react/jsx-space-before-closing': 'error',
                 'react/jsx-tag-spacing': 'error',
                 'react/jsx-wrap-multilines': ['error', {
                     'declaration': 'parens-new-line',
