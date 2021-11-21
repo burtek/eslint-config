@@ -32,15 +32,20 @@ const configs = [
 ];
 const reactConfigs = [
     {
-        // const global variables of function type can be PascalCase for React Components
+        // React Components
         'selector': 'variable',
         'modifiers': ['const', 'global'],
         'types': ['function'],
         'format': ['camelCase', 'UPPER_CASE', 'PascalCase']
     },
     {
+        // React Components
+        'selector': 'function',
+        'format': ['camelCase', 'PascalCase']
+    },
+    {
         // Components passed as props
-        'selector': 'property',
+        'selector': 'parameter',
         'filter': 'Comp(onent)?$',
         'format': ['camelCase', 'PascalCase']
     },

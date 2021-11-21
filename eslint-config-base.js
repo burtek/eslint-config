@@ -1,5 +1,7 @@
 const makeNamingRules = require('./helpers/make-naming-config');
 
+// need no-splice-add and no-splice-remove
+
 module.exports = {
     extends: [
         'plugin:@typescript-eslint/eslint-recommended',
@@ -214,17 +216,6 @@ module.exports = {
             }
         },
         {
-            files: ['*.jsx', '*.tsx'],
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true
-                }
-            },
-            rules: {
-                'jsx-quotes': ['error', 'prefer-single']
-            }
-        },
-        {
             files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
             extends: [
                 'plugin:jest-formatting/strict',
@@ -415,7 +406,7 @@ module.exports = {
         'no-array-constructor': 'error',
         'no-continue': 'error',
         'no-lonely-if': 'error',
-        'no-mixed-operators': 'error',
+        'no-mixed-operators': 'off', // need to make better config or make own custom rule
         'no-multi-assign': 'error',
         'no-multiple-empty-lines': ['error', {
             'max': 2
@@ -510,9 +501,9 @@ module.exports = {
         'import/no-self-import': 'error',
         'import/order': ['error', {
             'groups': [
-                ['builtin', 'external'],
-                'parent',
-                'sibling',
+                'builtin',
+                'external',
+                ['parent', 'sibling'],
                 'index'
             ],
             'newlines-between': 'never',

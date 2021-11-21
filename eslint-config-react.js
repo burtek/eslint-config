@@ -28,7 +28,7 @@ module.exports = {
         linkComponents: linkComponents
     },
     rules: {
-        'react/button-has-type': 'error',
+        'react/button-has-type': 'warn',
         'react/display-name': 'error',
         'react/no-access-state-in-setstate': 'error',
         'react/no-array-index-key': 'error',
@@ -70,6 +70,17 @@ module.exports = {
         },
         {
             files: ['*.jsx', '*.tsx'],
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            rules: {
+                'jsx-quotes': ['error', 'prefer-double']
+            }
+        },
+        {
+            files: ['*.jsx', '*.tsx'],
             rules: {
                 'react/jsx-boolean-value': 'error',
                 'react/jsx-child-element-spacing': 'error',
@@ -88,7 +99,7 @@ module.exports = {
                 }],
                 'react/jsx-equals-spacing': 'error',
                 'react/jsx-first-prop-new-line': 'error',
-                'react/jsx-fragments': ['error', 'element'],
+                'react/jsx-fragments': ['error', 'syntax'],
                 'react/jsx-handler-names': ['error', {
                     'checkInlineFunction': true
                 }],
@@ -101,7 +112,12 @@ module.exports = {
                     'checkFragmentShorthand': true,
                     'checkKeyMustBeforeSpread': true
                 }],
-                'react/jsx-max-props-per-line': 'error',
+                'react/jsx-max-props-per-line': ["error", {
+                    "maximum": {
+                        "single": 2,
+                        "multi": 1
+                    }
+                }],
                 'react/jsx-no-bind': 'error',
                 'react/jsx-no-comment-textnodes': 'error',
                 'react/jsx-no-constructed-context-values': 'error',
@@ -113,9 +129,6 @@ module.exports = {
                 })],
                 'react/jsx-no-target-blank': 'error',
                 'react/jsx-no-useless-fragment': 'error',
-                'react/jsx-one-expression-per-line': ['error', {
-                    'allow': 'literal'
-                }],
                 'react/jsx-pascal-case': 'error',
                 'react/jsx-tag-spacing': 'error',
                 'react/jsx-wrap-multilines': ['error', {
