@@ -6,28 +6,29 @@
   "keywords": [
     "eslint",
     "config",
-    "eslint config"
+    "eslint config",
+    "typescript"
   ],
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.2.4",
-    "eslint-plugin-jest-formatting": "^3.0.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-lodash": "^7.3.0",
     "eslint-plugin-promise": "^5.1.1",
-    "eslint-plugin-react": "^7.27.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
   },
   "devDependencies": {
-    "@types/eslint": "^7.28.2",
-    "@types/node": "^16.11.7",
+    "@types/eslint": "^8.2.0",
+    "@types/node": "^16.11.10",
     "auto-changelog": "^2.3.0",
-    "eslint": "^8.2.0",
-    "typescript": "^4.4.4"
+    "eslint": "^8.3.0",
+    "typescript": "^4.5.2"
   },
   "peerDependencies": {
     "eslint": ">=7",
