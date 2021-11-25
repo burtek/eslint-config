@@ -12,6 +12,7 @@ module.exports = {
         'import',
         'jest',
         'jest-formatting',
+        'jsonc',
         'promise'
     ],
     env: {
@@ -208,7 +209,7 @@ module.exports = {
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/return-await': 'error',
                 '@typescript-eslint/semi': 'error',
-                '@typescript-eslint/space-before-function-paren': ['error', {
+               '@typescript-eslint/space-before-function-paren': ['error', {
                     'anonymous': 'never',
                     'named': 'never',
                     'asyncArrow': 'always'
@@ -237,6 +238,23 @@ module.exports = {
                 'jest/prefer-strict-equal': 'error',
                 'jest/prefer-todo': 'error'
             }
+        },
+        {
+            files: ["*.json", "*.json5", "*.jsonc"],
+            parser: "jsonc-eslint-parser"
+        },
+        {
+            files: ["*.json"],
+            files: ['tsconfig.json', 'jsconfig.json'],
+            extends: ['plugin:jsonc/recommended-with-json']
+        },
+        {
+            files: ["*.jsonc", 'tsconfig.json', 'jsconfig.json'],
+            extends: ['plugin:jsonc/recommended-with-jsonc']
+        },
+        {
+            files: ["*.json5"],
+            extends: ['plugin:jsonc/recommended-with-json5']
         }
     ],
     reportUnusedDisableDirectives: true,
