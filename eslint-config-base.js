@@ -245,7 +245,7 @@ module.exports = {
         },
         {
             files: ["*.json"],
-            files: ['tsconfig.json', 'jsconfig.json'],
+            ignorePatterns: ['tsconfig.json', 'jsconfig.json'],
             extends: ['plugin:jsonc/recommended-with-json']
         },
         {
