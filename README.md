@@ -33,7 +33,7 @@ To use any of the configs put `@dtrw/eslint-config/<name>` in your eslint config
 
 name                        | notes
 ----------------------------|-------------
-`eslint-config-base`        | Base config, using some `eslint` and `typescript-eslint` rules as well as rules from eslint plugins `import`, `jest`, `jest-formatting` and `promise`
-`eslint-config-react`       | Config for reactJS and react-native projects, using rules from eslint plugins `react` and `react-hooks`. **Extends eslint-config-base**
-`eslint-config-react-a11y`  | Config for reactJS projects, using rules from eslint plugin `a11y`. **Extends eslint-config-react**
-`eslint-config-lodash`      | Config for projects utilising `lodash` library. This is an additional config, not extending any of the above ones
+`eslint-config-base`        | Base config, using some `eslint` and [`typescript-eslint`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) rules as well as rules from eslint plugins [`import`](https://www.npmjs.com/package/eslint-plugin-import), [`jest`](https://www.npmjs.com/package/eslint-plugin-jest), [`jest-formatting`](https://www.npmjs.com/package/eslint-plugin-jest-formatting), [`jsonc`](https://www.npmjs.com/package/eslint-plugin-jsonc) and [`promise`](https://www.npmjs.com/package/eslint-plugin-promise)
+`eslint-config-react`       | Config for reactJS and react-native projects, using rules from eslint plugins [`react`](https://www.npmjs.com/package/eslint-plugin-react) and [`react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks). **Extends eslint-config-base**
+`eslint-config-react-a11y`  | Config for reactJS projects, using rules from eslint plugin [`jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y). **Extends eslint-config-react**
+`eslint-config-lodash`      | Config for projects making use of `lodash` library, using rules from eslint [`lodash`](https://www.npmjs.com/package/eslint-plugin-lugin) plugin. This is an additional config, not extending any of the above ones
