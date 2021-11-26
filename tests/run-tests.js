@@ -4,6 +4,7 @@
 const { ESLint } = require('eslint');
 const fs = require('fs');
 const path = require('path');
+require('exit-code');
 
 /**
  * @returns {promise is PromiseRejectedResult}
@@ -22,12 +23,10 @@ async function getErrors(configFile) {
         }
     });
 
-    const results = await Promise.allSettled([
-        cli.lintText('', { filePath: 'file.js' }),
-        cli.lintText('', { filePath: 'file.jsx' }),
-        cli.lintText('', { filePath: 'file.ts' }),
-        cli.lintText('', { filePath: 'file.tsx' })
-    ]);
+    const exts = ['js', 'jsx', 'ts', 'tsx', 'json', 'jsonc', 'jsonx'].map(ext => `file.${ext}`);
+    const files = ['tsconfig.json', 'jsconfig.json'].map(ext => `file.${ext}`);
+
+    const results = await Promise.allSettled([ ...exts, ...files ].map(filePath => cli.lintText('', { filePath })));
     const rejectReasons = results.filter(filterRejected).map(promise => promise.reason)
 
     if (rejectReasons.length > 0) {
@@ -39,8 +38,6 @@ async function run() {
     const files = await fs.promises.readdir('.', { withFileTypes: true });
     const configs = files.filter(file => file.isFile() && file.name.startsWith('eslint-config') && file.name.endsWith('.js'));
 
-    let errored = false;
-
     configs.forEach(async f => {
         try {
             await getErrors(f.name);
@@ -48,12 +45,8 @@ async function run() {
             console.error('Error in config file', f.name);
             console.error(errors);
             
-            errored = true;
+            process.exitCode = 2
         }
     });
-
-    if (errored) {
-        process.exit(1);
-    }
 }
 run();
