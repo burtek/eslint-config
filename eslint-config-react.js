@@ -30,6 +30,9 @@ module.exports = {
     rules: {
         'react/button-has-type': 'warn',
         'react/display-name': 'error',
+        // needs eslint-plugin-react above 7.28.0
+        // see https://github.com/yannickcr/eslint-plugin-react/blob/master/CHANGELOG.md
+        // 'react/hook-use-state': 'error',
         'react/no-access-state-in-setstate': 'error',
         'react/no-array-index-key': 'error',
         'react/no-children-prop': 'error',
@@ -118,7 +121,9 @@ module.exports = {
                         "multi": 1
                     }
                 }],
-                'react/jsx-no-bind': 'error',
+                'react/jsx-no-bind': ['warn', {
+                    ignoreDOMComponents: true
+                }],
                 'react/jsx-no-comment-textnodes': 'error',
                 'react/jsx-no-constructed-context-values': 'error',
                 'react/jsx-no-duplicate-props': 'error',

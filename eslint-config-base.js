@@ -43,25 +43,26 @@ module.exports = {
                 }],
                 '@typescript-eslint/member-delimiter-style': 'error',
                 '@typescript-eslint/member-ordering': ['error', {
-                    'default': [
-                        'public-static-field',
-                        'protected-static-field',
-                        'private-static-field',
-                        'public-field',
-                        'protected-field',
-                        'private-field',
+                    'default': {
+                        'memberTypes': [
+                            'public-static-field',
+                            'protected-static-field',
+                            'private-static-field',
+                            'public-field',
+                            'protected-field',
+                            'private-field',
 
-                        'public-constructor',
-                        'protected-constructor',
-                        'private-constructor',
+                            'constructor',
 
-                        'public-static-method',
-                        'protected-static-method',
-                        'private-static-method',
-                        'public-method',
-                        'protected-method',
-                        'private-method'
-                    ]
+                            'public-method',
+                            'protected-method',
+                            'private-method',
+                            'public-static-method',
+                            'protected-static-method',
+                            'private-static-method'
+                        ],
+                        'order': 'alphabetically-case-insensitive'
+                    }
                 }],
                 '@typescript-eslint/method-signature-style': 'error',
                 'camelcase': 'off',
@@ -209,7 +210,7 @@ module.exports = {
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/return-await': 'error',
                 '@typescript-eslint/semi': 'error',
-               '@typescript-eslint/space-before-function-paren': ['error', {
+                '@typescript-eslint/space-before-function-paren': ['error', {
                     'anonymous': 'never',
                     'named': 'never',
                     'asyncArrow': 'always'
@@ -240,20 +241,20 @@ module.exports = {
             }
         },
         {
-            files: ["*.json", "*.json5", "*.jsonc"],
-            parser: "jsonc-eslint-parser"
+            files: ['*.json', '*.json5', '*.jsonc'],
+            parser: 'jsonc-eslint-parser'
         },
         {
-            files: ["*.json"],
+            files: ['*.json'],
             excludedFiles: ['tsconfig.json', 'jsconfig.json'],
             extends: ['plugin:jsonc/recommended-with-json']
         },
         {
-            files: ["*.jsonc", 'tsconfig.json', 'jsconfig.json'],
+            files: ['*.jsonc', 'tsconfig.json', 'jsconfig.json'],
             extends: ['plugin:jsonc/recommended-with-jsonc']
         },
         {
-            files: ["*.json5"],
+            files: ['*.json5'],
             extends: ['plugin:jsonc/recommended-with-json5']
         }
     ],
