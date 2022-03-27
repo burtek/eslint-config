@@ -45,7 +45,7 @@
     "test": "node tests/run-tests.js",
     "preversion": "yarn test",
     "push": "git push --follow-tags",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p --commit-limit false && git add CHANGELOG.md"
   },
   "repository": {
     "url": "https://github.com/burtek/eslint-config"
