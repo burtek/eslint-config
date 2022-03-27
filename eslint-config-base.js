@@ -243,6 +243,8 @@ module.exports = {
                 '@typescript-eslint/no-magic-numbers': 'off',
                 '@typescript-eslint/no-unsafe-assignment': 'off',
                 'jest/consistent-test-it': 'error',
+                'jest/no-conditional-in-test': 'error',
+                'jest/no-duplicate-hooks': 'error',
                 'jest/no-test-return-statement': 'error',
                 'jest/prefer-hooks-on-top': 'error',
                 'jest/prefer-strict-equal': 'error',
