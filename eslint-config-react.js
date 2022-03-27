@@ -30,9 +30,7 @@ module.exports = {
     rules: {
         'react/button-has-type': 'warn',
         'react/display-name': 'error',
-        // needs eslint-plugin-react above 7.28.0
-        // see https://github.com/yannickcr/eslint-plugin-react/blob/master/CHANGELOG.md
-        // 'react/hook-use-state': 'error',
+        'react/hook-use-state': 'error',
         'react/no-access-state-in-setstate': 'error',
         'react/no-array-index-key': 'error',
         'react/no-children-prop': 'error',
@@ -85,6 +83,7 @@ module.exports = {
         {
             files: ['*.jsx', '*.tsx'],
             rules: {
+                'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
                 'react/jsx-child-element-spacing': 'error',
                 'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
@@ -113,12 +112,13 @@ module.exports = {
                 'react/jsx-indent-props': 'error',
                 'react/jsx-key': ['error', {
                     'checkFragmentShorthand': true,
-                    'checkKeyMustBeforeSpread': true
+                    'checkKeyMustBeforeSpread': true,
+                    'warnOnDuplicates': true
                 }],
-                'react/jsx-max-props-per-line': ["error", {
-                    "maximum": {
-                        "single": 2,
-                        "multi": 1
+                'react/jsx-max-props-per-line': ['error', {
+                    'maximum': {
+                        'single': 2,
+                        'multi': 1
                     }
                 }],
                 'react/jsx-no-bind': ['warn', {
