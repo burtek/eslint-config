@@ -78,7 +78,12 @@ module.exports = {
                 '@typescript-eslint/no-implicit-any-catch': 'error',
                 '@typescript-eslint/no-invalid-void-type': 'error',
                 '@typescript-eslint/no-misused-new': 'error',
-                '@typescript-eslint/no-misused-promises': 'error',
+                '@typescript-eslint/no-misused-promises': [
+                    'error',
+                    {
+                        'checksVoidReturn': false
+                    }
+                ],
                 '@typescript-eslint/no-namespace': 'error',
                 '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
                 '@typescript-eslint/no-non-null-assertion': 'error',
@@ -153,6 +158,7 @@ module.exports = {
                 'require-await': 'off',
                 'no-return-await': 'off',
                 'semi': 'off',
+                'space-before-blocks': 'off',
                 'space-before-function-paren': 'off',
 
                 '@typescript-eslint/brace-style': 'error',
@@ -193,6 +199,7 @@ module.exports = {
                     'ignoreReadonlyClassProperties': true
                 }],
                 '@typescript-eslint/no-redeclare': 'error',
+                '@typescript-eslint/no-redundant-type-constituents': 'error',
                 '@typescript-eslint/no-shadow': 'error',
                 '@typescript-eslint/no-throw-literal': 'error',
                 '@typescript-eslint/no-unused-expressions': 'error',
@@ -206,10 +213,12 @@ module.exports = {
                     'ignoreTypeReferences': false
                 }],
                 '@typescript-eslint/no-useless-constructor': 'error',
+                '@typescript-eslint/no-useless-empty-export': 'error',
                 '@typescript-eslint/quotes': ['error', 'single'],
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/return-await': 'error',
                 '@typescript-eslint/semi': 'error',
+                '@typescript-eslint/space-before-blocks': 'error',
                 '@typescript-eslint/space-before-function-paren': ['error', {
                     'anonymous': 'never',
                     'named': 'never',
