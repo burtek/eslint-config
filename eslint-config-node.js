@@ -5,7 +5,7 @@ module.exports = {
         './eslint-config-base.js'
     ],
     plugins: [
-        'node',
+        'n',
         'security-node'
     ],
     env: {
