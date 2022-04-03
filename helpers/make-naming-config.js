@@ -13,6 +13,12 @@ const configs = [
         'format': ['camelCase', 'UPPER_CASE']
     },
     {
+        // readonly class properties can be UPPER_CASE - both static and non-static - eg. class type/object type, class-scope constants
+        'selector': 'classProperty',
+        'modifiers': ['readonly'],
+        'format': ['camelCase', 'UPPER_CASE']
+    },
+    {
         // unused parameters start with _
         'selector': 'parameter',
         'modifiers': ['unused'],
