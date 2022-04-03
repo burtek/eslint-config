@@ -16,6 +16,14 @@ function filterRejected(promise) {
     return promise.status === 'rejected';
 }
 
+/* eslint-disable object-curly-newline */
+const testCases = [
+    ...['js', 'jsx', 'ts', 'tsx'].map(ext => ({ filePath: `file.${ext}`, content: '' })),
+    ...['json', 'jsonc', 'jsonx', 'json5'].map(ext => ({ filePath: `file.${ext}`, content: '{}' })),
+    ...['tsconfig.json', 'jsconfig.json'].map(filePath => ({ filePath, content: '{}' }))
+];
+/* eslint-enable object-curly-newline */
+
 async function getErrors(configFile) {
     const cli = new ESLint({
         overrideConfig: {
@@ -26,10 +34,7 @@ async function getErrors(configFile) {
         }
     });
 
-    const exts = ['js', 'jsx', 'ts', 'tsx', 'json', 'jsonc', 'jsonx'].map(ext => `file.${ext}`);
-    const files = ['tsconfig.json', 'jsconfig.json'].map(ext => `file.${ext}`);
-
-    const results = await Promise.allSettled([...exts, ...files].map(filePath => cli.lintText('', { filePath })));
+    const results = await Promise.allSettled(testCases.map(({ filePath, content }) => cli.lintText(content, { filePath })));
     const rejectReasons = results.filter(filterRejected).map(promise => promise.reason);
 
     if (rejectReasons.length > 0) {
