@@ -11,6 +11,11 @@ module.exports = {
     env: {
         node: true
     },
+    parserOptions: {
+        ecmaFeatures: {
+            globalReturn: false
+        }
+    },
     rules: {
         'no-console': 'off',
 
