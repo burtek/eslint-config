@@ -10,6 +10,7 @@ const configs = [
         // const global variables can be UPPER_CASE
         'selector': 'variable',
         'modifiers': ['const', 'global'],
+        'types': ['boolean', 'string', 'number', 'array'],
         'format': ['camelCase', 'UPPER_CASE']
     },
     {
@@ -34,6 +35,16 @@ const configs = [
         // types
         'selector': 'typeLike',
         'format': ['PascalCase']
+    },
+    {
+        'selector': [
+            'property',
+            'method',
+            'accessor',
+            'enumMember'
+        ],
+        'format': null,
+        'modifiers': ['requiresQuotes']
     }
 ];
 const reactConfigs = [
@@ -42,7 +53,7 @@ const reactConfigs = [
         'selector': 'variable',
         'modifiers': ['const', 'global'],
         'types': ['function'],
-        'format': ['camelCase', 'UPPER_CASE', 'PascalCase']
+        'format': ['camelCase', 'PascalCase']
     },
     {
         // React Components
