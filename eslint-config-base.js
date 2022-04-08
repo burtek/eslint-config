@@ -203,7 +203,11 @@ module.exports = {
                 '@typescript-eslint/no-shadow': 'error',
                 '@typescript-eslint/no-throw-literal': 'error',
                 '@typescript-eslint/no-unused-expressions': 'error',
-                '@typescript-eslint/no-unused-vars': 'error',
+                '@typescript-eslint/no-unused-vars': ['error', {
+                    argsIgnorePattern: '^_',
+                    destructuredArrayIgnorePattern: '^_',
+                    ignoreRestSiblings: true
+                }],
                 '@typescript-eslint/no-use-before-define': ['error', {
                     'functions': false,
                     'classes': true,
@@ -394,7 +398,11 @@ module.exports = {
         'no-shadow-restricted-names': 'error',
         'no-undef': 'error',
         'no-undef-init': 'error',
-        'no-unused-vars': 'error',
+        'no-unused-vars': ['error', {
+            argsIgnorePattern: '^_',
+            destructuredArrayIgnorePattern: '^_',
+            ignoreRestSiblings: true
+        }],
         'no-use-before-define': ['error', {
             'functions': false,
             'classes': true,
