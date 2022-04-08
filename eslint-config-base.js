@@ -231,21 +231,29 @@ module.exports = {
             }
         },
         {
-            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
-            extends: [
-                'plugin:jest-formatting/strict',
-                'plugin:jest/recommended',
-                'plugin:jest/style'
-            ],
+            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx', '__mocks__/*'],
             env: {
                 jest: true,
                 node: true
             },
             rules: {
                 'no-console': 'off',
+                'no-magic-numbers': 'off',
+                'no-redeclare': 'off',
                 '@typescript-eslint/no-explicit-any': 'off',
                 '@typescript-eslint/no-magic-numbers': 'off',
-                '@typescript-eslint/no-unsafe-assignment': 'off',
+                '@typescript-eslint/no-redeclare': 'off',
+                '@typescript-eslint/no-unsafe-assignment': 'off'
+            }
+        },
+        {
+            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
+            extends: [
+                'plugin:jest-formatting/strict',
+                'plugin:jest/recommended',
+                'plugin:jest/style'
+            ],
+            rules: {
                 'jest/consistent-test-it': 'error',
                 'jest/no-conditional-in-test': 'error',
                 'jest/no-duplicate-hooks': 'error',
