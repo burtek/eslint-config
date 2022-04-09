@@ -239,46 +239,55 @@ module.exports = {
             rules: {
                 'no-console': 'off',
                 'no-magic-numbers': 'off',
-                'no-redeclare': 'off',
-                '@typescript-eslint/no-explicit-any': 'off',
-                '@typescript-eslint/no-magic-numbers': 'off',
-                '@typescript-eslint/no-redeclare': 'off',
-                '@typescript-eslint/no-unsafe-assignment': 'off'
-            }
-        },
-        {
-            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
-            extends: [
-                'plugin:jest-formatting/strict',
-                'plugin:jest/recommended',
-                'plugin:jest/style'
-            ],
-            rules: {
-                'jest/consistent-test-it': 'error',
-                'jest/no-conditional-in-test': 'error',
-                'jest/no-duplicate-hooks': 'error',
-                'jest/no-test-return-statement': 'error',
-                'jest/prefer-hooks-on-top': 'error',
-                'jest/prefer-strict-equal': 'error',
-                'jest/prefer-todo': 'error'
-            }
+                'no-redeclare': 'off'
+            },
+            overrides: [
+                {
+                    files: ['*.ts', '*.tsx'],
+                    rules: {
+                        '@typescript-eslint/no-explicit-any': 'off',
+                        '@typescript-eslint/no-magic-numbers': 'off',
+                        '@typescript-eslint/no-redeclare': 'off',
+                        '@typescript-eslint/no-unsafe-assignment': 'off'
+                    }
+                },
+                {
+                    files: ['*.test.*'],
+                    extends: [
+                        'plugin:jest-formatting/strict',
+                        'plugin:jest/recommended',
+                        'plugin:jest/style'
+                    ],
+                    rules: {
+                        'jest/consistent-test-it': 'error',
+                        'jest/no-conditional-in-test': 'error',
+                        'jest/no-duplicate-hooks': 'error',
+                        'jest/no-test-return-statement': 'error',
+                        'jest/prefer-hooks-on-top': 'error',
+                        'jest/prefer-strict-equal': 'error',
+                        'jest/prefer-todo': 'error'
+                    }
+                }
+            ]
         },
         {
             files: ['*.json', '*.json5', '*.jsonc'],
-            parser: 'jsonc-eslint-parser'
-        },
-        {
-            files: ['*.json'],
-            excludedFiles: ['tsconfig.json', 'jsconfig.json'],
-            extends: ['plugin:jsonc/recommended-with-json']
-        },
-        {
-            files: ['*.jsonc', 'tsconfig.json', 'jsconfig.json'],
-            extends: ['plugin:jsonc/recommended-with-jsonc']
-        },
-        {
-            files: ['*.json5'],
-            extends: ['plugin:jsonc/recommended-with-json5']
+            parser: 'jsonc-eslint-parser',
+            overrides: [
+                {
+                    files: ['*.json'],
+                    excludedFiles: ['tsconfig.json', 'jsconfig.json'],
+                    extends: ['plugin:jsonc/recommended-with-json']
+                },
+                {
+                    files: ['*.jsonc', 'tsconfig.json', 'jsconfig.json'],
+                    extends: ['plugin:jsonc/recommended-with-jsonc']
+                },
+                {
+                    files: ['*.json5'],
+                    extends: ['plugin:jsonc/recommended-with-json5']
+                }
+            ]
         }
     ],
     reportUnusedDisableDirectives: true,
