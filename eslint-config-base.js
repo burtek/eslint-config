@@ -231,7 +231,7 @@ module.exports = {
             }
         },
         {
-            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx', '__mocks__/*'],
+            files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx', '**/__mocks__/**/*'],
             env: {
                 jest: true,
                 node: true
