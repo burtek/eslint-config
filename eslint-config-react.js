@@ -127,6 +127,7 @@ module.exports = {
                 'react/jsx-no-comment-textnodes': 'error',
                 'react/jsx-no-constructed-context-values': 'error',
                 'react/jsx-no-duplicate-props': 'error',
+                'react/jsx-no-leaked-render': 'warn',
                 'react/jsx-no-script-url': ['error', linkComponents.map(function map(comp) {
                     return {
                         name: comp.name, props: [comp.linkAttribute]

@@ -138,7 +138,6 @@ module.exports = {
                 'lines-between-class-members': 'off',
                 'no-array-constructor': 'off',
                 'no-dupe-class-members': 'off',
-                'no-duplicate-imports': 'off',
                 'no-empty-function': 'off',
                 'no-extra-parens': 'off',
                 'no-extra-semi': 'off',
@@ -171,12 +170,13 @@ module.exports = {
                 '@typescript-eslint/lines-between-class-members': 'error',
                 '@typescript-eslint/no-array-constructor': 'error',
                 '@typescript-eslint/no-dupe-class-members': 'error',
-                '@typescript-eslint/no-duplicate-imports': 'error',
+                '@typescript-eslint/no-duplicate-enum-values': 'error',
                 '@typescript-eslint/no-empty-function': ['error', {
                     'allow': [
                         'private-constructors',
                         'protected-constructors',
-                        'decoratedFunctions'
+                        'decoratedFunctions',
+                        'overrideMethods'
                     ]
                 }],
                 '@typescript-eslint/no-extra-parens': ['error', 'all', {
@@ -196,7 +196,8 @@ module.exports = {
                     'ignoreDefaultValues': true,
                     'ignoreEnums': true,
                     'ignoreNumericLiteralTypes': true,
-                    'ignoreReadonlyClassProperties': true
+                    'ignoreReadonlyClassProperties': true,
+                    'ignoreTypeIndexes': true
                 }],
                 '@typescript-eslint/no-redeclare': 'error',
                 '@typescript-eslint/no-redundant-type-constituents': 'error',
@@ -218,6 +219,7 @@ module.exports = {
                 }],
                 '@typescript-eslint/no-useless-constructor': 'error',
                 '@typescript-eslint/no-useless-empty-export': 'error',
+                '@typescript-eslint/parameter-properties': ['error', { 'prefer': 'parameter-property' }],
                 '@typescript-eslint/quotes': ['error', 'single'],
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/return-await': 'error',
@@ -299,6 +301,7 @@ module.exports = {
         'no-compare-neg-zero': 'error',
         'no-cond-assign': ['error', 'always'],
         'no-console': 'error',
+        'no-constant-binary-expression': 'error',
         'no-constant-condition': 'error',
         'no-control-regex': 'error',
         'no-debugger': 'error',
@@ -521,7 +524,6 @@ module.exports = {
         'no-confusing-arrow': 'error',
         'no-const-assign': 'error',
         'no-dupe-class-members': 'error',
-        'no-duplicate-imports': 'error',
         'no-new-symbol': 'error',
         'no-this-before-super': 'error',
         'no-useless-computed-key': 'error',
