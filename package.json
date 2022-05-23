@@ -52,6 +52,6 @@
     "url": "https://github.com/burtek/eslint-config"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   }
 }
