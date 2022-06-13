@@ -27,7 +27,6 @@ module.exports = {
             parser: '@typescript-eslint/parser',
             rules: {
                 '@typescript-eslint/adjacent-overload-signatures': 'error',
-                '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
                 '@typescript-eslint/await-thenable': 'error',
                 '@typescript-eslint/ban-ts-comment': 'error',
                 '@typescript-eslint/ban-types': 'error',
@@ -124,7 +123,6 @@ module.exports = {
                 '@typescript-eslint/prefer-ts-expect-error': 'error',
                 '@typescript-eslint/restrict-plus-operands': 'error',
                 '@typescript-eslint/restrict-template-expressions': 'error',
-                '@typescript-eslint/strict-boolean-expressions': 'error',
                 '@typescript-eslint/switch-exhaustiveness-check': 'error',
                 '@typescript-eslint/type-annotation-spacing': 'error',
 
@@ -265,6 +263,7 @@ module.exports = {
                         'jest/no-conditional-in-test': 'error',
                         'jest/no-duplicate-hooks': 'error',
                         'jest/no-test-return-statement': 'error',
+                        'jest/prefer-hooks-in-order': 'error',
                         'jest/prefer-hooks-on-top': 'error',
                         'jest/prefer-strict-equal': 'error',
                         'jest/prefer-todo': 'error'
@@ -309,7 +308,9 @@ module.exports = {
         'no-dupe-else-if': 'error',
         'no-dupe-keys': 'error',
         'no-duplicate-case': 'error',
-        'no-empty': 'error',
+        'no-empty': ['error', {
+            'allowEmptyCatch': true
+        }],
         'no-empty-character-class': 'error',
         'no-ex-assign': 'error',
         'no-extra-boolean-cast': 'error',
