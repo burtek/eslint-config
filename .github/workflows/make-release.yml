@@ -2,8 +2,8 @@ name: 'Make github and npm releases'
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - master
 
 jobs:
   make-release:
@@ -14,6 +14,7 @@ jobs:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v2'
         with:
+          fetch-depth: 0
           ref: ${{ github.ref }}
       - name: 'Setup node'
         uses: actions/setup-node@v2
@@ -21,21 +22,21 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@dtrw'
-      - name: 'Create a github release'
-        uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          automatic_release_tag: "${{ github.ref_name }}"
-          title: "${{ github.ref_name }}"
-          files: |
-            LICENSE
-            README.md
-            package.json
-            yarn.lock
-            eslint-config-*.js
+      # - name: 'Create a github release'
+      #   uses: "marvinpinto/action-automatic-releases@latest"
+      #   with:
+      #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
+      #     prerelease: false
+      #     automatic_release_tag: "${{ github.ref_name }}"
+      #     title: "${{ github.ref_name }}"
+      #     files: |
+      #       LICENSE
+      #       README.md
+      #       package.json
+      #       yarn.lock
+      #       eslint-config-*.js
       - name: 'Install dependencies'
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: 'Test configs'
         run: yarn test
       - name: 'Publish package'

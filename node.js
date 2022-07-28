@@ -2,7 +2,7 @@ module.exports = {
     extends: [
         'plugin:n/recommended',
         'plugin:security-node/recommended',
-        './eslint-config-base.js'
+        './base.js'
     ],
     plugins: [
         'n',
