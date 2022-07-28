@@ -114,7 +114,7 @@ module.exports = {
                 '@typescript-eslint/prefer-function-type': 'error',
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/prefer-literal-enum-member': 'error',
-                '@typescript-eslint/prefer-nullish-coalescing': ['error'],
+                '@typescript-eslint/prefer-nullish-coalescing': 'error',
                 '@typescript-eslint/prefer-optional-chain': 'error',
                 '@typescript-eslint/prefer-readonly': 'error',
                 '@typescript-eslint/prefer-reduce-type-parameter': 'error',
@@ -122,7 +122,11 @@ module.exports = {
                 '@typescript-eslint/prefer-string-starts-ends-with': 'error',
                 '@typescript-eslint/prefer-ts-expect-error': 'error',
                 '@typescript-eslint/restrict-plus-operands': 'error',
-                '@typescript-eslint/restrict-template-expressions': 'error',
+                '@typescript-eslint/restrict-template-expressions': ['error', {
+                    allowBoolean: true,
+                    allowNumber: true,
+                    allowNullish: true
+                }],
                 '@typescript-eslint/switch-exhaustiveness-check': 'error',
                 '@typescript-eslint/type-annotation-spacing': 'error',
 
