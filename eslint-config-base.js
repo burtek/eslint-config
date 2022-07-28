@@ -30,6 +30,7 @@ module.exports = {
                 '@typescript-eslint/await-thenable': 'error',
                 '@typescript-eslint/ban-ts-comment': 'error',
                 '@typescript-eslint/ban-types': 'error',
+                '@typescript-eslint/consistent-generic-constructors': 'error',
                 '@typescript-eslint/consistent-indexed-object-style': 'error',
                 '@typescript-eslint/consistent-type-assertions': ['error', {
                     'assertionStyle': 'as',
