@@ -1,7 +1,12 @@
-/node_modules/
-/.github/
+/node_modules
+/.github
 /.gitignore
 /.markdownlint.json
-/.eslintrc
+/.eslintrc.txt
+/eslint.config.js
 /tests
-/src
+/import-types.d.ts
+/docs
+/*.md
+/tsconfig.json
+/yarn.lock

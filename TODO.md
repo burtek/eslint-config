@@ -5,6 +5,5 @@
 - create no-splice-add and no-splice-remove rules and include in base
 - fix TS issues and upgrade plugins as they transition to FlatConfig
 - add tests
-- create release workflow for github
 - TS declaration for config
 - run `tsc` on precommit
