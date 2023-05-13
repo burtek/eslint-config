@@ -1,1 +1,1 @@
-module.exports = require('./eslint-config-base');
+export { prepareConfig } from './configs/index.js';
