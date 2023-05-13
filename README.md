@@ -5,6 +5,10 @@
 
 This is repository with my `eslint` configs for multiple purposes that are used (or will be used) in my other projects.
 
+## WARNING
+
+This README is outdated, please wait for 2.0.0 docs.
+
 ## Install
 
 ```bash

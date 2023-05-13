@@ -5,11 +5,13 @@
     "moduleResolution": "nodenext",
     "allowJs": true,
     "checkJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationDir": "types",
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "outFile": "index.js",
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "exactOptionalPropertyTypes": true
-  }
+  },
+  "exclude": ["types.d.ts"]
 }

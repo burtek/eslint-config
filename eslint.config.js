@@ -1,7 +1,7 @@
 import { defineFlatConfig } from 'eslint-define-config';
 import globals from 'globals';
 
-import { prepareConfig } from './src/configs/index.js';
+import { prepareConfig } from './configs/index.js';
 
 
 export default defineFlatConfig([
