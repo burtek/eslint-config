@@ -40,7 +40,9 @@ export const baseNamingRuleConfig = [
         format: ['PascalCase']
     },
     {
-        selector: /** @type {any} */('override'),
+        // override
+        selector: 'default',
+        modifiers: ['override'],
         format: null
     },
     {
