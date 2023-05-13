@@ -38,7 +38,7 @@
     "auto-changelog": "^2.4.0",
     "eslint": "^8.40.0",
     "exit-code": "^1.0.2",
-    "typescript": "^4.7.4"
+    "typescript": "~5.0.4"
   },
   "peerDependencies": {
     "eslint": ">=8.23",
@@ -49,7 +49,7 @@
     "test": "node tests/run-tests.js",
     "preversion-temp-disabled": "yarn test",
     "push": "git push --follow-tags",
-    "version": "auto-changelog -p --commit-limit false && git add CHANGELOG.md"
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "homepage": "https://github.com/burtek/eslint-config#readme",
   "bugs": "https://github.com/burtek/eslint-config/issues",
@@ -61,5 +61,10 @@
   },
   "type": "module",
   "main": "index.js",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "auto-changelog": {
+    "breakingPattern": "BREAKING CHANGE:",
+    "unreleased": true,
+    "commitLimit": false
+  }
 }
