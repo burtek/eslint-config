@@ -21,6 +21,9 @@ const linkComponents = [
 ];
 
 const files = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
+const testFiles = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
+const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
+const jsxFiles = ['**/*.{jsx,tsx}'];
 
 /**
  * @param {Object} [config]
@@ -136,20 +139,24 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             }
         },
         {
-            files: ['**/*.{ts,cts,mts,tsx}'],
+            files: tsFiles,
             rules: { '@typescript-eslint/naming-convention': /** @type {any} */(['error']).concat(reactNamingRuleConfig) }
+        },
+        {
+            files: testFiles,
+            rules: { 'react-hooks/rules-of-hooks': 'off' }
         }
     ]);
     const nextConfig = defineFlatConfig([
         {
-            files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
+            files,
             plugins: { '@next/next': next },
             rules: { ...next.configs.recommended.rules }
         }
     ]);
     const a11yConfig = defineFlatConfig([
         {
-            files: ['**/*.{jsx,tsx}'],
+            files: jsxFiles,
             plugins: { 'jsx-a11y': jsxA11y },
             rules: { ...jsxA11y.configs.recommended.rules }
         }

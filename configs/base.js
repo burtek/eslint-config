@@ -194,7 +194,6 @@ export function prepareConfig() {
                     ignoreRegExpLiterals: true
                 }],
                 'max-statements-per-line': 'error',
-                'multiline-comment-style': 'error',
                 'multiline-ternary': ['error', 'always-multiline'],
                 'new-cap': 'error',
                 'newline-per-chained-call': 'error',
@@ -285,6 +284,7 @@ export function prepareConfig() {
                     'groups': [
                         'builtin',
                         'external',
+                        'internal',
                         ['parent', 'sibling'],
                         'index'
                     ],
@@ -322,7 +322,8 @@ export function prepareConfig() {
                 '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
                 '@typescript-eslint/consistent-type-imports': ['error', {
                     prefer: 'type-imports',
-                    fixStyle: 'separate-type-imports'
+                    fixStyle: 'separate-type-imports',
+                    disallowTypeAnnotations: false
                 }],
                 '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
                 '@typescript-eslint/member-delimiter-style': 'error',

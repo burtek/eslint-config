@@ -24,7 +24,11 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             languageOptions: {
                 globals: {
                     ...globals.jest,
-                    ...globals.node
+                    ...globals.node,
+                    ...(mode === 'vitest' && {
+                        jest: 'off',
+                        vitest: 'readonly'
+                    })
                 }
             },
             settings: {
