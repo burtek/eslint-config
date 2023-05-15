@@ -8,7 +8,7 @@ import { prepareConfig as node } from './node.js';
 import { prepareConfig as react } from './react.js';
 
 /** @satisfies {Record<string, (config?: any) => import('eslint-define-config').FlatESLintConfig[]>} */
-const configs = {
+export const configs = {
     base,
     jest,
     json,
