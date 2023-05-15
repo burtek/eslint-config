@@ -9,6 +9,7 @@ export default defineFlatConfig([
     {
         languageOptions: {
             globals: { ...globals.node },
+            parserOptions: { project: 'tsconfig.json' },
             sourceType: 'module'
         },
         rules: {
