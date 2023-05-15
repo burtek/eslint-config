@@ -25,14 +25,14 @@ export function prepareConfig({
         },
         {
             files: ['**/*.json', ...additionalFilesJson],
-            ignores: ['**/tsconfig.json', '**/jsconfig.json'],
+            ignores: ['**/tsconfig.json', '**/jsconfig.json', '.vscode/**/*.json'],
             rules: {
                 .../** @type {JsoncRules} */(jsonc.configs['recommended-with-json'].rules),
                 'jsonc/indent': ['error', 2]
             }
         },
         {
-            files: ['**/*.jsonc', '**/tsconfig.json', '**/jsconfig.json', ...additionalFilesJsonc],
+            files: ['**/*.jsonc', '**/tsconfig.json', '**/jsconfig.json', '.vscode/**/*.json', ...additionalFilesJsonc],
             rules: {
                 .../** @type {JsoncRules} */(jsonc.configs['recommended-with-jsonc'].rules),
                 'jsonc/indent': ['error', 2]
