@@ -1,1 +1,1 @@
-export { prepareConfig } from './configs/index.js';
+export { configs, prepareConfig } from './configs/index.js';
