@@ -32,10 +32,10 @@ jobs:
             README.md
             package.json
             yarn.lock
-            configs/**/*
-            docs/**/*
-            rules/**/*
-            tests/**/*
+            configs
+            docs
+            rules
+            tests
             index.js
             import-types.d.ts
       - name: 'Install dependencies'
