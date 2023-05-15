@@ -37,7 +37,10 @@ export function prepareConfig() {
                 'n/prefer-global/url-search-params': 'error',
                 'n/prefer-global/url': 'error',
                 'n/prefer-promises/dns': 'error',
-                'n/prefer-promises/fs': 'error'
+                'n/prefer-promises/fs': 'error',
+
+                // https://github.com/gkouziik/eslint-plugin-security-node/pull/63
+                'security-node/detect-unhandled-async-errors': 'off'
             }
         },
         {
