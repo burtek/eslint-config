@@ -285,8 +285,8 @@ export function prepareConfig() {
                         'builtin',
                         'external',
                         'internal',
-                        ['parent', 'sibling'],
-                        'index'
+                        'parent',
+                        ['index', 'sibling']
                     ],
                     'newlines-between': 'always',
                     'alphabetize': {
