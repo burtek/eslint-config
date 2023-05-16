@@ -5,6 +5,12 @@ import jsonParser from 'jsonc-eslint-parser';
 /** @typedef {Partial<import('eslint-define-config/src/rules/jsonc/index.js').JsoncRules>} JsoncRules  */
 /** @typedef {Partial<import('eslint-define-config/src/rules/eslint/index.js').EslintRules>} EslintRules  */
 
+const wellKnownJsonc = [
+    '**/tsconfig.json',
+    '**/jsconfig.json',
+    '.vscode/**/*.json'
+];
+
 /**
  * @param {Object} [config]
  * @param {Partial<Record<'json' | 'jsonc' | 'json5', string[]>>} [config.additionalFiles]
@@ -25,14 +31,14 @@ export function prepareConfig({
         },
         {
             files: ['**/*.json', ...additionalFilesJson],
-            ignores: ['**/tsconfig.json', '**/jsconfig.json', '.vscode/**/*.json'],
+            ignores: [...wellKnownJsonc],
             rules: {
                 .../** @type {JsoncRules} */(jsonc.configs['recommended-with-json'].rules),
                 'jsonc/indent': ['error', 2]
             }
         },
         {
-            files: ['**/*.jsonc', '**/tsconfig.json', '**/jsconfig.json', '.vscode/**/*.json', ...additionalFilesJsonc],
+            files: ['**/*.jsonc', ...wellKnownJsonc, ...additionalFilesJsonc],
             rules: {
                 .../** @type {JsoncRules} */(jsonc.configs['recommended-with-jsonc'].rules),
                 'jsonc/indent': ['error', 2]

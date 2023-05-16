@@ -46,6 +46,7 @@
   },
   "private": false,
   "scripts": {
+    "lint": "eslint configs/**/*.js rules/**/*.js",
     "test": "node tests/run-tests.js",
     "preversion-temp-disabled": "yarn test",
     "push": "git push --follow-tags",

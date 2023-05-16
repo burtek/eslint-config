@@ -42,7 +42,9 @@ jobs:
         run: yarn
       # - name: 'Test configs'
       #   run: yarn test
+      - name: 'Lint configs'
+        run: yarn lint
       - name: 'Publish package'
-        run: "yarn publish --tag ${{ (contains(github.ref_name, '-alpha') && 'alpha') || (contains(github.ref_name, '-beta') && 'beta') || 'latest' }} --access public"
+        run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
         env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
