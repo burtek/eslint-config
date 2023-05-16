@@ -61,7 +61,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'jsx-quotes': ['error', 'prefer-double'],
 
                 'react/button-has-type': 'warn',
-                'react/hook-use-state': 'error',
+                'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
                 'react/jsx-child-element-spacing': 'error',
@@ -121,6 +121,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/no-danger': 'error',
                 'react/no-did-mount-set-state': 'error',
                 'react/no-did-update-set-state': 'error',
+                'react/no-object-type-as-default-prop': 'error',
                 'react/no-redundant-should-component-update': 'error',
                 'react/no-this-in-sfc': 'error',
                 'react/no-typos': 'error',
@@ -158,7 +159,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             files: jsxFiles,
             plugins: { 'jsx-a11y': jsxA11y },
-            rules: { ...jsxA11y.configs.recommended.rules }
+            rules: {
+                ...jsxA11y.configs.recommended.rules,
+                'jsx-a11y/anchor-ambiguous-text': 'error'
+            }
         }
     ]);
 

@@ -1,30 +1,33 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import n from 'eslint-plugin-n';
+import nModule from 'eslint-plugin-n/configs/recommended-module.js';
+import nScript from 'eslint-plugin-n/configs/recommended-script.js';
 import nodeSecurity from 'eslint-plugin-security-node';
 import globals from 'globals';
 
 
-export function prepareConfig() {
+/**
+ * @param {Object} [config]
+ * @param {'module' | 'script'} [config.mode]
+ */
+export function prepareConfig({ mode = 'module' } = {}) {
+    const isModule = mode === 'module';
+
     return defineFlatConfig([
         {
+            files: [isModule ? '**/*.{cjs,cts}' : '**/*.{js,cjs,ts,cts}'],
+            ...nScript
+        },
+        {
+            files: [isModule ? '**/*.{js,mjs,ts,mts}' : '**/*.{mjs,mts}'],
+            ...nModule
+        },
+        {
             files: ['**/*.{js,cjs,mjs,ts,cts,mts}'],
-            plugins: {
-                n,
-                'security-node': nodeSecurity
-            },
             languageOptions: {
-                globals: {
-                    // eslint-disable-next-line no-warning-comments
-                    ...n.configs['recommended-module'].globals, // TODO: recommended once eslint-plugin-n moves to FlatConfig
-                    ...globals.node
-                },
+                globals: { ...globals.node },
                 parserOptions: { ecmaFeatures: { globalReturn: false } }
             },
             rules: {
-                // eslint-disable-next-line no-warning-comments
-                ...n.configs['recommended-module'].rules, // TODO: recommended once eslint-plugin-n moves to FlatConfig
-                ...nodeSecurity.configs.recommended.rules,
-
                 'no-console': 'off',
 
                 'n/no-missing-import': 'off',
@@ -37,10 +40,7 @@ export function prepareConfig() {
                 'n/prefer-global/url-search-params': 'error',
                 'n/prefer-global/url': 'error',
                 'n/prefer-promises/dns': 'error',
-                'n/prefer-promises/fs': 'error',
-
-                // https://github.com/gkouziik/eslint-plugin-security-node/pull/63
-                'security-node/detect-unhandled-async-errors': 'off'
+                'n/prefer-promises/fs': 'error'
             }
         },
         {
@@ -49,6 +49,16 @@ export function prepareConfig() {
                 'n/no-unpublished-import': 'error',
                 'n/no-unpublished-require': 'error',
                 'n/no-unsupported-features/es-syntax': 'off'
+            }
+        },
+        {
+            files: ['**/*.{js,cjs,mjs,ts,cts,mts}'],
+            plugins: { 'security-node': nodeSecurity },
+            rules: {
+                ...nodeSecurity.configs.recommended.rules,
+
+                // https://github.com/gkouziik/eslint-plugin-security-node/pull/63
+                'security-node/detect-unhandled-async-errors': 'off'
             }
         }
     ]);

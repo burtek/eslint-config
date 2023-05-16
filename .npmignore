@@ -5,7 +5,6 @@
 /.eslintrc.txt
 /eslint.config.js
 /tests
-/import-types.d.ts
 /docs
 /*.md
 /tsconfig.json

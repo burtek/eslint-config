@@ -4,13 +4,10 @@
 ![npm next version](https://img.shields.io/npm/v/@dtrw/eslint-config/next)
 ![NPM License](https://img.shields.io/npm/l/@dtrw/eslint-config)
 ![Release](https://img.shields.io/github/actions/workflow/status/burtek/eslint-config/make-release.yml?label=publish%20release)
+![dependencies](https://img.shields.io/librariesio/release/npm/@dtrw/eslint-config)
 
 
 This is repository with my `eslint` configs for multiple purposes that are used (or will be used) in my other projects.
-
-## WARNING
-
-This README is outdated, please wait for 2.0.0 docs.
 
 ## Install
 
