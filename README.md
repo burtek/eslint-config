@@ -23,15 +23,35 @@ npm i -D @dtrw/eslint-config
 
 ## Usage
 
-To use any of the configs put `@dtrw/eslint-config/<name>` in your eslint config's `extends` section, i.e.:
+This config requires `eslint` `>= 8.23`
 
-```json
-{
-    "extends": [
-        "@dtrw/eslint-config/eslint-config-base"
-    ]
-}
+
+```js
+// eslint.config.js
+
+import { configs, prepareConfig } from '@dtrw/eslint-config';
+
+export default prepareConfig(configuration)
 ```
+
+### Configuration
+
+The configuration object can contain following keys:
+
+- jest
+- json
+- lodash
+- node
+- react
+
+<!-- Configuration key | schema | plugins in use | description
+
+- `jest` - if present, enables the `jest` config
+  + `jest: true` enables it with default params
+  + `jest: {...}` allows additional configuration
+    - `jest.mode` can be set to `'vitest'` to make the plugin work with `vitest` library
+
+
 
 ## Available main configs
 
@@ -49,4 +69,4 @@ Those configs don't extend any of the above main configs
 
  name | notes | extends | Rules sources
 ------|-------|---------|--------------
-`eslint-config-lodash`      | Config for projects making use of `lodash` library | _none_ | <ul><li>[`lodash`](https://www.npmjs.com/package/eslint-plugin-lodash)</li></ul>
+`eslint-config-lodash`      | Config for projects making use of `lodash` library | _none_ | <ul><li>[`lodash`](https://www.npmjs.com/package/eslint-plugin-lodash)</li></ul> -->
