@@ -210,10 +210,7 @@ export function prepareConfig() {
                 'no-whitespace-before-property': 'error',
                 'object-curly-newline': ['error', { multiline: true }],
                 'object-curly-spacing': ['error', 'always'],
-                'one-var': ['error', {
-                    initialized: 'never',
-                    uninitialized: 'consecutive'
-                }],
+                'one-var': ['error', 'never'],
                 'operator-assignment': 'error',
                 'padded-blocks': ['error', 'never'],
                 'prefer-exponentiation-operator': 'error',
@@ -393,7 +390,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unnecessary-type-arguments': 'error',
                 '@typescript-eslint/no-unnecessary-type-assertion': 'error',
                 '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-                '@typescript-eslint/no-unsafe-assignment': 'error',
+                '@typescript-eslint/   fe-assignment': 'error',
                 '@typescript-eslint/no-unsafe-call': 'error',
                 '@typescript-eslint/no-unsafe-declaration-merging': 'error',
                 '@typescript-eslint/no-unsafe-enum-comparison': 'error',
