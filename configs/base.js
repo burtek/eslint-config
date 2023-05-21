@@ -390,7 +390,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unnecessary-type-arguments': 'error',
                 '@typescript-eslint/no-unnecessary-type-assertion': 'error',
                 '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-                '@typescript-eslint/   fe-assignment': 'error',
+                '@typescript-eslint/no-unsafe-assignment': 'error',
                 '@typescript-eslint/no-unsafe-call': 'error',
                 '@typescript-eslint/no-unsafe-declaration-merging': 'error',
                 '@typescript-eslint/no-unsafe-enum-comparison': 'error',
