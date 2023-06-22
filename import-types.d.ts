@@ -172,3 +172,31 @@ declare module 'eslint-plugin-cypress' {
 
     export default plugin;
 }
+
+declare module 'eslint-plugin-testing-library' {
+    import type { Rule } from 'eslint';
+    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+
+
+    const plugin: {
+        configs: Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', {
+            plugins: [string];
+            rules: Record<string, Severity>;
+        }>;
+        rules: Record<string, Rule.RuleModule>;
+    };
+
+    export default plugin;
+}
+
+declare module 'eslint-plugin-testing-library/configs/*.js' {
+    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+
+
+    const config: {
+        plugins: [string];
+        rules: Record<string, Severity>;
+    };
+
+    export default config;
+}

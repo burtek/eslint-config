@@ -44,6 +44,7 @@ The configuration object can contain following keys:
 - node
 - react
 - cypress
+- testing-library
 
 ### TODO: Docs
 

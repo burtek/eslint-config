@@ -7,6 +7,7 @@ import { prepareConfig as json } from './json.js';
 import { prepareConfig as lodash } from './lodash.js';
 import { prepareConfig as node } from './node.js';
 import { prepareConfig as react } from './react.js';
+import { prepareConfig as testingLibrary } from './testing-library.js';
 
 /** @satisfies {Record<string, (config?: any) => import('eslint-define-config').FlatESLintConfig[]>} */
 export const configs = {
@@ -16,7 +17,8 @@ export const configs = {
     json,
     lodash,
     node,
-    react
+    react,
+    testingLibrary
 };
 
 /**

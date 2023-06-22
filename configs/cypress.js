@@ -6,6 +6,8 @@ import globals from 'globals';
 
 const files = ['**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
+// eslint-disable-next-line no-warning-comments
+// TODO: move to FlatConfig once cypress is upgraded
 export function prepareConfig() {
     return defineFlatConfig([
         {
