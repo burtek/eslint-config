@@ -200,3 +200,19 @@ declare module 'eslint-plugin-testing-library/configs/*.js' {
 
     export default config;
 }
+
+declare module 'eslint-plugin-jest-dom' {
+    import type { Rule } from 'eslint';
+    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+
+
+    const plugin: {
+        configs: Record<'recommended' | 'all', {
+            plugins: [string];
+            rules: Record<string, Severity>;
+        }>;
+        rules: Record<string, Rule.RuleModule>;
+    };
+
+    export default plugin;
+}
