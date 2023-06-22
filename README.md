@@ -43,6 +43,9 @@ The configuration object can contain following keys:
 - lodash
 - node
 - react
+- cypress
+
+### TODO: Docs
 
 <!-- Configuration key | schema | plugins in use | description
 

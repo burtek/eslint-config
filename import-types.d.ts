@@ -151,3 +151,24 @@ declare module 'eslint-plugin-security-node' {
 
     export default plugin;
 }
+
+declare module 'eslint-plugin-cypress' {
+    import type { Rule } from 'eslint';
+    import type { LanguageOptions } from 'eslint-define-config';
+    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+
+
+    const plugin: {
+        configs: {
+            recommended: {
+                rules: Record<string, Severity>;
+            };
+        };
+        environments: {
+            globals: LanguageOptions['globals'];
+        };
+        rules: Record<string, Rule.RuleModule>;
+    };
+
+    export default plugin;
+}
