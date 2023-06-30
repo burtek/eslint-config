@@ -1,5 +1,4 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import jestDom from 'eslint-plugin-jest-dom';
 import testingLibrary from 'eslint-plugin-testing-library';
 
 
@@ -8,6 +7,8 @@ const files = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 // eslint-disable-next-line no-warning-comments
 // TODO: move to FlatConfig once testing-library and jest-dom are upgraded
 export function prepareConfig() {
+    // eslint-plugin-jest-dom depends on @testing-library/dom, let's not break eslint configs without TL installed.
+    const { default: jestDom } = require('eslint-plugin-jest-dom');
     return defineFlatConfig([
         {
             files,

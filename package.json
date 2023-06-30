@@ -13,9 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.7",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
-    "eslint-define-config": "^1.21.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint-define-config": "~1.20.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-import": "^2.27.5",
@@ -36,15 +36,22 @@
     "jsonc-eslint-parser": "^2.3.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.3.1",
     "@types/eslint": "^8.40.2",
     "auto-changelog": "^2.4.0",
     "eslint": "^8.43.0",
     "exit-code": "^1.0.2",
-    "typescript": "~5.1.3"
+    "typescript": "~5.1.6"
   },
   "peerDependencies": {
+    "@testing-library/dom": "^8.0.0 || ^9.0.0",
     "eslint": ">=8.23",
-    "typescript": ">=4"
+    "typescript": ">=4" 
+  },
+  "peerDependenciesMeta": {
+    "@testing-library/dom": {
+      "optional": true
+    }
   },
   "private": false,
   "scripts": {
