@@ -1,6 +1,6 @@
 {
   "name": "@dtrw/eslint-config",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
   "description": "Custom eslint configs",
   "keywords": [
@@ -46,7 +46,7 @@
   "peerDependencies": {
     "@testing-library/dom": "^8.0.0 || ^9.0.0",
     "eslint": ">=8.23",
-    "typescript": ">=4" 
+    "typescript": ">=4"
   },
   "peerDependenciesMeta": {
     "@testing-library/dom": {
