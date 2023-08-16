@@ -5,7 +5,7 @@ import { prepareConfig } from './configs/index.js';
 
 
 export default defineFlatConfig([
-    ...prepareConfig({ json: { additionalFiles: { jsonc: ['.czrc'] } } }),
+    ...await prepareConfig({ json: { additionalFiles: { jsonc: ['.czrc'] } } }),
     {
         languageOptions: {
             globals: { ...globals.node },

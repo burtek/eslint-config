@@ -19,8 +19,21 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@dtrw'
+      - name: 'Install dependencies'
+        run: yarn
+      # - name: 'Test configs'
+      #   run: yarn test
+      - name: 'Lint configs'
+        run: yarn lint
+      - name: 'Make .d.ts'
+        run: yarn make-types
+      - name: 'Publish package'
+        run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: 'Create a github release'
         uses: "marvinpinto/action-automatic-releases@latest"
+        # TODO: https://github.com/marvinpinto/actions/pull/642
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') }}
@@ -38,13 +51,4 @@ jobs:
             tests
             index.js
             import-types.d.ts
-      - name: 'Install dependencies'
-        run: yarn
-      # - name: 'Test configs'
-      #   run: yarn test
-      - name: 'Lint configs'
-        run: yarn lint
-      - name: 'Publish package'
-        run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            index.d.ts

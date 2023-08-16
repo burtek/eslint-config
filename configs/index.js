@@ -9,7 +9,12 @@ import { prepareConfig as node } from './node.js';
 import { prepareConfig as react } from './react.js';
 import { prepareConfig as testingLibrary } from './testing-library.js';
 
-/** @satisfies {Record<string, (config?: any) => import('eslint-define-config').FlatESLintConfig[]>} */
+/**
+ * @template T
+ * @typedef {Promise<T> | T} MaybePromise
+ */
+
+/** @satisfies {Record<string, (config?: any) => MaybePromise<import('eslint-define-config').FlatESLintConfig[]>>} */
 export const configs = {
     base,
     cypress,
@@ -32,7 +37,7 @@ export const configs = {
  * @param {{ [K in Exclude<keyof typeof configs, 'base'>]?: Config<K> | true }} [providedConfigs]
  * @returns
  */
-export function prepareConfig(providedConfigs = {}) {
+export async function prepareConfig(providedConfigs = {}) {
     /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
     const config = { ...providedConfigs, base: true };
     const configKeys = /** @type {Array<keyof typeof configs>} */(Object.keys(configs));
@@ -54,6 +59,6 @@ export function prepareConfig(providedConfigs = {}) {
 
     return defineFlatConfig([
         ...base(),
-        ...configKeys.flatMap(mapConfig)
+        ...(await Promise.all(configKeys.map(mapConfig))).flatMap(x => x)
     ]);
 }

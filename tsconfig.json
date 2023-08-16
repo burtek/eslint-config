@@ -14,5 +14,5 @@
     "exactOptionalPropertyTypes": true,
     "resolveJsonModule": true
   },
-  "exclude": ["types.d.ts"]
+  "exclude": []
 }
