@@ -4,7 +4,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactConfigJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import reactConfigRecommended from 'eslint-plugin-react/configs/recommended.js';
 import reactHooks from 'eslint-plugin-react-hooks';
-import globals from 'globals';
+import * as globals from 'globals';
 
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
@@ -63,6 +63,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'jsx-quotes': ['error', 'prefer-double'],
 
                 'react/button-has-type': 'warn',
+                'react/display-name': ['error', {
+                    checkContextObjects: true,
+                    ignoreTranspilerName: true
+                }],
                 'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
@@ -81,7 +85,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                     children: { when: 'never' }
                 }],
                 'react/jsx-equals-spacing': 'error',
-                'react/jsx-first-prop-new-line': 'error',
+                'react/jsx-first-prop-new-line': ['error', 'multiprop'],
                 'react/jsx-fragments': ['error', 'syntax'],
                 'react/jsx-handler-names': ['error', { checkInlineFunction: true }],
                 'react/jsx-indent': ['error', 4, {
@@ -121,6 +125,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/no-access-state-in-setstate': 'error',
                 'react/no-array-index-key': 'error',
                 'react/no-danger': 'error',
+                'react/no-deprecated': 'error',
                 'react/no-did-mount-set-state': 'error',
                 'react/no-did-update-set-state': 'error',
                 'react/no-object-type-as-default-prop': 'error',

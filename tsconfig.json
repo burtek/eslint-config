@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node", // nodenext doesn't work with eslint-define-config
     "allowJs": true,
     "checkJs": true,
     // "declaration": true,
@@ -11,8 +11,10 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+
+    // "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true
   },
   "exclude": []
 }

@@ -14,7 +14,9 @@ import { prepareConfig as testingLibrary } from './testing-library.js';
  * @typedef {Promise<T> | T} MaybePromise
  */
 
-/** @satisfies {Record<string, (config?: any) => MaybePromise<import('eslint-define-config').FlatESLintConfig[]>>} */
+/** @typedef {import('eslint-define-config').FlatESLintConfig} FlatESLintConfig */
+
+/** @satisfies {Record<string, (config?: any) => MaybePromise<FlatESLintConfig[]>>} */
 export const configs = {
     base,
     cypress,

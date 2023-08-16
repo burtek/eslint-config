@@ -1,5 +1,5 @@
-import ts from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
+import * as ts from '@typescript-eslint/eslint-plugin';
+import * as tsParser from '@typescript-eslint/parser/dist';
 import { defineFlatConfig } from 'eslint-define-config';
 import importPlugin from 'eslint-plugin-import';
 import promise from 'eslint-plugin-promise';
@@ -130,7 +130,6 @@ export function prepareConfig() {
                 'no-param-reassign': 'error',
                 'no-redeclare': 'error',
                 'no-return-assign': 'error',
-                'no-return-await': 'error',
                 'no-script-url': 'error',
                 'no-self-assign': 'error',
                 'no-self-compare': 'error',
@@ -375,16 +374,6 @@ export function prepareConfig() {
                 '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
                 '@typescript-eslint/no-non-null-assertion': 'error',
                 '@typescript-eslint/no-require-imports': 'error',
-                '@typescript-eslint/no-type-alias': ['error', {
-                    allowAliases: 'in-unions-and-intersections',
-                    allowCallbacks: 'always',
-                    allowConditionalTypes: 'always',
-                    allowConstructors: 'always',
-                    allowGenerics: 'always',
-                    allowLiterals: 'in-unions-and-intersections',
-                    allowMappedTypes: 'always',
-                    allowTupleTypes: 'always'
-                }],
                 '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
                 '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: true }],
                 '@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -447,7 +436,6 @@ export function prepareConfig() {
                 'no-useless-constructor': 'off',
                 'quotes': 'off',
                 'require-await': 'off',
-                'no-return-await': 'off',
                 'semi': 'off',
                 'space-before-blocks': 'off',
                 'space-before-function-paren': 'off',
@@ -516,7 +504,7 @@ export function prepareConfig() {
                 '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
                 '@typescript-eslint/quotes': ['error', 'single'],
                 '@typescript-eslint/require-await': 'error',
-                '@typescript-eslint/return-await': 'error',
+                '@typescript-eslint/return-await': ['error', 'always'],
                 '@typescript-eslint/semi': 'error',
                 '@typescript-eslint/space-before-blocks': 'error',
                 '@typescript-eslint/space-before-function-paren': ['error', {
