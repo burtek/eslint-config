@@ -1,5 +1,8 @@
-import * as ts from '@typescript-eslint/eslint-plugin';
-import * as tsParser from '@typescript-eslint/parser/dist';
+// eslint-disable-next-line import/newline-after-import
+import ts from '@typescript-eslint/eslint-plugin';
+// @ts-expect-error
+// eslint-disable-next-line
+import tsParser from '@typescript-eslint/parser';
 import { defineFlatConfig } from 'eslint-define-config';
 import importPlugin from 'eslint-plugin-import';
 import promise from 'eslint-plugin-promise';
