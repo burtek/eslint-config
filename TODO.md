@@ -7,3 +7,8 @@
 - add tests
 - TS declaration for config
 - run `tsc` on precommit
+
+
+## dd
+- add tests for config keys
+- fix moduleResolution and .d.ts

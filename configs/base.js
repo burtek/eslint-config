@@ -301,8 +301,8 @@ export function prepareConfig() {
         },
         {
             files: tsFiles,
-            plugins: { '@typescript-eslint': /** @type {any} */(ts) },
-            languageOptions: { parser: /** @type {any} */(tsParser) },
+            plugins: { '@typescript-eslint': ts },
+            languageOptions: { parser: tsParser },
             rules: {
                 // @ts-ignore
                 ...ts.configs['eslint-recommended'].overrides[0].rules,
@@ -363,7 +363,6 @@ export function prepareConfig() {
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-extraneous-class': 'error',
                 '@typescript-eslint/no-floating-promises': 'error',
-                '@typescript-eslint/no-implicit-any-catch': 'error',
                 // import/consistent-type-specifier-style makes sure we don't inline `type` modifier
                 '@typescript-eslint/no-import-type-side-effects': 'off',
                 '@typescript-eslint/no-invalid-void-type': 'error',
