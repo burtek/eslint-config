@@ -10,9 +10,6 @@ const mockFiles = '**/__mocks__/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}';
 const tsTestFiles = '**/*.test.{ts,cts,mts,tsx}';
 const tsMockFiles = '**/__mocks__/**/*.{ts,cts,mts,tsx}';
 
-// /** @typedef {Partial<import('eslint-define-config/src/rules/jsonc/index.js').JsoncRules>} JsoncRules  */
-// /** @typedef {Partial<import('eslint-define-config/src/rules/eslint/index.js').EslintRules>} EslintRules  */
-
 /**
  * @param {Object} [config]
  * @param {'jest' | 'vitest'} [config.mode]
@@ -66,6 +63,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
 
                 'jest/consistent-test-it': 'error',
                 'jest/no-conditional-in-test': 'error',
+                'jest/no-confusing-set-time': 'error',
                 'jest/no-duplicate-hooks': 'error',
                 'jest/no-test-return-statement': 'error',
                 'jest/prefer-each': 'error',

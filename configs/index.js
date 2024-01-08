@@ -9,6 +9,7 @@ import { prepareConfig as node } from './node.js';
 import { prepareConfig as react } from './react.js';
 import { prepareConfig as testingLibrary } from './testing-library.js';
 
+
 /**
  * @template T
  * @typedef {Promise<T> | T} MaybePromise

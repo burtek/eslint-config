@@ -1,14 +1,5 @@
-/**
- * @type {import("eslint-define-config/src/rules/typescript-eslint/naming-convention.js").NamingConventionOption}
- */
+/** @type {import('./naming-convention-types').Selector[]} */
 export const baseNamingRuleConfig = [
-    {
-        // default
-        selector: 'default',
-        format: ['camelCase'],
-        leadingUnderscore: 'forbid',
-        trailingUnderscore: 'forbid'
-    },
     {
         // const global variables can be UPPER_CASE
         selector: 'variable',
@@ -54,14 +45,18 @@ export const baseNamingRuleConfig = [
         ],
         format: null,
         modifiers: ['requiresQuotes']
-    }
+    },
+    {
+        // default
+        selector: 'default',
+        format: ['camelCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid'
+    },
 ];
 
-/**
- * @type {import("eslint-define-config/src/rules/typescript-eslint/naming-convention.js").NamingConventionOption}
- */
-export const reactNamingRuleConfig = [
-    ...baseNamingRuleConfig,
+/** @type {import('./naming-convention-types').Selector[]} */
+export const reactNamingRuleConfig = baseNamingRuleConfig.slice().splice(-1, 0,
     {
         // React Components
         selector: 'variable',
@@ -93,4 +88,4 @@ export const reactNamingRuleConfig = [
         filter: '^use',
         format: ['camelCase']
     }
-];
+);

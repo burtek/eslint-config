@@ -1,12 +1,11 @@
 import next from '@next/eslint-plugin-next';
 import { defineFlatConfig } from 'eslint-define-config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import reactConfigJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import reactConfigRecommended from 'eslint-plugin-react/configs/recommended.js';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
-import { reactNamingRuleConfig } from './share/naming-config.js';
+import { reactNamingRuleConfig } from './share/naming-config';
 
 
 const linkComponents = [
@@ -36,30 +35,22 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
     const baseConfig = defineFlatConfig([
         {
             files,
-            ...reactConfigRecommended
-        },
-        {
-            files,
-            ...reactConfigJsxRuntime
-        },
-        {
-            files,
+            plugins: { react },
             languageOptions: {
-                globals: {
-                    ...globals.serviceworker,
-                    ...globals.browser
-                }
+                parserOptions: {
+                    ecmaFeatures: { jsx: true },
+                    jsxPragma: null
+                },
+                globals: globals.browser
             },
-            plugins: { 'react-hooks': reactHooks },
-            rules: reactHooks.configs.recommended.rules
-        },
-        {
-            files,
             settings: {
                 react: { version: 'detect' },
                 linkComponents
             },
             rules: {
+                ...react.configs.recommended.rules,
+                ...react.configs['jsx-runtime'].rules,
+
                 'jsx-quotes': ['error', 'prefer-double'],
 
                 'react/button-has-type': 'warn',
@@ -145,6 +136,17 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/state-in-constructor': 'error',
                 'react/void-dom-elements-no-children': 'error'
             }
+        },
+        {
+            files,
+            languageOptions: {
+                globals: {
+                    ...globals.serviceworker,
+                    ...globals.browser
+                }
+            },
+            plugins: { 'react-hooks': reactHooks },
+            rules: reactHooks.configs.recommended.rules
         },
         {
             files: tsFiles,

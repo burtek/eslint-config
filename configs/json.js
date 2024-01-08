@@ -2,8 +2,8 @@ import { defineFlatConfig } from 'eslint-define-config';
 import * as jsonc from 'eslint-plugin-jsonc';
 import jsonParser from 'jsonc-eslint-parser';
 
-/** @typedef {Partial<import('eslint-define-config/src/rules/jsonc/index.js').JsoncRules>} JsoncRules  */
-/** @typedef {Partial<import('eslint-define-config/src/rules/eslint/index.js').EslintRules>} EslintRules  */
+
+/** @typedef {Partial<import('eslint-define-config').Rules>} Rules  */
 
 const wellKnownJsonc = [
     '**/tsconfig.json',
@@ -26,28 +26,28 @@ export function prepareConfig({
         {
             files: ['**/*.{json,jsonc,json5}', ...additionalFilesJson, ...additionalFilesJson5, ...additionalFilesJsonc],
             plugins: /** @type {any} */({ jsonc }),
-            languageOptions: { parser: /** @type {any} */(jsonParser) },
-            rules: /** @type {EslintRules} */(jsonc.configs.base.overrides[0].rules)
+            languageOptions: { parser: jsonParser },
+            rules: /** @type {Rules} */(jsonc.configs.base.overrides[0].rules)
         },
         {
             files: ['**/*.json', ...additionalFilesJson],
             ignores: [...wellKnownJsonc],
             rules: {
-                .../** @type {JsoncRules} */(jsonc.configs['recommended-with-json'].rules),
+                .../** @type {Rules} */(jsonc.configs['recommended-with-json'].rules),
                 'jsonc/indent': ['error', 2]
             }
         },
         {
             files: ['**/*.jsonc', ...wellKnownJsonc, ...additionalFilesJsonc],
             rules: {
-                .../** @type {JsoncRules} */(jsonc.configs['recommended-with-jsonc'].rules),
+                .../** @type {Rules} */(jsonc.configs['recommended-with-jsonc'].rules),
                 'jsonc/indent': ['error', 2]
             }
         },
         {
             files: ['**/*.json5', ...additionalFilesJson5],
             rules: {
-                .../** @type {JsoncRules} */(jsonc.configs['recommended-with-json5'].rules),
+                .../** @type {Rules} */(jsonc.configs['recommended-with-json5'].rules),
                 'jsonc/indent': ['error', 2]
             }
         }

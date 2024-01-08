@@ -1,26 +1,12 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import nModule from 'eslint-plugin-n/configs/recommended-module.js';
-import nScript from 'eslint-plugin-n/configs/recommended-script.js';
+import nPlugin from 'eslint-plugin-n';
 import nodeSecurity from 'eslint-plugin-security-node';
 import globals from 'globals';
 
 
-/**
- * @param {Object} [config]
- * @param {'module' | 'script'} [config.mode]
- */
-export function prepareConfig({ mode = 'module' } = {}) {
-    const isModule = mode === 'module';
-
+export function prepareConfig() {
     return defineFlatConfig([
-        {
-            files: [isModule ? '**/*.{cjs,cts}' : '**/*.{js,cjs,ts,cts}'],
-            ...nScript
-        },
-        {
-            files: [isModule ? '**/*.{js,mjs,ts,mts}' : '**/*.{mjs,mts}'],
-            ...nModule
-        },
+        ...nPlugin.configs['flat/mixed-esm-and-cjs'].map(c => ({ ...c, files: c.files.flatMap(f => [f, f.replace('.js', '.ts')]) })),
         {
             files: ['**/*.{js,cjs,mjs,ts,cts,mts}'],
             languageOptions: {

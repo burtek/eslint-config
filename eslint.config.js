@@ -16,5 +16,6 @@ export default defineFlatConfig([
             'no-extra-parens': 'off',
             'no-magic-numbers': 'off'
         }
-    }
+    },
+    { ignores: ['index.d.ts'] }
 ]);

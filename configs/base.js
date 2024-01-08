@@ -1,13 +1,10 @@
-// eslint-disable-next-line import/newline-after-import
 import ts from '@typescript-eslint/eslint-plugin';
-// @ts-expect-error
-// eslint-disable-next-line
-import tsParser from '@typescript-eslint/parser';
+import * as tsParser from '@typescript-eslint/parser';
 import { defineFlatConfig } from 'eslint-define-config';
 import importPlugin from 'eslint-plugin-import';
 import promise from 'eslint-plugin-promise';
 
-import { baseNamingRuleConfig } from './share/naming-config.js';
+import { baseNamingRuleConfig } from './share/naming-config';
 
 
 // eslint-disable-next-line no-warning-comments
@@ -207,7 +204,7 @@ export function prepareConfig() {
                 'no-multiple-empty-lines': ['error', { max: 2 }],
                 'no-negated-condition': 'error',
                 'no-nested-ternary': 'warn',
-                'no-new-object': 'error',
+                'no-object-constructor': 'error',
                 'no-trailing-spaces': 'error',
                 'no-whitespace-before-property': 'error',
                 'object-curly-newline': ['error', { multiline: true }],
@@ -301,11 +298,11 @@ export function prepareConfig() {
         },
         {
             files: tsFiles,
-            plugins: { '@typescript-eslint': ts },
+            // @ts-expect-error
+            plugins: { '@typescript-eslint': /** @type {import('eslint').ESLint.Plugin} */(ts) },
             languageOptions: { parser: tsParser },
             rules: {
-                // @ts-ignore
-                ...ts.configs['eslint-recommended'].overrides[0].rules,
+                ...ts.configs['eslint-recommended'].overrides?.[0].rules,
                 ...importPlugin.configs.typescript.rules,
 
                 '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -387,6 +384,8 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unsafe-enum-comparison': 'error',
                 '@typescript-eslint/no-unsafe-member-access': 'error',
                 '@typescript-eslint/no-unsafe-return': 'error',
+                '@typescript-eslint/no-unsafe-unary-minus': 'error',
+                '@typescript-eslint/no-useless-template-literals': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
                 '@typescript-eslint/prefer-enum-initializers': 'error',
                 '@typescript-eslint/prefer-for-of': 'error',
@@ -406,7 +405,10 @@ export function prepareConfig() {
                     allowNumber: true,
                     allowNullish: true
                 }],
-                '@typescript-eslint/switch-exhaustiveness-check': 'error',
+                '@typescript-eslint/switch-exhaustiveness-check': ['error', {
+                    allowDefaultCaseForExhaustiveSwitch: false,
+                    requireDefaultForNonUnion: true
+                }],
                 '@typescript-eslint/type-annotation-spacing': 'error',
 
                 'block-spacing': 'off',
@@ -437,6 +439,7 @@ export function prepareConfig() {
                 'no-use-before-define': 'off',
                 'no-useless-constructor': 'off',
                 'quotes': 'off',
+                'prefer-destructuring': 'off',
                 'require-await': 'off',
                 'semi': 'off',
                 'space-before-blocks': 'off',
@@ -505,6 +508,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-useless-empty-export': 'error',
                 '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
                 '@typescript-eslint/quotes': ['error', 'single'],
+                '@typescript-eslint/prefer-destructuring': 'error',
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/return-await': ['error', 'always'],
                 '@typescript-eslint/semi': 'error',

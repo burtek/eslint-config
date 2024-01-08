@@ -1,14 +1,13 @@
 declare module 'eslint-plugin-import' {
     import type { Rule } from 'eslint';
-    import type { ImportSettings } from 'eslint-define-config/src/config/settings/import.js';
-    import type { ImportRules } from 'eslint-define-config/src/rules/import';
+    import type { Rules, Settings } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             typescript: {
-                rules: Partial<ImportRules>;
-                settings: ImportSettings;
+                rules: Partial<Rules>;
+                settings: Settings;
             };
         };
         rules: Record<string, Rule.RuleModule>;
@@ -30,16 +29,16 @@ declare module 'eslint-plugin-promise' {
 
 declare module 'eslint-plugin-jest' {
     import type { Rule } from 'eslint';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             recommended: {
-                rules: Record<string, Severity>;
+                rules: Partial<Rules>;
             };
             style: {
-                rules: Record<string, Severity>;
+                rules: Partial<Rules>;
             };
         };
         rules: Record<string, Rule.RuleModule>;
@@ -68,13 +67,13 @@ declare module 'eslint-plugin-lodash' {
 
 declare module 'eslint-plugin-react-hooks' {
     import type { Rule } from 'eslint';
-    import type { ReactHooksRules } from 'eslint-define-config/src/rules/react-hooks';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             recommended: {
-                rules: Partial<ReactHooksRules>;
+                rules: Partial<Rules>;
             };
         };
         rules: Record<string, Rule.RuleModule>;
@@ -83,13 +82,16 @@ declare module 'eslint-plugin-react-hooks' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-react/configs/*.js' {
-    import type { FlatESLintConfigItem } from 'eslint-define-config';
+declare module 'eslint-plugin-react' {
+    import type { ESLint } from 'eslint';
+    import type { Rules } from 'eslint-define-config';
 
 
-    const config: FlatESLintConfigItem;
+    const plugin: ESLint.Plugin & {
+        configs: Record<'all' | 'recommended' | 'jsx-runtime', { rules: Partial<Rules> }>;
+    };
 
-    export default config;
+    export default plugin;
 }
 
 declare module 'eslint-plugin-jsx-a11y' {
@@ -111,13 +113,13 @@ declare module 'eslint-plugin-jsx-a11y' {
 
 declare module '@next/eslint-plugin-next' {
     import type { Rule } from 'eslint';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             recommended: {
-                rules: Record<string, Severity>;
+                rules: Partial<Rules>;
             };
         };
         rules: Record<string, Rule.RuleModule>;
@@ -126,24 +128,34 @@ declare module '@next/eslint-plugin-next' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-n/configs/*.js' {
-    import type { FlatESLintConfigItem } from 'eslint-define-config';
+declare module 'eslint-plugin-n' {
+    import type { ESLint } from 'eslint';
+    import type { LanguageOptions, Rules } from 'eslint-define-config';
 
 
-    const plugin: FlatESLintConfigItem;
+    const plugin: ESLint.Plugin & {
+        configs: {
+            'flat/mixed-esm-and-cjs': Array<{
+                plugins: { n: ESLint.Plugin };
+                files: string[];
+                languageOptions: LanguageOptions;
+                rules: Partial<Rules>;
+            }>;
+        };
+    };
 
     export default plugin;
 }
 
 declare module 'eslint-plugin-security-node' {
     import type { Rule } from 'eslint';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             recommended: {
-                rules: Record<string, Severity>;
+                rules: Partial<Rules>;
             };
         };
         rules: Record<string, Rule.RuleModule>;
@@ -154,14 +166,13 @@ declare module 'eslint-plugin-security-node' {
 
 declare module 'eslint-plugin-cypress' {
     import type { Rule } from 'eslint';
-    import type { LanguageOptions } from 'eslint-define-config';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { LanguageOptions, Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: {
             recommended: {
-                rules: Record<string, Severity>;
+                rules: Partial<Rules>;
             };
         };
         environments: {
@@ -175,13 +186,13 @@ declare module 'eslint-plugin-cypress' {
 
 declare module 'eslint-plugin-testing-library' {
     import type { Rule } from 'eslint';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', {
             plugins: [string];
-            rules: Record<string, Severity>;
+            rules: Partial<Rules>;
         }>;
         rules: Record<string, Rule.RuleModule>;
     };
@@ -189,27 +200,15 @@ declare module 'eslint-plugin-testing-library' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-testing-library/configs/*.js' {
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
-
-
-    const config: {
-        plugins: [string];
-        rules: Record<string, Severity>;
-    };
-
-    export default config;
-}
-
 declare module 'eslint-plugin-jest-dom' {
     import type { Rule } from 'eslint';
-    import type { Severity } from 'eslint-define-config/src/rules/rule-severity.js';
+    import type { Rules } from 'eslint-define-config';
 
 
     const plugin: {
         configs: Record<'recommended' | 'all', {
             plugins: [string];
-            rules: Record<string, Severity>;
+            rules: Partial<Rules>;
         }>;
         rules: Record<string, Rule.RuleModule>;
     };

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "node", // nodenext doesn't work with eslint-define-config
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "allowJs": true,
     "checkJs": true,
     // "declaration": true,
@@ -16,5 +16,11 @@
     // "exactOptionalPropertyTypes": true,
     "skipLibCheck": true
   },
-  "exclude": []
+  "include": [
+    "configs/**/*.js",
+    "configs/**/*-types.ts",
+    "eslint.config.js",
+    "import-types.d.ts",
+    "index.js",
+  ]
 }
