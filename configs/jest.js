@@ -22,16 +22,16 @@ export function prepareConfig({ mode = 'jest' } = {}) {
                 globals: {
                     ...globals.jest,
                     ...globals.node,
-                    ...(mode === 'vitest' && {
+                    ...mode === 'vitest' && {
                         jest: 'off',
                         vitest: 'readonly'
-                    })
+                    }
                 }
             },
             settings: {
                 jest: {
                     // lie to eslint-plugin-jest that we indeed use jest (vitest has same syntax)
-                    ...(mode === 'vitest' && { version: 29 })
+                    ...mode === 'vitest' && { version: 29 }
                 }
             },
             rules: {

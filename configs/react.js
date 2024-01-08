@@ -1,3 +1,4 @@
+/* eslint no-warning-comments: 1 */
 import next from '@next/eslint-plugin-next';
 import { defineFlatConfig } from 'eslint-define-config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -5,7 +6,7 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
-import { reactNamingRuleConfig } from './share/naming-config';
+import { reactNamingRuleConfig } from './share/naming-config.js';
 
 
 const linkComponents = [
@@ -51,13 +52,18 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 ...react.configs.recommended.rules,
                 ...react.configs['jsx-runtime'].rules,
 
-                'jsx-quotes': ['error', 'prefer-double'],
+                'stylistic/jsx-quotes': ['error', 'prefer-double'],
+                // TODO: move other rules to stylistic
+                // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3671
+                // see https://eslint.style/packages/default?filter=jsx
 
                 'react/button-has-type': 'warn',
-                'react/display-name': ['error', {
-                    checkContextObjects: true,
-                    ignoreTranspilerName: true
-                }],
+                'react/display-name': [
+                    'error', {
+                        checkContextObjects: true,
+                        ignoreTranspilerName: true
+                    }
+                ],
                 'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
@@ -65,54 +71,68 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
                 'react/jsx-closing-tag-location': 'error',
                 'react/jsx-curly-brace-presence': 'error',
-                'react/jsx-curly-newline': ['error', {
-                    multiline: 'forbid',
-                    singleline: 'forbid'
-                }],
-                'react/jsx-curly-spacing': ['error', {
-                    when: 'never',
-                    allowMultiline: false,
-                    attributes: { when: 'never' },
-                    children: { when: 'never' }
-                }],
+                'react/jsx-curly-newline': [
+                    'error', {
+                        multiline: 'forbid',
+                        singleline: 'forbid'
+                    }
+                ],
+                'react/jsx-curly-spacing': [
+                    'error', {
+                        when: 'never',
+                        allowMultiline: false,
+                        attributes: { when: 'never' },
+                        children: { when: 'never' }
+                    }
+                ],
                 'react/jsx-equals-spacing': 'error',
                 'react/jsx-first-prop-new-line': ['error', 'multiprop'],
                 'react/jsx-fragments': ['error', 'syntax'],
                 'react/jsx-handler-names': ['error', { checkInlineFunction: true }],
-                'react/jsx-indent': ['error', 4, {
-                    checkAttributes: true,
-                    indentLogicalExpressions: true
-                }],
-                'react/jsx-indent-props': 'error',
-                'react/jsx-key': ['error', {
-                    checkFragmentShorthand: true,
-                    checkKeyMustBeforeSpread: true,
-                    warnOnDuplicates: true
-                }],
-                'react/jsx-max-props-per-line': ['error', {
-                    maximum: {
-                        single: 2,
-                        multi: 1
+                'react/jsx-indent': [
+                    'error', 4, {
+                        checkAttributes: true,
+                        indentLogicalExpressions: true
                     }
-                }],
+                ],
+                'react/jsx-indent-props': 'error',
+                'react/jsx-key': [
+                    'error', {
+                        checkFragmentShorthand: true,
+                        checkKeyMustBeforeSpread: true,
+                        warnOnDuplicates: true
+                    }
+                ],
+                'react/jsx-max-props-per-line': [
+                    'error', {
+                        maximum: {
+                            single: 2,
+                            multi: 1
+                        }
+                    }
+                ],
                 'react/jsx-no-bind': ['warn', { ignoreDOMComponents: true }],
                 'react/jsx-no-constructed-context-values': 'error',
                 'react/jsx-no-leaked-render': 'warn',
+                // TODO: remove option after https://github.com/jsx-eslint/eslint-plugin-react/pull/3673 is released
                 'react/jsx-no-script-url': ['error', linkComponents.map(comp => ({ name: comp.name, props: [comp.linkAttribute] }))],
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
                 'react/jsx-pascal-case': 'error',
                 'react/jsx-tag-spacing': 'error',
                 'react/jsx-uses-vars': 'off',
-                'react/jsx-wrap-multilines': ['error', {
-                    declaration: 'parens-new-line',
-                    assignment: 'parens-new-line',
-                    return: 'parens-new-line',
-                    arrow: 'parens-new-line',
-                    condition: 'parens-new-line',
-                    logical: 'parens-new-line',
-                    prop: 'parens-new-line'
-                }],
+                'react/jsx-wrap-multilines': [
+                    'error',
+                    {
+                        declaration: 'parens-new-line',
+                        assignment: 'parens-new-line',
+                        return: 'parens-new-line',
+                        arrow: 'parens-new-line',
+                        condition: 'parens-new-line',
+                        logical: 'parens-new-line',
+                        prop: 'parens-new-line'
+                    }
+                ],
                 'react/no-access-state-in-setstate': 'error',
                 'react/no-array-index-key': 'error',
                 'react/no-danger': 'error',
@@ -129,10 +149,13 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/no-will-update-set-state': 'error',
                 'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
                 'react/prop-types': 'off',
-                'react/self-closing-comp': ['error', {
-                    component: true,
-                    html: true
-                }],
+                'react/self-closing-comp': [
+                    'error',
+                    {
+                        component: true,
+                        html: true
+                    }
+                ],
                 'react/state-in-constructor': 'error',
                 'react/void-dom-elements-no-children': 'error'
             }
