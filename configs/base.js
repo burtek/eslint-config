@@ -259,7 +259,6 @@ export function prepareConfig() {
                 'stylistic/function-call-spacing': 'error',
                 'stylistic/function-paren-newline': ['error', 'consistent'],
                 'stylistic/generator-star-spacing': ['error', 'after'],
-                'stylistic/implicit-arrow-linebreak': 'error',
                 'stylistic/indent': ['error', 4],
                 'stylistic/indent-binary-ops': ['error', 4],
                 'stylistic/key-spacing': 'error',

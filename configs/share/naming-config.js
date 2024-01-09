@@ -1,3 +1,5 @@
+/** @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md */
+
 /** @type {import('./naming-convention-types').Selector[]} */
 export const baseNamingRuleConfig = [
     { // const global variables can be UPPER_CASE

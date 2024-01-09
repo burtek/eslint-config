@@ -34,21 +34,8 @@ jobs:
       - name: 'Create a github release'
         uses: "marvinpinto/action-automatic-releases@latest"
         # TODO: https://github.com/marvinpinto/actions/pull/642
+        # TODO: body/content
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') }}
           automatic_release_tag: "${{ github.ref_name }}"
-          title: "${{ github.ref_name }}"
-          files: |
-            LICENSE
-            TODO.md
-            README.md
-            package.json
-            yarn.lock
-            configs
-            docs
-            rules
-            tests
-            index.js
-            import-types.d.ts
-            index.d.ts

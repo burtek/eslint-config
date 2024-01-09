@@ -56,7 +56,7 @@
     "test": "node tests/run-tests.js",
     "preversion--temp-disabled": "yarn test",
     "push": "git push --follow-tags",
-    "postversion": "auto-changelog -p --hide-empty-releases && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+    "postversion": "auto-changelog -p --hide-empty-releases && git add CHANGELOG.md && git commit --no-edit --amend && git tag -af \"v$(node -e \"console.log(require('./package.json').version)\")\" && echo \"REMEMBER TO USE YARN PUSH\""
   },
   "homepage": "https://github.com/burtek/eslint-config#readme",
   "bugs": "https://github.com/burtek/eslint-config/issues",
