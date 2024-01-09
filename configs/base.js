@@ -94,7 +94,7 @@ export function prepareConfig() {
                 'no-fallthrough': ['error', { allowEmptyCase: true }],
                 'no-func-assign': 'error',
                 'no-global-assign': 'error',
-                'no-implicit-coercion': 'error',
+                'no-implicit-coercion': ['error', { allow: ['!!'] }],
                 'no-implied-eval': 'error',
                 'no-import-assign': 'error',
                 'no-inner-declarations': 'error',
