@@ -54,9 +54,9 @@
     "lint": "eslint {configs,rules}/**/*.js",
     "make-types": "rimraf index.d.ts && tsc --noEmit false --declaration --emitDeclarationOnly --outFile index.js",
     "test": "node tests/run-tests.js",
-    "preversion-temp-disabled": "yarn test",
+    "preversion--temp-disabled": "yarn test",
     "push": "git push --follow-tags",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "postversion": "auto-changelog -p --hide-empty-releases && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
   },
   "homepage": "https://github.com/burtek/eslint-config#readme",
   "bugs": "https://github.com/burtek/eslint-config/issues",
