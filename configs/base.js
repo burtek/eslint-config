@@ -528,6 +528,10 @@ export function prepareConfig() {
                     }
                 ]
             }
+        },
+        {
+            files: ['eslint.config.js'],
+            rules: { 'stylistic/quote-props': ['error', 'consistent-as-needed'] }
         }
     ]);
 }
