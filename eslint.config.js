@@ -14,7 +14,8 @@ export default defineFlatConfig([
         },
         rules: {
             'no-extra-parens': 'off',
-            'no-magic-numbers': 'off'
+            'no-magic-numbers': 'off',
+            'stylistic/quote-props': ['error', 'consistent-as-needed']
         }
     },
     { ignores: ['index.d.ts'] }

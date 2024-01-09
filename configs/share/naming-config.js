@@ -30,6 +30,11 @@ export const baseNamingRuleConfig = [
         modifiers: ['override'],
         format: null
     },
+    { // default imports
+        selector: 'import',
+        modifiers: ['default'],
+        format: ['camelCase', 'PascalCase']
+    },
     {
         selector: [
             'property',
