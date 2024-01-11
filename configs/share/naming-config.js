@@ -5,8 +5,7 @@ export const baseNamingRuleConfig = [
     { // const global variables can be UPPER_CASE
         selector: 'variable',
         modifiers: ['const', 'global'],
-        types: ['boolean', 'string', 'number', 'array'],
-        format: ['camelCase', 'UPPER_CASE']
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase']
     },
     { // readonly class properties can be UPPER_CASE - both static and non-static - eg. class type/object type, class-scope constants
         selector: 'classProperty',
