@@ -1,5 +1,7 @@
 # @dtrw/eslint-config
 
+<!-- support table - import no support for eslint@9 - https://github.com/import-js/eslint-plugin-import/issues/2948 -->
+
 ![npm version](https://img.shields.io/npm/v/@dtrw/eslint-config/latest)
 ![npm next version](https://img.shields.io/npm/v/@dtrw/eslint-config/next)
 ![NPM License](https://img.shields.io/npm/l/@dtrw/eslint-config)

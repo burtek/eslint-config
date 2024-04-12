@@ -4,9 +4,8 @@
     {"type": "fix", "section": "Bug Fixes"},
     {"type": "chore", "section": "Chores"},
     {"type": "docs", "section": "Documentation changes:"},
-    {"type": "style", "hidden": "Chores"},
     {"type": "refactor", "hidden": "Chores"},
-    {"type": "perf", "hidden": true},
-    {"type": "test", "hidden": true}
+    {"type": "test", "hidden": true},
+    {"type": "types", "hidden": true}
   ]
 }

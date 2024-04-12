@@ -14,6 +14,7 @@
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.0",
     "@stylistic/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/utils": "^7.6.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-import": "^2.29.1",
@@ -49,10 +50,12 @@
   "private": false,
   "scripts": {
     "lint": "eslint {configs,rules}/**/*.js",
-    "make-types": "rimraf index.d.ts && tsc --noEmit false --declaration --emitDeclarationOnly --outFile index.js",
+    "make-types": "rimraf types && tsc --project tsconfig.build.json",
     "test": "node tests/run-tests.js",
     "preversion--temp-disabled": "yarn test",
     "push": "git push --follow-tags",
+    "prerelease": "yarn make-types && git add types && git commit -m 'types: Update types'",
+    "prerelease:alpha": "yarn make-types && git add types && git commit -m 'types: Update types'",
     "release": "commit-and-tag-version",
     "release:alpha": "commit-and-tag-version --prerelease alpha"
   },
@@ -66,5 +69,11 @@
   },
   "type": "module",
   "main": "index.js",
-  "types": "index.d.ts"
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "types": "./types/index.d.ts"
+    }
+  }
 }
