@@ -54,8 +54,6 @@
     "test": "node tests/run-tests.js",
     "preversion--temp-disabled": "yarn test",
     "push": "git push --follow-tags",
-    "prerelease": "yarn make-types && git add types && git commit -m 'types: Update types'",
-    "prerelease:alpha": "yarn make-types && git add types && git commit -m 'types: Update types'",
     "release": "commit-and-tag-version",
     "release:alpha": "commit-and-tag-version --prerelease alpha"
   },
