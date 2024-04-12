@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.2](https://github.com/burtek/eslint-config/compare/v2.4.1...v2.4.2) (2024-04-12)
+
+
+### Bug Fixes
+
+* Fix @typescript-eslint/prefer-string-starts-ends-with config ([009979b](https://github.com/burtek/eslint-config/commit/009979b6dc58aad1b16dc90fbc22430ed168964a))
+
 ## [2.4.1](https://github.com/burtek/eslint-config/compare/v2.4.1-alpha.0...v2.4.1) (2024-04-12)
 
 
