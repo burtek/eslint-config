@@ -1,7 +1,7 @@
-import { defineFlatConfig } from 'eslint-define-config';
 import jestPlugin from 'eslint-plugin-jest';
 import * as jestFormatting from 'eslint-plugin-jest-formatting';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 
 const testFiles = '**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}';
@@ -15,8 +15,9 @@ const tsMockFiles = '**/__mocks__/**/*.{ts,cts,mts,tsx}';
  * @param {'jest' | 'vitest'} [config.mode]
  */
 export function prepareConfig({ mode = 'jest' } = {}) {
-    return defineFlatConfig([
+    return tseslint.config(
         {
+            name: 'dtrw:jest:base',
             files: [testFiles, mockFiles],
             languageOptions: {
                 globals: {
@@ -30,7 +31,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             },
             settings: {
                 jest: {
-                    // lie to eslint-plugin-jest that we indeed use jest (vitest has same syntax)
+                    // lie to eslint-plugin-jest that we indeed use jest (vitest has same syntax), otherwise let auto-detect
                     ...mode === 'vitest' && { version: 29 }
                 }
             },
@@ -41,6 +42,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
+            name: 'dtrw:cypress:ts',
             files: [tsTestFiles, tsMockFiles],
             rules: {
                 '@typescript-eslint/no-explicit-any': 'off',
@@ -50,6 +52,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
+            name: 'dtrw:cypress:test',
             files: [testFiles],
             plugins: {
                 'jest': jestPlugin,
@@ -75,8 +78,9 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
+            name: 'dtrw:cypress:test.ts',
             files: [tsTestFiles],
             rules: { 'jest/no-untyped-mock-factory': 'error' }
         }
-    ]);
+    );
 }

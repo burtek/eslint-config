@@ -1,7 +1,7 @@
 /* eslint no-warning-comments: 1 */
-import { defineFlatConfig } from 'eslint-define-config';
 import cypress from 'eslint-plugin-cypress';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 
 const files = ['**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
@@ -9,13 +9,14 @@ const files = ['**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 // eslint-disable-next-line no-warning-comments
 // TODO: move to FlatConfig once cypress is upgraded
 export function prepareConfig() {
-    return defineFlatConfig([
+    return tseslint.config(
         {
+            name: 'dtrw:cypress:base',
             files,
             plugins: { cypress: { rules: cypress.rules } },
             languageOptions: {
                 globals: {
-                    ...cypress.environments.globals,
+                    ...cypress.environments.globals.globals,
                     ...globals.browser,
                     ...globals.mocha
                 }
@@ -33,5 +34,5 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unused-expressions': 'warn' // TODO: chai-friendly
             }
         }
-    ]);
+    );
 }

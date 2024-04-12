@@ -1,15 +1,20 @@
-import { defineFlatConfig } from 'eslint-define-config';
 import * as jsonc from 'eslint-plugin-jsonc';
 import jsonParser from 'jsonc-eslint-parser';
+import tseslint from 'typescript-eslint';
 
 
-/** @typedef {Partial<import('eslint-define-config').Rules>} Rules  */
+/** @typedef {Partial<import('@typescript-eslint/utils').TSESLint.SharedConfig.RulesRecord>} Rules  */
 
 const wellKnownJsonc = [
     '**/tsconfig.json',
     '**/jsconfig.json',
     '.vscode/**/*.json'
 ];
+
+/**
+ * @param {Array<{ rules?: Rules }>} configs
+ */
+const mergeRules = configs => configs.reduce((acc, { rules = {} }) => ({ ...acc, ...rules }), /** @type {Rules} */({}));
 
 /**
  * @param {Object} [config]
@@ -22,34 +27,33 @@ export function prepareConfig({
         jsonc: additionalFilesJsonc = []
     } = {}
 } = {}) {
-    return defineFlatConfig([
+    return tseslint.config(
         {
+            name: 'dtrw:json:base',
             files: ['**/*.{json,jsonc,json5}', ...additionalFilesJson, ...additionalFilesJson5, ...additionalFilesJsonc],
-            plugins: /** @type {any} */({ jsonc }),
-            languageOptions: { parser: jsonParser },
-            rules: /** @type {Rules} */(jsonc.configs.base.overrides[0].rules)
+            plugins: { jsonc },
+            languageOptions: { parser: jsonParser }
         },
         {
+            name: 'dtrw:json:json',
             files: ['**/*.json', ...additionalFilesJson],
             ignores: [...wellKnownJsonc],
-            rules: {
-                .../** @type {Rules} */(jsonc.configs['recommended-with-json'].rules),
-                'jsonc/indent': ['error', 2]
-            }
+            rules: mergeRules(jsonc.configs['flat/recommended-with-json'])
         },
         {
+            name: 'dtrw:json:jsonc',
             files: ['**/*.jsonc', ...wellKnownJsonc, ...additionalFilesJsonc],
-            rules: {
-                .../** @type {Rules} */(jsonc.configs['recommended-with-jsonc'].rules),
-                'jsonc/indent': ['error', 2]
-            }
+            rules: mergeRules(jsonc.configs['flat/recommended-with-jsonc'])
         },
         {
+            name: 'dtrw:json:json5',
             files: ['**/*.json5', ...additionalFilesJson5],
-            rules: {
-                .../** @type {Rules} */(jsonc.configs['recommended-with-json5'].rules),
-                'jsonc/indent': ['error', 2]
-            }
+            rules: mergeRules(jsonc.configs['flat/recommended-with-json5'])
+        },
+        {
+            name: 'dtrw:json:overrides',
+            files: ['**/*.{json,jsonc,json5}', ...additionalFilesJson, ...additionalFilesJson5, ...additionalFilesJsonc],
+            rules: { 'jsonc/indent': ['error', 2] }
         }
-    ]);
+    );
 }

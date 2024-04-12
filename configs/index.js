@@ -1,4 +1,4 @@
-import { defineFlatConfig } from 'eslint-define-config';
+import tseslint from 'typescript-eslint';
 
 import { prepareConfig as base } from './base.js';
 import { prepareConfig as cypress } from './cypress.js';
@@ -10,14 +10,9 @@ import { prepareConfig as react } from './react.js';
 import { prepareConfig as testingLibrary } from './testing-library.js';
 
 
-/**
- * @template T
- * @typedef {Promise<T> | T} MaybePromise
- */
+/** @typedef {import('typescript-eslint').Config} FlatESLintConfig */
 
-/** @typedef {import('eslint-define-config').FlatESLintConfig} FlatESLintConfig */
-
-/** @satisfies {Record<string, (config?: any) => MaybePromise<FlatESLintConfig[]>>} */
+/** @satisfies {Record<string, (config?: any) => FlatESLintConfig>} */
 export const configs = {
     base,
     cypress,
@@ -60,8 +55,8 @@ export async function prepareConfig(providedConfigs = {}) {
         return configs[key](config[key]);
     }
 
-    return defineFlatConfig([
+    return tseslint.config(
         ...base(),
         ...(await Promise.all(configKeys.map(mapConfig))).flatMap(x => x)
-    ]);
+    );
 }

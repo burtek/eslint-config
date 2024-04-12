@@ -1,9 +1,7 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import ts from '@typescript-eslint/eslint-plugin';
-import * as tsParser from '@typescript-eslint/parser';
-import { defineFlatConfig } from 'eslint-define-config';
 import importPlugin from 'eslint-plugin-import';
 import promise from 'eslint-plugin-promise';
+import tseslint from 'typescript-eslint';
 
 import { baseNamingRuleConfig } from './share/naming-config.js';
 
@@ -17,8 +15,9 @@ const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
 const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts', '.tsx'];
 
 export function prepareConfig() {
-    return defineFlatConfig([
+    return tseslint.config(
         {
+            name: 'dtrw:base:base',
             files: allFiles,
             linterOptions: { reportUnusedDisableDirectives: true },
             settings: {
@@ -31,9 +30,9 @@ export function prepareConfig() {
                 }
             },
             plugins: {
-                import: importPlugin,
+                'import': importPlugin,
                 promise,
-                stylistic: /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin)
+                '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin)
             },
             rules: {
                 'accessor-pairs': 'error',
@@ -241,31 +240,31 @@ export function prepareConfig() {
                 'promise/prefer-await-to-callbacks': 'error',
                 'promise/prefer-await-to-then': 'error',
 
-                'stylistic/array-bracket-newline': 'error',
-                'stylistic/array-bracket-spacing': ['error', 'never'],
-                'stylistic/array-element-newline': ['error', 'consistent'], // consistent+multiline?
-                'stylistic/arrow-parens': ['error', 'as-needed'],
-                'stylistic/arrow-spacing': 'error',
-                'stylistic/block-spacing': 'error',
-                'stylistic/brace-style': 'error',
-                'stylistic/comma-dangle': 'error',
-                'stylistic/comma-spacing': 'error',
-                'stylistic/comma-style': 'error',
-                'stylistic/computed-property-spacing': ['error', 'never', { enforceForClassMembers: true }],
-                'stylistic/dot-location': ['error', 'property'],
-                'stylistic/eol-last': 'error',
-                'stylistic/func-call-spacing': 'error',
-                'stylistic/function-call-argument-newline': ['error', 'consistent'],
-                'stylistic/function-call-spacing': 'error',
-                'stylistic/function-paren-newline': ['error', 'consistent'],
-                'stylistic/generator-star-spacing': ['error', 'after'],
-                'stylistic/indent': ['error', 4],
-                'stylistic/indent-binary-ops': ['error', 4],
-                'stylistic/key-spacing': 'error',
-                'stylistic/keyword-spacing': 'error',
-                'stylistic/linebreak-style': ['error', 'unix'],
-                'stylistic/lines-between-class-members': 'error',
-                'stylistic/max-len': [
+                '@stylistic/array-bracket-newline': 'error',
+                '@stylistic/array-bracket-spacing': ['error', 'never'],
+                '@stylistic/array-element-newline': ['error', 'consistent'], // consistent+multiline?
+                '@stylistic/arrow-parens': ['error', 'as-needed'],
+                '@stylistic/arrow-spacing': 'error',
+                '@stylistic/block-spacing': 'error',
+                '@stylistic/brace-style': 'error',
+                '@stylistic/comma-dangle': 'error',
+                '@stylistic/comma-spacing': 'error',
+                '@stylistic/comma-style': 'error',
+                '@stylistic/computed-property-spacing': ['error', 'never', { enforceForClassMembers: true }],
+                '@stylistic/dot-location': ['error', 'property'],
+                '@stylistic/eol-last': 'error',
+                '@stylistic/func-call-spacing': 'error',
+                '@stylistic/function-call-argument-newline': ['error', 'consistent'],
+                '@stylistic/function-call-spacing': 'error',
+                '@stylistic/function-paren-newline': ['error', 'consistent'],
+                '@stylistic/generator-star-spacing': ['error', 'after'],
+                '@stylistic/indent': ['error', 4],
+                '@stylistic/indent-binary-ops': ['error', 4],
+                '@stylistic/key-spacing': 'error',
+                '@stylistic/keyword-spacing': 'error',
+                '@stylistic/linebreak-style': ['error', 'unix'],
+                '@stylistic/lines-between-class-members': 'error',
+                '@stylistic/max-len': [
                     'error', {
                         code: 150,
                         ignoreRegExpLiterals: true,
@@ -274,13 +273,13 @@ export function prepareConfig() {
                         ignoreTemplateLiterals: true
                     }
                 ],
-                'stylistic/max-statements-per-line': 'error',
-                'stylistic/member-delimiter-style': 'error',
-                'stylistic/multiline-ternary': ['error', 'always-multiline'],
-                'stylistic/new-parens': 'error',
-                'stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
-                'stylistic/no-confusing-arrow': 'error',
-                'stylistic/no-extra-parens': [
+                '@stylistic/max-statements-per-line': 'error',
+                '@stylistic/member-delimiter-style': 'error',
+                '@stylistic/multiline-ternary': ['error', 'always-multiline'],
+                '@stylistic/new-parens': 'error',
+                '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
+                '@stylistic/no-confusing-arrow': 'error',
+                '@stylistic/no-extra-parens': [
                     'error',
                     'all',
                     {
@@ -291,66 +290,67 @@ export function prepareConfig() {
                         nestedBinaryExpressions: false
                     }
                 ],
-                'stylistic/no-extra-semi': 'error',
-                'stylistic/no-floating-decimal': 'error',
-                'stylistic/no-mixed-operators': 'error',
-                'stylistic/no-multi-spaces': 'error',
-                'stylistic/no-multiple-empty-lines': ['error', { max: 2 }],
-                'stylistic/no-trailing-spaces': 'error',
-                'stylistic/no-whitespace-before-property': 'error',
-                'stylistic/object-curly-newline': ['error', { multiline: true }],
-                'stylistic/object-curly-spacing': ['error', 'always'],
-                'stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
-                'stylistic/operator-linebreak': ['error', 'before'],
-                'stylistic/padded-blocks': ['error', 'never'],
-                'stylistic/quote-props': ['error', 'as-needed'],
-                'stylistic/quotes': ['error', 'single'],
-                'stylistic/rest-spread-spacing': 'error',
-                'stylistic/semi': 'error',
-                'stylistic/semi-spacing': 'error',
-                'stylistic/semi-style': 'error',
-                'stylistic/space-before-blocks': 'error',
-                'stylistic/space-before-function-paren': [
+                '@stylistic/no-extra-semi': 'error',
+                '@stylistic/no-floating-decimal': 'error',
+                '@stylistic/no-mixed-operators': 'error',
+                '@stylistic/no-multi-spaces': 'error',
+                '@stylistic/no-multiple-empty-lines': ['error', { max: 2 }],
+                '@stylistic/no-trailing-spaces': 'error',
+                '@stylistic/no-whitespace-before-property': 'error',
+                '@stylistic/object-curly-newline': ['error', { multiline: true }],
+                '@stylistic/object-curly-spacing': ['error', 'always'],
+                '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
+                '@stylistic/operator-linebreak': ['error', 'before'],
+                '@stylistic/padded-blocks': ['error', 'never'],
+                '@stylistic/quote-props': ['error', 'as-needed'],
+                '@stylistic/quotes': ['error', 'single'],
+                '@stylistic/rest-spread-spacing': 'error',
+                '@stylistic/semi': 'error',
+                '@stylistic/semi-spacing': 'error',
+                '@stylistic/semi-style': 'error',
+                '@stylistic/space-before-blocks': 'error',
+                '@stylistic/space-before-function-paren': [
                     'error', {
                         anonymous: 'never',
                         asyncArrow: 'always',
                         named: 'never'
                     }
                 ],
-                'stylistic/space-in-parens': 'error',
-                'stylistic/space-infix-ops': ['error', { int32Hint: false }],
-                'stylistic/space-unary-ops': ['error', { words: true, nonwords: false }],
-                'stylistic/spaced-comment': 'error',
-                'stylistic/switch-colon-spacing': 'error',
-                'stylistic/template-curly-spacing': 'error',
-                'stylistic/template-tag-spacing': 'error',
-                'stylistic/type-annotation-spacing': 'error',
-                'stylistic/type-generic-spacing': 'error',
-                'stylistic/type-named-tuple-spacing': 'error',
-                'stylistic/wrap-iife': ['error', 'inside'],
-                'stylistic/yield-star-spacing': ['error', 'after']
+                '@stylistic/space-in-parens': 'error',
+                '@stylistic/space-infix-ops': ['error', { int32Hint: false }],
+                '@stylistic/space-unary-ops': ['error', { words: true, nonwords: false }],
+                '@stylistic/spaced-comment': 'error',
+                '@stylistic/switch-colon-spacing': 'error',
+                '@stylistic/template-curly-spacing': 'error',
+                '@stylistic/template-tag-spacing': 'error',
+                '@stylistic/type-annotation-spacing': 'error',
+                '@stylistic/type-generic-spacing': 'error',
+                '@stylistic/type-named-tuple-spacing': 'error',
+                '@stylistic/wrap-iife': ['error', 'inside'],
+                '@stylistic/yield-star-spacing': ['error', 'after']
             }
         },
         {
+            name: 'dtrw:base:ts',
             files: tsFiles,
-            // @ts-expect-error
-            plugins: { '@typescript-eslint': /** @type {import('eslint').ESLint.Plugin} */(ts) },
-            languageOptions: { parser: tsParser },
+            plugins: { '@typescript-eslint': tseslint.plugin },
+            languageOptions: { parser: tseslint.parser },
             rules: {
-                ...ts.configs['eslint-recommended'].overrides?.[0].rules, // check
+                ...tseslint.configs.eslintRecommended.rules,
                 ...importPlugin.configs.typescript.rules,
 
                 'camelcase': 'off',
                 'dot-notation': 'off',
                 'no-array-constructor': 'off',
                 'no-empty-function': 'off',
+                'no--implicit-returns': 'off',
                 'no-implied-eval': 'off',
                 'no-invalid-this': 'off',
                 'no-loop-func': 'off',
                 'no-loss-of-precision': 'off',
                 'no-magic-numbers': 'off',
                 'no-shadow': 'off',
-                'no-throw-literal': 'off',
+                'no-throw-literal': 'off', // extended by tseslint/only-throw-error
                 'no-unused-expressions': 'off',
                 'no-unused-vars': 'off',
                 'no-use-before-define': 'off',
@@ -410,6 +410,7 @@ export function prepareConfig() {
                 '@typescript-eslint/method-signature-style': 'error',
                 '@typescript-eslint/naming-convention': ['error', ...baseNamingRuleConfig],
                 '@typescript-eslint/no-array-constructor': 'error',
+                '@typescript-eslint/no-array-delete': 'error',
                 '@typescript-eslint/no-base-to-string': 'error',
                 '@typescript-eslint/no-confusing-non-null-assertion': 'error',
                 '@typescript-eslint/no-confusing-void-expression': 'error',
@@ -431,6 +432,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-extraneous-class': 'error',
                 '@typescript-eslint/no-floating-promises': 'error',
+                '@typescript-eslint/consistent-return': 'error',
                 '@typescript-eslint/no-implied-eval': 'error',
                 // import/consistent-type-specifier-style makes sure we don't inline `type` modifier
                 '@typescript-eslint/no-import-type-side-effects': 'off',
@@ -461,7 +463,6 @@ export function prepareConfig() {
                 '@typescript-eslint/no-redundant-type-constituents': 'error',
                 '@typescript-eslint/no-require-imports': 'error',
                 '@typescript-eslint/no-shadow': 'error',
-                '@typescript-eslint/no-throw-literal': 'error',
                 '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
                 '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: true }],
                 '@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -496,19 +497,22 @@ export function prepareConfig() {
                 '@typescript-eslint/no-useless-empty-export': 'error',
                 '@typescript-eslint/no-useless-template-literals': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
+                '@typescript-eslint/only-throw-error': 'error', // extends no-throw-literal
                 '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
                 '@typescript-eslint/prefer-destructuring': 'error',
                 '@typescript-eslint/prefer-enum-initializers': 'error',
+                '@typescript-eslint/prefer-find': 'error',
                 '@typescript-eslint/prefer-for-of': 'error',
                 '@typescript-eslint/prefer-function-type': 'error',
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/prefer-literal-enum-member': 'error',
                 '@typescript-eslint/prefer-nullish-coalescing': 'error',
                 '@typescript-eslint/prefer-optional-chain': 'error',
+                '@typescript-eslint/prefer-promise-reject-errors': 'error',
                 '@typescript-eslint/prefer-readonly': 'error',
                 '@typescript-eslint/prefer-reduce-type-parameter': 'error',
                 '@typescript-eslint/prefer-regexp-exec': 'warn',
-                '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+                '@typescript-eslint/prefer-string-starts-ends-with': ['error', { allowSingleElementEquality: true }],
                 '@typescript-eslint/prefer-ts-expect-error': 'error',
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/restrict-plus-operands': 'error',
@@ -525,12 +529,14 @@ export function prepareConfig() {
                         allowDefaultCaseForExhaustiveSwitch: false,
                         requireDefaultForNonUnion: true
                     }
-                ]
+                ],
+                '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error'
             }
         },
         {
+            name: 'dtrw:base:eslintconfig',
             files: ['eslint.config.js'],
-            rules: { 'stylistic/quote-props': ['error', 'consistent-as-needed'] }
+            rules: { '@stylistic/quote-props': ['error', 'consistent-as-needed'] }
         }
-    ]);
+    );
 }

@@ -1,19 +1,11 @@
 declare module 'eslint-plugin-import' {
     import type { Rule } from 'eslint';
-    import type { Rules, Settings } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
-    const plugin: {
-        configs: {
-            typescript: {
-                rules: Partial<Rules>;
-                settings: Settings;
-            };
-        };
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
+    export const configs: Record<'recommended' | 'error' | 'warnings' | 'react' | 'react-native' | 'electron' | 'typescript',
+        TSESLint.ClassicConfig.Config>;
+    export const rules: Record<string, Rule.RuleModule>;    
 }
 
 declare module 'eslint-plugin-promise' {
@@ -29,18 +21,13 @@ declare module 'eslint-plugin-promise' {
 
 declare module 'eslint-plugin-jest' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
-        configs: {
-            recommended: {
-                rules: Partial<Rules>;
-            };
-            style: {
-                rules: Partial<Rules>;
-            };
-        };
+        configs:
+            & Record<'all' | 'recommended' | 'style', Required<Pick<TSESLint.ClassicConfig.Config, 'env' | 'rules' | 'plugins'>>>
+            & Record<'flat/all' | 'flat/recommended' | 'flat/style', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>>
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -67,44 +54,64 @@ declare module 'eslint-plugin-lodash' {
 
 declare module 'eslint-plugin-react-hooks' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
+
+
+    export const configs: Record<'recommended', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>;
+    export const rules: Record<string, Rule.RuleModule>;  s 
+}
+
+declare module 'eslint-plugin-react' {
+    import type { Rule } from 'eslint';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
-        configs: {
-            recommended: {
-                rules: Partial<Rules>;
-            };
-        };
+        configs: Record<
+            'all' | 'recommended' | 'jsx-runtime',
+            Required<Pick<TSESLint.FlatConfig.Config, 'languageOptions' | 'rules'>>
+            & Required<Pick<TSESLint.ClassicConfig.Config, 'parserOptions' | 'plugins'>>
+        >;
         rules: Record<string, Rule.RuleModule>;
     };
 
     export default plugin;
 }
+declare module 'eslint-plugin-react/configs/all.js' {
+    import type { Rule } from 'eslint';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
-declare module 'eslint-plugin-react' {
-    import type { ESLint } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+
+    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
+
+    export default plugin;
+}
+declare module 'eslint-plugin-react/configs/jsx-runtime.js' {
+    import type { Rule } from 'eslint';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
-    const plugin: ESLint.Plugin & {
-        configs: Record<'all' | 'recommended' | 'jsx-runtime', { rules: Partial<Rules> }>;
-    };
+    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
+
+    export default plugin;
+}
+declare module 'eslint-plugin-react/configs/recommended.js' {
+    import type { Rule } from 'eslint';
+    import type { TSESLint } from '@typescript-eslint/utils';
+
+
+    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
 
     export default plugin;
 }
 
 declare module 'eslint-plugin-jsx-a11y' {
     import type { Rule } from 'eslint';
-    import type { JsxA11yRules } from 'eslint-define-config/src/rules/jsx-a11y';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
-        configs: {
-            recommended: {
-                rules: Partial<JsxA11yRules>;
-            };
-        };
+        configs: Record<'recommended' | 'strict', TSESLint.ClassicConfig.Config>
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -113,14 +120,12 @@ declare module 'eslint-plugin-jsx-a11y' {
 
 declare module '@next/eslint-plugin-next' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
         configs: {
-            recommended: {
-                rules: Partial<Rules>;
-            };
+            recommended: TSESLint.ClassicConfig.Config;
         };
         rules: Record<string, Rule.RuleModule>;
     };
@@ -128,35 +133,14 @@ declare module '@next/eslint-plugin-next' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-n' {
-    import type { ESLint } from 'eslint';
-    import type { LanguageOptions, Rules } from 'eslint-define-config';
-
-
-    const plugin: ESLint.Plugin & {
-        configs: {
-            'flat/mixed-esm-and-cjs': Array<{
-                plugins: { n: ESLint.Plugin };
-                files: string[];
-                languageOptions: LanguageOptions;
-                rules: Partial<Rules>;
-            }>;
-        };
-    };
-
-    export default plugin;
-}
-
 declare module 'eslint-plugin-security-node' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
         configs: {
-            recommended: {
-                rules: Partial<Rules>;
-            };
+            recommended: TSESLint.ClassicConfig.Config;
         };
         rules: Record<string, Rule.RuleModule>;
     };
@@ -166,17 +150,15 @@ declare module 'eslint-plugin-security-node' {
 
 declare module 'eslint-plugin-cypress' {
     import type { Rule } from 'eslint';
-    import type { LanguageOptions, Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
         configs: {
-            recommended: {
-                rules: Partial<Rules>;
-            };
+            recommended: TSESLint.ClassicConfig.Config;
         };
         environments: {
-            globals: LanguageOptions['globals'];
+            globals: TSESLint.Linter.Environment;
         };
         rules: Record<string, Rule.RuleModule>;
     };
@@ -186,14 +168,11 @@ declare module 'eslint-plugin-cypress' {
 
 declare module 'eslint-plugin-testing-library' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
-        configs: Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', {
-            plugins: [string];
-            rules: Partial<Rules>;
-        }>;
+        configs: Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>;
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -202,14 +181,13 @@ declare module 'eslint-plugin-testing-library' {
 
 declare module 'eslint-plugin-jest-dom' {
     import type { Rule } from 'eslint';
-    import type { Rules } from 'eslint-define-config';
+    import type { TSESLint } from '@typescript-eslint/utils';
 
 
     const plugin: {
-        configs: Record<'recommended' | 'all', {
-            plugins: [string];
-            rules: Partial<Rules>;
-        }>;
+        configs:
+            & Record<'recommended' | 'all', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>
+            & Record<'flat/recommended' | 'flat/all', Required<Pick<TSESLint.FlatConfig.Config>, 'plugins' | 'rules'>>;
         rules: Record<string, Rule.RuleModule>;
     };
 

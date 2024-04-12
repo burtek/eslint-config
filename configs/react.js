@@ -1,10 +1,10 @@
 /* eslint no-warning-comments: 1 */
 import next from '@next/eslint-plugin-next';
-import { defineFlatConfig } from 'eslint-define-config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
@@ -12,11 +12,11 @@ import { reactNamingRuleConfig } from './share/naming-config.js';
 const linkComponents = [
     {
         name: 'Link',
-        linkAttribute: 'to'
+        linkAttribute: ['to', 'href']
     },
     {
         name: 'NavLink',
-        linkAttribute: 'to'
+        linkAttribute: ['to', 'href']
     }
 ];
 
@@ -33,8 +33,9 @@ const jsxFiles = ['**/*.{jsx,tsx}'];
  * @param {boolean} [config.nextjs] Include config for next.js
  */
 export function prepareConfig({ a11y = false, nextjs = false } = {}) {
-    const baseConfig = defineFlatConfig([
+    const baseConfig = tseslint.config(
         {
+            name: 'dtrw:react:base',
             files,
             plugins: { react },
             languageOptions: {
@@ -52,7 +53,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 ...react.configs.recommended.rules,
                 ...react.configs['jsx-runtime'].rules,
 
-                'stylistic/jsx-quotes': ['error', 'prefer-double'],
+                '@stylistic/jsx-quotes': ['error', 'prefer-double'],
                 // TODO: move other rules to stylistic
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3671
                 // see https://eslint.style/packages/default?filter=jsx
@@ -114,8 +115,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-no-bind': ['warn', { ignoreDOMComponents: true }],
                 'react/jsx-no-constructed-context-values': 'error',
                 'react/jsx-no-leaked-render': 'warn',
-                // TODO: remove option after https://github.com/jsx-eslint/eslint-plugin-react/pull/3673 is released
-                'react/jsx-no-script-url': ['error', linkComponents.map(comp => ({ name: comp.name, props: [comp.linkAttribute] }))],
+                'react/jsx-no-script-url': ['error', { includeFromSettings: true }],
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
                 'react/jsx-pascal-case': 'error',
@@ -161,6 +161,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             }
         },
         {
+            name: 'dtrw:react:hooks',
             files,
             languageOptions: {
                 globals: {
@@ -172,23 +173,27 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             rules: reactHooks.configs.recommended.rules
         },
         {
+            name: 'dtrw:react:ts',
             files: tsFiles,
             rules: { '@typescript-eslint/naming-convention': /** @type {any} */(['error']).concat(reactNamingRuleConfig) }
         },
         {
+            name: 'dtrw:react:test',
             files: testFiles,
             rules: { 'react-hooks/rules-of-hooks': 'off' }
         }
-    ]);
-    const nextConfig = defineFlatConfig([
+    );
+    const nextConfig = tseslint.config(
         {
+            name: 'dtrw:react:next',
             files,
             plugins: { '@next/next': next },
             rules: { ...next.configs.recommended.rules }
         }
-    ]);
-    const a11yConfig = defineFlatConfig([
+    );
+    const a11yConfig = tseslint.config(
         {
+            name: 'dtrw:react:a11y',
             files: jsxFiles,
             plugins: { 'jsx-a11y': jsxA11y },
             rules: {
@@ -196,7 +201,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'jsx-a11y/anchor-ambiguous-text': 'error'
             }
         }
-    ]);
+    );
 
     const result = [...baseConfig];
     if (nextjs) {

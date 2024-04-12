@@ -1,12 +1,13 @@
-import { defineFlatConfig } from 'eslint-define-config';
 import lodash from 'eslint-plugin-lodash';
+import tseslint from 'typescript-eslint';
 
 
 const files = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
-    return defineFlatConfig([
+    return tseslint.config(
         {
+            name: 'dtrw:lodash:base',
             files,
             plugins: { lodash },
             rules: {
@@ -23,5 +24,5 @@ export function prepareConfig() {
                 'lodash/prefer-times': 'error'
             }
         }
-    ]);
+    );
 }

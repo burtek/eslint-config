@@ -12,42 +12,39 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@next/eslint-plugin-next": "^14.0.4",
-    "@stylistic/eslint-plugin": "^1.5.3",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
-    "eslint-define-config": "^2.1.0",
+    "@next/eslint-plugin-next": "^14.2.0",
+    "@stylistic/eslint-plugin": "^1.7.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^27.6.1",
-    "eslint-plugin-jest-dom": "^5.1.0",
+    "eslint-plugin-jest": "^28.2.0",
+    "eslint-plugin-jest-dom": "^5.2.0",
     "eslint-plugin-jest-formatting": "^3.1.0",
-    "eslint-plugin-jsonc": "^2.11.2",
+    "eslint-plugin-jsonc": "^2.15.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-lodash": "^7.4.0",
-    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-n": "^17.2.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-security-node": "^1.1.4",
     "eslint-plugin-testing-library": "^6.2.0",
-    "globals": "^13.24.0",
-    "husky": "^8.0.3",
-    "jsonc-eslint-parser": "^2.4.0"
+    "globals": "^15.0.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "typescript-eslint": "^7.6.0"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.1",
+    "@types/eslint": "^8.56.8",
     "auto-changelog": "^2.4.0",
-    "eslint": "^8.56.0",
-    "eslint-plugin-mdx": "^3.1.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-mdx": "^3.1.5",
     "exit-code": "^1.0.2",
     "rimraf": "^5.0.5",
-    "typescript": "~5.3.3"
+    "typescript": "~5.4.5"
   },
   "peerDependencies": {
-    "eslint": ">=8.23",
-    "typescript": ">=4"
+    "eslint": "^8.56",
+    "typescript": ">=4.7.4"
   },
   "private": false,
   "scripts": {
@@ -65,7 +62,7 @@
     "url": "https://github.com/burtek/eslint-config"
   },
   "engines": {
-    "node": ">=16"
+    "node": "^18.18.0 || >=20.0.0"
   },
   "type": "module",
   "main": "index.js",

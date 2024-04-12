@@ -1,13 +1,17 @@
-import { defineFlatConfig } from 'eslint-define-config';
 import nPlugin from 'eslint-plugin-n';
 import nodeSecurity from 'eslint-plugin-security-node';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 
 export function prepareConfig() {
-    return defineFlatConfig([
-        ...nPlugin.configs['flat/mixed-esm-and-cjs'].map(c => ({ ...c, files: c.files.flatMap(f => [f, f.replace('.js', '.ts')]) })),
+    return tseslint.config(
+        ...nPlugin.configs['flat/mixed-esm-and-cjs'].map(c => ({
+            ...c,
+            files: /** @type {string[]} */(c.files).flatMap(f => [f, f.replace('.js', '.ts')])
+        })),
         {
+            name: 'dtrw:node:base',
             files: ['**/*.{js,cjs,mjs,ts,cts,mts}'],
             languageOptions: {
                 globals: { ...globals.node },
@@ -16,6 +20,7 @@ export function prepareConfig() {
             rules: {
                 'no-console': 'off',
 
+                'n/prefer-node-protocol': 'error',
                 'n/no-missing-import': 'off',
                 'n/no-missing-require': 'off',
                 'n/no-path-concat': 'error',
@@ -30,6 +35,7 @@ export function prepareConfig() {
             }
         },
         {
+            name: 'dtrw:node:node.ts',
             files: ['**/*.{ts,cts,mts}'],
             rules: {
                 'n/no-unpublished-import': 'error',
@@ -38,6 +44,7 @@ export function prepareConfig() {
             }
         },
         {
+            name: 'dtrw:node:security',
             files: ['**/*.{js,cjs,mjs,ts,cts,mts}'],
             plugins: { 'security-node': nodeSecurity },
             rules: {
@@ -47,5 +54,5 @@ export function prepareConfig() {
                 'security-node/detect-unhandled-async-errors': 'off'
             }
         }
-    ]);
+    );
 }
