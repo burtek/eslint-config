@@ -25,15 +25,21 @@ npm i -D @dtrw/eslint-config
 
 ## Usage
 
-This config requires `eslint` `>= 8.23`
+This config requires `eslint` `^8.59` (not compatible with `eslint@9` yet - see [#11](https://github.com/burtek/eslint-config/pull/11))
 
 
 ```js
 // eslint.config.js
 
-import { configs, prepareConfig } from '@dtrw/eslint-config';
+import { prepareConfig } from '@dtrw/eslint-config';
+import { config } from 'typescript-eslint';
 
 export default prepareConfig(configuration)
+//or
+export default config(
+    ...await prepareConfig(configuration),
+    ...moreFlatConfigs
+);
 ```
 
 ### Configuration
