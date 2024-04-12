@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/eslint": "^8.56.8",
     "auto-changelog": "^2.4.0",
+    "commit-and-tag-version": "^12.2.0",
     "eslint": "^8.57.0",
     "eslint-plugin-mdx": "^3.1.5",
     "exit-code": "^1.0.2",
@@ -53,8 +54,8 @@
     "test": "node tests/run-tests.js",
     "preversion--temp-disabled": "yarn test",
     "push": "git push --follow-tags",
-    "postversion": "auto-changelog -p --hide-empty-releases && git add CHANGELOG.md && git commit --no-edit --amend && yarn postversion-retag && echo \"REMEMBER TO USE YARN PUSH\"",
-    "postversion-retag": "git commit --no-edit --amend && node -e \"console.log('v'+require('./package.json').version)\" | xargs -I{} git tag -a -f {} -m {}"
+    "release": "commit-and-tag-version",
+    "release:alpha": "commit-and-tag-version --prerelease alpha"
   },
   "homepage": "https://github.com/burtek/eslint-config#readme",
   "bugs": "https://github.com/burtek/eslint-config/issues",
@@ -66,10 +67,5 @@
   },
   "type": "module",
   "main": "index.js",
-  "types": "index.d.ts",
-  "auto-changelog": {
-    "breakingPattern": "BREAKING CHANGE:",
-    "unreleased": true,
-    "commitLimit": false
-  }
+  "types": "index.d.ts"
 }
