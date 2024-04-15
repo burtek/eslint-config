@@ -1,0 +1,43 @@
+name: 'Trigger a release'
+
+on:
+  workflow_dispatch:
+    inputs:
+      alpha:
+        type: boolean
+        description: 'Alpha release?'
+
+jobs:
+  default:
+    name: 'Trigger a release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v4'
+      - name: 'Setup node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: 'Install dependencies'
+        run: yarn
+        # - name: 'Test configs'
+        #   run: yarn test
+      - name: 'Lint configs'
+        run: yarn lint
+      - name: 'Setup git'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: 'Create release'
+        if: ${{ !github.event.inputs.alpha }}
+        run: yarn release
+      - name: 'Create alpha release'
+        if: ${{ github.event.inputs.alpha }}
+        run: yarn release:alpha
+      - name: 'Push release'
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master

@@ -1,4 +1,4 @@
-name: 'Make github and npm releases'
+name: 'Create github and npm releases'
 
 on:
   push:
@@ -9,6 +9,8 @@ jobs:
   make-release:
     name: 'Make github and npm releases'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: 'Checkout source code'
@@ -16,7 +18,7 @@ jobs:
       - name: 'Setup node'
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@dtrw'
       - name: 'Install dependencies'
@@ -31,11 +33,15 @@ jobs:
         run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Generate Changelog
+        run: |
+          START=$(grep -n "## \[" CHANGELOG.md | head -n 1 | cut -d : -f 1)
+          END=$(grep -n "## \[" CHANGELOG.md | head -n 2 | tail -n 1 | cut -d : -f 1)
+          awk "NR > $START && NR < $END" CHANGELOG.md | sed -e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba' > ${{ github.workspace }}-CHANGELOG.temp.md
       - name: 'Create a github release'
-        uses: "marvinpinto/action-automatic-releases@latest"
-        # TODO: https://github.com/marvinpinto/actions/pull/642
-        # TODO: body/content
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') }}
-          automatic_release_tag: "${{ github.ref_name }}"
+          tag_name: "${{ github.ref_name }}"
+          body_path: ${{ github.workspace }}-CHANGELOG.temp.md
