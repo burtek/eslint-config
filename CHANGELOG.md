@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.3](https://github.com/burtek/eslint-config/compare/v2.4.2...v2.4.3) (2024-04-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.1 ([#13](https://github.com/burtek/eslint-config/issues/13)) ([ebf8480](https://github.com/burtek/eslint-config/commit/ebf84803b9fbdb17f96a80cee6ad981ad1ae983e))
+* **deps:** update dependency @stylistic/eslint-plugin to v1.7.2 ([#18](https://github.com/burtek/eslint-config/issues/18)) ([3a8a221](https://github.com/burtek/eslint-config/commit/3a8a22117a936bffd40299da7222d45ab71e7618))
+* **deps:** update dependency eslint-plugin-cypress to v2.15.2 ([#16](https://github.com/burtek/eslint-config/issues/16)) ([802d183](https://github.com/burtek/eslint-config/commit/802d1831ef897b825433c92916e3d9b40011e815))
+* **deps:** update dependency eslint-plugin-n to v17.2.1 ([#14](https://github.com/burtek/eslint-config/issues/14)) ([bc027c3](https://github.com/burtek/eslint-config/commit/bc027c3bc820379c17190b9b51cb4d0e83087343))
+* **deps:** update dependency eslint-plugin-testing-library to v6.2.1 ([#12](https://github.com/burtek/eslint-config/issues/12)) ([032cfa3](https://github.com/burtek/eslint-config/commit/032cfa3db410d167002020a27a1e99b29c869470))
+* **deps:** update dependency eslint-plugin-testing-library to v6.2.2 ([#15](https://github.com/burtek/eslint-config/issues/15)) ([c27f89d](https://github.com/burtek/eslint-config/commit/c27f89d7228b49c65671f89e64fe3bcad00c40f1))
+* **deps:** update typescript-eslint monorepo to v7.7.0 ([#17](https://github.com/burtek/eslint-config/issues/17)) ([2fcc945](https://github.com/burtek/eslint-config/commit/2fcc945e72940376de15e1ddd9b8a38b6a0a87a3))
+
+
+### Chores
+
+* **docs:** Update README.md ([c9f2824](https://github.com/burtek/eslint-config/commit/c9f2824a41d4ccfc71129fb928c6edc3108573eb))
+* **github actions:** Add action to trigger release manually ([80b76d4](https://github.com/burtek/eslint-config/commit/80b76d49e165f8ae3d8aadb0b388b1816e6b9156))
+* **github actions:** Remove action to trigger release manually ([a5c4990](https://github.com/burtek/eslint-config/commit/a5c499003dfd62e833b1153a22749ffd09fe1b13))
+
 ## [2.4.2](https://github.com/burtek/eslint-config/compare/v2.4.1...v2.4.2) (2024-04-12)
 
 
