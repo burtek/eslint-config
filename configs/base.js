@@ -340,6 +340,7 @@ export function prepareConfig() {
                 ...importPlugin.configs.typescript.rules,
 
                 'camelcase': 'off',
+                'default-case': 'off',
                 'dot-notation': 'off',
                 'no-array-constructor': 'off',
                 'no-empty-function': 'off',
