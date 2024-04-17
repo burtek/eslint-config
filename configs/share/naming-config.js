@@ -13,7 +13,7 @@ export const baseNamingRuleConfig = [
         format: ['camelCase', 'UPPER_CASE']
     },
     { // unused parameters start with _
-        selector: 'parameter',
+        selector: ['parameter', 'variable'],
         modifiers: ['unused'],
         leadingUnderscore: 'allow',
         format: null
