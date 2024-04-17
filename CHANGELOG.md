@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.5.1](https://github.com/burtek/eslint-config/compare/v2.5.0...v2.5.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* disable default-case on typescript files ([75eba97](https://github.com/burtek/eslint-config/commit/75eba971b9e26fd15b0283abdfeddeadc9fa8240))
+
 ## [2.5.0](https://github.com/burtek/eslint-config/compare/v2.4.5...v2.5.0) (2024-04-17)
 
 
