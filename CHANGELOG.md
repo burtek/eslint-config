@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.4](https://github.com/burtek/eslint-config/compare/v2.4.3...v2.4.4) (2024-04-17)
+
+
+### Bug Fixes
+
+* Fix jest config ([583ede6](https://github.com/burtek/eslint-config/commit/583ede6f98495da8bede705ef3f4b0a1333803a6))
+
 ## [2.4.3](https://github.com/burtek/eslint-config/compare/v2.4.2...v2.4.3) (2024-04-16)
 
 
