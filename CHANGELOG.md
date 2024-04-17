@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.5](https://github.com/burtek/eslint-config/compare/v2.4.4...v2.4.5) (2024-04-17)
+
+
+### Bug Fixes
+
+* naming-convention - add unused variable ([310214c](https://github.com/burtek/eslint-config/commit/310214cac0508ac44b0341d7aaa2b7165a7637bc))
+
 ## [2.4.4](https://github.com/burtek/eslint-config/compare/v2.4.3...v2.4.4) (2024-04-17)
 
 
