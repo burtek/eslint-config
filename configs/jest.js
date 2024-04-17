@@ -42,7 +42,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
-            name: 'dtrw:cypress:ts',
+            name: 'dtrw:jest:ts',
             files: [tsTestFiles, tsMockFiles],
             rules: {
                 '@typescript-eslint/no-explicit-any': 'off',
@@ -52,7 +52,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
-            name: 'dtrw:cypress:test',
+            name: 'dtrw:jest:test',
             files: [testFiles],
             plugins: {
                 'jest': jestPlugin,
@@ -66,7 +66,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
 
                 'jest/consistent-test-it': 'error',
                 'jest/no-conditional-in-test': 'error',
-                'jest/no-confusing-set-time': 'error',
+                'jest/no-confusing-set-timeout': 'error',
                 'jest/no-duplicate-hooks': 'error',
                 'jest/no-test-return-statement': 'error',
                 'jest/prefer-each': 'error',
@@ -78,7 +78,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             }
         },
         {
-            name: 'dtrw:cypress:test.ts',
+            name: 'dtrw:jest:test.ts',
             files: [tsTestFiles],
             rules: { 'jest/no-untyped-mock-factory': 'error' }
         }
