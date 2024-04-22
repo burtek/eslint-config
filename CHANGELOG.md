@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.5.2](https://github.com/burtek/eslint-config/compare/v2.5.1...v2.5.2) (2024-04-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.2 ([#19](https://github.com/burtek/eslint-config/issues/19)) ([77fdaf5](https://github.com/burtek/eslint-config/commit/77fdaf5c2f33daa7e044807cd128ab284553b207))
+* **deps:** update dependency eslint-plugin-jest-dom to v5.4.0 ([#22](https://github.com/burtek/eslint-config/issues/22)) ([4f6cc32](https://github.com/burtek/eslint-config/commit/4f6cc325b3d393225d5155fba8df6f6e24e37265))
+* **deps:** update typescript-eslint monorepo to v7.7.1 ([#23](https://github.com/burtek/eslint-config/issues/23)) ([9670495](https://github.com/burtek/eslint-config/commit/96704951de7f001c1f4c8c6ea83cce8ee37a687f))
+* Ignore conditional testing in `prefer-nullish-coalescing` rule ([4488e74](https://github.com/burtek/eslint-config/commit/4488e74039ff903fb3339e9ee447c6882b6b4b70))
+
+
+### Chores
+
+* **deps:** update dependency @types/eslint to v8.56.10 ([#20](https://github.com/burtek/eslint-config/issues/20)) ([d234cb2](https://github.com/burtek/eslint-config/commit/d234cb220fccd557dabe8affa7ee2ad51ac71501))
+* **deps:** update dependency commit-and-tag-version to v12.4.0 ([#21](https://github.com/burtek/eslint-config/issues/21)) ([b56eba7](https://github.com/burtek/eslint-config/commit/b56eba767782f7addf950627b46ef6b4c857122d))
+
 ## [2.5.1](https://github.com/burtek/eslint-config/compare/v2.5.0...v2.5.1) (2024-04-17)
 
 
