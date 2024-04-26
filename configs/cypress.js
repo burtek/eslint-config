@@ -1,4 +1,3 @@
-/* eslint no-warning-comments: 1 */
 import cypress from 'eslint-plugin-cypress';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -22,16 +21,15 @@ export function prepareConfig() {
                 }
             },
             rules: {
-                'cypress/no-assigning-return-values': 'error',
-                'cypress/no-unnecessary-waiting': 'error',
+                ...cypress.configs.recommended.rules,
                 'cypress/assertion-before-screenshot': 'warn',
                 'cypress/no-force': 'warn',
-                'cypress/no-async-tests': 'error',
+                'cypress/no-async-before': 'error',
                 'cypress/no-pause': 'error',
-                'cypress/unsafe-to-chain-command': 'error',
 
-                'no-unused-expressions': 'warn', // TODO: chai-friendly
-                '@typescript-eslint/no-unused-expressions': 'warn' // TODO: chai-friendly
+                // chai-friendly
+                'no-unused-expressions': 'off',
+                '@typescript-eslint/no-unused-expressions': 'off'
             }
         }
     );
