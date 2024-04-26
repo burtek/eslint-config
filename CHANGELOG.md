@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.5.3](https://github.com/burtek/eslint-config/compare/v2.5.2...v2.5.3) (2024-04-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.3 ([#26](https://github.com/burtek/eslint-config/issues/26)) ([a446126](https://github.com/burtek/eslint-config/commit/a446126ba62be9e07f286f8c6ce0e2df390982ed))
+* **deps:** update dependency eslint-plugin-cypress to v3 ([#24](https://github.com/burtek/eslint-config/issues/24)) ([3dcebc4](https://github.com/burtek/eslint-config/commit/3dcebc4d8104204383d52a215aafbb012535e24b))
+* **deps:** update dependency eslint-plugin-cypress to v3.0.1 ([#29](https://github.com/burtek/eslint-config/issues/29)) ([84d8f52](https://github.com/burtek/eslint-config/commit/84d8f52b8bfd03dab1bfe84a9943c2eba08df679))
+* **deps:** update dependency eslint-plugin-n to v17.3.1 ([#25](https://github.com/burtek/eslint-config/issues/25)) ([0af7873](https://github.com/burtek/eslint-config/commit/0af78735726c6270fb8ef27f105157256f40a5eb))
+* **deps:** update dependency eslint-plugin-react-hooks to v4.6.1 ([#28](https://github.com/burtek/eslint-config/issues/28)) ([21b7b36](https://github.com/burtek/eslint-config/commit/21b7b369a0a54f5e60425d7220bfa8baa4ffa767))
+
+
+### Chores
+
+* **deps:** Unpin deps ([4628a97](https://github.com/burtek/eslint-config/commit/4628a97bbba24b3ac04e72c2bf25212d6b97346d))
+
 ## [2.5.2](https://github.com/burtek/eslint-config/compare/v2.5.1...v2.5.2) (2024-04-22)
 
 
