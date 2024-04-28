@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/eslint": "^8.56.8",
     "commit-and-tag-version": "^12.2.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-mdx": "^3.1.5",
     "exit-code": "^1.0.2",
     "rimraf": "^5.0.5",
