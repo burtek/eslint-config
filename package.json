@@ -14,7 +14,7 @@
   "dependencies": {
     "@next/eslint-plugin-next": "~14.2.2",
     "@stylistic/eslint-plugin": "~1.7.2",
-    "@typescript-eslint/utils": "7.7.1",
+    "@typescript-eslint/utils": "7.8.0",
     "eslint-import-resolver-typescript": "~3.6.1",
     "eslint-plugin-cypress": "~3.0.2",
     "eslint-plugin-import": "~2.29.1",
@@ -32,7 +32,7 @@
     "eslint-plugin-testing-library": "~6.2.2",
     "globals": "^15.0.0",
     "jsonc-eslint-parser": "~2.4.0",
-    "typescript-eslint": "7.7.1"
+    "typescript-eslint": "7.8.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.8",
