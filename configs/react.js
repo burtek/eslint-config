@@ -120,7 +120,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-no-script-url': ['error', { includeFromSettings: true }],
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
-                'react/jsx-one-expression-per-line': ['error', 'non-jsx'],
+                'react/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
                 'react/jsx-pascal-case': 'error',
                 'react/jsx-tag-spacing': 'error',
                 'react/jsx-uses-vars': 'off',
