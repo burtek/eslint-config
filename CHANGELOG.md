@@ -2,14 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.6.1](https://github.com/burtek/eslint-config/compare/v2.6.0...v2.6.1) (2024-05-10)
-
-
-### Chores
-
-* Empty commit to fix release ([bff0e7b](https://github.com/burtek/eslint-config/commit/bff0e7bcabed1edd85bd8eb142763e23615c2867))
-
-## [2.6.0](https://github.com/burtek/eslint-config/compare/v2.5.3...v2.6.0) (2024-05-10)
+## [2.6.1](https://github.com/burtek/eslint-config/compare/v2.5.3...v2.6.1) (2024-05-10)
 
 
 ### Features
