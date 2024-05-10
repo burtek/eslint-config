@@ -24,5 +24,3 @@ export default tseslint.config(
     },
     { ignores: ['index.d.ts'] }
 );
-
-export const { config } = tseslint;

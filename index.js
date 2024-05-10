@@ -6,3 +6,5 @@ export { prepareConfig as prepareLodashConfig } from './configs/lodash.js';
 export { prepareConfig as prepareNodeConfig } from './configs/node.js';
 export { prepareConfig as prepareReactConfig } from './configs/react.js';
 export { prepareConfig as prepareTestingLibraryConfig } from './configs/testing-library.js';
+
+export { config } from 'typescript-eslint';
