@@ -30,6 +30,8 @@ export function prepareConfig() {
                 // chai-friendly
                 'no-unused-expressions': 'off',
                 '@typescript-eslint/no-unused-expressions': 'off'
+                // eslint-disable-next-line no-warning-comments
+                // TODO: fork of those above based on https://github.com/ihordiachenko/eslint-plugin-chai-friendly/blob/master/lib/rules/no-unused-expressions.js
             }
         }
     );
