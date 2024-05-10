@@ -53,7 +53,9 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 ...react.configs.recommended.rules,
                 ...react.configs['jsx-runtime'].rules,
 
+                '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
                 '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+
                 // TODO: move other rules to stylistic
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3671
                 // see https://eslint.style/packages/default?filter=jsx
@@ -118,6 +120,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-no-script-url': ['error', { includeFromSettings: true }],
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
+                'react/jsx-one-expression-per-line': ['error', 'non-jsx'],
                 'react/jsx-pascal-case': 'error',
                 'react/jsx-tag-spacing': 'error',
                 'react/jsx-uses-vars': 'off',

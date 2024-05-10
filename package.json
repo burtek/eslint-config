@@ -63,7 +63,7 @@
     "url": "https://github.com/burtek/eslint-config"
   },
   "engines": {
-    "node": "^18.18.0 || >=20.0.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "type": "module",
   "main": "index.js",
