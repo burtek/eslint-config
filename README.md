@@ -14,13 +14,13 @@ This is repository with my `eslint` configs for multiple purposes that are used 
 ## Install
 
 ```bash
-yarn add -D @dtrw/eslint-config
+yarn add -D @dtrw/eslint-config eslint@^8.59
 ```
 
 or
 
 ```bash
-npm i -D @dtrw/eslint-config
+npm i -D @dtrw/eslint-config eslint@^8.59
 ```
 
 ## Usage
@@ -31,8 +31,7 @@ This config requires `eslint` `^8.59` (not compatible with `eslint@9` yet - see 
 ```js
 // eslint.config.js
 
-import { prepareConfig } from '@dtrw/eslint-config';
-import { config } from 'typescript-eslint';
+import { config, prepareConfig } from '@dtrw/eslint-config'; // config re-exported from typescript-eslint
 
 export default prepareConfig(configuration)
 //or
