@@ -25,7 +25,7 @@ npm i -D @dtrw/eslint-config eslint@^8.59
 
 ## Usage
 
-This config requires `eslint` `^8.59` (not compatible with `eslint@9` yet - see [#11](https://github.com/burtek/eslint-config/pull/11))
+This config requires `eslint` `^8.59` (not compatible with `eslint@9` yet - see [#41](https://github.com/burtek/eslint-config/pull/41#issuecomment-2103958705))
 
 
 ```js
