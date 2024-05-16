@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.6.3](https://github.com/burtek/eslint-config/compare/v2.6.2...v2.6.3) (2024-05-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-lodash to v8 ([#45](https://github.com/burtek/eslint-config/issues/45)) ([7c64cc8](https://github.com/burtek/eslint-config/commit/7c64cc80faccfbe57c00aedfba976a33d4cd57f2))
+* **deps:** update dependency eslint-plugin-n to ~17.7.0 ([#47](https://github.com/burtek/eslint-config/issues/47)) ([c3a6f16](https://github.com/burtek/eslint-config/commit/c3a6f168b503d07b7dffa7a391a46a2ace713565))
+* **deps:** update typescript-eslint monorepo to v7.9.0 ([#46](https://github.com/burtek/eslint-config/issues/46)) ([644780c](https://github.com/burtek/eslint-config/commit/644780c93232cafd1ab8f54aad768fb02ed4a40e))
+
+
+### Chores
+
+* **ci:** Check PRs for deduplicated yarn.lock ([0029817](https://github.com/burtek/eslint-config/commit/00298179225149d242ee1407267055324a668497))
+* **deps:** update dependency rimraf to v5.0.6 ([#43](https://github.com/burtek/eslint-config/issues/43)) ([59ee012](https://github.com/burtek/eslint-config/commit/59ee0122f49894dff4ac88596d2d8f9be7f50260))
+* **deps:** update dependency rimraf to v5.0.7 ([#44](https://github.com/burtek/eslint-config/issues/44)) ([4720dc7](https://github.com/burtek/eslint-config/commit/4720dc7e3a5a6877b2fd7914074d8da583e7e362))
+* **docs:** Fix eslint version in README.md ([00949ae](https://github.com/burtek/eslint-config/commit/00949ae6095421cc50483127347deceb17c9f351))
+* **docs:** Update README.md ([3dfaeac](https://github.com/burtek/eslint-config/commit/3dfaeac69b4d6a74c0778fa85c877530d944293a))
+* **docs:** Update README.md ([8c813f7](https://github.com/burtek/eslint-config/commit/8c813f73ddb6dcdc971eee59ec23c00a231e025e))
+
 ## [2.6.2](https://github.com/burtek/eslint-config/compare/v2.6.1...v2.6.2) (2024-05-10)
 
 
