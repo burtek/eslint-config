@@ -14,18 +14,18 @@ This is repository with my `eslint` configs for multiple purposes that are used 
 ## Install
 
 ```bash
-yarn add -D @dtrw/eslint-config eslint@^8.59
+yarn add -D @dtrw/eslint-config eslint@^8.56
 ```
 
 or
 
 ```bash
-npm i -D @dtrw/eslint-config eslint@^8.59
+npm i -D @dtrw/eslint-config eslint@^8.56
 ```
 
 ## Usage
 
-This config requires `eslint` `^8.59` (not compatible with `eslint@9` yet - see [#41](https://github.com/burtek/eslint-config/pull/41#issuecomment-2103958705))
+This config requires `eslint` `^8.56` (not compatible with `eslint@9` yet - see [#41](https://github.com/burtek/eslint-config/pull/41#issuecomment-2103958705))
 
 
 ```js
