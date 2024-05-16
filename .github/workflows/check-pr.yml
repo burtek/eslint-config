@@ -21,3 +21,9 @@ jobs:
         #   run: yarn test
       - name: 'Lint configs'
         run: yarn lint
+      - name: 'Verify yarn.lock is deduplicated'
+        run: |
+          yarn global add yarn-deduplicate
+          yarn-deduplicate
+          yarn
+          git diff --exit-code -s yarn.lock
