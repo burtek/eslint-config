@@ -1,4 +1,3 @@
-import stylisticPlugin from '@stylistic/eslint-plugin';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -14,7 +13,6 @@ export default tseslint.config(
             parserOptions: { project: 'tsconfig.json' },
             sourceType: 'module'
         },
-        plugins: { '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin) },
         rules: {
             'no-extra-parens': 'off',
             'no-magic-numbers': 'off',

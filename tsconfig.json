@@ -12,6 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
 
     // "exactOptionalPropertyTypes": true,
     "skipLibCheck": true
@@ -19,7 +20,10 @@
   "include": [
     "configs/**/*.js",
     "configs/**/*-types.ts",
+    "tests/fixtures",
+    "tests/*.ts",
     "eslint.config.js",
+    "jest.config.js",
     "import-types.d.ts",
     "index.js",
   ]

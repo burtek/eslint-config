@@ -1,5 +1,5 @@
 import * as jsonc from 'eslint-plugin-jsonc';
-import jsonParser from 'jsonc-eslint-parser';
+import * as jsonParser from 'jsonc-eslint-parser';
 import tseslint from 'typescript-eslint';
 
 

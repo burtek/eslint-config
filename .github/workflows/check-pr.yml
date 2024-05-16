@@ -1,29 +1,51 @@
 name: 'Check PR'
 
 on:
-  pull_request
+  workflow_call:
+    inputs:
+      skip-deduplication:
+        required: false
+        type: boolean
+  pull_request:
+    branches:
+      - 'master'
 
 jobs:
-  check-pr:
-    name: 'Check PR'
+  test-pr:
+    name: 'Test PR'
     runs-on: ubuntu-latest
-
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v4'
-      - name: 'Setup node'
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-      - name: 'Install dependencies'
-        run: yarn
-        # - name: 'Test configs'
-        #   run: yarn test
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
+      - name: 'Test configs'
+        run: yarn test
+
+  lint-pr:
+    name: 'Lint PR'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v4'
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
       - name: 'Lint configs'
         run: yarn lint
-      - name: 'Verify yarn.lock is deduplicated'
+
+  check-deps:
+    name: 'Check deps deduplication'
+    runs-on: ubuntu-latest
+    if: ${{ !inputs.skip-deduplication }}
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v4'
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
+      - name: 'Deduplicate dependencies'
         run: |
           yarn global add yarn-deduplicate
           yarn-deduplicate
           yarn
-          git diff --exit-code -s yarn.lock
+      - name: 'Verify yarn.lock is intact'
+        run: git diff --exit-code yarn.lock
