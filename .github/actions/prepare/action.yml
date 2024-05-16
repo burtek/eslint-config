@@ -1,0 +1,14 @@
+name: 'Prepare workflow'
+
+runs:
+  using: "composite"
+  steps:
+    - name: 'Setup node'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@dtrw'
+    - name: 'Install dependencies'
+      run: yarn
+      shell: bash

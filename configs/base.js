@@ -1,5 +1,5 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import importPlugin from 'eslint-plugin-import';
+import * as importPlugin from 'eslint-plugin-import';
 import promise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
@@ -16,6 +16,7 @@ const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts
 
 export function prepareConfig() {
     return tseslint.config(
+        { plugins: { '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin) } },
         {
             name: 'dtrw:base:base',
             files: allFiles,
@@ -30,9 +31,8 @@ export function prepareConfig() {
                 }
             },
             plugins: {
-                'import': importPlugin,
-                promise,
-                '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin)
+                import: importPlugin,
+                promise
             },
             rules: {
                 'accessor-pairs': 'error',
