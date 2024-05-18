@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.6.4](https://github.com/burtek/eslint-config/compare/v2.6.3...v2.6.4) (2024-05-18)
+
+
+### Bug Fixes
+
+* **json:** Change tsconfig.*.json to jsonc ([4f2ff53](https://github.com/burtek/eslint-config/commit/4f2ff53e95ef8c0eabdc7b0c14def7d2a0cf53e4))
+
+
+### Chores
+
+* **ci:** Enable config testing, change CI workflows ([#48](https://github.com/burtek/eslint-config/issues/48)) ([564a455](https://github.com/burtek/eslint-config/commit/564a455265a34d99ccf98086c0d55a9ca501fd40))
+* **deps:** Use any patch version of typescript-eslint ([432b933](https://github.com/burtek/eslint-config/commit/432b933e933114864dafea0d9d2a8b7947af827c))
+* **docs:** Update README.md ([24f436f](https://github.com/burtek/eslint-config/commit/24f436fef0e7902d2ce2935a862545fe327998ee))
+
 ## [2.6.3](https://github.com/burtek/eslint-config/compare/v2.6.2...v2.6.3) (2024-05-16)
 
 
