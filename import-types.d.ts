@@ -1,11 +1,11 @@
 declare module 'eslint-plugin-import' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     export const configs: Record<'recommended' | 'error' | 'warnings' | 'react' | 'react-native' | 'electron' | 'typescript',
         TSESLint.ClassicConfig.Config>;
-    export const rules: Record<string, Rule.RuleModule>;    
+    export const rules: Record<string, Rule.RuleModule>;
 }
 
 declare module 'eslint-plugin-promise' {
@@ -20,14 +20,14 @@ declare module 'eslint-plugin-promise' {
 }
 
 declare module 'eslint-plugin-jest' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
         configs:
             & Record<'all' | 'recommended' | 'style', Required<Pick<TSESLint.ClassicConfig.Config, 'env' | 'rules' | 'plugins'>>>
-            & Record<'flat/all' | 'flat/recommended' | 'flat/style', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>>
+            & Record<'flat/all' | 'flat/recommended' | 'flat/style', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>>;
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -53,17 +53,17 @@ declare module 'eslint-plugin-lodash' {
 }
 
 declare module 'eslint-plugin-react-hooks' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     export const configs: Record<'recommended', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>;
-    export const rules: Record<string, Rule.RuleModule>;  s 
+    export const rules: Record<string, Rule.RuleModule>;
 }
 
 declare module 'eslint-plugin-react' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
@@ -78,7 +78,6 @@ declare module 'eslint-plugin-react' {
     export default plugin;
 }
 declare module 'eslint-plugin-react/configs/all.js' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
 
 
@@ -87,7 +86,6 @@ declare module 'eslint-plugin-react/configs/all.js' {
     export default plugin;
 }
 declare module 'eslint-plugin-react/configs/jsx-runtime.js' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
 
 
@@ -96,7 +94,6 @@ declare module 'eslint-plugin-react/configs/jsx-runtime.js' {
     export default plugin;
 }
 declare module 'eslint-plugin-react/configs/recommended.js' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
 
 
@@ -106,12 +103,12 @@ declare module 'eslint-plugin-react/configs/recommended.js' {
 }
 
 declare module 'eslint-plugin-jsx-a11y' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
-        configs: Record<'recommended' | 'strict', TSESLint.ClassicConfig.Config>
+        configs: Record<'recommended' | 'strict', TSESLint.ClassicConfig.Config>;
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -119,8 +116,8 @@ declare module 'eslint-plugin-jsx-a11y' {
 }
 
 declare module '@next/eslint-plugin-next' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
@@ -134,8 +131,8 @@ declare module '@next/eslint-plugin-next' {
 }
 
 declare module 'eslint-plugin-security-node' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
@@ -149,8 +146,8 @@ declare module 'eslint-plugin-security-node' {
 }
 
 declare module 'eslint-plugin-cypress' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
@@ -167,8 +164,8 @@ declare module 'eslint-plugin-cypress' {
 }
 
 declare module 'eslint-plugin-testing-library' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {
@@ -180,8 +177,8 @@ declare module 'eslint-plugin-testing-library' {
 }
 
 declare module 'eslint-plugin-jest-dom' {
-    import type { Rule } from 'eslint';
     import type { TSESLint } from '@typescript-eslint/utils';
+    import type { Rule } from 'eslint';
 
 
     const plugin: {

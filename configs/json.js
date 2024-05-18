@@ -7,7 +7,9 @@ import tseslint from 'typescript-eslint';
 
 const wellKnownJsonc = [
     '**/tsconfig.json',
+    '**/tsconfig.*.json',
     '**/jsconfig.json',
+    '**/jsconfig.*.json',
     '.vscode/**/*.json'
 ];
 
@@ -37,17 +39,19 @@ export function prepareConfig({
         {
             name: 'dtrw:json:json',
             files: ['**/*.json', ...additionalFilesJson],
-            ignores: [...wellKnownJsonc],
+            ignores: [...wellKnownJsonc, ...additionalFilesJsonc, ...additionalFilesJson5],
             rules: mergeRules(jsonc.configs['flat/recommended-with-json'])
         },
         {
             name: 'dtrw:json:jsonc',
             files: ['**/*.jsonc', ...wellKnownJsonc, ...additionalFilesJsonc],
+            ignores: [...additionalFilesJson, ...additionalFilesJson5],
             rules: mergeRules(jsonc.configs['flat/recommended-with-jsonc'])
         },
         {
             name: 'dtrw:json:json5',
             files: ['**/*.json5', ...additionalFilesJson5],
+            ignores: [...wellKnownJsonc, ...additionalFilesJson, ...additionalFilesJsonc],
             rules: mergeRules(jsonc.configs['flat/recommended-with-json5'])
         },
         {
