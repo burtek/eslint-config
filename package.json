@@ -1,6 +1,6 @@
 {
   "name": "@dtrw/eslint-config",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "author": "Bartosz Dotryw <burtekdotryw@gmail.com>",
   "description": "Custom eslint configs",
   "keywords": [
