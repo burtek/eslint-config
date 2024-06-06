@@ -145,17 +145,15 @@ declare module 'eslint-plugin-security-node' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-cypress' {
+declare module 'eslint-plugin-cypress/flat' {
     import type { TSESLint } from '@typescript-eslint/utils';
     import type { Rule } from 'eslint';
 
 
     const plugin: {
         configs: {
-            recommended: TSESLint.ClassicConfig.Config;
-        };
-        environments: {
-            globals: TSESLint.Linter.Environment;
+            globals: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions'>>;
+            recommended: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
         };
         rules: Record<string, Rule.RuleModule>;
     };
