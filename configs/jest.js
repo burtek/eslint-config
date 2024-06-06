@@ -80,7 +80,10 @@ export function prepareConfig({ mode = 'jest' } = {}) {
         {
             name: 'dtrw:jest:test.ts',
             files: [tsTestFiles],
-            rules: { 'jest/no-untyped-mock-factory': 'error' }
+            rules: {
+                'jest/no-untyped-mock-factory': 'error',
+                'jest/prefer-jest-mocked': 'error'
+            }
         }
     );
 }
