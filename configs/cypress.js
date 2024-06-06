@@ -1,25 +1,15 @@
-import cypress from 'eslint-plugin-cypress';
-import globals from 'globals';
+import cypress from 'eslint-plugin-cypress/flat';
 import tseslint from 'typescript-eslint';
 
 
 const files = ['**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
-// eslint-disable-next-line no-warning-comments
-// TODO: move to FlatConfig once cypress is upgraded
 export function prepareConfig() {
     return tseslint.config(
         {
+            ...cypress.configs.recommended,
             name: 'dtrw:cypress:base',
             files,
-            plugins: { cypress: { rules: cypress.rules } },
-            languageOptions: {
-                globals: {
-                    ...cypress.environments.globals.globals,
-                    ...globals.browser,
-                    ...globals.mocha
-                }
-            },
             rules: {
                 ...cypress.configs.recommended.rules,
                 'cypress/assertion-before-screenshot': 'warn',
