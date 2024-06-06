@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.7.0](https://github.com/burtek/eslint-config/compare/v2.6.5...v2.7.0) (2024-06-06)
+
+
+### Features
+
+* **deps:** update dependency eslint-plugin-jest to ~28.6.0 and add `jest/prefer-jest-mocked` rule ([#62](https://github.com/burtek/eslint-config/issues/62)) ([bdf7434](https://github.com/burtek/eslint-config/commit/bdf743413b4103e14e2db4a3764702a11a420997))
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-cypress to ~3.3.0 ([#58](https://github.com/burtek/eslint-config/issues/58)) ([b0bb0af](https://github.com/burtek/eslint-config/commit/b0bb0af50df939e8132e52c68acbf40a2b4daa05))
+* **deps:** update dependency eslint-plugin-jsonc to ~2.16.0 ([#52](https://github.com/burtek/eslint-config/issues/52)) ([b97df5e](https://github.com/burtek/eslint-config/commit/b97df5e38c654b30287389dd2b33f043ba420bd3))
+* **deps:** update dependency eslint-plugin-n to ~17.8.0 ([#60](https://github.com/burtek/eslint-config/issues/60)) ([b89da2c](https://github.com/burtek/eslint-config/commit/b89da2c32f9368c8ae8bcc3131ded9b553a1137d))
+* **deps:** update dependency eslint-plugin-promise to ~6.2.0 ([#53](https://github.com/burtek/eslint-config/issues/53)) ([91eeea7](https://github.com/burtek/eslint-config/commit/91eeea77773d74d6f28b7004c0aee138acf6cc20))
+* **deps:** update dependency eslint-plugin-react to v7.34.2 ([#56](https://github.com/burtek/eslint-config/issues/56)) ([8b1c933](https://github.com/burtek/eslint-config/commit/8b1c933ebbba495eb041e9cfbcbb05ce519b31b8))
+* **deps:** update dependency globals to v15.4.0 ([#61](https://github.com/burtek/eslint-config/issues/61)) ([5c1131a](https://github.com/burtek/eslint-config/commit/5c1131acafd244b189f3aeea4c678d5f24d4fce9))
+* **deps:** update dependency typescript-eslint to ~7.11.0 ([#54](https://github.com/burtek/eslint-config/issues/54)) ([d33e972](https://github.com/burtek/eslint-config/commit/d33e97217e066bee4743ed750bfc6b32928b6dd1))
+* **deps:** update dependency typescript-eslint to ~7.12.0 ([#59](https://github.com/burtek/eslint-config/issues/59)) ([f922afd](https://github.com/burtek/eslint-config/commit/f922afd56924687201817893a2c4e48d28cb9d61))
+
+
+### Chores
+
+* **deps:** Bump multiple yarn.lock versions ([#57](https://github.com/burtek/eslint-config/issues/57)) ([3afa394](https://github.com/burtek/eslint-config/commit/3afa3948bbf2320a05e93f6b3b4d063eb5bf66ec))
+* **deps:** update dependency ts-jest to v29.1.4 ([#55](https://github.com/burtek/eslint-config/issues/55)) ([9d2a2e3](https://github.com/burtek/eslint-config/commit/9d2a2e3934be6d00715ba8361dacef3054d05193))
+
 ## [2.6.5](https://github.com/burtek/eslint-config/compare/v2.6.4...v2.6.5) (2024-05-23)
 
 
