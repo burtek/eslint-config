@@ -496,7 +496,7 @@ export function prepareConfig() {
                 ],
                 '@typescript-eslint/no-useless-constructor': 'error',
                 '@typescript-eslint/no-useless-empty-export': 'error',
-                '@typescript-eslint/no-useless-template-literals': 'error',
+                '@typescript-eslint/no-unnecessary-template-expression': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
                 '@typescript-eslint/only-throw-error': 'error', // extends no-throw-literal
                 '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
