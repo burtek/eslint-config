@@ -1,13 +1,3 @@
-declare module 'eslint-plugin-import' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    export const configs: Record<'recommended' | 'error' | 'warnings' | 'react' | 'react-native' | 'electron' | 'typescript',
-        TSESLint.ClassicConfig.Config>;
-    export const rules: Record<string, Rule.RuleModule>;
-}
-
 declare module 'eslint-plugin-promise' {
     import type { Rule } from 'eslint';
 
