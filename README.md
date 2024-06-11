@@ -1,32 +1,26 @@
 # @dtrw/eslint-config
 
-<!-- support table - import no support for eslint@9 - https://github.com/import-js/eslint-plugin-import/issues/2948 -->
-
 ![npm version](https://img.shields.io/npm/v/@dtrw/eslint-config/latest)
 ![npm next version](https://img.shields.io/npm/v/@dtrw/eslint-config/next)
 ![NPM License](https://img.shields.io/npm/l/@dtrw/eslint-config)
 ![Release](https://img.shields.io/github/actions/workflow/status/burtek/eslint-config/release.yml?label=publish%20release)
 ![dependencies](https://img.shields.io/librariesio/release/npm/@dtrw/eslint-config)
 
-
 This is repository with my `eslint` configs for multiple purposes that are used (or will be used) in my other projects.
 
 ## Install
 
 ```bash
-yarn add -D @dtrw/eslint-config eslint@^8.56
+yarn add -D @dtrw/eslint-config eslint
 ```
 
 or
 
 ```bash
-npm i -D @dtrw/eslint-config eslint@^8.56
+npm i -D @dtrw/eslint-config eslint
 ```
 
 ## Usage
-
-This config requires `eslint` `^8.56` (not compatible with `eslint@9` yet - see [#41](https://github.com/burtek/eslint-config/pull/41#issuecomment-2103958705))
-
 
 ```js
 // eslint.config.js
