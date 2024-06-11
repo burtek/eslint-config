@@ -1,5 +1,5 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import * as importPlugin from 'eslint-plugin-import';
+import * as importPlugin from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
@@ -23,15 +23,15 @@ export function prepareConfig() {
             linterOptions: { reportUnusedDisableDirectives: true },
             settings: {
                 ...importPlugin.configs.typescript.settings,
-                'import/extensions': allImportExtensions,
-                'import/parsers': { '@typescript-eslint/parser': allImportExtensions },
-                'import/resolver': {
+                'import-x/extensions': allImportExtensions,
+                'import-x/parsers': { '@typescript-eslint/parser': allImportExtensions },
+                'import-x/resolver': {
                     node: { extensions: allImportExtensions },
                     typescript: true
                 }
             },
             plugins: {
-                import: importPlugin,
+                'import-x': importPlugin,
                 promise
             },
             rules: {
@@ -199,28 +199,26 @@ export function prepareConfig() {
                 'valid-typeof': ['error', { requireStringLiterals: true }],
                 'yoda': ['error', 'never', { exceptRange: true }],
 
-                'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
-                'import/default': 'error',
-                'import/export': 'error',
-                'import/first': 'error',
-                'import/namespace': 'error',
-                'import/newline-after-import': [
+                ...importPlugin.configs.recommended.rules,
+                'import-x/no-unresolved': 'off',
+                'import-x/named': 'off',
+                'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+                'import-x/first': 'error',
+                'import-x/newline-after-import': [
                     'error',
                     {
                         considerComments: true,
                         count: 2
                     }
                 ],
-                'import/no-anonymous-default-export': 'error',
-                'import/no-cycle': 'error',
-                'import/no-deprecated': 'warn',
-                'import/no-duplicates': 'error',
-                'import/no-empty-named-blocks': 'error',
-                'import/no-mutable-exports': 'error',
-                'import/no-named-as-default': 'warn',
-                'import/no-named-as-default-member': 'warn',
-                'import/no-self-import': 'error',
-                'import/order': [
+                'import-x/no-anonymous-default-export': 'error',
+                'import-x/no-cycle': 'error',
+                'import-x/no-deprecated': 'warn',
+                'import-x/no-duplicates': 'error',
+                'import-x/no-empty-named-blocks': 'error',
+                'import-x/no-mutable-exports': 'error',
+                'import-x/no-self-import': 'error',
+                'import-x/order': [
                     'error',
                     {
                         'groups': [
@@ -443,7 +441,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-floating-promises': 'error',
                 '@typescript-eslint/consistent-return': 'error',
                 '@typescript-eslint/no-implied-eval': 'error',
-                // import/consistent-type-specifier-style makes sure we don't inline `type` modifier
+                // import-x/consistent-type-specifier-style makes sure we don't inline `type` modifier
                 '@typescript-eslint/no-import-type-side-effects': 'off',
                 '@typescript-eslint/no-invalid-this': 'error',
                 '@typescript-eslint/no-invalid-void-type': 'error',
