@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.7.1](https://github.com/burtek/eslint-config/compare/v2.7.0...v2.7.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency typescript-eslint to ~7.13.0 ([#63](https://github.com/burtek/eslint-config/issues/63)) ([a94e6d9](https://github.com/burtek/eslint-config/commit/a94e6d98622f5fb46e4700806b2db5e2cfbd3faf))
+
+
+### Documentation changes:
+
+* Update README.md ([56ad2ac](https://github.com/burtek/eslint-config/commit/56ad2aca5f773055649b540ec92290605ac5006b))
+
 ## [2.7.0](https://github.com/burtek/eslint-config/compare/v2.6.5...v2.7.0) (2024-06-06)
 
 
