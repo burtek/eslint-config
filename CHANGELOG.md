@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-alpha.0](https://github.com/burtek/eslint-config/compare/v2.7.0...v3.0.0-alpha.0) (2024-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update dependency eslint to v9 (#41)
+* there might be differences in a way this plugin works and this might require changes to project's own `eslint.config.js` files
+
+* feat!(deps): Replace import with import-x (#64) ([bca46aa](https://github.com/burtek/eslint-config/commit/bca46aa9dc940f4046e6d0af160f880e0b11782c)), closes [#64](https://github.com/burtek/eslint-config/issues/64)
+
+
+### Features
+
+* **deps:** update dependency eslint to v9 ([#41](https://github.com/burtek/eslint-config/issues/41)) ([63c26dd](https://github.com/burtek/eslint-config/commit/63c26dd0cfa3ace947cf6dbcc8462698f8d29d04))
+
+
+### Bug Fixes
+
+* **deps:** update dependency typescript-eslint to ~7.13.0 ([#63](https://github.com/burtek/eslint-config/issues/63)) ([a94e6d9](https://github.com/burtek/eslint-config/commit/a94e6d98622f5fb46e4700806b2db5e2cfbd3faf))
+
+
+### Documentation changes:
+
+* Update README.md ([cdc1d14](https://github.com/burtek/eslint-config/commit/cdc1d1426407c82f67fd0f2a5859cdc86a1595a7))
+* Update README.md ([56ad2ac](https://github.com/burtek/eslint-config/commit/56ad2aca5f773055649b540ec92290605ac5006b))
+
 ## [2.7.0](https://github.com/burtek/eslint-config/compare/v2.6.5...v2.7.0) (2024-06-06)
 
 
