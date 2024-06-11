@@ -514,7 +514,6 @@ export function prepareConfig() {
                 '@typescript-eslint/prefer-reduce-type-parameter': 'error',
                 '@typescript-eslint/prefer-regexp-exec': 'warn',
                 '@typescript-eslint/prefer-string-starts-ends-with': ['error', { allowSingleElementEquality: 'always' }],
-                '@typescript-eslint/prefer-ts-expect-error': 'error',
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/restrict-plus-operands': 'error',
                 '@typescript-eslint/restrict-template-expressions': [
