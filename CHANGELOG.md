@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.7.2](https://github.com/burtek/eslint-config/compare/v2.7.1...v2.7.2) (2024-06-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.4 ([#67](https://github.com/burtek/eslint-config/issues/67)) ([4cd3a87](https://github.com/burtek/eslint-config/commit/4cd3a87a36e35a1065710add5afea088564facbb))
+* **deps:** update dependency @stylistic/eslint-plugin to ~2.2.0 ([#69](https://github.com/burtek/eslint-config/issues/69)) ([54f6543](https://github.com/burtek/eslint-config/commit/54f6543ec2f8b766a8b28341c39fe72247fc940f))
+* **deps:** update dependency eslint-plugin-n to ~17.9.0 ([#68](https://github.com/burtek/eslint-config/issues/68)) ([60c9101](https://github.com/burtek/eslint-config/commit/60c9101a4cbddaf3c98182ab0e5b4f488454ba90))
+* **deps:** update dependency globals to v15.5.0 ([#70](https://github.com/burtek/eslint-config/issues/70)) ([cf24fca](https://github.com/burtek/eslint-config/commit/cf24fca6fc5a6cf5e08ec4b5aad5c5ee427c475a))
+
+
+### Chores
+
+* **deps:** update dependency ts-jest to v29.1.5 ([#71](https://github.com/burtek/eslint-config/issues/71)) ([7242fab](https://github.com/burtek/eslint-config/commit/7242fab2b02efb8abb55e761eb9b921560efd1d2))
+
 ## [2.7.1](https://github.com/burtek/eslint-config/compare/v2.7.0...v2.7.1) (2024-06-11)
 
 
