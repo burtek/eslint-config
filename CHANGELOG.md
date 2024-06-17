@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.7.3](https://github.com/burtek/eslint-config/compare/v2.7.2...v2.7.3) (2024-06-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stylistic/eslint-plugin to v2.2.1 ([#72](https://github.com/burtek/eslint-config/issues/72)) ([493432a](https://github.com/burtek/eslint-config/commit/493432aafbaa757915d85a1c614e7700cba4d32a))
+
 ## [2.7.2](https://github.com/burtek/eslint-config/compare/v2.7.1...v2.7.2) (2024-06-16)
 
 
