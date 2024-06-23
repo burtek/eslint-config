@@ -200,7 +200,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             files: jsxFiles,
             plugins: { 'jsx-a11y': jsxA11y },
             rules: {
-                ...jsxA11y.configs.recommended.rules,
+                ...jsxA11y.flatConfigs.recommended.rules,
                 'jsx-a11y/anchor-ambiguous-text': 'error'
             }
         }
