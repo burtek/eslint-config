@@ -109,6 +109,7 @@ declare module 'eslint-plugin-jsx-a11y' {
 
     const plugin: {
         configs: Record<'recommended' | 'strict', TSESLint.ClassicConfig.Config>;
+        flatConfigs: Record<'recommended' | 'strict', TSESLint.FlatConfig.Config>;
         rules: Record<string, Rule.RuleModule>;
     };
 
