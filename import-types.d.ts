@@ -9,10 +9,15 @@ declare module 'eslint-plugin-import' {
 }
 
 declare module 'eslint-plugin-promise' {
+    import type { TSESLint } from '@typescript-eslint/utils';
     import type { Rule } from 'eslint';
 
 
     const plugin: {
+        configs: {
+            'recommended': Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>;
+            'flat/recommended': Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'rules'>>;
+        };
         rules: Record<string, Rule.RuleModule>;
     };
 
