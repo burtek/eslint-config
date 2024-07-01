@@ -242,7 +242,7 @@ export function prepareConfig() {
 
                 '@stylistic/array-bracket-newline': 'error',
                 '@stylistic/array-bracket-spacing': ['error', 'never'],
-                '@stylistic/array-element-newline': ['error', 'consistent'], // consistent+multiline?
+                '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
                 '@stylistic/arrow-parens': ['error', 'as-needed'],
                 '@stylistic/arrow-spacing': 'error',
                 '@stylistic/block-spacing': 'error',
