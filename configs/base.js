@@ -205,7 +205,8 @@ export function prepareConfig() {
                 'import/first': 'error',
                 'import/namespace': 'error',
                 'import/newline-after-import': [
-                    'error', {
+                    'error',
+                    {
                         considerComments: true,
                         count: 2
                     }
@@ -220,7 +221,8 @@ export function prepareConfig() {
                 'import/no-named-as-default-member': 'warn',
                 'import/no-self-import': 'error',
                 'import/order': [
-                    'error', {
+                    'error',
+                    {
                         'groups': [
                             'builtin',
                             'external',
@@ -265,7 +267,8 @@ export function prepareConfig() {
                 '@stylistic/linebreak-style': ['error', 'unix'],
                 '@stylistic/lines-between-class-members': 'error',
                 '@stylistic/max-len': [
-                    'error', {
+                    'error',
+                    {
                         code: 150,
                         ignoreRegExpLiterals: true,
                         ignoreUrls: true,
@@ -310,7 +313,8 @@ export function prepareConfig() {
                 '@stylistic/semi-style': 'error',
                 '@stylistic/space-before-blocks': 'error',
                 '@stylistic/space-before-function-paren': [
-                    'error', {
+                    'error',
+                    {
                         anonymous: 'never',
                         asyncArrow: 'always',
                         named: 'never'
@@ -366,14 +370,16 @@ export function prepareConfig() {
                 '@typescript-eslint/consistent-generic-constructors': 'error',
                 '@typescript-eslint/consistent-indexed-object-style': 'error',
                 '@typescript-eslint/consistent-type-assertions': [
-                    'error', {
+                    'error',
+                    {
                         assertionStyle: 'as',
                         objectLiteralTypeAssertions: 'allow-as-parameter'
                     }
                 ],
                 '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
                 '@typescript-eslint/consistent-type-imports': [
-                    'error', {
+                    'error',
+                    {
                         prefer: 'type-imports',
                         fixStyle: 'separate-type-imports',
                         disallowTypeAnnotations: false
@@ -382,7 +388,8 @@ export function prepareConfig() {
                 '@typescript-eslint/dot-notation': 'error',
                 '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
                 '@typescript-eslint/member-ordering': [
-                    'error', {
+                    'error',
+                    {
                         default: {
                             memberTypes: [
                                 'public-static-field',
@@ -419,7 +426,8 @@ export function prepareConfig() {
                 '@typescript-eslint/no-duplicate-enum-values': 'error',
                 '@typescript-eslint/no-duplicate-type-constituents': 'error',
                 '@typescript-eslint/no-empty-function': [
-                    'error', {
+                    'error',
+                    {
                         allow: [
                             'private-constructors',
                             'protected-constructors',
@@ -442,7 +450,8 @@ export function prepareConfig() {
                 '@typescript-eslint/no-loop-func': 'error',
                 '@typescript-eslint/no-loss-of-precision': 'warn',
                 '@typescript-eslint/no-magic-numbers': [
-                    'warn', {
+                    'warn',
+                    {
                         ignoreArrayIndexes: true,
                         ignoreDefaultValues: true,
                         ignoreEnums: true,
@@ -478,14 +487,16 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unsafe-unary-minus': 'error',
                 '@typescript-eslint/no-unused-expressions': 'error',
                 '@typescript-eslint/no-unused-vars': [
-                    'error', {
+                    'error',
+                    {
                         argsIgnorePattern: '^_',
                         destructuredArrayIgnorePattern: '^_',
                         ignoreRestSiblings: true
                     }
                 ],
                 '@typescript-eslint/no-use-before-define': [
-                    'error', {
+                    'error',
+                    {
                         classes: true,
                         enums: true,
                         functions: false,
@@ -517,7 +528,8 @@ export function prepareConfig() {
                 '@typescript-eslint/require-await': 'error',
                 '@typescript-eslint/restrict-plus-operands': 'error',
                 '@typescript-eslint/restrict-template-expressions': [
-                    'error', {
+                    'error',
+                    {
                         allowBoolean: true,
                         allowNullish: true,
                         allowNumber: true
@@ -525,7 +537,8 @@ export function prepareConfig() {
                 ],
                 '@typescript-eslint/return-await': ['error', 'always'],
                 '@typescript-eslint/switch-exhaustiveness-check': [
-                    'error', {
+                    'error',
+                    {
                         allowDefaultCaseForExhaustiveSwitch: false,
                         requireDefaultForNonUnion: true
                     }
