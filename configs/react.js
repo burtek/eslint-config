@@ -62,7 +62,8 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
 
                 'react/button-has-type': 'warn',
                 'react/display-name': [
-                    'error', {
+                    'error',
+                    {
                         checkContextObjects: true,
                         ignoreTranspilerName: true
                     }
@@ -75,13 +76,15 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-closing-tag-location': 'error',
                 'react/jsx-curly-brace-presence': 'error',
                 'react/jsx-curly-newline': [
-                    'error', {
+                    'error',
+                    {
                         multiline: 'forbid',
                         singleline: 'forbid'
                     }
                 ],
                 'react/jsx-curly-spacing': [
-                    'error', {
+                    'error',
+                    {
                         when: 'never',
                         allowMultiline: false,
                         attributes: { when: 'never' },
@@ -93,21 +96,25 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-fragments': ['error', 'syntax'],
                 'react/jsx-handler-names': ['error', { checkInlineFunction: true }],
                 'react/jsx-indent': [
-                    'error', 4, {
+                    'error',
+                    4,
+                    {
                         checkAttributes: true,
                         indentLogicalExpressions: true
                     }
                 ],
                 'react/jsx-indent-props': 'error',
                 'react/jsx-key': [
-                    'error', {
+                    'error',
+                    {
                         checkFragmentShorthand: true,
                         checkKeyMustBeforeSpread: true,
                         warnOnDuplicates: true
                     }
                 ],
                 'react/jsx-max-props-per-line': [
-                    'error', {
+                    'error',
+                    {
                         maximum: {
                             single: 2,
                             multi: 1
