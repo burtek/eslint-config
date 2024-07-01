@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.7.4](https://github.com/burtek/eslint-config/compare/v2.7.3...v2.7.4) (2024-07-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stylistic/eslint-plugin to ~2.3.0 ([#81](https://github.com/burtek/eslint-config/issues/81)) ([957a8b1](https://github.com/burtek/eslint-config/commit/957a8b1354920d8f4d9f4c0543d789d0bd6b8c12))
+* **deps:** update dependency @stylistic/eslint-plugin to v2.2.2 ([#77](https://github.com/burtek/eslint-config/issues/77)) ([943011c](https://github.com/burtek/eslint-config/commit/943011c04345ea2d721cb96a94c555580c096243))
+* **deps:** update dependency eslint-plugin-jsx-a11y to ~6.9.0 ([#78](https://github.com/burtek/eslint-config/issues/78)) ([b5d8535](https://github.com/burtek/eslint-config/commit/b5d8535131ec8ccec0896e05f75272b2d1b67c7d))
+* **deps:** update dependency eslint-plugin-promise to ~6.4.0 ([#83](https://github.com/burtek/eslint-config/issues/83)) ([4aae0d5](https://github.com/burtek/eslint-config/commit/4aae0d5b291ac7d2ee69f0c87120ab56e97b1b79))
+* **deps:** update dependency eslint-plugin-react to v7.34.3 ([#75](https://github.com/burtek/eslint-config/issues/75)) ([0be4229](https://github.com/burtek/eslint-config/commit/0be4229c2ca5a28ed9793648a468e8df52d4fb6b))
+* **deps:** update dependency globals to v15.6.0 ([#73](https://github.com/burtek/eslint-config/issues/73)) ([f4612c6](https://github.com/burtek/eslint-config/commit/f4612c640d8a82aa919d96da65fa8cb115a1d1c7))
+* **deps:** update dependency globals to v15.7.0 ([#82](https://github.com/burtek/eslint-config/issues/82)) ([daedb8f](https://github.com/burtek/eslint-config/commit/daedb8ff3c45cf9b5cee96edffcae0e66eadeb74))
+* **deps:** update dependency typescript-eslint to ~7.14.0 ([#80](https://github.com/burtek/eslint-config/issues/80)) ([93bcbd1](https://github.com/burtek/eslint-config/commit/93bcbd17ca9f017a750b84ed55a4692c61880be5))
+* **deps:** update dependency typescript-eslint to v7.13.1 ([#74](https://github.com/burtek/eslint-config/issues/74)) ([fb24843](https://github.com/burtek/eslint-config/commit/fb24843c92fe439cf1c2c52cbc94e9ede82ed3ce))
+
+
+### Chores
+
+* **deps:** bump ws from 8.17.0 to 8.17.1 ([#76](https://github.com/burtek/eslint-config/issues/76)) ([b30f950](https://github.com/burtek/eslint-config/commit/b30f9508c0ee4ef65f9d4d5b69ba0b62a0cb742f))
+* **deps:** update dependency typescript to ~5.5.2 ([#79](https://github.com/burtek/eslint-config/issues/79)) ([f4bcd57](https://github.com/burtek/eslint-config/commit/f4bcd573b74321e1a240ac31c679131cc336a879))
+
 ## [2.7.3](https://github.com/burtek/eslint-config/compare/v2.7.2...v2.7.3) (2024-06-17)
 
 
