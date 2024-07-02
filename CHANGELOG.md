@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [3.0.0](https://github.com/burtek/eslint-config/compare/v2.7.4...v3.0.0) (2024-08-08)
 
+This changelog entry compares this alpha release against last full release (v2.7.4) and includes changels from previous alphas.
 
 ### ⚠ BREAKING CHANGES
 
