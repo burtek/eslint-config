@@ -363,10 +363,21 @@ export function prepareConfig() {
                 'prefer-destructuring': 'off',
                 'require-await': 'off',
 
+                '@typescript-eslint/ban-types': 'error',
+                '@typescript-eslint/no-empty-interface': 'error',
+                // '@typescript-eslint/ban-types': [
+                //     'error',
+                //     {
+                //         extendDefaults: true,
+                //         types: { '{}': false }
+                //     }
+                // ],
+                // '@typescript-eslint/no-empty-interface': 'off',
+                // '@typescript-eslint/no-empty-object-type': 'error',
+
                 '@typescript-eslint/adjacent-overload-signatures': 'error',
                 '@typescript-eslint/await-thenable': 'error',
                 '@typescript-eslint/ban-ts-comment': 'error',
-                '@typescript-eslint/ban-types': 'error',
                 '@typescript-eslint/consistent-generic-constructors': 'error',
                 '@typescript-eslint/consistent-indexed-object-style': 'error',
                 '@typescript-eslint/consistent-type-assertions': [
@@ -436,7 +447,6 @@ export function prepareConfig() {
                         ]
                     }
                 ],
-                '@typescript-eslint/no-empty-interface': 'error',
                 '@typescript-eslint/no-explicit-any': 'error',
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-extraneous-class': 'error',
