@@ -485,6 +485,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-shadow': 'error',
                 '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
                 '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: true }],
+                '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
                 '@typescript-eslint/no-unnecessary-type-arguments': 'error',
                 '@typescript-eslint/no-unnecessary-type-assertion': 'error',
                 '@typescript-eslint/no-unnecessary-type-constraint': 'error',
