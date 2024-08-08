@@ -30,7 +30,7 @@
     "eslint-plugin-testing-library": "~6.2.2",
     "globals": "^15.0.0",
     "jsonc-eslint-parser": "~2.4.0",
-    "typescript-eslint": "~7.18.0"
+    "typescript-eslint": "~8.0.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.8",
