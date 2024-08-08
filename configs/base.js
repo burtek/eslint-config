@@ -348,11 +348,10 @@ export function prepareConfig() {
                 'dot-notation': 'off',
                 'no-array-constructor': 'off',
                 'no-empty-function': 'off',
-                'no--implicit-returns': 'off',
+                'no-implicit-returns': 'off',
                 'no-implied-eval': 'off',
                 'no-invalid-this': 'off',
                 'no-loop-func': 'off',
-                'no-loss-of-precision': 'off',
                 'no-magic-numbers': 'off',
                 'no-shadow': 'off',
                 'no-throw-literal': 'off', // extended by tseslint/only-throw-error
@@ -362,18 +361,6 @@ export function prepareConfig() {
                 'no-useless-constructor': 'off',
                 'prefer-destructuring': 'off',
                 'require-await': 'off',
-
-                '@typescript-eslint/ban-types': 'error',
-                '@typescript-eslint/no-empty-interface': 'error',
-                // '@typescript-eslint/ban-types': [
-                //     'error',
-                //     {
-                //         extendDefaults: true,
-                //         types: { '{}': false }
-                //     }
-                // ],
-                // '@typescript-eslint/no-empty-interface': 'off',
-                // '@typescript-eslint/no-empty-object-type': 'error',
 
                 '@typescript-eslint/adjacent-overload-signatures': 'error',
                 '@typescript-eslint/await-thenable': 'error',
@@ -447,6 +434,7 @@ export function prepareConfig() {
                         ]
                     }
                 ],
+                '@typescript-eslint/no-empty-object-type': 'error',
                 '@typescript-eslint/no-explicit-any': 'error',
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-extraneous-class': 'error',
@@ -458,7 +446,6 @@ export function prepareConfig() {
                 '@typescript-eslint/no-invalid-this': 'error',
                 '@typescript-eslint/no-invalid-void-type': 'error',
                 '@typescript-eslint/no-loop-func': 'error',
-                '@typescript-eslint/no-loss-of-precision': 'warn',
                 '@typescript-eslint/no-magic-numbers': [
                     'warn',
                     {
@@ -493,6 +480,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unsafe-call': 'error',
                 '@typescript-eslint/no-unsafe-declaration-merging': 'error',
                 '@typescript-eslint/no-unsafe-enum-comparison': 'error',
+                '@typescript-eslint/no-unsafe-function-type': 'error',
                 '@typescript-eslint/no-unsafe-member-access': 'error',
                 '@typescript-eslint/no-unsafe-return': 'error',
                 '@typescript-eslint/no-unsafe-unary-minus': 'error',
@@ -520,6 +508,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-useless-empty-export': 'error',
                 '@typescript-eslint/no-unnecessary-template-expression': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
+                '@typescript-eslint/no-wrapper-object-types': 'error',
                 '@typescript-eslint/only-throw-error': 'error', // extends no-throw-literal
                 '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
                 '@typescript-eslint/prefer-destructuring': 'error',
@@ -529,7 +518,7 @@ export function prepareConfig() {
                 '@typescript-eslint/prefer-function-type': 'error',
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/prefer-literal-enum-member': 'error',
-                '@typescript-eslint/prefer-nullish-coalescing': ['error', { ignoreConditionalTests: true }],
+                '@typescript-eslint/prefer-nullish-coalescing': 'error',
                 '@typescript-eslint/prefer-optional-chain': 'error',
                 '@typescript-eslint/prefer-promise-reject-errors': 'error',
                 '@typescript-eslint/prefer-readonly': 'error',
