@@ -50,9 +50,7 @@ declare module 'eslint-plugin-lodash' {
     import type { Rule } from 'eslint';
 
 
-    const plugin: {
-        rules: Record<string, Rule.RuleModule>;
-    };
+    const plugin: { rules: Record<string, Rule.RuleModule> };
 
     export default plugin;
 }
@@ -71,38 +69,13 @@ declare module 'eslint-plugin-react' {
     import type { Rule } from 'eslint';
 
 
+    type ClassicConfig = Required<Pick<TSESLint.ClassicConfig.Config, 'parserOptions' | 'plugins' | 'rules'>>;
+    type FlatConfig = Required<Pick<TSESLint.FlatConfig.Config, 'languageOptions' | 'plugins' | 'rules'>>;
+
     const plugin: {
-        configs: Record<
-            'all' | 'recommended' | 'jsx-runtime',
-            Required<Pick<TSESLint.FlatConfig.Config, 'languageOptions' | 'rules'>>
-            & Required<Pick<TSESLint.ClassicConfig.Config, 'parserOptions' | 'plugins'>>
-        >;
+        configs: Record<'all' | 'recommended' | 'jsx-runtime', ClassicConfig> & { flat: Record<'all' | 'recommended' | 'jsx-runtime', FlatConfig> };
         rules: Record<string, Rule.RuleModule>;
     };
-
-    export default plugin;
-}
-declare module 'eslint-plugin-react/configs/all.js' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-
-
-    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
-
-    export default plugin;
-}
-declare module 'eslint-plugin-react/configs/jsx-runtime.js' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-
-
-    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
-
-    export default plugin;
-}
-declare module 'eslint-plugin-react/configs/recommended.js' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-
-
-    const plugin: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
 
     export default plugin;
 }
@@ -127,9 +100,7 @@ declare module '@next/eslint-plugin-next' {
 
 
     const plugin: {
-        configs: {
-            recommended: TSESLint.ClassicConfig.Config;
-        };
+        configs: { recommended: TSESLint.ClassicConfig.Config };
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -142,9 +113,7 @@ declare module 'eslint-plugin-security-node' {
 
 
     const plugin: {
-        configs: {
-            recommended: TSESLint.ClassicConfig.Config;
-        };
+        configs: { recommended: TSESLint.ClassicConfig.Config };
         rules: Record<string, Rule.RuleModule>;
     };
 

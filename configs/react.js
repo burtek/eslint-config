@@ -125,6 +125,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-no-constructed-context-values': 'error',
                 'react/jsx-no-leaked-render': 'warn',
                 'react/jsx-no-script-url': ['error', { includeFromSettings: true }],
+                'react/jsx-props-no-spread-multi': 'error',
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
                 'react/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
