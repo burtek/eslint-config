@@ -1,5 +1,4 @@
-import jestPlugin from 'eslint-plugin-jest';
-import * as jestFormatting from 'eslint-plugin-jest-formatting';
+import jest from 'eslint-plugin-jest';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -54,21 +53,17 @@ export function prepareConfig({ mode = 'jest' } = {}) {
         {
             name: 'dtrw:jest:test',
             files: [testFiles],
-            plugins: {
-                'jest': jestPlugin,
-                'jest-formatting': jestFormatting
-            },
+            plugins: { jest },
             rules: {
-                'jest-formatting/padding-around-all': 'error',
-
-                ...jestPlugin.configs.recommended.rules,
-                ...jestPlugin.configs.style.rules,
+                ...jest.configs.recommended.rules,
+                ...jest.configs.style.rules,
 
                 'jest/consistent-test-it': 'error',
                 'jest/no-conditional-in-test': 'error',
                 'jest/no-confusing-set-timeout': 'error',
                 'jest/no-duplicate-hooks': 'error',
                 'jest/no-test-return-statement': 'error',
+                'jest/padding-around-all': 'error',
                 'jest/prefer-each': 'error',
                 'jest/prefer-hooks-in-order': 'error',
                 'jest/prefer-hooks-on-top': 'error',
