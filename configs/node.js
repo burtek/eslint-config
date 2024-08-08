@@ -1,3 +1,4 @@
+/** @import { TSESLint } from '@typescript-eslint/utils' */
 import nPlugin from 'eslint-plugin-n';
 import nodeSecurity from 'eslint-plugin-security-node';
 import globals from 'globals';
@@ -7,7 +8,8 @@ import tseslint from 'typescript-eslint';
 export function prepareConfig() {
     return tseslint.config(
         ...nPlugin.configs['flat/mixed-esm-and-cjs'].map(c => ({
-            ...c,
+            // cast to be removed after https://github.com/typescript-eslint/typescript-eslint/issues/9724
+            .../** @type {TSESLint.FlatConfig.Config} */(c),
             files: /** @type {string[]} */(c.files).flatMap(f => [f, f.replace('.js', '.ts')])
         })),
         {
