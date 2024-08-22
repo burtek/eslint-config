@@ -142,7 +142,9 @@ declare module 'eslint-plugin-testing-library' {
 
 
     const plugin: {
-        configs: Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>;
+        configs:
+            & Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>
+            & Record<'flat/react' | 'flat/vue' | 'flat/marko' | 'flat/dom' | 'flat/angular', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'rules'>>>;
         rules: Record<string, Rule.RuleModule>;
     };
 
