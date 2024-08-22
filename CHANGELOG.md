@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.1.0](https://github.com/burtek/eslint-config/compare/v3.0.1...v3.1.0) (2024-08-22)
+
+
+### Features
+
+* Add `no-debug` rule to cypress config, update eslint-plugin-cypress to ~3.5.0 ([#116](https://github.com/burtek/eslint-config/issues/116)) ([0954aef](https://github.com/burtek/eslint-config/commit/0954aef002e9f6475ab8b858e8f9487fb90540b6))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.6 ([#119](https://github.com/burtek/eslint-config/issues/119)) ([199f843](https://github.com/burtek/eslint-config/commit/199f843d4dbf4f454c3d6c70a0ad2aeba24f1a4a))
+* **deps:** update dependency @stylistic/eslint-plugin to v2.6.4 ([#118](https://github.com/burtek/eslint-config/issues/118)) ([e4691ef](https://github.com/burtek/eslint-config/commit/e4691ef26631ac21a72eb9a46949311a7adc25bb))
+* **deps:** update dependency eslint-plugin-testing-library to ~6.3.0 ([#115](https://github.com/burtek/eslint-config/issues/115)) ([18f90e3](https://github.com/burtek/eslint-config/commit/18f90e31af22c1b9bcc5c280de01ea9e2faac3be))
+* **deps:** update dependency typescript-eslint to ~8.2.0 ([#117](https://github.com/burtek/eslint-config/issues/117)) ([20de2d9](https://github.com/burtek/eslint-config/commit/20de2d907f98d56775cb3a15af0cd45612c9857c))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.16.1 ([#114](https://github.com/burtek/eslint-config/issues/114)) ([2cd9ea2](https://github.com/burtek/eslint-config/commit/2cd9ea273e52bf083b31e3f7a21b156b0a10cf05))
+
 ## [3.0.1](https://github.com/burtek/eslint-config/compare/v3.0.0...v3.0.1) (2024-08-08)
 
 
