@@ -5,8 +5,6 @@ import tseslint from 'typescript-eslint';
 
 const files = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
-// eslint-disable-next-line no-warning-comments
-// TODO: move to FlatConfig once testing-library and jest-dom are upgraded
 export function prepareConfig() {
     return tseslint.config(
         {
@@ -15,11 +13,11 @@ export function prepareConfig() {
             files
         },
         {
+            ...testingLibrary.configs['flat/react'],
             name: 'dtrw:testing-lib:react',
             files,
-            plugins: { 'testing-library': { rules: testingLibrary.rules } },
             rules: {
-                ...testingLibrary.configs.react.rules,
+                ...testingLibrary.configs['flat/react'].rules,
                 'testing-library/prefer-explicit-assert': 'error',
                 'testing-library/prefer-user-event': 'warn'
             }
