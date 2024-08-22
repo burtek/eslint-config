@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://github.com/burtek/eslint-config/compare/v3.1.0...v4.0.0) (2024-08-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* there might be differences in a way this plugin works and this might require changes to project's own `eslint.config.js` files
+
+* feat!(deps): Replace import with import-x (#64) ([066af82](https://github.com/burtek/eslint-config/commit/066af829e986d5fee2718f9d4f65f12d0f4b9d43)), closes [#64](https://github.com/burtek/eslint-config/issues/64)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-import-x to v3 ([#121](https://github.com/burtek/eslint-config/issues/121)) ([928f54f](https://github.com/burtek/eslint-config/commit/928f54f5726be513cc7260d861560a1288cc6aa5))
+
 ## [3.1.0](https://github.com/burtek/eslint-config/compare/v3.0.1...v3.1.0) (2024-08-22)
 
 
