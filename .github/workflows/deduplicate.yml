@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - uses: actions/github-script@v7
+        id: github-script
         with:
           script: |
             github.rest.issues.createComment({
@@ -21,11 +22,16 @@ jobs:
               repo: context.repo.repo,
               body: 'Ok, trying to deduplicate using strategy `${{ env.STRATEGY }}`'
             })
+            return (await github.pulls.get(
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            })).data
 
       - name: Check out the repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.issue.pull_request.head.ref }}
+          ref: ${{ fromJSON(steps.github-script.outputs.result).head.ref }}
 
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
@@ -42,9 +48,18 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add yarn.lock
           git commit -m "Deduplicated dependencies using yarn-deduplicate"
-        if: ${{ success() }}
 
       - name: Push changes
         run: |
-          git push origin HEAD:${{ github.event.issue.pull_request.head.ref }}
-        if: ${{ success() }}
+          git push origin HEAD:${{ fromJSON(steps.github-script.outputs.result).head.ref }}
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'I failed :('
+            })
+        if: failure()
