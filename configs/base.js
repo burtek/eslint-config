@@ -1,5 +1,5 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import * as importPlugin from 'eslint-plugin-import-x';
+import importPlugin from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
@@ -22,7 +22,7 @@ export function prepareConfig() {
             files: allFiles,
             linterOptions: { reportUnusedDisableDirectives: true },
             settings: {
-                ...importPlugin.configs.typescript.settings,
+                ...importPlugin.flatConfigs.typescript.settings,
                 'import-x/extensions': allImportExtensions,
                 'import-x/parsers': { '@typescript-eslint/parser': allImportExtensions },
                 'import-x/resolver': {
@@ -199,7 +199,7 @@ export function prepareConfig() {
                 'valid-typeof': ['error', { requireStringLiterals: true }],
                 'yoda': ['error', 'never', { exceptRange: true }],
 
-                ...importPlugin.configs.recommended.rules,
+                ...importPlugin.flatConfigs.recommended.rules,
                 'import-x/no-unresolved': 'off',
                 'import-x/named': 'off',
                 'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
@@ -339,7 +339,7 @@ export function prepareConfig() {
             languageOptions: { parser: tseslint.parser },
             rules: {
                 ...tseslint.configs.eslintRecommended.rules,
-                ...importPlugin.configs.typescript.rules,
+                ...importPlugin.flatConfigs.typescript.rules,
 
                 'camelcase': 'off',
                 'default-case': 'off',
