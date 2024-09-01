@@ -22,7 +22,7 @@ jobs:
               repo: context.repo.repo,
               body: 'Ok, trying to deduplicate using strategy `${{ env.STRATEGY }}`'
             })
-            return (await github.pulls.get({
+            return (await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number
