@@ -58,4 +58,4 @@ jobs:
               repo: context.repo.repo,
               body: '`yarn.lock` is not deduplicated. You can try deduplicating dependencies using `/deduplicate` command'
             })
-        if: ${{ failure() }}
+        if: failure()
