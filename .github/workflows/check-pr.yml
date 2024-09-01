@@ -49,7 +49,8 @@ jobs:
           yarn
       - name: 'Verify yarn.lock is intact'
         run: git diff --exit-code yarn.lock
-      - uses: actions/github-script@v7
+      - name: 'Notify of duplicates'
+        uses: actions/github-script@v7
         with:
           script: |
             var comments = await github.rest.issues.listComments({
