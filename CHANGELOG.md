@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.1](https://github.com/burtek/eslint-config/compare/v4.0.0...v4.0.1) (2024-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.2.7 ([#129](https://github.com/burtek/eslint-config/issues/129)) ([d3dd770](https://github.com/burtek/eslint-config/commit/d3dd7701d2284b1cd37331858c9668d41ebe52f0))
+* **deps:** update dependency @stylistic/eslint-plugin to ~2.7.0 ([#131](https://github.com/burtek/eslint-config/issues/131)) ([f548d7f](https://github.com/burtek/eslint-config/commit/f548d7fb3f81b71803b5d97e778812a9b6310225))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.6.3 ([#126](https://github.com/burtek/eslint-config/issues/126)) ([e425108](https://github.com/burtek/eslint-config/commit/e425108fdde9ced273663dd19e5f159ac48295d9))
+* **deps:** update dependency eslint-plugin-import-x to v4 ([#128](https://github.com/burtek/eslint-config/issues/128)) ([e77f28a](https://github.com/burtek/eslint-config/commit/e77f28a978c80daf7187130783e640dda47ae7d6))
+* **deps:** update dependency eslint-plugin-jest to v28.8.1 ([#132](https://github.com/burtek/eslint-config/issues/132)) ([9504718](https://github.com/burtek/eslint-config/commit/95047184c06e3409fc1033fea24a01920d9efdf7))
+* **deps:** update dependency typescript-eslint to ~8.3.0 ([#127](https://github.com/burtek/eslint-config/issues/127)) ([5c81b49](https://github.com/burtek/eslint-config/commit/5c81b492fee22fbb7f9dd4d0302a41e032523d35))
+
+
+### Chores
+
+* **deps:** Add /deduplicate command to PRs ([5ec76ab](https://github.com/burtek/eslint-config/commit/5ec76abaa6cdb561a5068124e10175502a1764aa))
+* **deps:** bump micromatch from 4.0.7 to 4.0.8 ([#123](https://github.com/burtek/eslint-config/issues/123)) ([7571c8f](https://github.com/burtek/eslint-config/commit/7571c8fd5fa04922fb4e283edb8d65b1a726cf83))
+* **deps:** fix: Stop spamming ([60d5e02](https://github.com/burtek/eslint-config/commit/60d5e02005c74b1e6b1f7ad938e49b91f029f156))
+* **deps:** update dependency @types/eslint to v8.56.12 ([#125](https://github.com/burtek/eslint-config/issues/125)) ([81f2041](https://github.com/burtek/eslint-config/commit/81f2041fb1d89dc6926c476edbd9385bef0ffc50))
+* **deps:** update dependency @types/node to v20.16.3 ([#130](https://github.com/burtek/eslint-config/issues/130)) ([22a2f00](https://github.com/burtek/eslint-config/commit/22a2f0012949a074c69f66f64a245f0b6c07d11b))
+* **deps:** update dependency commit-and-tag-version to v12.4.2 ([#124](https://github.com/burtek/eslint-config/issues/124)) ([250df16](https://github.com/burtek/eslint-config/commit/250df16600b1e95270a2bf45176cdb4ddda77abf))
+* **deps:** update dependency ts-jest to v29.2.5 ([#122](https://github.com/burtek/eslint-config/issues/122)) ([e311981](https://github.com/burtek/eslint-config/commit/e311981a31c7937e55ed6854c80fc7d2cdd62452))
+
 ## [4.0.0](https://github.com/burtek/eslint-config/compare/v3.1.0...v4.0.0) (2024-08-22)
 
 
