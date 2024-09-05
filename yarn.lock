@@ -1031,7 +1031,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@8.4.0", "@typescript-eslint/typescript-estree@^8.1.0":
+"@typescript-eslint/typescript-estree@8.4.0":
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-8.4.0.tgz#00ed79ae049e124db37315cde1531a900a048482"
   integrity sha512-kJ2OIP4dQw5gdI4uXsaxUZHRwWAGpREJ9Zq6D5L0BweyOrWsL6Sz0YcAZGWhvKnH7fm1J5YFE1JrQL0c9dd53A==
@@ -2367,12 +2367,11 @@ eslint-plugin-es-x@^7.5.0:
     "@eslint-community/regexpp" "^4.6.0"
     eslint-compat-utils "^0.5.0"
 
-eslint-plugin-import-x@~4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.1.1.tgz#715efe257eddeb5986c68cda73908d019c954280"
-  integrity sha512-dBEM8fACIFNt4H7GoOaRmnH6evJW6JSTJTYYgmRd3vI4geBTjgDM/JyUDKUwIw0HDSyI+u7Vs3vFRXUo/BOAtA==
+eslint-plugin-import-x@~4.2.0:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.2.1.tgz#575f311d51d960f46609dfa3fea9f027cd0cf60b"
+  integrity sha512-WWi2GedccIJa0zXxx3WDnTgouGQTtdYK1nhXMwywbqqAgB0Ov+p1pYBsWh3VaB0bvBOwLse6OfVII7jZD9xo5Q==
   dependencies:
-    "@typescript-eslint/typescript-estree" "^8.1.0"
     "@typescript-eslint/utils" "^8.1.0"
     debug "^4.3.4"
     doctrine "^3.0.0"
