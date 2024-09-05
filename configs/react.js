@@ -191,7 +191,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:test',
             files: testFiles,
-            rules: { 'react-hooks/rules-of-hooks': 'off' }
+            rules: {
+                'react-hooks/rules-of-hooks': 'off',
+                'react/display-name': 'off'
+            }
         }
     );
     const nextConfig = tseslint.config(
