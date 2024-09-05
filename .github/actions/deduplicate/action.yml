@@ -1,0 +1,24 @@
+name: 'Deduplicate'
+
+inputs:
+  strategy:
+    description: 'yarn-deduplicate strategy'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run yarn-deduplicate (highest)
+      if: ${{ env.STRATEGY == 'highest' }}
+      run: |
+        yarn global add yarn-deduplicate
+        yarn-deduplicate --strategy highest
+        yarn-deduplicate --strategy fewer --packages @types/node # @types/node@* causes unneeded duplication in highest mode
+        yarn
+
+    - name: Run yarn-deduplicate (fewer)
+      if: ${{ env.STRATEGY == 'fewer' }}
+      run: |
+        yarn global add yarn-deduplicate
+        yarn-deduplicate --strategy fewer --exclude @types/unist # @types/unist gets downgraded in this mode
+        yarn

@@ -43,10 +43,9 @@ jobs:
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Deduplicate dependencies'
-        run: |
-          yarn global add yarn-deduplicate
-          yarn-deduplicate
-          yarn
+        uses: ./.github/actions/deduplicate
+        with:
+          strategy: 'highest'
       - name: 'Verify yarn.lock is intact'
         run: git diff --exit-code yarn.lock
       - name: 'Notify of duplicates'

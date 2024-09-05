@@ -38,13 +38,10 @@ jobs:
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
 
-      - name: Run yarn-deduplicate
-        env:
-          ARGS: ${{ contains(github.event.comment.body, 'fewer') && '--exclude @types/unist' || '' }}
-        run: |
-          yarn global add yarn-deduplicate
-          yarn-deduplicate --strategy $STRATEGY $ARGS
-          yarn
+      - name: 'Deduplicate dependencies'
+        uses: ./.github/actions/deduplicate
+        with:
+          strategy: ${{ env.STRATEGY }}
 
       - name: Commit changes
         run: |
