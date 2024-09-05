@@ -26,9 +26,5 @@
       "matchBaseBranches": ["eslint-v9"],
       "labels": ["dependencies", "v9"]
     }
-  ],
-  "baseBranches": [
-    "master",
-    "eslint-v9"
   ]
 }
