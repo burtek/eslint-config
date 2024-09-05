@@ -33,7 +33,7 @@
     "typescript-eslint": "~8.4.0"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.8",
+    "@types/eslint": "^9.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.0.0",
     "commit-and-tag-version": "^12.2.0",
