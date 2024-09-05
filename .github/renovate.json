@@ -17,5 +17,9 @@
       "matchDepTypes": ["peerDependencies"],
       "enabled": false
     }
+  ],
+  "baseBranches": [
+    "master",
+    "eslint-v9"
   ]
 }
