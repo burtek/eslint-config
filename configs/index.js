@@ -33,10 +33,11 @@ export const configs = {
  * Creates eslint flat config based on provided configuration object.
  *
  * @param {{ [K in Exclude<keyof typeof configs, 'base'>]?: Config<K> | true }} [providedConfigs] configs to enable with optional parameters
- * @param {string[]} [ignores] ignores config pattern, defaults to `['node_modules/', 'dist/', 'coverage/', '.vercel/']`
+ * @param {string[] | ((defaults: string[]) => string[])} [ignores] ignores pattern, defaults to `['node_modules/', 'dist/', 'coverage/', '.vercel/']`
  * @returns
  */
-export async function prepareConfig(providedConfigs = {}, ignores = ['node_modules/', 'dist/', 'coverage/', '.vercel/']) {
+const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
+export async function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES) {
     /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
     const config = { ...providedConfigs, base: true };
     const configKeys = /** @type {Array<keyof typeof configs>} */(Object.keys(configs));
@@ -57,7 +58,7 @@ export async function prepareConfig(providedConfigs = {}, ignores = ['node_modul
     }
 
     return tseslint.config(
-        { ignores },
+        { ignores: ignores instanceof Function ? ignores(DEFAULT_IGNORES) : ignores },
         ...base(),
         ...(await Promise.all(configKeys.map(mapConfig))).flatMap(x => x)
     );
