@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.0](https://github.com/burtek/eslint-config/compare/v4.0.2...v4.1.0) (2024-09-06)
+
+
+### Features
+
+* Add ignores to eslint config ([2eb6910](https://github.com/burtek/eslint-config/commit/2eb6910a6967869e11f20d3d5c86360df17e1e18))
+
+
+### Chores
+
+* **deps:** Use @types/node@20 ([47bdd57](https://github.com/burtek/eslint-config/commit/47bdd57e9ac43950b8338359626b85426b2863d4))
+* **renovate:** update config so that renovate knows about `eslint-v9` ([4eb5297](https://github.com/burtek/eslint-config/commit/4eb529783d478b4911b7d18bf51db366539d12f0))
+* Rework deduplication github actions ([9d162eb](https://github.com/burtek/eslint-config/commit/9d162eb0c304f37ee7466877bb5931db38c341ce))
+
 ## [4.0.2](https://github.com/burtek/eslint-config/compare/v4.0.1...v4.0.2) (2024-09-05)
 
 
