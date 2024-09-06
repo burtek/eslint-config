@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.1.2](https://github.com/burtek/eslint-config/compare/v4.1.1...v4.1.2) (2024-09-06)
+
+
+### Bug Fixes
+
+* allow ignores param to be function ([052f6a6](https://github.com/burtek/eslint-config/commit/052f6a60cd208b722fba7a5e2c151274432072eb))
+
 ## [4.1.1](https://github.com/burtek/eslint-config/compare/v4.1.0...v4.1.1) (2024-09-06)
 
 
