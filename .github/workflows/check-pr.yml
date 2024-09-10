@@ -57,7 +57,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            if (!comments.find(c => c.body.includes('is not deduplicated. You can try deduplicating'))) {
+            if (!comments.data.find(c => c.body.includes('is not deduplicated. You can try deduplicating'))) {
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,

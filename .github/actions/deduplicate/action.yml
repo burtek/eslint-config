@@ -9,7 +9,8 @@ runs:
   using: "composite"
   steps:
     - name: Run yarn-deduplicate (highest)
-      if: ${{ env.STRATEGY == 'highest' }}
+      if: ${{ inputs.strategy == 'highest' }}
+      shell: bash
       run: |
         yarn global add yarn-deduplicate
         yarn-deduplicate --strategy highest
@@ -17,7 +18,8 @@ runs:
         yarn
 
     - name: Run yarn-deduplicate (fewer)
-      if: ${{ env.STRATEGY == 'fewer' }}
+      if: ${{ inputs.strategy == 'fewer' }}
+      shell: bash
       run: |
         yarn global add yarn-deduplicate
         yarn-deduplicate --strategy fewer --exclude @types/unist # @types/unist gets downgraded in this mode

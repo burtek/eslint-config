@@ -22,12 +22,13 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'Ok, trying to deduplicate using strategy `${{ env.STRATEGY }}`'
-            })
-            return (await github.rest.pulls.get({
+            });
+            var pull = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number
-            })).data.head.ref
+            });
+            return pull.data.head.ref;
 
       - name: Check out the repository
         uses: actions/checkout@v4
