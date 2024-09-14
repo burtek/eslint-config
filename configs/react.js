@@ -68,6 +68,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                         ignoreTranspilerName: true
                     }
                 ],
+                'react/forward-ref-uses-ref': 'error',
                 'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
