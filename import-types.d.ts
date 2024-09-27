@@ -29,13 +29,6 @@ declare module 'eslint-plugin-jest' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-jest-formatting' {
-    import type { Rule } from 'eslint';
-
-
-    export const rules: Record<string, Rule.RuleModule>;
-}
-
 declare module 'eslint-plugin-lodash' {
     import type { Rule } from 'eslint';
 
