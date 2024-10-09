@@ -251,6 +251,7 @@ export function prepareConfig() {
                 '@stylistic/comma-spacing': 'error',
                 '@stylistic/comma-style': 'error',
                 '@stylistic/computed-property-spacing': ['error', 'never', { enforceForClassMembers: true }],
+                '@stylistic/curly-newline': ['error', 'always'],
                 '@stylistic/dot-location': ['error', 'property'],
                 '@stylistic/eol-last': 'error',
                 '@stylistic/func-call-spacing': 'error',
