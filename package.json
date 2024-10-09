@@ -57,6 +57,7 @@
     "test": "jest tests/tests.test.ts",
     "preversion": "yarn test",
     "push": "git push --follow-tags",
+    "prerelease": "yarn test",
     "release": "commit-and-tag-version",
     "release:alpha": "commit-and-tag-version --prerelease alpha"
   },
