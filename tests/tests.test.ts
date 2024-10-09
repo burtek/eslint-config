@@ -1,16 +1,16 @@
 import { readdirSync, promises as fs$ } from 'node:fs';
 import { resolve } from 'node:path';
 
-import tseslint from 'typescript-eslint';
 import { Linter } from 'eslint';
+import tseslint from 'typescript-eslint';
 
 import { prepareConfig } from '../configs';
 
 
 describe('Eslint configs', () => {
     let config: Linter.FlatConfig[];
-    
-    const testsDirname = resolve(process.cwd(), 'tests')
+
+    const testsDirname = resolve(process.cwd(), 'tests');
     const fixturesPath = resolve(testsDirname, 'fixtures');
     const files = readdirSync(fixturesPath, { withFileTypes: true }).filter(f => f.isFile() && f.name.startsWith('file-'));
 
@@ -40,7 +40,7 @@ describe('Eslint configs', () => {
         const content = await fs$.readFile(resolve(path, name), { encoding: 'utf8' });
 
         const linter = new Linter({ configType: 'flat' });
-        let lintResult: unknown[] = []
+        let lintResult: unknown[] = [];
         function validate() {
             lintResult = linter.verify(
                 content,
@@ -48,7 +48,7 @@ describe('Eslint configs', () => {
                 resolve('tests/fixtures', name)
             );
         }
-        expect(validate).not.toThrow()
+        expect(validate).not.toThrow();
         expect(lintResult).toHaveLength(0);
     }, 1000);
 });
