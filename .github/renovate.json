@@ -19,7 +19,7 @@
     },
     {
       "matchBaseBranches": ["eslint-v9"],
-      "matchPackageNames": ["!/^(@types\/)?eslint$/"],
+      "matchPackageNames": ["!/^(@types\\/)?eslint(-plugin-cypress)?$/"],
       "enabled": false
     },
     {
