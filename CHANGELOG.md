@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.0](https://github.com/burtek/eslint-config/compare/v4.2.0...v5.0.0) (2024-10-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* Supports v9 only now.
+
+### Features
+
+* Upgrade to ESLint v9 ([#65](https://github.com/burtek/eslint-config/issues/65)) ([d578122](https://github.com/burtek/eslint-config/commit/d578122c330c85c22795b2f501568c86d327f817))
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-cypress to ~3.6.0 ([#203](https://github.com/burtek/eslint-config/issues/203)) ([a70bd74](https://github.com/burtek/eslint-config/commit/a70bd74ba47988b2f37dbbe4c8efa5775be26e4a))
+* **deps:** update dependency eslint-plugin-cypress to v4 ([#209](https://github.com/burtek/eslint-config/issues/209)) ([c9241ce](https://github.com/burtek/eslint-config/commit/c9241ce26f8c729200e7ef0ab8c7f9b363e80900))
+* **deps:** update dependency eslint-plugin-n to v17.11.1 ([#201](https://github.com/burtek/eslint-config/issues/201)) ([d09288d](https://github.com/burtek/eslint-config/commit/d09288dfc0628070afb70c34aed81fe95ae74f21))
+* **deps:** update dependency eslint-plugin-react-hooks to v5 ([#204](https://github.com/burtek/eslint-config/issues/204)) ([0b193c4](https://github.com/burtek/eslint-config/commit/0b193c4654df508b021aef4616ddb59b61d23331))
+* **deps:** update dependency eslint-plugin-testing-library to v6.3.2 ([#208](https://github.com/burtek/eslint-config/issues/208)) ([707dac5](https://github.com/burtek/eslint-config/commit/707dac55fca0d1ec3aede87b4352662be55c4a2e))
+* **deps:** update dependency eslint-plugin-testing-library to v6.4.0 ([#211](https://github.com/burtek/eslint-config/issues/211)) ([cdced1f](https://github.com/burtek/eslint-config/commit/cdced1f227fe0927ccceb81ff84051b9dba13e7c))
+* **deps:** update dependency typescript-eslint to ~8.9.0 (master) ([#206](https://github.com/burtek/eslint-config/issues/206)) ([6e2d384](https://github.com/burtek/eslint-config/commit/6e2d384140f745724f042b4f0109c861f3e8db71))
+* **deps:** update dependency typescript-eslint to v8.10.0 (master) ([#210](https://github.com/burtek/eslint-config/issues/210)) ([a5cdc8a](https://github.com/burtek/eslint-config/commit/a5cdc8a1053b4ee56578237edfbc02cbdcd9f61a))
+
+
+### Chores
+
+* **deps:** require eslint ~9.9.0 rather than ^9.4.0 as dev dependency ([a1640f2](https://github.com/burtek/eslint-config/commit/a1640f2d5358defbbdfd4560f01948794c01d20e))
+* **deps:** update dependency @types/node to v20.16.12 (master) ([#207](https://github.com/burtek/eslint-config/issues/207)) ([228e026](https://github.com/burtek/eslint-config/commit/228e0263c86d063475e6f00b3523a954e9ff6c19))
+* **deps:** update dependency commit-and-tag-version to v12.5.0 (master) ([#202](https://github.com/burtek/eslint-config/issues/202)) ([fbc033b](https://github.com/burtek/eslint-config/commit/fbc033ba7477377fbd537fc5f1cb314fee457d29))
+* **deps:** update dependency eslint to ~9.10.0 ([#152](https://github.com/burtek/eslint-config/issues/152)) ([58d4008](https://github.com/burtek/eslint-config/commit/58d4008f625f8edd1ddd82b3753628a8f5674b84))
+* **deps:** update dependency eslint to ~9.11.0 ([#180](https://github.com/burtek/eslint-config/issues/180)) ([d223b44](https://github.com/burtek/eslint-config/commit/d223b44f7bc5c89bf19db76fdee9951abee64f7c))
+* **deps:** update dependency eslint to ~9.12.0 (eslint-v9) ([#193](https://github.com/burtek/eslint-config/issues/193)) ([dfa2772](https://github.com/burtek/eslint-config/commit/dfa277264f4a4577967a9ec578ada0a6bf65a961))
+* **deps:** update dependency eslint to v9.11.1 (eslint-v9) ([#183](https://github.com/burtek/eslint-config/issues/183)) ([c1cc11f](https://github.com/burtek/eslint-config/commit/c1cc11facf8a1b70c59b49cea8a72353cd8ecf8d))
+* **deps:** update dependency eslint to v9.9.1 ([#151](https://github.com/burtek/eslint-config/issues/151)) ([4c0c0f7](https://github.com/burtek/eslint-config/commit/4c0c0f70c15c3ff9b6cc1896f91254df259a9a12))
+* Enable eslint-v9 renovate PRs for eslint-plugin-cypress as it's only v9-compatible now ([e71937a](https://github.com/burtek/eslint-config/commit/e71937ac160a419e329b07009113c7a9f0157b24))
+* Format `tests.test.ts` ([af55964](https://github.com/burtek/eslint-config/commit/af559644f4e0c053da3cadb5c642a3d6b89733cb))
+* Pin dependencies ([bf440fa](https://github.com/burtek/eslint-config/commit/bf440fa756728d65754be8c5f371199318c6a6b4))
+* Remove `eslint-v9` branch leftovers ([e356f08](https://github.com/burtek/eslint-config/commit/e356f0880cab34c902f385350bb1b9a1ba78b469))
+* **renovate:** update config so that eslint-v9 is no longer recognised after the merge ([ba7ac07](https://github.com/burtek/eslint-config/commit/ba7ac073d04951458b1af7f8b7fa3ab654917aa8))
+
+
+### Documentation changes:
+
+* Update README.md ([9911ced](https://github.com/burtek/eslint-config/commit/9911ced3c1485122a24b5f340f27ae863ea29252))
+
 ## [4.2.0](https://github.com/burtek/eslint-config/compare/v4.1.2...v4.2.0) (2024-10-09)
 
 
