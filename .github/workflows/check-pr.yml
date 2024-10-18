@@ -9,7 +9,6 @@ on:
   pull_request:
     branches:
       - 'master'
-      - 'eslint-v9'
 
 jobs:
   test-pr:

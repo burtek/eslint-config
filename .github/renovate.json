@@ -16,15 +16,6 @@
     {
       "matchDepTypes": ["peerDependencies"],
       "enabled": false
-    },
-    {
-      "matchBaseBranches": ["eslint-v9"],
-      "matchPackageNames": ["!/^(@types\\/)?eslint(-plugin-cypress)?$/"],
-      "enabled": false
-    },
-    {
-      "matchBaseBranches": ["eslint-v9"],
-      "labels": ["dependencies", "v9"]
     }
   ]
 }
