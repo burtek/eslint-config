@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.2](https://github.com/burtek/eslint-config/compare/v5.0.1...v5.0.2) (2024-10-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsx-a11y to v6.10.2 ([#224](https://github.com/burtek/eslint-config/issues/224)) ([f43a8d2](https://github.com/burtek/eslint-config/commit/f43a8d280d78e568bfac2309d2a9d4bec166a138))
+* **deps:** update dependency typescript-eslint to v8.12.2 ([#225](https://github.com/burtek/eslint-config/issues/225)) ([0ff6fe7](https://github.com/burtek/eslint-config/commit/0ff6fe7101e49ee8eabaf80469896bf6e4461332))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.17.1 ([#223](https://github.com/burtek/eslint-config/issues/223)) ([40a900a](https://github.com/burtek/eslint-config/commit/40a900afcff345e33324cedc1b76a457cc1d3139))
+* **deps:** update dependency @types/node to v22 ([7f4678a](https://github.com/burtek/eslint-config/commit/7f4678a07fbcd926f7cadab6eee6c1e6bfcb27ae))
+
 ## [5.0.1](https://github.com/burtek/eslint-config/compare/v5.0.0...v5.0.1) (2024-10-23)
 
 
