@@ -36,7 +36,7 @@
     "@types/eslint": "^9.6.1",
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.0.0",
+    "@types/node": "^22.0.0",
     "commit-and-tag-version": "^12.2.0",
     "eslint": "~9.13.0",
     "exit-code": "^1.0.2",
