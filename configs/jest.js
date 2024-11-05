@@ -2,6 +2,8 @@ import jest from 'eslint-plugin-jest';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
+import { extendFlatConfig } from './share/extend-flat-config.js';
+
 
 const testFiles = '**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}';
 const mockFiles = '**/__mocks__/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}';
@@ -50,28 +52,28 @@ export function prepareConfig({ mode = 'jest' } = {}) {
                 '@typescript-eslint/no-unsafe-assignment': 'off'
             }
         },
-        {
-            name: 'dtrw:jest:test',
-            files: [testFiles],
-            plugins: { jest },
-            rules: {
-                ...jest.configs.recommended.rules,
-                ...jest.configs.style.rules,
-
-                'jest/consistent-test-it': 'error',
-                'jest/no-conditional-in-test': 'error',
-                'jest/no-confusing-set-timeout': 'error',
-                'jest/no-duplicate-hooks': 'error',
-                'jest/no-test-return-statement': 'error',
-                'jest/padding-around-all': 'error',
-                'jest/prefer-each': 'error',
-                'jest/prefer-hooks-in-order': 'error',
-                'jest/prefer-hooks-on-top': 'error',
-                'jest/prefer-mock-promise-shorthand': 'error',
-                'jest/prefer-strict-equal': 'error',
-                'jest/prefer-todo': 'error'
+        extendFlatConfig(
+            jest.configs['flat/recommended'],
+            jest.configs['flat/style'],
+            {
+                name: 'dtrw:jest:test',
+                files: [testFiles],
+                rules: {
+                    'jest/consistent-test-it': 'error',
+                    'jest/no-conditional-in-test': 'error',
+                    'jest/no-confusing-set-timeout': 'error',
+                    'jest/no-duplicate-hooks': 'error',
+                    'jest/no-test-return-statement': 'error',
+                    'jest/padding-around-all': 'error',
+                    'jest/prefer-each': 'error',
+                    'jest/prefer-hooks-in-order': 'error',
+                    'jest/prefer-hooks-on-top': 'error',
+                    'jest/prefer-mock-promise-shorthand': 'error',
+                    'jest/prefer-strict-equal': 'error',
+                    'jest/prefer-todo': 'error'
+                }
             }
-        },
+        ),
         {
             name: 'dtrw:jest:test.ts',
             files: [tsTestFiles],
