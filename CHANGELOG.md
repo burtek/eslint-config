@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.3](https://github.com/burtek/eslint-config/compare/v5.0.2...v5.0.3) (2024-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stylistic/eslint-plugin to v2.10.1 ([#233](https://github.com/burtek/eslint-config/issues/233)) ([6ea17e4](https://github.com/burtek/eslint-config/commit/6ea17e4da0440a3f1bb26e9b522bab231ad6f668))
+* **deps:** update dependency eslint-plugin-cypress to v4.1.0 ([#231](https://github.com/burtek/eslint-config/issues/231)) ([5209b83](https://github.com/burtek/eslint-config/commit/5209b83844fbe9c13dc6fc15efb28b24dc008c34))
+* **deps:** update dependency eslint-plugin-import-x to v4.4.0 ([#232](https://github.com/burtek/eslint-config/issues/232)) ([db3acec](https://github.com/burtek/eslint-config/commit/db3acece98a80a20c5cbd21bdc55b0602b1bb645))
+* **deps:** update dependency eslint-plugin-jest to v28.9.0 ([#238](https://github.com/burtek/eslint-config/issues/238)) ([3bb38a5](https://github.com/burtek/eslint-config/commit/3bb38a5ec66612283e8cc2bda020eadf8bb660dd))
+* **deps:** update dependency eslint-plugin-n to v17.12.0 ([#230](https://github.com/burtek/eslint-config/issues/230)) ([8eb004c](https://github.com/burtek/eslint-config/commit/8eb004c98c7309dc7e3630c9dcfde743fdc4eb9f))
+* **deps:** update dependency globals to v15.12.0 ([#236](https://github.com/burtek/eslint-config/issues/236)) ([da8baa9](https://github.com/burtek/eslint-config/commit/da8baa9878b1cbf1e2a2f9bfba2b854dfcb1a250))
+* **deps:** update dependency typescript-eslint to v8.13.0 ([#237](https://github.com/burtek/eslint-config/issues/237)) ([f14a6e7](https://github.com/burtek/eslint-config/commit/f14a6e7db87b9013431ca520b7a6d88c9b312740))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v22.8.6 ([#228](https://github.com/burtek/eslint-config/issues/228)) ([f59c87c](https://github.com/burtek/eslint-config/commit/f59c87c812e9c4c56aec2472e3c3e758a3497d54))
+* **deps:** update dependency @types/node to v22.9.0 ([#235](https://github.com/burtek/eslint-config/issues/235)) ([e81c3d1](https://github.com/burtek/eslint-config/commit/e81c3d15a60f442b415455713b2642b606c1e088))
+* **deps:** update dependency eslint to ~9.14.0 ([#234](https://github.com/burtek/eslint-config/issues/234)) ([a383982](https://github.com/burtek/eslint-config/commit/a3839822da181b8c49fa2cf055905d772cff6457))
+
 ## [5.0.2](https://github.com/burtek/eslint-config/compare/v5.0.1...v5.0.2) (2024-10-29)
 
 
