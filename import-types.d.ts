@@ -14,21 +14,6 @@ declare module 'eslint-plugin-promise' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-jest' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    const plugin: {
-        configs:
-            & Record<'all' | 'recommended' | 'style', Required<Pick<TSESLint.ClassicConfig.Config, 'env' | 'rules' | 'plugins'>>>
-            & Record<'flat/all' | 'flat/recommended' | 'flat/style', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>>;
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
-
 declare module 'eslint-plugin-lodash' {
     import type { Rule } from 'eslint';
 
