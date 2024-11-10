@@ -2126,6 +2126,11 @@ eslint-import-resolver-typescript@3.6.3:
     is-bun-module "^1.0.2"
     is-glob "^4.0.3"
 
+eslint-json-compat-utils@^0.1.2:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/eslint-json-compat-utils/-/eslint-json-compat-utils-0.1.3.tgz#0f8fa368584ba34183f9b9bc86dab54fd3f33600"
+  integrity sha512-/Vkubo+HWjd9sn5qp8gcNSvr73ZT/LKB4MCjr2GM6MWvN+qLwtpGiYB+KiE5NliMC74UE+6GkUrzV1psdyImCg==
+
 eslint-module-utils@^2.8.1:
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.8.2.tgz#2ecad69d71e1fa81f17f7f24d5d3e46b168de663"
@@ -2180,13 +2185,14 @@ eslint-plugin-jest@28.9.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
-eslint-plugin-jsonc@2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-2.17.0.tgz#e4a6c2a50f1ab29f2be09284b73cb819808fcf85"
-  integrity sha512-wvifOtlIGDx6IFqVpuavPYLRA0yCoaFpoIUOW46rgS2F91brwCyWbEDXjrNrsThZ6rImTuDH9Biu5XHxaaL1qA==
+eslint-plugin-jsonc@2.18.0:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-2.18.0.tgz#74b46be0eb24552283ec3e3603451bac7b2af5fd"
+  integrity sha512-5HoxMECa+GMyxP1/zR8u/Hacbv7hbQ6NKGHKNPIX6rL2Dwktzgyf4+Qa1urgFc8HDg6rgOr5qhRSR40XicBL6w==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     eslint-compat-utils "^0.6.0"
+    eslint-json-compat-utils "^0.1.2"
     espree "^9.6.1"
     graphemer "^1.4.0"
     jsonc-eslint-parser "^2.0.4"
