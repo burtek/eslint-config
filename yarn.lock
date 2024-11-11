@@ -2126,10 +2126,12 @@ eslint-import-resolver-typescript@3.6.3:
     is-bun-module "^1.0.2"
     is-glob "^4.0.3"
 
-eslint-json-compat-utils@^0.1.2:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/eslint-json-compat-utils/-/eslint-json-compat-utils-0.1.3.tgz#0f8fa368584ba34183f9b9bc86dab54fd3f33600"
-  integrity sha512-/Vkubo+HWjd9sn5qp8gcNSvr73ZT/LKB4MCjr2GM6MWvN+qLwtpGiYB+KiE5NliMC74UE+6GkUrzV1psdyImCg==
+eslint-json-compat-utils@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-json-compat-utils/-/eslint-json-compat-utils-0.2.1.tgz#32931d42c723da383712f25177a2c57b9ef5f079"
+  integrity sha512-YzEodbDyW8DX8bImKhAcCeu/L31Dd/70Bidx2Qex9OFUtgzXLqtfWL4Hr5fM/aCCB8QUZLuJur0S9k6UfgFkfg==
+  dependencies:
+    esquery "^1.6.0"
 
 eslint-module-utils@^2.8.1:
   version "2.8.2"
@@ -2185,14 +2187,14 @@ eslint-plugin-jest@28.9.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
-eslint-plugin-jsonc@2.18.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-2.18.0.tgz#74b46be0eb24552283ec3e3603451bac7b2af5fd"
-  integrity sha512-5HoxMECa+GMyxP1/zR8u/Hacbv7hbQ6NKGHKNPIX6rL2Dwktzgyf4+Qa1urgFc8HDg6rgOr5qhRSR40XicBL6w==
+eslint-plugin-jsonc@2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-2.18.1.tgz#379eee90c9d5133560572307b0c12526fcabf948"
+  integrity sha512-6qY8zDpxOwPQNcr8eZ+RxwGX6IPHws5/Qef7aBEjER8rB9+UMB6zQWVIVcbP7xzFmEMHAesNFPe/sIlU4c78dg==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     eslint-compat-utils "^0.6.0"
-    eslint-json-compat-utils "^0.1.2"
+    eslint-json-compat-utils "^0.2.1"
     espree "^9.6.1"
     graphemer "^1.4.0"
     jsonc-eslint-parser "^2.0.4"
@@ -2377,7 +2379,7 @@ esprima@^4.0.0:
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
-esquery@^1.5.0:
+esquery@^1.5.0, esquery@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.6.0.tgz#91419234f804d852a82dceec3e16cdc22cf9dae7"
   integrity sha512-ca9pw9fomFcKPvFLXhBKUK90ZvGibiGOvRJNbjljY7s7uq/5YO4BOzcYtJqExdx99rF6aAcnRxHmcUHcz6sQsg==
