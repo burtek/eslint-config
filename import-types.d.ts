@@ -118,18 +118,3 @@ declare module 'eslint-plugin-testing-library' {
 
     export default plugin;
 }
-
-declare module 'eslint-plugin-jest-dom' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    const plugin: {
-        configs:
-            & Record<'recommended' | 'all', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>
-            & Record<'flat/recommended' | 'flat/all', Required<Pick<TSESLint.FlatConfig.Config>, 'plugins' | 'rules'>>;
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
