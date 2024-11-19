@@ -23,7 +23,7 @@
     "tests/fixtures",
     "tests/*.ts",
     "eslint.config.js",
-    "jest.config.js",
+    "jest.config.ts",
     "import-types.d.ts",
     "index.js",
   ]
