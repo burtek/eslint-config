@@ -434,6 +434,7 @@ export function prepareConfig() {
                 '@typescript-eslint/no-unsafe-function-type': 'error',
                 '@typescript-eslint/no-unsafe-member-access': 'error',
                 '@typescript-eslint/no-unsafe-return': 'error',
+                '@typescript-eslint/no-unsafe-type-assertion': 'error',
                 '@typescript-eslint/no-unsafe-unary-minus': 'error',
                 '@typescript-eslint/no-unused-expressions': 'error',
                 '@typescript-eslint/no-unused-vars': [
@@ -477,6 +478,7 @@ export function prepareConfig() {
                 '@typescript-eslint/prefer-regexp-exec': 'warn',
                 '@typescript-eslint/prefer-string-starts-ends-with': ['error', { allowSingleElementEquality: 'always' }],
                 '@typescript-eslint/require-await': 'error',
+                '@typescript-eslint/related-getter-setter-pairs': 'warn',
                 '@typescript-eslint/restrict-plus-operands': 'error',
                 '@typescript-eslint/restrict-template-expressions': [
                     'error',
