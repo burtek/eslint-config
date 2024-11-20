@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.0](https://github.com/burtek/eslint-config/compare/v5.0.3...v5.1.0) (2024-11-20)
+
+
+### Features
+
+* **deps:** Enable two new tseslint rules, update typescript-eslint to v8.15.0 ([#255](https://github.com/burtek/eslint-config/issues/255)) ([afb33b5](https://github.com/burtek/eslint-config/commit/afb33b5ebfc0743dc15c01364a49df64dac8b465))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stylistic/eslint-plugin to v2.11.0 ([#256](https://github.com/burtek/eslint-config/issues/256)) ([7ceca0a](https://github.com/burtek/eslint-config/commit/7ceca0ad9f260b58ae47994c35da710855e94e1d))
+* **deps:** update dependency eslint-plugin-import-x to v4.4.2 ([#248](https://github.com/burtek/eslint-config/issues/248)) ([023730e](https://github.com/burtek/eslint-config/commit/023730e18573029832b3b7a4003839903fecc218))
+* **deps:** update dependency eslint-plugin-jest-dom to v5.5.0 ([#253](https://github.com/burtek/eslint-config/issues/253)) ([0c31994](https://github.com/burtek/eslint-config/commit/0c319944932727e77ea608be41c5ac6c8144fd2a))
+* **deps:** update dependency eslint-plugin-jsonc to v2.17.0 ([#242](https://github.com/burtek/eslint-config/issues/242)) ([5ce5205](https://github.com/burtek/eslint-config/commit/5ce520565a38e6e9205b7b05ed46c2e5ca2e2c2f))
+* **deps:** update dependency eslint-plugin-jsonc to v2.18.0 ([#245](https://github.com/burtek/eslint-config/issues/245)) ([9902ddb](https://github.com/burtek/eslint-config/commit/9902ddb417f6e25112e14820375071dd35272306))
+* **deps:** update dependency eslint-plugin-jsonc to v2.18.1 ([#246](https://github.com/burtek/eslint-config/issues/246)) ([bf57cd5](https://github.com/burtek/eslint-config/commit/bf57cd50c575b9949238ec0cc5c00db0b0cd85c2))
+* **deps:** update dependency eslint-plugin-jsonc to v2.18.2 ([#254](https://github.com/burtek/eslint-config/issues/254)) ([a5c109b](https://github.com/burtek/eslint-config/commit/a5c109b91cd9c771cf0ae5a5ac5126e999ed590e))
+* **deps:** update dependency eslint-plugin-n to v17.13.0 ([#239](https://github.com/burtek/eslint-config/issues/239)) ([712b5cc](https://github.com/burtek/eslint-config/commit/712b5cc7143b885709f5cfdd60752090a52f47d9))
+* **deps:** update dependency eslint-plugin-n to v17.13.1 ([#241](https://github.com/burtek/eslint-config/issues/241)) ([8cc9d62](https://github.com/burtek/eslint-config/commit/8cc9d62de057cb45fbbb5179beaeee603cafe306))
+* **deps:** update dependency eslint-plugin-n to v17.13.2 ([#249](https://github.com/burtek/eslint-config/issues/249)) ([bf6c7eb](https://github.com/burtek/eslint-config/commit/bf6c7eb4bde0065459c0d5b11bc091788a51ca15))
+* **deps:** update dependency typescript-eslint to v8.14.0 ([#247](https://github.com/burtek/eslint-config/issues/247)) ([26c852c](https://github.com/burtek/eslint-config/commit/26c852ca923d7501b57cd2f5dcee8fde214d858e))
+
+
+### Chores
+
+* Bump some nested deps ([fff95f9](https://github.com/burtek/eslint-config/commit/fff95f97d2a3463c6c7daed710b0c8829553ccc9))
+* **deps:** bump @eslint/plugin-kit from 0.2.0 to 0.2.3 ([#251](https://github.com/burtek/eslint-config/issues/251)) ([9e52dcc](https://github.com/burtek/eslint-config/commit/9e52dcc7d6365c2f1e0f0cad5e2d92a4c97a5fe3))
+* **deps:** bump cross-spawn from 7.0.3 to 7.0.5 ([#252](https://github.com/burtek/eslint-config/issues/252)) ([2746aba](https://github.com/burtek/eslint-config/commit/2746aba59e4abd66039c12686b9058a11ab50765))
+* **deps:** update dependency @types/node to v22.9.1 ([#257](https://github.com/burtek/eslint-config/issues/257)) ([8c5f7d4](https://github.com/burtek/eslint-config/commit/8c5f7d47852af1b4fb8066504f90fd09e9a9b762))
+* **deps:** update dependency eslint to ~9.15.0 ([#250](https://github.com/burtek/eslint-config/issues/250)) ([2daca0c](https://github.com/burtek/eslint-config/commit/2daca0c6a556542cf8969949be7f336a635a99df))
+* Fix tsconfig ([871b46e](https://github.com/burtek/eslint-config/commit/871b46e3ddbf97bfb0c6a98104994db32ed39529))
+
 ## [5.0.3](https://github.com/burtek/eslint-config/compare/v5.0.2...v5.0.3) (2024-11-05)
 
 
