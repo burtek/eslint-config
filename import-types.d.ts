@@ -103,18 +103,3 @@ declare module 'eslint-plugin-cypress/flat' {
 
     export default plugin;
 }
-
-declare module 'eslint-plugin-testing-library' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    const plugin: {
-        configs:
-            & Record<'react' | 'vue' | 'marko' | 'dom' | 'angular', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>
-            & Record<'flat/react' | 'flat/vue' | 'flat/marko' | 'flat/dom' | 'flat/angular', Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'rules'>>>;
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
