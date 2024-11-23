@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.2.0](https://github.com/burtek/eslint-config/compare/v5.1.0...v5.2.0) (2024-11-23)
+
+
+### Features
+
+* **deps:** update dependency eslint-plugin-testing-library to v7 ([#263](https://github.com/burtek/eslint-config/issues/263)) ([a4c6d9a](https://github.com/burtek/eslint-config/commit/a4c6d9a14bfe76c81efb52aa23bc4b2b19207ab8))
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-import-x to v4.4.3 ([#258](https://github.com/burtek/eslint-config/issues/258)) ([532edee](https://github.com/burtek/eslint-config/commit/532edeef0eeb23a5dd338cac6d445b972b105bad))
+* **deps:** update dependency eslint-plugin-n to v17.14.0 ([#260](https://github.com/burtek/eslint-config/issues/260)) ([d51830c](https://github.com/burtek/eslint-config/commit/d51830c90b052e34eb91b6b15475dc3fbf03c692))
+* **deps:** update dependency eslint-plugin-testing-library to v6.5.0 ([#259](https://github.com/burtek/eslint-config/issues/259)) ([0b3ada7](https://github.com/burtek/eslint-config/commit/0b3ada7e199fa37708e7f4a4269f9cff9f3f63b5))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v22.9.3 ([#262](https://github.com/burtek/eslint-config/issues/262)) ([778d755](https://github.com/burtek/eslint-config/commit/778d755631a1957af275853347c41f6d02d48718))
+* **deps:** update dependency typescript to ~5.7.0 ([#261](https://github.com/burtek/eslint-config/issues/261)) ([8b66cce](https://github.com/burtek/eslint-config/commit/8b66cced605e327b83723c8c6696ed70319d5096))
+* Update .npmignore ([0c75a4c](https://github.com/burtek/eslint-config/commit/0c75a4cefe91369b89989ffbf54b1a596329296d))
+
 ## [5.1.0](https://github.com/burtek/eslint-config/compare/v5.0.3...v5.1.0) (2024-11-20)
 
 
