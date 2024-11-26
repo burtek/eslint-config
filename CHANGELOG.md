@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.0](https://github.com/burtek/eslint-config/compare/v5.2.0...v5.3.0) (2024-11-26)
+
+
+### Features
+
+* **deps:** Enable `promise/prefer-catch`, update eslint-plugin-promise to v7.2.0 ([#264](https://github.com/burtek/eslint-config/issues/264)) ([eda3e43](https://github.com/burtek/eslint-config/commit/eda3e436be2381e673814bb8da5ff6576c7cbefe))
+* Import and enable `@eslint/json` ([#244](https://github.com/burtek/eslint-config/issues/244)) ([c3afa30](https://github.com/burtek/eslint-config/commit/c3afa3093249861eafc2d1e52fbaeea1fb2b6dac))
+
+
+### Bug Fixes
+
+* **deps:** update dependency typescript-eslint to v8.16.0 ([#265](https://github.com/burtek/eslint-config/issues/265)) ([6b7630c](https://github.com/burtek/eslint-config/commit/6b7630c9ed9bd7de7a1843a589984899eefc60ef))
+* Fix types generation ([363c5f5](https://github.com/burtek/eslint-config/commit/363c5f590fb0fd0f980a3aa014aee6f5e6de91c8))
+
+
+### Chores
+
+* **deps:** Bump devDependencies to match yarn.lock ([d2650c0](https://github.com/burtek/eslint-config/commit/d2650c09f116d3cd8d3c84ffd6cff59ab374e062))
+* **deps:** update dependency @types/node to v22.10.0 ([#267](https://github.com/burtek/eslint-config/issues/267)) ([1a6b892](https://github.com/burtek/eslint-config/commit/1a6b892ae59906adfbef35cb8c38d9a33bff220e))
+* **deps:** update dependency @types/node to v22.9.4 ([#266](https://github.com/burtek/eslint-config/issues/266)) ([0dcc8af](https://github.com/burtek/eslint-config/commit/0dcc8af70136868f7a277841657824ce318efb6a))
+* remove async/await from `prepareConfig` ([4533b7a](https://github.com/burtek/eslint-config/commit/4533b7a3479aad25d1f4bf6d26651cd8f5ba2af2))
+* update README and versionrc ([66c03ee](https://github.com/burtek/eslint-config/commit/66c03ee92e04f952c775eca6cb3f828294477c4a))
+
 ## [5.2.0](https://github.com/burtek/eslint-config/compare/v5.1.0...v5.2.0) (2024-11-23)
 
 
