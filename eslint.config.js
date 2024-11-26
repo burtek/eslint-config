@@ -5,7 +5,7 @@ import { prepareConfig } from './configs/index.js';
 
 
 export default tseslint.config(
-    ...await prepareConfig({ json: true }),
+    ...prepareConfig({ json: true }),
     {
         name: 'local-overrides',
         languageOptions: {

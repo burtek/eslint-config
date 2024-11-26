@@ -37,7 +37,7 @@ export const configs = {
  * @returns
  */
 const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
-export async function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES) {
+export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES) {
     /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
     const config = { ...providedConfigs, base: true };
     const configKeys = /** @type {Array<keyof typeof configs>} */(Object.keys(configs));
@@ -60,6 +60,6 @@ export async function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNO
     return tseslint.config(
         { ignores: ignores instanceof Function ? ignores(DEFAULT_IGNORES) : ignores },
         ...base(),
-        ...(await Promise.all(configKeys.map(mapConfig))).flatMap(x => x)
+        ...configKeys.map(mapConfig).flat(1)
     );
 }

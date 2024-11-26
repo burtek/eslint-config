@@ -1,7 +1,7 @@
 # @dtrw/eslint-config
 
+<!-- ![npm next version](https://img.shields.io/npm/v/@dtrw/eslint-config/next) -->
 ![npm version](https://img.shields.io/npm/v/@dtrw/eslint-config/latest)
-![npm next version](https://img.shields.io/npm/v/@dtrw/eslint-config/next)
 ![NPM License](https://img.shields.io/npm/l/@dtrw/eslint-config)
 ![Release](https://img.shields.io/github/actions/workflow/status/burtek/eslint-config/release.yml?label=publish%20release)
 ![dependencies](https://img.shields.io/librariesio/release/npm/@dtrw/eslint-config)
@@ -30,7 +30,7 @@ import { config, prepareConfig } from '@dtrw/eslint-config'; // config re-export
 export default prepareConfig(configuration)
 //or
 export default config(
-    ...await prepareConfig(configuration),
+    ...prepareConfig(configuration),
     ...moreFlatConfigs
 );
 ```
