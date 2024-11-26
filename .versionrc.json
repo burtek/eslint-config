@@ -7,5 +7,21 @@
     {"type": "refactor", "hidden": "Chores"},
     {"type": "test", "hidden": true},
     {"type": "types", "hidden": true}
+  ],
+  "packageFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
+  ],
+  "bumpFiles": [
+    {
+      "filename": "README.md",
+      "updater": "utils/readme-updater.cjs"
+    },
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
   ]
 }
