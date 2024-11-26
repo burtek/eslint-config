@@ -312,20 +312,20 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.15.0.tgz#df0e24fe869143b59731942128c19938fdbadfb5"
   integrity sha512-tMTqrY+EzbXmKJR5ToI8lxu7jaN5EdmrBFJpQk5JmSlyLsx6o4t27r883K5xsLuCYCpfKBCGswMSWXsM+jB7lg==
 
-"@eslint/json@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.6.0.tgz#9c583806381503f960dc4379d8e40d0dad9f5a10"
-  integrity sha512-xlYoULv2QIeJnjFP4RVbPMpaGplsYo0vSIBpXP/QRnoi7oDYhVZ4u3wE5UUwI8hnhTQUMozrDhyuVFXMQ1HkMQ==
+"@eslint/json@0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.8.0.tgz#18aa5248fde0911eb361b26372cb2a94b6448e57"
+  integrity sha512-DdWL9kT3h0XNRK1EVo4ZvxcdQus30msg1Yligb3VR7dnP+1CPM+qBH+SqVV53++XSEhiUJB702bHOttlaa5vhg==
   dependencies:
-    "@eslint/plugin-kit" "^0.2.0"
-    "@humanwhocodes/momoa" "^3.3.0"
+    "@eslint/plugin-kit" "^0.2.3"
+    "@humanwhocodes/momoa" "^3.3.3"
 
 "@eslint/object-schema@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@eslint/object-schema/-/object-schema-2.1.4.tgz#9e69f8bb4031e11df79e03db09f9dbbae1740843"
   integrity sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==
 
-"@eslint/plugin-kit@^0.2.0", "@eslint/plugin-kit@^0.2.3":
+"@eslint/plugin-kit@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.2.3.tgz#812980a6a41ecf3a8341719f92a6d1e784a2e0e8"
   integrity sha512-2b/g5hRmpbb1o4GnTZax9N9m0FXzz9OV42ZzI4rDDMDuHUqigAiQCEWChBWCY4ztAGVRjoWT19v0yMmc5/L5kA==
@@ -350,7 +350,7 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/module-importer/-/module-importer-1.0.1.tgz#af5b2691a22b44be847b0ca81641c5fb6ad0172c"
   integrity sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==
 
-"@humanwhocodes/momoa@^3.3.0":
+"@humanwhocodes/momoa@^3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/momoa/-/momoa-3.3.3.tgz#fa757457a436f6a27865b5702a9482c397cb8554"
   integrity sha512-5EKzSg1FH5wpg0HXBsglgC5u9U4qFgvZX7u8oVDP6XH6Mh9kmz4iQZV9/88xMdQ/UGQNxckf5njK65gU9jjS0w==
