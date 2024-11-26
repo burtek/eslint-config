@@ -25,6 +25,6 @@
     "eslint.config.js",
     "jest.config.ts",
     "import-types.d.ts",
-    "index.js",
+    "index.js"
   ]
 }
