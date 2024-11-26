@@ -190,6 +190,7 @@ export function prepareConfig() {
                 'promise/no-multiple-resolved': 'error',
                 'promise/prefer-await-to-callbacks': 'error',
                 'promise/prefer-await-to-then': 'error',
+                'promise/prefer-catch': 'error',
 
                 '@stylistic/array-bracket-newline': 'error',
                 '@stylistic/array-bracket-spacing': ['error', 'never'],
