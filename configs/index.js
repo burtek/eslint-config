@@ -29,14 +29,14 @@ export const configs = {
  * @typedef {NonNullable<Parameters<(typeof configs)[T]>[0]>} Config
  */
 
+const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
 /**
  * Creates eslint flat config based on provided configuration object.
  *
  * @param {{ [K in Exclude<keyof typeof configs, 'base'>]?: Config<K> | true }} [providedConfigs] configs to enable with optional parameters
- * @param {string[] | ((defaults: string[]) => string[])} [ignores] ignores pattern, defaults to `['node_modules/', 'dist/', 'coverage/', '.vercel/']`
+ * @param {string[] | ((defaults: string[]) => string[])} [ignores] `ignores` pattern, defaults to `['node_modules', 'dist', 'coverage', '.vercel']`
  * @returns
  */
-const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
 export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES) {
     /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
     const config = { ...providedConfigs, base: true };
