@@ -252,7 +252,17 @@ export function prepareConfig() {
                 '@stylistic/no-multiple-empty-lines': ['error', { max: 2 }],
                 '@stylistic/no-trailing-spaces': 'error',
                 '@stylistic/no-whitespace-before-property': 'error',
-                '@stylistic/object-curly-newline': ['error', { multiline: true }],
+                '@stylistic/object-curly-newline': [
+                    'error',
+                    {
+                        ObjectExpression: { multiline: true },
+                        ObjectPattern: { multiline: true },
+                        ImportDeclaration: { multiline: true, minProperties: 3 },
+                        ExportDeclaration: { multiline: true, minProperties: 3 },
+                        TSTypeLiteral: 'always',
+                        TSInterfaceBody: 'always'
+                    }
+                ],
                 '@stylistic/object-curly-spacing': ['error', 'always'],
                 '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
                 '@stylistic/operator-linebreak': ['error', 'before'],
