@@ -259,7 +259,7 @@ export function prepareConfig() {
                         ObjectPattern: { multiline: true },
                         ImportDeclaration: { multiline: true, minProperties: 3 },
                         ExportDeclaration: { multiline: true, minProperties: 3 },
-                        TSTypeLiteral: 'always',
+                        TSTypeLiteral: { multiline: true, minProperties: 3 },
                         TSInterfaceBody: 'always'
                     }
                 ],
