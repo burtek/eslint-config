@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.4](https://github.com/burtek/eslint-config/compare/v5.3.3...v5.3.4) (2024-11-28)
+
+
+### Bug Fixes
+
+* remove `minProperties` in `@stylistic/object-curly-newline` ([2c0bc86](https://github.com/burtek/eslint-config/commit/2c0bc861a5df7c6140b0cb3f2d64318475529902))
+
 ## [5.3.3](https://github.com/burtek/eslint-config/compare/v5.3.2...v5.3.3) (2024-11-28)
 
 
