@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.2](https://github.com/burtek/eslint-config/compare/v5.3.1...v5.3.2) (2024-11-28)
+
+
+### Bug Fixes
+
+* fix TS interfaces with single property ([20fcbe8](https://github.com/burtek/eslint-config/commit/20fcbe8f9ba644dcdba854617df8a92ed8160912))
+
 ## [5.3.1](https://github.com/burtek/eslint-config/compare/v5.3.0...v5.3.1) (2024-11-28)
 
 
