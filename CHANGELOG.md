@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.3.1](https://github.com/burtek/eslint-config/compare/v5.3.0...v5.3.1) (2024-11-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-promise to v7.2.1 ([#268](https://github.com/burtek/eslint-config/issues/268)) ([f955194](https://github.com/burtek/eslint-config/commit/f9551940dd14c9eb8526166dc3a75289a33c6128))
+* ignore `node_modules` ([33d19e6](https://github.com/burtek/eslint-config/commit/33d19e6ff0bbb18f606d7941e1ed9511ddfdd03b))
+
+
+### Chores
+
+* **deps:** `yarn upgrade` ([6940c11](https://github.com/burtek/eslint-config/commit/6940c11a791f4ba0a599e207243568a54f8b395e))
+* **deps:** update dependency @types/node to v22.10.1 ([#269](https://github.com/burtek/eslint-config/issues/269)) ([c1668d6](https://github.com/burtek/eslint-config/commit/c1668d66924a2465a6188dbf3eebc654c0eac60f))
+* fix dangling comma in tsconfig.json ([014c438](https://github.com/burtek/eslint-config/commit/014c438c518956bdff3584edc0044bc9e8560657))
+
 ## [5.3.0](https://github.com/burtek/eslint-config/compare/v5.2.0...v5.3.0) (2024-11-26)
 
 
