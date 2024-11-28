@@ -17,6 +17,7 @@ const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts
 
 export function prepareConfig() {
     return tseslint.config(
+        { ignores: ['node_modules'] },
         { plugins: { '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin) } },
         {
             name: 'dtrw:base:base',
