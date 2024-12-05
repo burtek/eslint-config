@@ -1,7 +1,7 @@
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-import { prepareConfig } from './configs/index.js';
+import { prepareConfig } from './index.js';
 
 
 export default tseslint.config(

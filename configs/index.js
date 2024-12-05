@@ -13,7 +13,7 @@ import { prepareConfig as testingLibrary } from './testing-library.js';
 /** @typedef {import('typescript-eslint').Config} FlatESLintConfig */
 
 /** @satisfies {Record<string, (config?: any) => FlatESLintConfig>} */
-export const configs = {
+export const configFactories = {
     base,
     cypress,
     jest,
@@ -23,44 +23,44 @@ export const configs = {
     react,
     testingLibrary
 };
+const configFactoryKeys = /** @type {Array<keyof typeof configFactories>} */(Object.keys(configFactories));
 
 /**
- * @template {keyof typeof configs} T
- * @typedef {NonNullable<Parameters<(typeof configs)[T]>[0]>} Config
+ * @template {keyof typeof configFactories} T
+ * @typedef {NonNullable<Parameters<(typeof configFactories)[T]>[0]>} Config
  */
 
 const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
 /**
  * Creates eslint flat config based on provided configuration object.
  *
- * @param {{ [K in Exclude<keyof typeof configs, 'base'>]?: Config<K> | true }} [providedConfigs] configs to enable with optional parameters
+ * @param {{ [K in Exclude<keyof typeof configFactories, 'base'>]?: Config<K> | true }} [providedConfigs] configs to enable with optional parameters
  * @param {string[] | ((defaults: string[]) => string[])} [ignores] `ignores` pattern, defaults to `['node_modules', 'dist', 'coverage', '.vercel']`
  * @param {Config<'base'>} [baseConfig] additional experimental settings for base config
  * @returns
  */
 export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES, baseConfig) {
-    /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
-    const config = { ...providedConfigs, base: baseConfig ?? true };
-    const configKeys = /** @type {Array<keyof typeof configs>} */(Object.keys(configs));
+    /** @type {{ [K in keyof typeof configFactories]?: Config<K> | true }} */
+    const finalConfig = { ...providedConfigs, base: baseConfig ?? true };
 
     /**
-     * @template {keyof typeof configs} T
+     * @template {keyof typeof configFactories} T
      * @param {T} key
      */
     function mapConfig(key) {
-        if (!config[key]) {
+        if (!finalConfig[key]) {
             return [];
         }
-        if (config[key] === true) {
-            return configs[key]();
+        if (finalConfig[key] === true) {
+            return configFactories[key]();
         }
         // @ts-expect-error -- TODO: fixme
-        return configs[key](config[key]);
+        return configFactories[key](finalConfig[key]);
     }
 
     return tseslint.config(
         { ignores: ignores instanceof Function ? ignores(DEFAULT_IGNORES) : ignores },
         ...base(),
-        ...configKeys.map(mapConfig).flat(1)
+        ...configFactoryKeys.map(mapConfig).flat(1)
     );
 }
