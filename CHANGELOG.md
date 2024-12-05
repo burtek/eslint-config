@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.4.0-alpha.2](https://github.com/burtek/eslint-config/compare/v5.4.0-alpha.1...v5.4.0-alpha.2) (2024-12-05)
+
+
+### Bug Fixes
+
+* Revert to eslint-import-resolver-typescript ([09eb779](https://github.com/burtek/eslint-config/commit/09eb779dd7dc2984ca4c610de1bd61110f404e7e))
+
 ## [5.4.0-alpha.1](https://github.com/burtek/eslint-config/compare/v5.4.0-alpha.0...v5.4.0-alpha.1) (2024-12-05)
 
 
