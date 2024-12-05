@@ -35,11 +35,12 @@ const DEFAULT_IGNORES = ['node_modules/', 'dist/', 'coverage/', '.vercel/'];
  *
  * @param {{ [K in Exclude<keyof typeof configs, 'base'>]?: Config<K> | true }} [providedConfigs] configs to enable with optional parameters
  * @param {string[] | ((defaults: string[]) => string[])} [ignores] `ignores` pattern, defaults to `['node_modules', 'dist', 'coverage', '.vercel']`
+ * @param {Config<'base'>} [baseConfig] additional experimental settings for base config
  * @returns
  */
-export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES) {
+export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES, baseConfig) {
     /** @type {{ [K in keyof typeof configs]?: Config<K> | true }} */
-    const config = { ...providedConfigs, base: true };
+    const config = { ...providedConfigs, base: baseConfig ?? true };
     const configKeys = /** @type {Array<keyof typeof configs>} */(Object.keys(configs));
 
     /**

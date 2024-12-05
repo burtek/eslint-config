@@ -1,6 +1,10 @@
+/* eslint-disable import-x/newline-after-import -- https://github.com/un-ts/eslint-plugin-import-x/issues/194 */
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import importPlugin from 'eslint-plugin-import-x';
+// @ts-expect-error -- no TS types
+import legacyNodeImportResolver from 'eslint-import-resolver-node';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import importPlugin, { importXResolverCompat } from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
@@ -14,8 +18,25 @@ const allFiles = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
 
 const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts', '.tsx'];
+/**
+ * @param {Object} [config]
+ * @param {boolean} [config.nextResolver]
+ */
+export function prepareConfig({ nextResolver = false } = {}) {
+    const resolverSettings = nextResolver
+        ? {
+            'import-x/resolver-next': [
+                createTypeScriptImportResolver(),
+                importXResolverCompat(legacyNodeImportResolver, { extensions: allImportExtensions })
+            ]
+        }
+        : {
+            'import-x/resolver': {
+                node: { extensions: allImportExtensions },
+                typescript: true
+            }
+        };
 
-export function prepareConfig() {
     return tseslint.config(
         { ignores: ['node_modules'] },
         { plugins: { '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin) } },
@@ -24,13 +45,10 @@ export function prepareConfig() {
             files: allFiles,
             linterOptions: { reportUnusedDisableDirectives: true },
             settings: {
-                ...importPlugin.flatConfigs.typescript.settings,
                 'import-x/extensions': allImportExtensions,
+                'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
                 'import-x/parsers': { '@typescript-eslint/parser': allImportExtensions },
-                'import-x/resolver': {
-                    node: { extensions: allImportExtensions },
-                    typescript: true
-                }
+                ...resolverSettings
             },
             plugins: {
                 'import-x': importPlugin,
