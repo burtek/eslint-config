@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.4.0](https://github.com/burtek/eslint-config/compare/v5.3.4...v5.4.0) (2024-12-05)
+
+
+### Features
+
+* Bump eslint import plugin and TS resolver, use new resolver config ([#276](https://github.com/burtek/eslint-config/issues/276)) ([5492413](https://github.com/burtek/eslint-config/commit/5492413318fe34a4a387de8a077e543844168a35))
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-testing-library to v7.1.0 ([#275](https://github.com/burtek/eslint-config/issues/275)) ([32ba4b8](https://github.com/burtek/eslint-config/commit/32ba4b824e9de8c7c7d36a0c118a4912908947b3))
+* **deps:** update dependency globals to v15.13.0 ([#271](https://github.com/burtek/eslint-config/issues/271)) ([38c12e6](https://github.com/burtek/eslint-config/commit/38c12e61bb3e36d581be941cf1310ad1da065b5d))
+* **deps:** update dependency typescript-eslint to v8.17.0 ([#272](https://github.com/burtek/eslint-config/issues/272)) ([a86c633](https://github.com/burtek/eslint-config/commit/a86c6337b76d0737d917c8f5a68abe040a93f604))
+
+
+### Chores
+
+* **deps:** update dependency eslint to ~9.16.0 ([#270](https://github.com/burtek/eslint-config/issues/270)) ([ac18799](https://github.com/burtek/eslint-config/commit/ac18799398d15c40a9bbf5f2d9af58bd884a3aa7))
+* Refactor ([e76658d](https://github.com/burtek/eslint-config/commit/e76658db3d089a79bd3992c237ee3efcc86d085b))
+
 ## [5.3.4](https://github.com/burtek/eslint-config/compare/v5.3.3...v5.3.4) (2024-11-28)
 
 
