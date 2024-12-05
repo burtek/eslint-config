@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.4.0-alpha.1](https://github.com/burtek/eslint-config/compare/v5.4.0-alpha.0...v5.4.0-alpha.1) (2024-12-05)
+
+
+### Bug Fixes
+
+* Allow setting base config flags ([c667460](https://github.com/burtek/eslint-config/commit/c6674602ef73319af3dacd232d144a40a295ca79))
+
 ## [5.4.0-alpha.0](https://github.com/burtek/eslint-config/compare/v5.3.4...v5.4.0-alpha.0) (2024-12-05)
 
 
