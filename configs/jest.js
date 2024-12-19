@@ -22,12 +22,8 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             files: [testFiles, mockFiles],
             languageOptions: {
                 globals: {
-                    ...globals.jest,
-                    ...globals.node,
-                    ...mode === 'vitest' && {
-                        jest: 'off',
-                        vitest: 'readonly'
-                    }
+                    ...mode === 'vitest' ? globals.vitest : globals.jest,
+                    ...globals.node
                 }
             },
             settings: {
