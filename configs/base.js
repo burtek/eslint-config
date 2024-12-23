@@ -1,10 +1,7 @@
-/* eslint-disable import-x/newline-after-import -- https://github.com/un-ts/eslint-plugin-import-x/issues/194 */
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
-// @ts-expect-error -- no TS types
-import legacyNodeImportResolver from 'eslint-import-resolver-node';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import importPlugin, { importXResolverCompat } from 'eslint-plugin-import-x';
+import importPlugin from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
 import tseslint from 'typescript-eslint';
 
@@ -27,7 +24,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
         ? {
             'import-x/resolver-next': [
                 createTypeScriptImportResolver(),
-                importXResolverCompat(legacyNodeImportResolver, { extensions: allImportExtensions })
+                importPlugin.createNodeResolver({ extensions: allImportExtensions })
             ]
         }
         : {
