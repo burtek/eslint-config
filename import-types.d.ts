@@ -32,22 +32,6 @@ declare module 'eslint-plugin-react-hooks' {
     export const rules: Record<string, Rule.RuleModule>;
 }
 
-declare module 'eslint-plugin-react' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    type ClassicConfig = Required<Pick<TSESLint.ClassicConfig.Config, 'parserOptions' | 'plugins' | 'rules'>>;
-    type FlatConfig = Required<Pick<TSESLint.FlatConfig.Config, 'languageOptions' | 'plugins' | 'rules'>>;
-
-    const plugin: {
-        configs: Record<'all' | 'recommended' | 'jsx-runtime', ClassicConfig> & { flat: Record<'all' | 'recommended' | 'jsx-runtime', FlatConfig> };
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
-
 declare module 'eslint-plugin-jsx-a11y' {
     import type { TSESLint } from '@typescript-eslint/utils';
     import type { Rule } from 'eslint';
