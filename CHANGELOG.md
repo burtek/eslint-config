@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.4.2](https://github.com/burtek/eslint-config/compare/v5.4.1...v5.4.2) (2025-01-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-react to v7.37.3 ([#296](https://github.com/burtek/eslint-config/issues/296)) ([7789b6e](https://github.com/burtek/eslint-config/commit/7789b6e2ed288be6a88691c29f9316fb6e48ab30))
+* **deps:** update dependency typescript-eslint to v8.18.2 ([#295](https://github.com/burtek/eslint-config/issues/295)) ([c74e8d3](https://github.com/burtek/eslint-config/commit/c74e8d3bd1ec5768c265f07be71f8aea1a9204a8))
+* **deps:** update dependency typescript-eslint to v8.19.0 ([#297](https://github.com/burtek/eslint-config/issues/297)) ([c4f67c7](https://github.com/burtek/eslint-config/commit/c4f67c7079cf035f1fa907a6d588320523593d57))
+* **deps:** update dependency typescript-eslint to v8.19.1 ([#299](https://github.com/burtek/eslint-config/issues/299)) ([9e40038](https://github.com/burtek/eslint-config/commit/9e400384ad36d0da40c10e303f58f35c749e3a43))
+* Remove eslint-plugin-react from mport-types.d.ts ([#200](https://github.com/burtek/eslint-config/issues/200)) ([4c4013a](https://github.com/burtek/eslint-config/commit/4c4013aabff0e99ff5c9a6a63b38c0c1be7ac12c))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v22.10.5 ([#298](https://github.com/burtek/eslint-config/issues/298)) ([0343823](https://github.com/burtek/eslint-config/commit/0343823dadb65ce72db592dc691fca6106f1b54b))
+* **deps:** update dependency eslint to ~9.18.0 ([#301](https://github.com/burtek/eslint-config/issues/301)) ([d89d40a](https://github.com/burtek/eslint-config/commit/d89d40ae92e09d3ffaf139805a6f7f8b2fbc2597))
+* **deps:** update dependency typescript to v5.7.3 ([#300](https://github.com/burtek/eslint-config/issues/300)) ([ab1f4ee](https://github.com/burtek/eslint-config/commit/ab1f4ee7aca35a182dd7d146b71b6153ae21c658))
+
 ## [5.4.1](https://github.com/burtek/eslint-config/compare/v5.4.0...v5.4.1) (2024-12-23)
 
 
