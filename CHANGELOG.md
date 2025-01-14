@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.5.0](https://github.com/burtek/eslint-config/compare/v5.4.2...v5.5.0) (2025-01-14)
+
+
+### Features
+
+* **deps:** update dependency typescript-eslint to v8.20.0 ([#308](https://github.com/burtek/eslint-config/issues/308)) ([03442ca](https://github.com/burtek/eslint-config/commit/03442ca7538782df8e01fb99989a10ec81ec3766))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stylistic/eslint-plugin to v2.13.0 ([#305](https://github.com/burtek/eslint-config/issues/305)) ([515e806](https://github.com/burtek/eslint-config/commit/515e8064877723c7f979e547ec54ad63d0998975))
+* **deps:** update dependency eslint-plugin-react to v7.37.4 ([#306](https://github.com/burtek/eslint-config/issues/306)) ([c90387b](https://github.com/burtek/eslint-config/commit/c90387bfc57c987bfb8d4b60014609cc24033f4e))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v22.10.6 ([#307](https://github.com/burtek/eslint-config/issues/307)) ([13602c2](https://github.com/burtek/eslint-config/commit/13602c2240859c52dca1a1c23568fb72f3bc6c97))
+* Use flat configs from react plugin ([#309](https://github.com/burtek/eslint-config/issues/309)) ([228769d](https://github.com/burtek/eslint-config/commit/228769dbda7aae832864e2576af84eec994d7856))
+
 ## [5.4.2](https://github.com/burtek/eslint-config/compare/v5.4.1...v5.4.2) (2025-01-11)
 
 
