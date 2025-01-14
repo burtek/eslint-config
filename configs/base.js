@@ -348,6 +348,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
                 '@typescript-eslint/consistent-type-assertions': [
                     'error',
                     {
+                        arrayLiteralTypeAssertions: 'allow-as-parameter',
                         assertionStyle: 'as',
                         objectLiteralTypeAssertions: 'allow-as-parameter'
                     }
@@ -440,6 +441,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
                     'error',
                     { checksVoidReturn: false }
                 ],
+                '@typescript-eslint/no-misused-spread': 'error',
                 '@typescript-eslint/no-mixed-enums': 'error',
                 '@typescript-eslint/no-namespace': 'error',
                 '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
