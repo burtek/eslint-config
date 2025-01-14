@@ -257,7 +257,8 @@ export function prepareConfig({ nextResolver = false } = {}) {
                         enforceForArrowConditionals: false,
                         enforceForFunctionPrototypeMethods: false,
                         ignoreJSX: 'multi-line',
-                        nestedBinaryExpressions: false
+                        nestedBinaryExpressions: false,
+                        nestedConditionalExpressions: false
                     }
                 ],
                 '@stylistic/no-extra-semi': 'error',
