@@ -50,8 +50,8 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 linkComponents
             },
             rules: {
-                ...react.configs.recommended.rules,
-                ...react.configs['jsx-runtime'].rules,
+                ...react.configs.flat.recommended.rules,
+                ...react.configs.flat['jsx-runtime'].rules,
 
                 '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
                 '@stylistic/jsx-quotes': ['error', 'prefer-double'],
