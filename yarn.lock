@@ -335,12 +335,13 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.18.0.tgz#3356f85d18ed3627ab107790b53caf7e1e3d1e84"
   integrity sha512-fK6L7rxcq6/z+AaQMtiFTkvbHkBLNlwyRxHpKawP0x3u9+NC6MQTnFW+AdpwC6gfHTW0051cokQgtTN2FqlxQA==
 
-"@eslint/json@0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.9.0.tgz#f2d2d9ad828e4053afc0508b57c11842bfe0f7c6"
-  integrity sha512-PTLD0Kp7+BKhTthodns+hFbuZZ+hjb3lc/iVAg7mtBAnW5hLJhkST9O4m21oMkxG94GR2+GGZQNNurG9KP8pNA==
+"@eslint/json@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.9.1.tgz#dfb52447d7d44158a7746e663aab39219a1a3235"
+  integrity sha512-mscUtoUx9SOwbiz3aCP2Ittlo6w5NujHOQJge1KKOq2fEe1Zki+C0GCqtRqZBKwShNlzgPtvv1uj7MorMl43OQ==
   dependencies:
-    "@eslint/plugin-kit" "^0.2.3"
+    "@eslint/core" "^0.10.0"
+    "@eslint/plugin-kit" "^0.2.5"
     "@humanwhocodes/momoa" "^3.3.4"
 
 "@eslint/object-schema@^2.1.5":
@@ -348,7 +349,7 @@
   resolved "https://registry.yarnpkg.com/@eslint/object-schema/-/object-schema-2.1.5.tgz#8670a8f6258a2be5b2c620ff314a1d984c23eb2e"
   integrity sha512-o0bhxnL89h5Bae5T318nFoFzGy+YE5i/gGkoPAgkmTVdRKTiv3p8JHevPiPaMwoloKfEiiaHlawCqaZMqRm+XQ==
 
-"@eslint/plugin-kit@^0.2.3", "@eslint/plugin-kit@^0.2.5":
+"@eslint/plugin-kit@^0.2.5":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.2.5.tgz#ee07372035539e7847ef834e3f5e7b79f09e3a81"
   integrity sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==
