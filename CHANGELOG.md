@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.5.2](https://github.com/burtek/eslint-config/compare/v5.5.1...v5.5.2) (2025-01-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @eslint/json to v0.10.0 ([#317](https://github.com/burtek/eslint-config/issues/317)) ([33cd822](https://github.com/burtek/eslint-config/commit/33cd822f1012e9b0bf011c65e5bc5ddd8bd8f18d))
+* **deps:** update dependency eslint-plugin-jsonc to v2.19.0 ([#318](https://github.com/burtek/eslint-config/issues/318)) ([85060f0](https://github.com/burtek/eslint-config/commit/85060f00eaab6ec48fc68c11f92a7d189e2e8702))
+* **deps:** update dependency eslint-plugin-jsonc to v2.19.1 ([#319](https://github.com/burtek/eslint-config/issues/319)) ([016a1e4](https://github.com/burtek/eslint-config/commit/016a1e451b0c2d65d757904c83ac112a7ee7eb01))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v22.10.10 ([#316](https://github.com/burtek/eslint-config/issues/316)) ([6cd6bb2](https://github.com/burtek/eslint-config/commit/6cd6bb2e2545adbca51c6fb573e8b73fc1378802))
+
 ## [5.5.1](https://github.com/burtek/eslint-config/compare/v5.5.0...v5.5.1) (2025-01-23)
 
 
