@@ -1,14 +1,16 @@
+/* eslint no-warning-comments: 1 */
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
+import eslint from 'eslint';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import importPlugin from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
+import semver from 'semver';
 import tseslint from 'typescript-eslint';
 
 import { baseNamingRuleConfig } from './share/naming-config.js';
 
 
-// eslint-disable-next-line no-warning-comments
 // TODO: need no-splice-add and no-splice-remove
 
 const allFiles = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
@@ -40,7 +42,11 @@ export function prepareConfig({ nextResolver = false } = {}) {
         {
             name: 'dtrw:base:base',
             files: allFiles,
-            linterOptions: { reportUnusedDisableDirectives: true },
+            linterOptions: {
+                reportUnusedDisableDirectives: true,
+                // TODO: typechecking doesn't check this
+                ...semver.satisfies(eslint.Linter.version, '>=9.19.0') ? { reportUnusedInlineConfigs: 'warn' } : {}
+            },
             settings: {
                 'import-x/extensions': allImportExtensions,
                 'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
