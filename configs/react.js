@@ -25,7 +25,6 @@ const testFiles = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
 const jsxFiles = ['**/*.{jsx,tsx}'];
 
-// eslint-disable-next-line no-warning-comments
 // TODO: move to FlatConfig once react-hooks is upgraded
 /**
  * @param {Object} [config]
