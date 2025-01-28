@@ -290,7 +290,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
                 '@stylistic/operator-linebreak': ['error', 'before'],
                 '@stylistic/padded-blocks': ['error', 'never'],
                 '@stylistic/quote-props': ['error', 'as-needed'],
-                '@stylistic/quotes': ['error', 'single'],
+                '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }],
                 '@stylistic/rest-spread-spacing': 'error',
                 '@stylistic/semi': 'error',
                 '@stylistic/semi-spacing': 'error',
