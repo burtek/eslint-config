@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-security-node": "1.1.4",
     "eslint-plugin-testing-library": "7.1.1",
-    "globals": "15.14.0",
+    "globals": "15.15.0",
     "jsonc-eslint-parser": "2.4.0",
     "semver": "^7.6.3",
     "typescript-eslint": "8.24.0"
