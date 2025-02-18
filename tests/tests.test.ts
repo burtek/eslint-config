@@ -8,15 +8,16 @@ import { prepareConfig } from '../configs';
 
 
 describe('Eslint configs', () => {
-    let config: Linter.FlatConfig[];
+    let config: Linter.Config[];
 
     const testsDirname = resolve(process.cwd(), 'tests');
     const fixturesPath = resolve(testsDirname, 'fixtures');
     const files = readdirSync(fixturesPath, { withFileTypes: true }).filter(f => f.isFile() && f.name.startsWith('file-'));
 
-    beforeAll(async () => {
+    beforeAll(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
         config = tseslint.config(
-            ...await prepareConfig({
+            ...prepareConfig({
                 cypress: true,
                 jest: true,
                 json: true,
@@ -28,12 +29,12 @@ describe('Eslint configs', () => {
             {
                 name: 'local-overrides',
                 languageOptions: {
-                    parserOptions: { project: 'tsconfig.json' },
+                    parserOptions: { project: 'tsconfig.test.json' },
                     sourceType: 'module'
                 },
                 settings: { react: { version: '18.0' } }
             }
-        ) as Linter.FlatConfig[];
+        ) as Linter.Config[];
     });
 
     it.each(files)('should return no errors for $name', async ({ path, name }) => {
