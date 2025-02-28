@@ -172,16 +172,14 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             }
         },
         {
-            name: 'dtrw:react:hooks',
+            ...reactHooks.configs['recommended-latest'],
             files,
             languageOptions: {
                 globals: {
                     ...globals.serviceworker,
                     ...globals.browser
                 }
-            },
-            plugins: { 'react-hooks': reactHooks },
-            rules: reactHooks.configs.recommended.rules
+            }
         },
         {
             name: 'dtrw:react:ts',

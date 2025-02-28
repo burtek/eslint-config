@@ -26,7 +26,7 @@
     "eslint-plugin-n": "17.15.1",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-hooks": "5.1.0",
+    "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-security-node": "1.1.4",
     "eslint-plugin-testing-library": "7.1.1",
     "globals": "15.15.0",

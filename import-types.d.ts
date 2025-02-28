@@ -23,15 +23,6 @@ declare module 'eslint-plugin-lodash' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-react-hooks' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    export const configs: Record<'recommended', Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>>;
-    export const rules: Record<string, Rule.RuleModule>;
-}
-
 declare module 'eslint-plugin-jsx-a11y' {
     import type { TSESLint } from '@typescript-eslint/utils';
     import type { Rule } from 'eslint';
