@@ -38,7 +38,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
 
     return tseslint.config(
         { ignores: ['node_modules'] },
-        { plugins: { '@stylistic': /** @type {Pick<typeof stylisticPlugin, 'rules'>} */(stylisticPlugin) } },
+        { plugins: { '@stylistic': stylisticPlugin } },
         {
             name: 'dtrw:base:base',
             files: allFiles,
@@ -214,6 +214,7 @@ export function prepareConfig({ nextResolver = false } = {}) {
                 'promise/prefer-await-to-then': 'error',
                 'promise/prefer-catch': 'error',
 
+                // ...stylisticPlugin.configs.customize({}).rules, // TODO: maybe?
                 '@stylistic/array-bracket-newline': 'error',
                 '@stylistic/array-bracket-spacing': ['error', 'never'],
                 '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
