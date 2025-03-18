@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.7.0](https://github.com/burtek/eslint-config/compare/v5.6.1...v5.7.0) (2025-03-18)
+
+
+### Features
+
+* **deps:** update dependency eslint-import-resolver-typescript to v4 ([#367](https://github.com/burtek/eslint-config/issues/367)) ([d31fe15](https://github.com/burtek/eslint-config/commit/d31fe157e0e4e9a75df0b29c2bb00309f1aed3bb))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @eslint/json to v0.11.0 ([#364](https://github.com/burtek/eslint-config/issues/364)) ([7dfb1ac](https://github.com/burtek/eslint-config/commit/7dfb1ac96fe6fee06a18f4d30dd015a04fe7c7de))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.8.6 ([#361](https://github.com/burtek/eslint-config/issues/361)) ([e888513](https://github.com/burtek/eslint-config/commit/e888513aa017a65b9085b392e3921700e7f28ad3))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.8.7 ([#363](https://github.com/burtek/eslint-config/issues/363)) ([86c059f](https://github.com/burtek/eslint-config/commit/86c059f79afa3d5c9be1cc207bce9e830b1fb675))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.9.1 ([#366](https://github.com/burtek/eslint-config/issues/366)) ([6d2c20a](https://github.com/burtek/eslint-config/commit/6d2c20aa5d52daf4fcad5e88672a7a82330df614))
+* **deps:** update dependency eslint-plugin-import-x to v4.9.0 ([#365](https://github.com/burtek/eslint-config/issues/365)) ([82b135d](https://github.com/burtek/eslint-config/commit/82b135d129b322c753fe2ef9554956bb520a02b9))
+
+
+### Chores
+
+* **deps:** bump @babel/runtime from 7.26.0 to 7.26.10 ([#362](https://github.com/burtek/eslint-config/issues/362)) ([4f4601e](https://github.com/burtek/eslint-config/commit/4f4601e8b0aaaea83fb6312b234b8b301f48692f))
+
 ## [5.6.1](https://github.com/burtek/eslint-config/compare/v5.6.1-alpha.0...v5.6.1) (2025-03-10)
 
 
