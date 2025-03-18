@@ -19,9 +19,9 @@ const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
 const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts', '.tsx'];
 /**
  * @param {Object} [config]
- * @param {boolean} [config.nextResolver]
+ * @param {boolean} [config.nextResolver=true]
  */
-export function prepareConfig({ nextResolver = false } = {}) {
+export function prepareConfig({ nextResolver = true } = {}) {
     const resolverSettings = nextResolver
         ? {
             'import-x/resolver-next': [
