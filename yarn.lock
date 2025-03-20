@@ -969,7 +969,7 @@
     semver "^7.6.0"
     ts-api-utils "^2.0.1"
 
-"@typescript-eslint/utils@8.27.0", "@typescript-eslint/utils@^6.0.0 || ^7.0.0 || ^8.0.0", "@typescript-eslint/utils@^8.15.0", "@typescript-eslint/utils@^8.23.0", "@typescript-eslint/utils@^8.26.1":
+"@typescript-eslint/utils@8.27.0", "@typescript-eslint/utils@^6.0.0 || ^7.0.0 || ^8.0.0", "@typescript-eslint/utils@^8.15.0", "@typescript-eslint/utils@^8.23.0", "@typescript-eslint/utils@^8.27.0":
   version "8.27.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-8.27.0.tgz#d9c2a4891c6a85b952a9d5f9656c379ab111cf6d"
   integrity sha512-njkodcwH1yvmo31YWgRHNb/x1Xhhq4/m81PhtvmRngD8iHPehxffz1SNCO+kwaePhATC+kOa/ggmvPoPza5i0Q==
@@ -2195,19 +2195,20 @@ eslint-plugin-es-x@^7.8.0:
     "@eslint-community/regexpp" "^4.11.0"
     eslint-compat-utils "^0.5.1"
 
-eslint-plugin-import-x@4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.9.0.tgz#50983dc52903bba525e7e970e438a214b97e8783"
-  integrity sha512-qdrsei0heLV8z9QpY2/PHF/r/3fF15w3JeVXqWlLzPMiiwYx0VAwIjxN6SzdaPVuGeIMAbQHHS1Wwdn1/bsCgw==
+eslint-plugin-import-x@4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.9.1.tgz#c13b37e662111dc1a0e6ab8c4f4ee72b955d15d1"
+  integrity sha512-YJ9W12tfDBBYVUUI5FVls6ZrzbVmfrHcQkjeHrG6I7QxWAlIbueRD+G4zPTg1FwlBouunTYm9dhJMVJZdj9wwQ==
   dependencies:
     "@types/doctrine" "^0.0.9"
-    "@typescript-eslint/utils" "^8.26.1"
+    "@typescript-eslint/utils" "^8.27.0"
     debug "^4.4.0"
     doctrine "^3.0.0"
     eslint-import-resolver-node "^0.3.9"
     get-tsconfig "^4.10.0"
-    picomatch "^4.0.2"
-    rspack-resolver "^1.2.1"
+    is-glob "^4.0.3"
+    minimatch "^10.0.1"
+    rspack-resolver "^1.2.2"
     semver "^7.7.1"
     stable-hash "^0.0.5"
     tslib "^2.8.1"
@@ -4010,7 +4011,7 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-minimatch@^10.0.0:
+minimatch@^10.0.0, minimatch@^10.0.1:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-10.0.1.tgz#ce0521856b453c86e25f2c4c0d03e6ff7ddc440b"
   integrity sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==
@@ -4618,7 +4619,7 @@ rrweb-cssom@^0.7.1:
   resolved "https://registry.yarnpkg.com/rrweb-cssom/-/rrweb-cssom-0.7.1.tgz#c73451a484b86dd7cfb1e0b2898df4b703183e4b"
   integrity sha512-TrEMa7JGdVm0UThDJSx7ddw5nVm3UJS9o9CCIZ72B1vSyEZoziDqBYP3XIoi/12lKrJR8rE3jeFHMok2F/Mnsg==
 
-rspack-resolver@^1.2.1, rspack-resolver@^1.2.2:
+rspack-resolver@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/rspack-resolver/-/rspack-resolver-1.2.2.tgz#f4f8f740246c59bc83525f830aca628b71843e8a"
   integrity sha512-Fwc19jMBA3g+fxDJH2B4WxwZjE0VaaOL7OX/A4Wn5Zv7bOD/vyPZhzXfaO73Xc2GAlfi96g5fGUa378WbIGfFw==
