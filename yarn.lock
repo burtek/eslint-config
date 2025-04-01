@@ -2221,11 +2221,12 @@ eslint-plugin-es-x@^7.8.0:
     "@eslint-community/regexpp" "^4.11.0"
     eslint-compat-utils "^0.5.1"
 
-eslint-plugin-import-x@4.9.4:
-  version "4.9.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.9.4.tgz#f77122bcb964ea7df449693796ec69cb3ef5edfb"
-  integrity sha512-IPWbN0KBgBCpAiSlUcS17zc1eqMzRlYz15AzsFrw2Qfqt+e0IupxYbvYD96bGLKVlNdkNwa4ggv1skztpaZR/g==
+eslint-plugin-import-x@4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.10.0.tgz#ec73c3cefb554ab0d83a0dad47700d56c349184a"
+  integrity sha512-5ej+0WILhX3D6wkcdsyYmPp10SUIK6fmuZ6KS8nf9MD8CJ6/S/3Dl7m21g+MLeaTMsvcEXo3JunNAbgHwXxs/g==
   dependencies:
+    "@pkgr/core" "^0.2.0"
     "@types/doctrine" "^0.0.9"
     "@typescript-eslint/utils" "^8.28.0"
     debug "^4.4.0"
@@ -2233,7 +2234,7 @@ eslint-plugin-import-x@4.9.4:
     eslint-import-resolver-node "^0.3.9"
     get-tsconfig "^4.10.0"
     is-glob "^4.0.3"
-    minimatch "^10.0.1"
+    minimatch "^9.0.3 || ^10.0.1"
     semver "^7.7.1"
     stable-hash "^0.0.5"
     tslib "^2.8.1"
@@ -4044,7 +4045,7 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-minimatch@^10.0.0, minimatch@^10.0.1:
+minimatch@^10.0.0, "minimatch@^9.0.3 || ^10.0.1":
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-10.0.1.tgz#ce0521856b453c86e25f2c4c0d03e6ff7ddc440b"
   integrity sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==
