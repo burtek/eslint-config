@@ -5,10 +5,7 @@ const jestConfig: JestConfigWithTsJest = {
     transform: {
         'tests.test.ts$': [
             'ts-jest',
-            {
-                tsconfig: 'tsconfig.test.json',
-                isolatedModules: true
-            }
+            { tsconfig: 'tsconfig.test.json' }
         ]
     },
     preset: 'ts-jest/presets/js-with-ts-esm',
