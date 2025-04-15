@@ -720,7 +720,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pkgr/core@^0.2.0", "@pkgr/core@^0.2.3":
+"@pkgr/core@^0.2.0", "@pkgr/core@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.4.tgz#d897170a2b0ba51f78a099edccd968f7b103387c"
   integrity sha512-ROFF39F6ZrnzSUEmQQZUar0Jt4xVoP9WnDRdWwF4NNcXs3xBTLgBUDoOwW141y1jP+S8nahIbdxbFC7IShw9Iw==
@@ -2227,12 +2227,12 @@ eslint-plugin-es-x@^7.8.0:
     "@eslint-community/regexpp" "^4.11.0"
     eslint-compat-utils "^0.5.1"
 
-eslint-plugin-import-x@4.10.4:
-  version "4.10.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.10.4.tgz#23209cea2ebc99b36089529e3cea5ee63087f114"
-  integrity sha512-UNjPJmwmFoIHRKV8dB3C8EKyF8TTa8fghoA0tGixSB5H/PFZXkQ/UEafpTCckjHury+ykWjVwdkw+5YpomGuaA==
+eslint-plugin-import-x@4.10.5:
+  version "4.10.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.10.5.tgz#5189b21efff32ee93a14637b775b2fa30a92311b"
+  integrity sha512-cmteCl8P5q1lkuL/4qqQw1uvnQHytpv2fjHFZ2UIqSfkM0RwWm/KLgasXKIqDRjgMnmUJTeyP8+9hDpJJuiZgg==
   dependencies:
-    "@pkgr/core" "^0.2.3"
+    "@pkgr/core" "^0.2.4"
     "@types/doctrine" "^0.0.9"
     "@typescript-eslint/utils" "^8.30.1"
     debug "^4.4.0"
