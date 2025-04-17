@@ -362,10 +362,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.24.0.tgz#685277980bb7bf84ecc8e4e133ccdda7545a691e"
   integrity sha512-uIY/y3z0uvOGX8cp1C2fiC4+ZmBhp6yZWkojtHL1YEMnRt1Y63HB9TM17proGEmeG7HeUY+UP36F0aknKYTpYA==
 
-"@eslint/json@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.11.0.tgz#fbba0ef442651aa4d28eb6d4c33bd230bab69bb0"
-  integrity sha512-XSrJBMuDEP0/XgLJ/CfQc6otytZt56l/n2SCjk8qGgaw311F/aKvdCqAgXKzsBTlxi1MlM/F3K8H2e1TEBbmCA==
+"@eslint/json@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.12.0.tgz#7d1cb7152d01f3837703c154a5b38233f409395e"
+  integrity sha512-n/7dz8HFStpEe4o5eYk0tdkBdGUS/ZGb0GQCeDWN1ZmRq67HMHK4vC33b0rQlTT6xdZoX935P4vstiWVk5Ying==
   dependencies:
     "@eslint/core" "^0.12.0"
     "@eslint/plugin-kit" "^0.2.7"
