@@ -2234,10 +2234,10 @@ eslint-plugin-es-x@^7.8.0:
     "@eslint-community/regexpp" "^4.11.0"
     eslint-compat-utils "^0.5.1"
 
-eslint-plugin-import-x@4.10.5:
-  version "4.10.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.10.5.tgz#5189b21efff32ee93a14637b775b2fa30a92311b"
-  integrity sha512-cmteCl8P5q1lkuL/4qqQw1uvnQHytpv2fjHFZ2UIqSfkM0RwWm/KLgasXKIqDRjgMnmUJTeyP8+9hDpJJuiZgg==
+eslint-plugin-import-x@4.10.6:
+  version "4.10.6"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.10.6.tgz#39b5ff478b3d1d2f2aab3ed93a2f0bda8ab073bd"
+  integrity sha512-sWIaoezWK7kuPA7u29ULsO8WzlYYC8uivaipsazyHiZDykjNsuPtwRsYZIK2luqc5wppwXOop8iFdW7xffo/Xw==
   dependencies:
     "@pkgr/core" "^0.2.4"
     "@types/doctrine" "^0.0.9"
@@ -2251,7 +2251,7 @@ eslint-plugin-import-x@4.10.5:
     semver "^7.7.1"
     stable-hash "^0.0.5"
     tslib "^2.8.1"
-    unrs-resolver "^1.5.0"
+    unrs-resolver "^1.6.0"
 
 eslint-plugin-jest-dom@5.5.0:
   version "5.5.0"
@@ -5362,7 +5362,7 @@ undici-types@~6.21.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
-unrs-resolver@^1.5.0, unrs-resolver@^1.6.0:
+unrs-resolver@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.6.0.tgz#9a579f4af765f94e16a5ea943e3ca8b66d81005a"
   integrity sha512-BP1MMiJ6GXKPxslEijZ0s4RKr993qlfG+YIyANIPMTrSYkLQb18pBb42KIvROxr79ElqzCTWSzFptJLp658w9g==
