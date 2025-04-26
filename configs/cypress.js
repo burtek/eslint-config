@@ -18,6 +18,7 @@ export function prepareConfig() {
                     'cypress/assertion-before-screenshot': 'warn',
                     'cypress/no-force': 'warn',
                     'cypress/no-async-before': 'error',
+                    'cypress/no-chained-get': 'error',
                     'cypress/no-debug': 'error',
                     'cypress/no-pause': 'error',
 
