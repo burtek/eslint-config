@@ -22,6 +22,7 @@ export function prepareConfig() {
                 name: 'dtrw:testing-lib:react',
                 files,
                 rules: {
+                    'testing-library/no-test-id-queries': 'warn',
                     'testing-library/prefer-explicit-assert': 'error',
                     'testing-library/prefer-user-event': 'warn'
                 }
