@@ -28,7 +28,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-security-node": "1.1.4",
-    "eslint-plugin-testing-library": "7.5.1",
+    "eslint-plugin-testing-library": "7.5.2",
     "globals": "16.2.0",
     "jsonc-eslint-parser": "2.4.0",
     "semver": "^7.6.3",
