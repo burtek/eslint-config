@@ -7,6 +7,11 @@ import tseslint from 'typescript-eslint';
 import { prepareConfig } from '../configs';
 
 
+// FIXME: doesn't work
+jest.mock('@typescript-eslint/types', () => ({
+    ...jest.requireActual('@typescript-eslint/types'),
+}))
+
 describe('Eslint configs', () => {
     let config: Linter.Config[];
 
