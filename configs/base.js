@@ -44,8 +44,9 @@ export function prepareConfig({ nextResolver = true } = {}) {
             files: allFiles,
             linterOptions: {
                 reportUnusedDisableDirectives: true,
-                // TODO: typechecking doesn't check this
-                ...semver.satisfies(eslint.Linter.version, '>=9.19.0') ? { reportUnusedInlineConfigs: 'warn' } : {}
+                ...semver.satisfies(eslint.Linter.version, '>=9.19.0')
+                    ? /** @satisfies {import('@typescript-eslint/utils').TSESLint.FlatConfig.LinterOptions} */({ reportUnusedInlineConfigs: 'warn' })
+                    : {}
             },
             settings: {
                 'import-x/extensions': allImportExtensions,
@@ -215,32 +216,26 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 'promise/prefer-await-to-then': 'error',
                 'promise/prefer-catch': 'error',
 
-                // ...stylisticPlugin.configs.customize({}).rules, // TODO: maybe?
+                ...stylisticPlugin.configs.customize({
+                    braceStyle: '1tbs',
+                    commaDangle: 'never',
+                    indent: 4,
+                    pluginName: '@stylistic',
+                    quoteProps: 'as-needed',
+                    quotes: 'single',
+                    semi: true,
+                    severity: 'error'
+                }).rules,
                 '@stylistic/array-bracket-newline': 'error',
-                '@stylistic/array-bracket-spacing': ['error', 'never'],
                 '@stylistic/array-element-newline': ['error', { consistent: true, multiline: true }],
                 '@stylistic/arrow-parens': ['error', 'as-needed'],
-                '@stylistic/arrow-spacing': 'error',
-                '@stylistic/block-spacing': 'error',
                 '@stylistic/brace-style': 'error',
-                '@stylistic/comma-dangle': 'error',
-                '@stylistic/comma-spacing': 'error',
-                '@stylistic/comma-style': 'error',
-                '@stylistic/computed-property-spacing': ['error', 'never', { enforceForClassMembers: true }],
                 '@stylistic/curly-newline': ['error', 'always'],
-                '@stylistic/dot-location': ['error', 'property'],
-                '@stylistic/eol-last': 'error',
-                '@stylistic/func-call-spacing': 'error',
                 '@stylistic/function-call-argument-newline': ['error', 'consistent'],
                 '@stylistic/function-call-spacing': 'error',
                 '@stylistic/function-paren-newline': ['error', 'consistent'],
-                '@stylistic/generator-star-spacing': ['error', 'after'],
                 '@stylistic/indent': ['error', 4],
-                '@stylistic/indent-binary-ops': ['error', 4],
-                '@stylistic/key-spacing': 'error',
-                '@stylistic/keyword-spacing': 'error',
                 '@stylistic/linebreak-style': ['error', 'unix'],
-                '@stylistic/lines-between-class-members': 'error',
                 '@stylistic/max-len': [
                     'error',
                     {
@@ -251,10 +246,6 @@ export function prepareConfig({ nextResolver = true } = {}) {
                         ignoreTemplateLiterals: true
                     }
                 ],
-                '@stylistic/max-statements-per-line': 'error',
-                '@stylistic/member-delimiter-style': 'error',
-                '@stylistic/multiline-ternary': ['error', 'always-multiline'],
-                '@stylistic/new-parens': 'error',
                 '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
                 '@stylistic/no-confusing-arrow': 'error',
                 '@stylistic/no-extra-parens': [
@@ -270,12 +261,8 @@ export function prepareConfig({ nextResolver = true } = {}) {
                     }
                 ],
                 '@stylistic/no-extra-semi': 'error',
-                '@stylistic/no-floating-decimal': 'error',
                 '@stylistic/no-mixed-operators': 'error',
-                '@stylistic/no-multi-spaces': 'error',
-                '@stylistic/no-multiple-empty-lines': ['error', { max: 2 }],
-                '@stylistic/no-trailing-spaces': 'error',
-                '@stylistic/no-whitespace-before-property': 'error',
+                '@stylistic/no-multiple-empty-lines': ['error', { max: 2, maxBOF: 0, maxEOF: 0 }],
                 '@stylistic/object-curly-newline': [
                     'error',
                     {
@@ -287,17 +274,9 @@ export function prepareConfig({ nextResolver = true } = {}) {
                         TSInterfaceBody: 'always'
                     }
                 ],
-                '@stylistic/object-curly-spacing': ['error', 'always'],
                 '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
-                '@stylistic/operator-linebreak': ['error', 'before'],
-                '@stylistic/padded-blocks': ['error', 'never'],
-                '@stylistic/quote-props': ['error', 'as-needed'],
                 '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }],
-                '@stylistic/rest-spread-spacing': 'error',
-                '@stylistic/semi': 'error',
-                '@stylistic/semi-spacing': 'error',
                 '@stylistic/semi-style': 'error',
-                '@stylistic/space-before-blocks': 'error',
                 '@stylistic/space-before-function-paren': [
                     'error',
                     {
@@ -306,18 +285,8 @@ export function prepareConfig({ nextResolver = true } = {}) {
                         named: 'never'
                     }
                 ],
-                '@stylistic/space-in-parens': 'error',
-                '@stylistic/space-infix-ops': ['error', { int32Hint: false }],
-                '@stylistic/space-unary-ops': ['error', { words: true, nonwords: false }],
-                '@stylistic/spaced-comment': 'error',
                 '@stylistic/switch-colon-spacing': 'error',
-                '@stylistic/template-curly-spacing': 'error',
-                '@stylistic/template-tag-spacing': 'error',
-                '@stylistic/type-annotation-spacing': 'error',
-                '@stylistic/type-generic-spacing': 'error',
-                '@stylistic/type-named-tuple-spacing': 'error',
-                '@stylistic/wrap-iife': ['error', 'inside'],
-                '@stylistic/yield-star-spacing': ['error', 'after']
+                '@stylistic/wrap-iife': ['error', 'inside']
             }
         },
         {
