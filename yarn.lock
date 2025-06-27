@@ -1013,7 +1013,7 @@
     debug "^4.3.4"
     ts-api-utils "^2.1.0"
 
-"@typescript-eslint/types@8.35.0", "@typescript-eslint/types@^8.34.0", "@typescript-eslint/types@^8.34.1", "@typescript-eslint/types@^8.35.0":
+"@typescript-eslint/types@8.35.0", "@typescript-eslint/types@^8.34.1", "@typescript-eslint/types@^8.35.0":
   version "8.35.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.35.0.tgz#e60d062907930e30008d796de5c4170f02618a93"
   integrity sha512-0mYH3emanku0vHw2aRLNGqe7EXh9WHEhi7kZzscrMDf6IIRUQ5Jk4wp1QrledE/36KtdZrVfKnE32eZCf/vaVQ==
@@ -2235,7 +2235,7 @@ eslint-compat-utils@^0.6.4:
   dependencies:
     semver "^7.5.4"
 
-eslint-import-context@^0.1.8:
+eslint-import-context@^0.1.8, eslint-import-context@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/eslint-import-context/-/eslint-import-context-0.1.9.tgz#967b0b2f0a90ef4b689125e088f790f0b7756dbe"
   integrity sha512-K9Hb+yRaGAGUbwjhFNHvSmmkZs9+zbuoe3kFQ4V1wYjrepUFYM2dZAfNtjbbj3qsPfUfsA68Bx/ICWQMi+C8Eg==
@@ -2279,20 +2279,20 @@ eslint-plugin-es-x@^7.8.0:
     "@eslint-community/regexpp" "^4.11.0"
     eslint-compat-utils "^0.5.1"
 
-eslint-plugin-import-x@4.16.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.16.0.tgz#edd91facd3272aad09489a2a4f866d7f15c4454a"
-  integrity sha512-g67gvUrgE1VeZ9lFoFM6RfYSh+R3kkxbxDMvNTsz+jxRmj5NA7SHCzhO5O+hDCnSTlLnITMFcl9/hXWudMvX7w==
+eslint-plugin-import-x@4.16.1:
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-x/-/eslint-plugin-import-x-4.16.1.tgz#a96ee1ad5ba6816f9a5573a9617935011a24c4df"
+  integrity sha512-vPZZsiOKaBAIATpFE2uMI4w5IRwdv/FpQ+qZZMR4E+PeOcM4OeoEbqxRMnywdxP19TyB/3h6QBB0EWon7letSQ==
   dependencies:
-    "@typescript-eslint/types" "^8.34.0"
+    "@typescript-eslint/types" "^8.35.0"
     comment-parser "^1.4.1"
     debug "^4.4.1"
-    eslint-import-context "^0.1.8"
+    eslint-import-context "^0.1.9"
     is-glob "^4.0.3"
     minimatch "^9.0.3 || ^10.0.1"
     semver "^7.7.2"
-    stable-hash-x "^0.1.1"
-    unrs-resolver "^1.9.0"
+    stable-hash-x "^0.2.0"
+    unrs-resolver "^1.9.2"
 
 eslint-plugin-jest-dom@5.5.0:
   version "5.5.0"
@@ -4949,11 +4949,6 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
-stable-hash-x@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/stable-hash-x/-/stable-hash-x-0.1.1.tgz#1dc602f65183ef049a44a9be4fce249a4c71fc84"
-  integrity sha512-l0x1D6vhnsNUGPFVDx45eif0y6eedVC8nm5uACTrVFJFtl2mLRW17aWtVyxFCpn5t94VUPkjU8vSLwIuwwqtJQ==
-
 stable-hash-x@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/stable-hash-x/-/stable-hash-x-0.2.0.tgz#dfd76bfa5d839a7470125c6a6b3c8b22061793e9"
@@ -5424,7 +5419,7 @@ undici-types@~6.21.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
-unrs-resolver@^1.7.11, unrs-resolver@^1.9.0:
+unrs-resolver@^1.7.11, unrs-resolver@^1.9.2:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.9.2.tgz#1a7c73335a5e510643664d7bb4bb6f5c28782e36"
   integrity sha512-VUyWiTNQD7itdiMuJy+EuLEErLj3uwX/EpHQF8EOf33Dq3Ju6VW1GXm+swk6+1h7a49uv9fKZ+dft9jU7esdLA==
