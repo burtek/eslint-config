@@ -539,13 +539,6 @@
     "@types/node" "*"
     jest-mock "30.0.2"
 
-"@jest/expect-utils@30.0.3":
-  version "30.0.3"
-  resolved "https://registry.yarnpkg.com/@jest/expect-utils/-/expect-utils-30.0.3.tgz#2a9fb40110c8a13ae464da41f877df90d2e6bc3b"
-  integrity sha512-SMtBvf2sfX2agcT0dA9pXwcUrKvOSDqBY4e4iRfT+Hya33XzV35YVg+98YQFErVGA/VR1Gto5Y2+A6G9LSQ3Yg==
-  dependencies:
-    "@jest/get-type" "30.0.1"
-
 "@jest/expect-utils@30.0.4":
   version "30.0.4"
   resolved "https://registry.yarnpkg.com/@jest/expect-utils/-/expect-utils-30.0.4.tgz#0512fb2588c7fc463ce26fb38c0d47814266d965"
@@ -927,14 +920,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.5.tgz#ec10755e871497bcd83efe927e43ec46e8c0747e"
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
-"@types/node@*":
-  version "24.0.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.10.tgz#f65a169779bf0d70203183a1890be7bee8ca2ddb"
-  integrity sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==
-  dependencies:
-    undici-types "~7.8.0"
-
-"@types/node@^22.10.0":
+"@types/node@*", "@types/node@^22.10.0":
   version "22.16.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-22.16.0.tgz#352bc4951fd089df32f2b6412a61d339b67ded8b"
   integrity sha512-B2egV9wALML1JCpv3VQoQ+yesQKAmNMBIAY7OteVrikcOcAkWm+dGL6qpeCktPjAv6N1JLnhbNiqS35UpFyBsQ==
@@ -1075,150 +1061,75 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-android-arm-eabi/-/resolver-binding-android-arm-eabi-1.11.0.tgz#6a64664fa35d2aaf3ed9bc82dff15ef9df23c066"
   integrity sha512-LRw5BW29sYj9NsQC6QoqeLVQhEa+BwVINYyMlcve+6stwdBsSt5UB7zw4UZB4+4PNqIVilHoMaPWCb/KhABHQw==
 
-"@unrs/resolver-binding-android-arm-eabi@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-android-arm-eabi/-/resolver-binding-android-arm-eabi-1.9.2.tgz#6cb01dde20bef06397ffd4924f502596cb458851"
-  integrity sha512-tS+lqTU3N0kkthU+rYp0spAYq15DU8ld9kXkaKg9sbQqJNF+WPMuNHZQGCgdxrUOEO0j22RKMwRVhF1HTl+X8A==
-
 "@unrs/resolver-binding-android-arm64@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-android-arm64/-/resolver-binding-android-arm64-1.11.0.tgz#1ab6be0d8a1340d629318d5985c5555c8d750558"
   integrity sha512-zYX8D2zcWCAHqghA8tPjbp7LwjVXbIZP++mpU/Mrf5jUVlk3BWIxkeB8yYzZi5GpFSlqMcRZQxQqbMI0c2lASQ==
-
-"@unrs/resolver-binding-android-arm64@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-android-arm64/-/resolver-binding-android-arm64-1.9.2.tgz#1672b533f01f98119095860683496def93929a2e"
-  integrity sha512-MffGiZULa/KmkNjHeuuflLVqfhqLv1vZLm8lWIyeADvlElJ/GLSOkoUX+5jf4/EGtfwrNFcEaB8BRas03KT0/Q==
 
 "@unrs/resolver-binding-darwin-arm64@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-arm64/-/resolver-binding-darwin-arm64-1.11.0.tgz#45754acf53eda1d9ec2916da9411924bcadd8cf2"
   integrity sha512-YsYOT049hevAY/lTYD77GhRs885EXPeAfExG5KenqMJ417nYLS2N/kpRpYbABhFZBVQn+2uRPasTe4ypmYoo3w==
 
-"@unrs/resolver-binding-darwin-arm64@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-arm64/-/resolver-binding-darwin-arm64-1.9.2.tgz#dad66a21553b1ba4088c6eb922332846550bd9b2"
-  integrity sha512-dzJYK5rohS1sYl1DHdJ3mwfwClJj5BClQnQSyAgEfggbUwA9RlROQSSbKBLqrGfsiC/VyrDPtbO8hh56fnkbsQ==
-
 "@unrs/resolver-binding-darwin-x64@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-x64/-/resolver-binding-darwin-x64-1.11.0.tgz#a5b64d820a1ca7d0f9d5f3b2dd4bf133b63143de"
   integrity sha512-PSjvk3OZf1aZImdGY5xj9ClFG3bC4gnSSYWrt+id0UAv+GwwVldhpMFjAga8SpMo2T1GjV9UKwM+QCsQCQmtdA==
-
-"@unrs/resolver-binding-darwin-x64@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-darwin-x64/-/resolver-binding-darwin-x64-1.9.2.tgz#bfaedca218078862f3d536d44269fed94a6158e2"
-  integrity sha512-gaIMWK+CWtXcg9gUyznkdV54LzQ90S3X3dn8zlh+QR5Xy7Y+Efqw4Rs4im61K1juy4YNb67vmJsCDAGOnIeffQ==
 
 "@unrs/resolver-binding-freebsd-x64@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-freebsd-x64/-/resolver-binding-freebsd-x64-1.11.0.tgz#17fc82321b7cdfdae871b63e3a54fe1978fde62e"
   integrity sha512-KC/iFaEN/wsTVYnHClyHh5RSYA9PpuGfqkFua45r4sweXpC0KHZ+BYY7ikfcGPt5w1lMpR1gneFzuqWLQxsRKg==
 
-"@unrs/resolver-binding-freebsd-x64@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-freebsd-x64/-/resolver-binding-freebsd-x64-1.9.2.tgz#bdab0e754c45831522b16df0b6fe4b0ffde22628"
-  integrity sha512-S7QpkMbVoVJb0xwHFwujnwCAEDe/596xqY603rpi/ioTn9VDgBHnCCxh+UFrr5yxuMH+dliHfjwCZJXOPJGPnw==
-
 "@unrs/resolver-binding-linux-arm-gnueabihf@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-gnueabihf/-/resolver-binding-linux-arm-gnueabihf-1.11.0.tgz#acc6d616231bde02dab70a844903652441aa1cbb"
   integrity sha512-CDh/0v8uot43cB4yKtDL9CVY8pbPnMV0dHyQCE4lFz6PW/+9tS0i9eqP5a91PAqEBVMqH1ycu+k8rP6wQU846w==
-
-"@unrs/resolver-binding-linux-arm-gnueabihf@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-gnueabihf/-/resolver-binding-linux-arm-gnueabihf-1.9.2.tgz#2bac9c19599888d4ba4787b437b0273ac7a7a9f2"
-  integrity sha512-+XPUMCuCCI80I46nCDFbGum0ZODP5NWGiwS3Pj8fOgsG5/ctz+/zzuBlq/WmGa+EjWZdue6CF0aWWNv84sE1uw==
 
 "@unrs/resolver-binding-linux-arm-musleabihf@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-musleabihf/-/resolver-binding-linux-arm-musleabihf-1.11.0.tgz#8d200f0ceb193efe56972d7ca76a3cb147c992be"
   integrity sha512-+TE7epATDSnvwr3L/hNHX3wQ8KQYB+jSDTdywycg3qDqvavRP8/HX9qdq/rMcnaRDn4EOtallb3vL/5wCWGCkw==
 
-"@unrs/resolver-binding-linux-arm-musleabihf@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm-musleabihf/-/resolver-binding-linux-arm-musleabihf-1.9.2.tgz#49d27d5d63e5f26cf7b93a0731334b302b9b7fec"
-  integrity sha512-sqvUyAd1JUpwbz33Ce2tuTLJKM+ucSsYpPGl2vuFwZnEIg0CmdxiZ01MHQ3j6ExuRqEDUCy8yvkDKvjYFPb8Zg==
-
 "@unrs/resolver-binding-linux-arm64-gnu@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-gnu/-/resolver-binding-linux-arm64-gnu-1.11.0.tgz#2d976fdbb4d6b94bf77b51c668e893ffc2e95c45"
   integrity sha512-VBAYGg3VahofpQ+L4k/ZO8TSICIbUKKTaMYOWHWfuYBFqPbSkArZZLezw3xd27fQkxX4BaLGb/RKnW0dH9Y/UA==
-
-"@unrs/resolver-binding-linux-arm64-gnu@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-gnu/-/resolver-binding-linux-arm64-gnu-1.9.2.tgz#95ba5d1654a04b1049d944871e165d786e8da68f"
-  integrity sha512-UYA0MA8ajkEDCFRQdng/FVx3F6szBvk3EPnkTTQuuO9lV1kPGuTB+V9TmbDxy5ikaEgyWKxa4CI3ySjklZ9lFA==
 
 "@unrs/resolver-binding-linux-arm64-musl@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-musl/-/resolver-binding-linux-arm64-musl-1.11.0.tgz#0bb3fcd3d490e171102a7e786557f3e30f375d74"
   integrity sha512-9IgGFUUb02J1hqdRAHXpZHIeUHRrbnGo6vrRbz0fREH7g+rzQy53/IBSyadZ/LG5iqMxukriNPu4hEMUn+uWEg==
 
-"@unrs/resolver-binding-linux-arm64-musl@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-arm64-musl/-/resolver-binding-linux-arm64-musl-1.9.2.tgz#23f90a48b1d343189b1c20c89b694140e2d5a210"
-  integrity sha512-P/CO3ODU9YJIHFqAkHbquKtFst0COxdphc8TKGL5yCX75GOiVpGqd1d15ahpqu8xXVsqP4MGFP2C3LRZnnL5MA==
-
 "@unrs/resolver-binding-linux-ppc64-gnu@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-ppc64-gnu/-/resolver-binding-linux-ppc64-gnu-1.11.0.tgz#436b591ccda94e191a2a6eff6cd021b1375a703b"
   integrity sha512-LR4iQ/LPjMfivpL2bQ9kmm3UnTas3U+umcCnq/CV7HAkukVdHxrDD1wwx74MIWbbgzQTLPYY7Ur2MnnvkYJCBQ==
-
-"@unrs/resolver-binding-linux-ppc64-gnu@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-ppc64-gnu/-/resolver-binding-linux-ppc64-gnu-1.9.2.tgz#076f2c2e95dbcd4824cc9929bc504151b402ac11"
-  integrity sha512-uKStFlOELBxBum2s1hODPtgJhY4NxYJE9pAeyBgNEzHgTqTiVBPjfTlPFJkfxyTjQEuxZbbJlJnMCrRgD7ubzw==
 
 "@unrs/resolver-binding-linux-riscv64-gnu@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-gnu/-/resolver-binding-linux-riscv64-gnu-1.11.0.tgz#bcd73a92c8fb2897cdf345c21bc9e657fc04a120"
   integrity sha512-HCupFQwMrRhrOg7YHrobbB5ADg0Q8RNiuefqMHVsdhEy9lLyXm/CxsCXeLJdrg27NAPsCaMDtdlm8Z2X8x91Tg==
 
-"@unrs/resolver-binding-linux-riscv64-gnu@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-gnu/-/resolver-binding-linux-riscv64-gnu-1.9.2.tgz#f7de54d45df430c74bbd12794946a55805bed6dd"
-  integrity sha512-LkbNnZlhINfY9gK30AHs26IIVEZ9PEl9qOScYdmY2o81imJYI4IMnJiW0vJVtXaDHvBvxeAgEy5CflwJFIl3tQ==
-
 "@unrs/resolver-binding-linux-riscv64-musl@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-musl/-/resolver-binding-linux-riscv64-musl-1.11.0.tgz#29d7e501830635559a3b6bd24a46895ad015a257"
   integrity sha512-Ckxy76A5xgjWa4FNrzcKul5qFMWgP5JSQ5YKd0XakmWOddPLSkQT+uAvUpQNnFGNbgKzv90DyQlxPDYPQ4nd6A==
-
-"@unrs/resolver-binding-linux-riscv64-musl@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-riscv64-musl/-/resolver-binding-linux-riscv64-musl-1.9.2.tgz#ad1fcdcf5f112d7432fcfe38269a084bdccad266"
-  integrity sha512-vI+e6FzLyZHSLFNomPi+nT+qUWN4YSj8pFtQZSFTtmgFoxqB6NyjxSjAxEC1m93qn6hUXhIsh8WMp+fGgxCoRg==
 
 "@unrs/resolver-binding-linux-s390x-gnu@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-s390x-gnu/-/resolver-binding-linux-s390x-gnu-1.11.0.tgz#0aff45e49256ed0340cac63562c0a424dfdbe45c"
   integrity sha512-HfO0PUCCRte2pMJmVyxPI+eqT7KuV3Fnvn2RPvMe5mOzb2BJKf4/Vth8sSt9cerQboMaTVpbxyYjjLBWIuI5BQ==
 
-"@unrs/resolver-binding-linux-s390x-gnu@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-s390x-gnu/-/resolver-binding-linux-s390x-gnu-1.9.2.tgz#d914a4f12b9048e1a4de0040f64d73274104e301"
-  integrity sha512-sSO4AlAYhSM2RAzBsRpahcJB1msc6uYLAtP6pesPbZtptF8OU/CbCPhSRW6cnYOGuVmEmWVW5xVboAqCnWTeHQ==
-
 "@unrs/resolver-binding-linux-x64-gnu@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-x64-gnu/-/resolver-binding-linux-x64-gnu-1.11.0.tgz#7437389f2d89eee159cd0a458c5719959cf37c1a"
   integrity sha512-9PZdjP7tLOEjpXHS6+B/RNqtfVUyDEmaViPOuSqcbomLdkJnalt5RKQ1tr2m16+qAufV0aDkfhXtoO7DQos/jg==
 
-"@unrs/resolver-binding-linux-x64-gnu@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-x64-gnu/-/resolver-binding-linux-x64-gnu-1.9.2.tgz#d8f8cddc42ae267ef45ed4b61ff72b9e22aa3b82"
-  integrity sha512-jkSkwch0uPFva20Mdu8orbQjv2A3G88NExTN2oPTI1AJ+7mZfYW3cDCTyoH6OnctBKbBVeJCEqh0U02lTkqD5w==
-
 "@unrs/resolver-binding-linux-x64-musl@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.11.0.tgz#9fc10fa5fd0c37bc780296ef5aa15e32034c9701"
   integrity sha512-qkE99ieiSKMnFJY/EfyGKVtNra52/k+lVF/PbO4EL5nU6AdvG4XhtJ+WHojAJP7ID9BNIra/yd75EHndewNRfA==
-
-"@unrs/resolver-binding-linux-x64-musl@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-linux-x64-musl/-/resolver-binding-linux-x64-musl-1.9.2.tgz#7bfce67acb51b3f4a7cff8383f46600f7b055a96"
-  integrity sha512-Uk64NoiTpQbkpl+bXsbeyOPRpUoMdcUqa+hDC1KhMW7aN1lfW8PBlBH4mJ3n3Y47dYE8qi0XTxy1mBACruYBaw==
 
 "@unrs/resolver-binding-wasm32-wasi@1.11.0":
   version "1.11.0"
@@ -1227,42 +1138,20 @@
   dependencies:
     "@napi-rs/wasm-runtime" "^0.2.11"
 
-"@unrs/resolver-binding-wasm32-wasi@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-wasm32-wasi/-/resolver-binding-wasm32-wasi-1.9.2.tgz#b133c9b6941aba54eea007ca2f27ff6ce917ae55"
-  integrity sha512-EpBGwkcjDicjR/ybC0g8wO5adPNdVuMrNalVgYcWi+gYtC1XYNuxe3rufcO7dA76OHGeVabcO6cSkPJKVcbCXQ==
-  dependencies:
-    "@napi-rs/wasm-runtime" "^0.2.11"
-
 "@unrs/resolver-binding-win32-arm64-msvc@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-arm64-msvc/-/resolver-binding-win32-arm64-msvc-1.11.0.tgz#fdd98a7d3cf6864c33d6e730efe31c0cff9ab591"
   integrity sha512-9LT6zIGO7CHybiQSh7DnQGwFMZvVr0kUjah6qQfkH2ghucxPV6e71sUXJdSM4Ba0MaGE6DC/NwWf7mJmc3DAng==
-
-"@unrs/resolver-binding-win32-arm64-msvc@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-arm64-msvc/-/resolver-binding-win32-arm64-msvc-1.9.2.tgz#5f95f590f06c1e9ba15b24292c956c21a6294b30"
-  integrity sha512-EdFbGn7o1SxGmN6aZw9wAkehZJetFPao0VGZ9OMBwKx6TkvDuj6cNeLimF/Psi6ts9lMOe+Dt6z19fZQ9Ye2fw==
 
 "@unrs/resolver-binding-win32-ia32-msvc@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-ia32-msvc/-/resolver-binding-win32-ia32-msvc-1.11.0.tgz#b09f3dcf0f3b516d90dd1a3b00fa72d8536dadb6"
   integrity sha512-HYchBYOZ7WN266VjoGm20xFv5EonG/ODURRgwl9EZT7Bq1nLEs6VKJddzfFdXEAho0wfFlt8L/xIiE29Pmy1RA==
 
-"@unrs/resolver-binding-win32-ia32-msvc@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-ia32-msvc/-/resolver-binding-win32-ia32-msvc-1.9.2.tgz#aac6595c6de6b26e5314372ab977b0f6a869c903"
-  integrity sha512-JY9hi1p7AG+5c/dMU8o2kWemM8I6VZxfGwn1GCtf3c5i+IKcMo2NQ8OjZ4Z3/itvY/Si3K10jOBQn7qsD/whUA==
-
 "@unrs/resolver-binding-win32-x64-msvc@1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.0.tgz#70c6b7d5807ece551c57dee4587dd4a40d197bd2"
   integrity sha512-+oLKLHw3I1UQo4MeHfoLYF+e6YBa8p5vYUw3Rgt7IDzCs+57vIZqQlIo62NDpYM0VG6BjWOwnzBczMvbtH8hag==
-
-"@unrs/resolver-binding-win32-x64-msvc@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.9.2.tgz#f755c5229f1401bbff7307d037c6e38fa169ad1d"
-  integrity sha512-ryoo+EB19lMxAd80ln9BVf8pdOAxLb97amrQ3SFN9OCRn/5M5wvwDgAe4i8ZjhpbiHoDeP8yavcTEnpKBo7lZg==
 
 JSONStream@^1.3.5:
   version "1.3.5"
@@ -2656,7 +2545,7 @@ exit-x@^0.2.2:
   resolved "https://registry.yarnpkg.com/exit-x/-/exit-x-0.2.2.tgz#1f9052de3b8d99a696b10dad5bced9bdd5c3aa64"
   integrity sha512-+I6B/IkJc1o/2tiURyz/ivu/O0nKNEArIUB5O7zBrlDVJr22SCLH3xTeEry428LvFhRzIA1g8izguxJ/gbNcVQ==
 
-expect@30.0.4:
+expect@30.0.4, expect@^30.0.0:
   version "30.0.4"
   resolved "https://registry.yarnpkg.com/expect/-/expect-30.0.4.tgz#23ce0eaa9a1dcd72fcb78a228b9babdbcf9ddeca"
   integrity sha512-dDLGjnP2cKbEppxVICxI/Uf4YemmGMPNy0QytCbfafbpYk9AFQsxb8Uyrxii0RPK7FWgLGlSem+07WirwS3cFQ==
@@ -2664,18 +2553,6 @@ expect@30.0.4:
     "@jest/expect-utils" "30.0.4"
     "@jest/get-type" "30.0.1"
     jest-matcher-utils "30.0.4"
-    jest-message-util "30.0.2"
-    jest-mock "30.0.2"
-    jest-util "30.0.2"
-
-expect@^30.0.0:
-  version "30.0.3"
-  resolved "https://registry.yarnpkg.com/expect/-/expect-30.0.3.tgz#8bf31a67514f78c5e4ac8d67774192ab95d5ec25"
-  integrity sha512-HXg6NvK35/cSYZCUKAtmlgCFyqKM4frEPbzrav5hRqb0GMz0E0lS5hfzYjSaiaE5ysnp/qI2aeZkeyeIAOeXzQ==
-  dependencies:
-    "@jest/expect-utils" "30.0.3"
-    "@jest/get-type" "30.0.1"
-    jest-matcher-utils "30.0.3"
     jest-message-util "30.0.2"
     jest-mock "30.0.2"
     jest-util "30.0.2"
@@ -3629,16 +3506,6 @@ jest-config@30.0.4:
     slash "^3.0.0"
     strip-json-comments "^3.1.1"
 
-jest-diff@30.0.3:
-  version "30.0.3"
-  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-30.0.3.tgz#50ac056b90fe9151d6266b18a27adeb064c30235"
-  integrity sha512-Q1TAV0cUcBTic57SVnk/mug0/ASyAqtSIOkr7RAlxx97llRYsM74+E8N5WdGJUlwCKwgxPAkVjKh653h1+HA9A==
-  dependencies:
-    "@jest/diff-sequences" "30.0.1"
-    "@jest/get-type" "30.0.1"
-    chalk "^4.1.2"
-    pretty-format "30.0.2"
-
 jest-diff@30.0.4:
   version "30.0.4"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-30.0.4.tgz#f6e71d19ed6e8f5c7f1bead9ac406c0dd6abce5a"
@@ -3704,16 +3571,6 @@ jest-leak-detector@30.0.2:
   integrity sha512-U66sRrAYdALq+2qtKffBLDWsQ/XoNNs2Lcr83sc9lvE/hEpNafJlq2lXCPUBMNqamMECNxSIekLfe69qg4KMIQ==
   dependencies:
     "@jest/get-type" "30.0.1"
-    pretty-format "30.0.2"
-
-jest-matcher-utils@30.0.3:
-  version "30.0.3"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-30.0.3.tgz#e07e4776bade71a3a7948a9bf8aeede311c5013a"
-  integrity sha512-hMpVFGFOhYmIIRGJ0HgM9htC5qUiJ00famcc9sRFchJJiLZbbVKrAztcgE6VnXLRxA3XZ0bvNA7hQWh3oHXo/A==
-  dependencies:
-    "@jest/get-type" "30.0.1"
-    chalk "^4.1.2"
-    jest-diff "30.0.3"
     pretty-format "30.0.2"
 
 jest-matcher-utils@30.0.4:
@@ -4321,11 +4178,6 @@ ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
-
-napi-postinstall@^0.2.4:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/napi-postinstall/-/napi-postinstall-0.2.5.tgz#57d8a142f854e5a510c7b71ca101e89c11eddf35"
-  integrity sha512-kmsgUvCRIJohHjbZ3V8avP0I1Pekw329MVAMDzVxsrkjgdnqiwvMX5XwR+hWV66vsAtZ+iM+fVnq8RTQawUmCQ==
 
 napi-postinstall@^0.3.0:
   version "0.3.0"
@@ -5560,12 +5412,7 @@ undici-types@~6.21.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
-undici-types@~7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.8.0.tgz#de00b85b710c54122e44fbfd911f8d70174cd294"
-  integrity sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==
-
-unrs-resolver@^1.7.11:
+unrs-resolver@^1.7.11, unrs-resolver@^1.9.2:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.11.0.tgz#6c14cf04f44fc7117c84f9341115e180b99a44bb"
   integrity sha512-uw3hCGO/RdAEAb4zgJ3C/v6KIAFFOtBoxR86b2Ejc5TnH7HrhTWJR2o0A9ullC3eWMegKQCw/arQ/JivywQzkg==
@@ -5591,33 +5438,6 @@ unrs-resolver@^1.7.11:
     "@unrs/resolver-binding-win32-arm64-msvc" "1.11.0"
     "@unrs/resolver-binding-win32-ia32-msvc" "1.11.0"
     "@unrs/resolver-binding-win32-x64-msvc" "1.11.0"
-
-unrs-resolver@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.9.2.tgz#1a7c73335a5e510643664d7bb4bb6f5c28782e36"
-  integrity sha512-VUyWiTNQD7itdiMuJy+EuLEErLj3uwX/EpHQF8EOf33Dq3Ju6VW1GXm+swk6+1h7a49uv9fKZ+dft9jU7esdLA==
-  dependencies:
-    napi-postinstall "^0.2.4"
-  optionalDependencies:
-    "@unrs/resolver-binding-android-arm-eabi" "1.9.2"
-    "@unrs/resolver-binding-android-arm64" "1.9.2"
-    "@unrs/resolver-binding-darwin-arm64" "1.9.2"
-    "@unrs/resolver-binding-darwin-x64" "1.9.2"
-    "@unrs/resolver-binding-freebsd-x64" "1.9.2"
-    "@unrs/resolver-binding-linux-arm-gnueabihf" "1.9.2"
-    "@unrs/resolver-binding-linux-arm-musleabihf" "1.9.2"
-    "@unrs/resolver-binding-linux-arm64-gnu" "1.9.2"
-    "@unrs/resolver-binding-linux-arm64-musl" "1.9.2"
-    "@unrs/resolver-binding-linux-ppc64-gnu" "1.9.2"
-    "@unrs/resolver-binding-linux-riscv64-gnu" "1.9.2"
-    "@unrs/resolver-binding-linux-riscv64-musl" "1.9.2"
-    "@unrs/resolver-binding-linux-s390x-gnu" "1.9.2"
-    "@unrs/resolver-binding-linux-x64-gnu" "1.9.2"
-    "@unrs/resolver-binding-linux-x64-musl" "1.9.2"
-    "@unrs/resolver-binding-wasm32-wasi" "1.9.2"
-    "@unrs/resolver-binding-win32-arm64-msvc" "1.9.2"
-    "@unrs/resolver-binding-win32-ia32-msvc" "1.9.2"
-    "@unrs/resolver-binding-win32-x64-msvc" "1.9.2"
 
 update-browserslist-db@^1.1.3:
   version "1.1.3"
