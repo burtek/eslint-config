@@ -748,10 +748,10 @@
     "@emnapi/runtime" "^1.4.3"
     "@tybys/wasm-util" "^0.9.0"
 
-"@next/eslint-plugin-next@~15.2.0 || ~15.3.0":
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-15.3.0.tgz#728dbaf0a8b7d269c338b66d636b62cd81afcf36"
-  integrity sha512-511UUcpWw5GWTyKfzW58U2F/bYJyjLE9e3SlnGK/zSXq7RqLlqFO8B9bitJjumLpj317fycC96KZ2RZsjGNfBw==
+"@next/eslint-plugin-next@~15.2.0 || ~15.3.0 || ~15.4.0":
+  version "15.4.3"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-15.4.3.tgz#62b15c25ce189aa7f83af6cdfae317f46a61acaf"
+  integrity sha512-wYYbP29uZlm9lqD1C6HDgW9WNNt6AlTogYKYpDyATs0QrKYIv/rPueoIDRH6qttXGCe3zNrb7hxfQx4w8OSkLA==
   dependencies:
     fast-glob "3.3.1"
 
