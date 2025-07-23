@@ -11,11 +11,14 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
 
     // "exactOptionalPropertyTypes": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "types": ["vitest/globals"]
   },
   "include": [
     "configs/**/*.js",

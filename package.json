@@ -36,18 +36,16 @@
   },
   "devDependencies": {
     "@types/eslint": "^9.6.1",
-    "@types/jest": "^30.0.0",
     "@types/node": "^24.1.0",
     "@types/semver": "^7.5.8",
     "commit-and-tag-version": "^12.5.0",
     "eslint": "~9.31.0",
     "exit-code": "^1.0.2",
-    "jest": "^30.0.0",
     "jiti": "^2.4.2",
     "rimraf": "^6.0.1",
-    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.2",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "eslint": "^9.6.0",
@@ -57,7 +55,7 @@
   "scripts": {
     "lint": "eslint {configs,rules}/**/*.js",
     "make-types": "rimraf types && tsc --project tsconfig.build.json",
-    "test": "jest tests/tests.test.ts",
+    "test": "vitest run tests/tests.test.ts",
     "preversion": "yarn test",
     "push": "git push --follow-tags",
     "prerelease": "yarn test",
@@ -70,15 +68,15 @@
     "url": "https://github.com/burtek/eslint-config"
   },
   "engines": {
-    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    "node": "^18.18.0 || ^20.9.0 || ^22.0.0 || ^24.0.0"
   },
   "type": "module",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "default": "./index.js",
-      "types": "./types/index.d.ts"
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
     }
   }
 }
