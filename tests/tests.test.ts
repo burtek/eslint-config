@@ -9,7 +9,19 @@ import { prepareConfig } from '../configs';
 
 vitest.mock(import('@typescript-eslint/types'), async importOriginal => ({ ...await importOriginal() }));
 
-describe('Eslint configs', () => {
+describe.each<{
+    config: Pick<NonNullable<Parameters<typeof prepareConfig>[0]>, 'jest'>;
+    settings: Partial<Record<'jest', { version: number }>>;
+}>([
+    {
+        config: { jest: { mode: 'vitest' } },
+        settings: {}
+    },
+    {
+        config: { jest: true },
+        settings: { jest: { version: 30 } }
+    }
+])('Eslint configs', ({ config: conf, settings }) => {
     let config: Linter.Config[];
 
     const testsDirname = resolve(process.cwd(), 'tests');
@@ -21,7 +33,7 @@ describe('Eslint configs', () => {
         config = tseslint.config(
             ...prepareConfig({
                 cypress: true,
-                jest: { mode: 'vitest' },
+                jest: conf.jest,
                 json: true,
                 lodash: true,
                 node: true,
@@ -34,7 +46,10 @@ describe('Eslint configs', () => {
                     parserOptions: { project: 'tsconfig.test.json' },
                     sourceType: 'module'
                 },
-                settings: { react: { version: '18.0' } }
+                settings: {
+                    react: { version: '18.0' },
+                    ...settings
+                }
             }
         ) as Linter.Config[];
     });
