@@ -37,19 +37,6 @@ declare module 'eslint-plugin-jsx-a11y' {
     export default plugin;
 }
 
-declare module '@next/eslint-plugin-next' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
-
-
-    const plugin: {
-        configs: { recommended: TSESLint.ClassicConfig.Config };
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
-
 declare module 'eslint-plugin-security-node' {
     import type { TSESLint } from '@typescript-eslint/utils';
     import type { Rule } from 'eslint';
