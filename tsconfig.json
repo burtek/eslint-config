@@ -15,7 +15,9 @@
     "esModuleInterop": true,
 
     // "exactOptionalPropertyTypes": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "types": ["vitest/globals"]
   },
   "include": [
     "configs/**/*.js",

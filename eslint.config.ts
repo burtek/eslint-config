@@ -5,7 +5,10 @@ import { prepareConfig } from './index.js';
 
 
 export default tseslint.config(
-    ...prepareConfig({ json: true }),
+    ...prepareConfig({
+        json: true,
+        jest: { mode: 'vitest' }
+    }),
     {
         name: 'local-overrides',
         languageOptions: {

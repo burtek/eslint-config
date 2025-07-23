@@ -29,7 +29,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             settings: {
                 jest: {
                     // lie to eslint-plugin-jest that we indeed use jest (vitest has same syntax), otherwise let auto-detect
-                    ...mode === 'vitest' && { version: 29 }
+                    ...mode === 'vitest' && { version: 30 }
                 }
             },
             rules: {

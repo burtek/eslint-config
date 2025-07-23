@@ -7,10 +7,7 @@ import tseslint from 'typescript-eslint';
 import { prepareConfig } from '../configs';
 
 
-// FIXME: doesn't work
-jest.mock('@typescript-eslint/types', () => ({
-    ...jest.requireActual('@typescript-eslint/types'),
-}))
+vitest.mock(import('@typescript-eslint/types'), async importOriginal => ({ ...await importOriginal() }));
 
 describe('Eslint configs', () => {
     let config: Linter.Config[];
@@ -24,7 +21,7 @@ describe('Eslint configs', () => {
         config = tseslint.config(
             ...prepareConfig({
                 cypress: true,
-                jest: true,
+                jest: { mode: 'vitest' },
                 json: true,
                 lodash: true,
                 node: true,
@@ -42,8 +39,8 @@ describe('Eslint configs', () => {
         ) as Linter.Config[];
     });
 
-    it.each(files)('should return no errors for $name', async ({ path, name }) => {
-        const content = await fs$.readFile(resolve(path, name), { encoding: 'utf8' });
+    it.each(files)('should return no errors for $name', async ({ parentPath, name }) => {
+        const content = await fs$.readFile(resolve(parentPath, name), { encoding: 'utf8' });
 
         const linter = new Linter({ configType: 'flat' });
         let lintResult: unknown[] = [];
@@ -54,7 +51,8 @@ describe('Eslint configs', () => {
                 resolve('tests/fixtures', name)
             );
         }
+
         expect(validate).not.toThrow();
         expect(lintResult).toHaveLength(0);
-    }, 1000);
+    }, 2000);
 });
