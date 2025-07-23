@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@eslint/json": "0.13.1",
-    "@next/eslint-plugin-next": "~15.2.0 || ~15.3.0 || ~15.4.0",
+    "@next/eslint-plugin-next": "~15.4.0",
     "@stylistic/eslint-plugin": "5.2.2",
     "eslint-import-resolver-typescript": "^4.0.0",
     "eslint-plugin-cypress": "5.1.0",
