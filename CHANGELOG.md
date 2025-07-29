@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.9.3](https://github.com/burtek/eslint-config/compare/v5.9.2...v5.9.3) (2025-07-29)
+
+
+### Bug Fixes
+
+* nextjs plugin import ([a159ac9](https://github.com/burtek/eslint-config/commit/a159ac9236fa6ec56f6b369e8ff349fd42b12761))
+
 ## [5.9.2](https://github.com/burtek/eslint-config/compare/v5.9.1...v5.9.2) (2025-07-23)
 
 
