@@ -1,5 +1,5 @@
 /* eslint no-warning-comments: 1 */
-import { flatConfig as next } from '@next/eslint-plugin-next';
+import * as next from '@next/eslint-plugin-next';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import * as reactHooks from 'eslint-plugin-react-hooks';
@@ -198,7 +198,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
     const nextConfig = tseslint.config(
         // @ts-expect-error -- https://github.com/vercel/next.js/issues/81695
         {
-            ...next.coreWebVitals,
+            ...next.flatConfig.coreWebVitals,
             name: 'dtrw:react:next',
             files
         }
