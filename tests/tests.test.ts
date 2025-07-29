@@ -10,21 +10,21 @@ import { prepareConfig } from '../configs';
 vitest.mock(import('@typescript-eslint/types'), async importOriginal => ({ ...await importOriginal() }));
 
 describe.each<{
-    _: string;
+    modeDesc: string;
     config: Pick<NonNullable<Parameters<typeof prepareConfig>[0]>, 'jest'>;
     settings: Partial<Record<'jest', { version: number }>>;
 }>([
     {
-        _: 'vitest',
+        modeDesc: 'vitest',
         config: { jest: { mode: 'vitest' } },
         settings: {}
     },
     {
-        _: 'jest',
+        modeDesc: 'jest',
         config: { jest: true },
         settings: { jest: { version: 30 } }
     }
-])('Eslint configs in $_ mode', ({ config: conf, settings }) => {
+])('Eslint configs in $modeDesc mode', ({ config: conf, settings }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     const config = tseslint.config(
         ...prepareConfig({
@@ -33,7 +33,7 @@ describe.each<{
             json: true,
             lodash: true,
             node: true,
-            react: true,
+            react: { nextjs: true, a11y: true },
             testingLibrary: true
         }),
         {
