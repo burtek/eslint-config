@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout source code'
-        uses: 'actions/checkout@v4'
+        uses: 'actions/checkout@v5'
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Test configs'
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout source code'
-        uses: 'actions/checkout@v4'
+        uses: 'actions/checkout@v5'
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Lint configs'
@@ -39,7 +39,7 @@ jobs:
     if: ${{ !inputs.skip-deduplication }}
     steps:
       - name: 'Checkout source code'
-        uses: 'actions/checkout@v4'
+        uses: 'actions/checkout@v5'
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Deduplicate dependencies'
