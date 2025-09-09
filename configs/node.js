@@ -1,11 +1,11 @@
+import { defineConfig } from 'eslint/config';
 import nPlugin from 'eslint-plugin-n';
 import nodeSecurity from 'eslint-plugin-security-node';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
 
 export function prepareConfig() {
-    return tseslint.config(
+    return defineConfig(
         ...nPlugin.configs['flat/mixed-esm-and-cjs'].map(c => ({
             ...c,
             files: /** @type {string[]} */(c.files).flatMap(f => [f, f.replace('.js', '.ts')])

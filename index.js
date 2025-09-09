@@ -12,4 +12,4 @@ export { prepareConfig as prepareTestingLibraryConfig } from './configs/testing-
 
 /** @deprecated Renamed to `configFactories` */
 export const configs = configFactories;
-export { config } from 'typescript-eslint';
+export { defineConfig as config } from 'eslint/config';

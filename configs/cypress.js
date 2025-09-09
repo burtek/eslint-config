@@ -1,6 +1,6 @@
 /* eslint no-warning-comments: 1 */
+import { defineConfig } from 'eslint/config';
 import cypress from 'eslint-plugin-cypress/flat';
-import tseslint from 'typescript-eslint';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
 
@@ -8,7 +8,7 @@ import { extendFlatConfig } from './share/extend-flat-config.js';
 const files = ['**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
-    return tseslint.config(
+    return defineConfig(
         extendFlatConfig(
             cypress.configs.recommended,
             {

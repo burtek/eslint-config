@@ -1,4 +1,4 @@
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 
 import { prepareConfig as base } from './base.js';
 import { prepareConfig as cypress } from './cypress.js';
@@ -58,7 +58,7 @@ export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES, b
         return configFactories[key](finalConfig[key]);
     }
 
-    return tseslint.config(
+    return defineConfig(
         { ignores: ignores instanceof Function ? ignores(DEFAULT_IGNORES) : ignores },
         ...base(),
         ...configFactoryKeys.map(mapConfig).flat(1)

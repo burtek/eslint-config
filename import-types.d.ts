@@ -1,12 +1,11 @@
 declare module 'eslint-plugin-promise' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
+    import type { Linter, Rule } from 'eslint';
 
 
     const plugin: {
         configs: {
-            'recommended': Required<Pick<TSESLint.ClassicConfig.Config, 'plugins' | 'rules'>>;
-            'flat/recommended': Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'rules'>>;
+            'recommended': Required<Pick<Linter.LegacyConfig, 'plugins' | 'rules'>>;
+            'flat/recommended': Required<Pick<Linter.Config, 'plugins' | 'rules'>>;
         };
         rules: Record<string, Rule.RuleModule>;
     };
@@ -24,13 +23,12 @@ declare module 'eslint-plugin-lodash' {
 }
 
 declare module 'eslint-plugin-jsx-a11y' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
+    import type { Linter, Rule } from 'eslint';
 
 
     const plugin: {
-        configs: Record<'recommended' | 'strict', TSESLint.ClassicConfig.Config>;
-        flatConfigs: Record<'recommended' | 'strict', TSESLint.FlatConfig.Config>;
+        configs: Record<'recommended' | 'strict', Linter.LegacyConfig>;
+        flatConfigs: Record<'recommended' | 'strict', Linter.Config>;
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -38,12 +36,11 @@ declare module 'eslint-plugin-jsx-a11y' {
 }
 
 declare module 'eslint-plugin-security-node' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
+    import type { Linter, Rule } from 'eslint';
 
 
     const plugin: {
-        configs: { recommended: TSESLint.ClassicConfig.Config };
+        configs: { recommended: Linter.LegacyConfig };
         rules: Record<string, Rule.RuleModule>;
     };
 
@@ -51,14 +48,13 @@ declare module 'eslint-plugin-security-node' {
 }
 
 declare module 'eslint-plugin-cypress/flat' {
-    import type { TSESLint } from '@typescript-eslint/utils';
-    import type { Rule } from 'eslint';
+    import type { Linter, Rule } from 'eslint';
 
 
     const plugin: {
         configs: {
-            globals: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions'>>;
-            recommended: Required<Pick<TSESLint.FlatConfig.Config, 'plugins' | 'languageOptions' | 'rules'>>;
+            globals: Required<Pick<Linter.Config, 'plugins' | 'languageOptions'>>;
+            recommended: Required<Pick<Linter.Config, 'plugins' | 'languageOptions' | 'rules'>>;
         };
         rules: Record<string, Rule.RuleModule>;
     };

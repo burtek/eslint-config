@@ -1,6 +1,6 @@
+import { defineConfig } from 'eslint/config';
 import jestDom from 'eslint-plugin-jest-dom';
 import testingLibrary from 'eslint-plugin-testing-library';
-import tseslint from 'typescript-eslint';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
 
@@ -8,7 +8,7 @@ import { extendFlatConfig } from './share/extend-flat-config.js';
 const files = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
-    return tseslint.config(
+    return defineConfig(
         extendFlatConfig(
             jestDom.configs['flat/all'],
             {

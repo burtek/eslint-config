@@ -1,7 +1,7 @@
 import json from '@eslint/json';
+import { defineConfig } from 'eslint/config';
 import * as jsonc from 'eslint-plugin-jsonc';
 import * as jsonParser from 'jsonc-eslint-parser';
-import tseslint from 'typescript-eslint';
 
 
 /** @typedef {Partial<import('@typescript-eslint/utils').TSESLint.SharedConfig.RulesRecord>} Rules  */
@@ -30,11 +30,13 @@ export function prepareConfig({
         jsonc: additionalFilesJsonc = []
     } = {}
 } = {}) {
-    return tseslint.config(
+    return defineConfig(
         {
             name: 'dtrw:json:base',
             files: ['**/*.{json,jsonc,json5}', ...additionalFilesJson, ...additionalFilesJson5, ...additionalFilesJsonc],
-            plugins: { json, jsonc },
+            // configs has rules with "string" type rather than RuleSeverity, but it's not needed in here as we use the config directly
+            // so we can mute the TS error by overriding configs with undefined
+            plugins: { json, jsonc: { ...jsonc, configs: undefined } },
             languageOptions: { parser: jsonParser }
         },
         {

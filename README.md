@@ -25,7 +25,7 @@ npm i -D @dtrw/eslint-config@~5.9.0 eslint
 ```js
 // eslint.config.js
 
-import { config, prepareConfig } from '@dtrw/eslint-config'; // config re-exported from typescript-eslint
+import { config, prepareConfig } from '@dtrw/eslint-config'; // config re-exported from eslint/config
 
 export default prepareConfig(configuration)
 //or
