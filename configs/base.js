@@ -256,11 +256,11 @@ export function prepareConfig({ nextResolver = true } = {}) {
                     'all',
                     {
                         allowParensAfterCommentPattern: '@type',
-                        enforceForArrowConditionals: false,
                         enforceForFunctionPrototypeMethods: false,
                         ignoreJSX: 'multi-line',
                         nestedBinaryExpressions: false,
-                        nestedConditionalExpressions: false
+                        nestedConditionalExpressions: false,
+                        ignoredNodes: ['ArrowFunctionExpression[body.type=ConditionalExpression']
                     }
                 ],
                 '@stylistic/no-extra-semi': 'error',
