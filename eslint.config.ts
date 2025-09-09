@@ -7,7 +7,8 @@ import { prepareConfig } from './index.js';
 export default tseslint.config(
     ...prepareConfig({
         json: true,
-        jest: { mode: 'vitest' }
+        jest: { mode: 'vitest' },
+        node: true
     }),
     {
         name: 'local-overrides',
