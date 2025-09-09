@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Acknowlegde command and get ref
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         id: github-script
         with:
           script: |
@@ -58,7 +58,7 @@ jobs:
           branch: ${{ fromJson(steps.github-script.outputs.result) }}
 
       - name: Notify of failure
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             github.rest.issues.createComment({
