@@ -260,7 +260,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                         ignoreJSX: 'multi-line',
                         nestedBinaryExpressions: false,
                         nestedConditionalExpressions: false,
-                        ignoredNodes: ['ArrowFunctionExpression[body.type=ConditionalExpression']
+                        ignoredNodes: ['ArrowFunctionExpression[body.type=ConditionalExpression]']
                     }
                 ],
                 '@stylistic/no-extra-semi': 'error',
