@@ -2,6 +2,7 @@
 import js from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import eslint from 'eslint';
+import { defineConfig } from 'eslint/config';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import importPlugin from 'eslint-plugin-import-x';
 import promise from 'eslint-plugin-promise';
@@ -36,7 +37,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
             }
         };
 
-    return tseslint.config(
+    return defineConfig(
         { ignores: ['node_modules'] },
         { plugins: { '@stylistic': stylisticPlugin } },
         {
@@ -55,6 +56,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 ...resolverSettings
             },
             plugins: {
+                // @ts-expect-error TS mismatch between tseslint and eslint types
                 'import-x': importPlugin,
                 promise
             },

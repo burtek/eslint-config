@@ -1,10 +1,10 @@
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
 import { prepareConfig } from './index.js';
 
 
-export default tseslint.config(
+export default defineConfig(
     ...prepareConfig({
         json: true,
         jest: { mode: 'vitest' },

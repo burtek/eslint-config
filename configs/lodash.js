@@ -1,11 +1,11 @@
+import { defineConfig } from 'eslint/config';
 import lodash from 'eslint-plugin-lodash';
-import tseslint from 'typescript-eslint';
 
 
 const files = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
-    return tseslint.config(
+    return defineConfig(
         {
             name: 'dtrw:lodash:base',
             files,

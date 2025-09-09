@@ -1,13 +1,9 @@
-/** @import { type TSESLint } from '@typescript-eslint/utils'; */
+/** @import { type Linter } from 'eslint'; */
+
 
 /**
- * @param {Partial<TSESLint.FlatConfig.Config>} baseConfig
- * @param {Partial<TSESLint.FlatConfig.Config>} extendedConfig
- * @returns {TSESLint.FlatConfig.Config}
- */
-/**
- * @param  {...Partial<TSESLint.FlatConfig.Config>} configs
- * @returns {TSESLint.FlatConfig.Config}
+ * @param  {...Partial<Linter.Config>} configs
+ * @returns {Linter.Config}
  */
 export const extendFlatConfig = (...configs) => configs.reduce((current, next) => ({
     ...current,

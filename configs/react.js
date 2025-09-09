@@ -1,11 +1,11 @@
 /* eslint no-warning-comments: 1 */
 import nextDefault from '@next/eslint-plugin-next';
 import * as next from '@next/eslint-plugin-next';
+import { defineConfig } from 'eslint/config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import * as reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
@@ -33,7 +33,7 @@ const jsxFiles = ['**/*.{jsx,tsx}'];
  * @param {boolean} [config.nextjs] Include config for next.js
  */
 export function prepareConfig({ a11y = false, nextjs = false } = {}) {
-    const baseConfig = tseslint.config(
+    const baseConfig = defineConfig(
         {
             name: 'dtrw:react:base',
             files,
@@ -196,7 +196,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             }
         }
     );
-    const nextConfig = tseslint.config(
+    const nextConfig = defineConfig(
         {
             // @ts-expect-error -- https://github.com/vercel/next.js/issues/81695
             ...('flatConfig' in nextDefault ? nextDefault : next).flatConfig.coreWebVitals,
@@ -204,7 +204,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             files
         }
     );
-    const a11yConfig = tseslint.config(
+    const a11yConfig = defineConfig(
         {
             name: 'dtrw:react:a11y',
             files: jsxFiles,

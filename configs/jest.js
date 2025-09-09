@@ -1,6 +1,6 @@
+import { defineConfig } from 'eslint/config';
 import jest from 'eslint-plugin-jest';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
 
@@ -16,7 +16,7 @@ const tsMockFiles = '**/__mocks__/**/*.{ts,cts,mts,tsx}';
  * @param {'jest' | 'vitest'} [config.mode]
  */
 export function prepareConfig({ mode = 'jest' } = {}) {
-    return tseslint.config(
+    return defineConfig(
         {
             name: 'dtrw:jest:base',
             files: [testFiles, mockFiles],
