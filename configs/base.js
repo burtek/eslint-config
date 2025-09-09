@@ -167,6 +167,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 'prefer-rest-params': 'error',
                 'prefer-spread': 'error',
                 'prefer-template': 'error',
+                'preserve-caught-error': 'error',
                 'radix': 'error',
                 'require-atomic-updates': 'error',
                 'require-await': 'error',
