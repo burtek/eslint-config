@@ -46,18 +46,3 @@ declare module 'eslint-plugin-security-node' {
 
     export default plugin;
 }
-
-declare module 'eslint-plugin-cypress/flat' {
-    import type { Linter, Rule } from 'eslint';
-
-
-    const plugin: {
-        configs: {
-            globals: Required<Pick<Linter.Config, 'plugins' | 'languageOptions'>>;
-            recommended: Required<Pick<Linter.Config, 'plugins' | 'languageOptions' | 'rules'>>;
-        };
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
