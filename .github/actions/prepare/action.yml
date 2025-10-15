@@ -1,13 +1,20 @@
 name: 'Prepare workflow'
 
+inputs:
+  setupNode:
+    description: 'Whether to run setup-node'
+    required: false
+    default: true
+
 runs:
   using: "composite"
   steps:
-    - name: 'Setup node'
+    - name: 'Setup node' # If changing anything here, change it in workflows/release.yml too
+      if: ${{ inputs.setupNode == 'true' }}
       uses: actions/setup-node@v6
       with:
         cache: 'yarn'
-        node-version: '24.x'
+        node-version: 24
         registry-url: 'https://registry.npmjs.org'
         scope: '@dtrw'
     - name: 'Install dependencies'

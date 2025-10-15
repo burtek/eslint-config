@@ -5,6 +5,10 @@ on:
     tags:
       - "v*"
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: write
+
 jobs:
   check-release:
     name: 'Check release is good and ready'
@@ -15,21 +19,26 @@ jobs:
   make-release:
     name: 'Make github and npm releases'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     needs: check-release
 
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v5'
+      - name: 'Setup node' # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composites
+        uses: actions/setup-node@v6
+        with:
+          cache: 'yarn'
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@dtrw'
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
+        with:
+          setupNode: false
       - name: 'Make .d.ts'
         run: yarn make-types
       - name: 'Publish package'
-        run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: "npm publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
       - name: Generate Changelog
         run: |
           START=$(grep -n "## \[" CHANGELOG.md | head -n 1 | cut -d : -f 1)
