@@ -24,16 +24,17 @@ jobs:
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v5'
-      - name: 'Setup node'
+      - name: 'Setup node' # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composites
         uses: actions/setup-node@v6
         with:
           cache: 'yarn'
-          node-version: '24.x'
+          node-version: 24
           registry-url: 'https://registry.npmjs.org'
           scope: '@dtrw'
-      - name: 'Install dependencies'
-        run: yarn
-        shell: bash
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
+        with:
+          setupNode: false
       - name: 'Make .d.ts'
         run: yarn make-types
       - name: 'Publish package'
