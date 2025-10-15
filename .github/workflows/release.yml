@@ -7,7 +7,7 @@ on:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write
 
 jobs:
   check-release:
@@ -19,15 +19,21 @@ jobs:
   make-release:
     name: 'Make github and npm releases'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     needs: check-release
 
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v5'
-      - name: 'Prepare workflow'
-        uses: ./.github/actions/prepare
+      - name: 'Setup node'
+        uses: actions/setup-node@v6
+        with:
+          cache: 'yarn'
+          node-version: '24.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@dtrw'
+      - name: 'Install dependencies'
+        run: yarn
+        shell: bash
       - name: 'Make .d.ts'
         run: yarn make-types
       - name: 'Publish package'
