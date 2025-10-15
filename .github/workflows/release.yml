@@ -31,7 +31,7 @@ jobs:
       - name: 'Make .d.ts'
         run: yarn make-types
       - name: 'Publish package'
-        run: "yarn publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
+        run: "npm publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
       - name: Generate Changelog
         run: |
           START=$(grep -n "## \[" CHANGELOG.md | head -n 1 | cut -d : -f 1)
