@@ -11,13 +11,13 @@ This is repository with my `eslint` configs for multiple purposes that are used 
 ## Install
 
 ```bash
-yarn add -D @dtrw/eslint-config@~5.9.0 eslint
+yarn add -D @dtrw/eslint-config@~5.10.0 eslint
 ```
 
 or
 
 ```bash
-npm i -D @dtrw/eslint-config@~5.9.0 eslint
+npm i -D @dtrw/eslint-config@~5.10.0 eslint
 ```
 
 ## Usage
