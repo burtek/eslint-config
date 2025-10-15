@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.10.0-alpha.1](https://github.com/burtek/eslint-config/compare/v5.10.0-alpha.0...v5.10.0-alpha.1) (2025-10-15)
+
+
+### Chores
+
+* Fix nom oidc publish ([8b2edfb](https://github.com/burtek/eslint-config/commit/8b2edfb7e28afd0f062ddee87250a1033a189d89))
+
 ## [5.10.0-alpha.0](https://github.com/burtek/eslint-config/compare/v5.9.4...v5.10.0-alpha.0) (2025-10-15)
 
 
