@@ -3,7 +3,7 @@ import * as next from '@next/eslint-plugin-next';
 import { defineConfig } from 'eslint/config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
-import * as reactHooks from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 import { reactNamingRuleConfig } from './share/naming-config.js';
@@ -25,7 +25,6 @@ const testFiles = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
 const jsxFiles = ['**/*.{jsx,tsx}'];
 
-// TODO: move to FlatConfig once react-hooks is upgraded
 /**
  * @param {Object} [config]
  * @param {boolean} [config.a11y] Include config for a11y
@@ -42,7 +41,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                     ecmaFeatures: { jsx: true },
                     jsxPragma: null
                 },
-                globals: globals.browser
+                globals: {
+                    ...globals.serviceworker,
+                    ...globals.browser
+                }
             },
             settings: {
                 react: { version: 'detect' },
@@ -172,14 +174,9 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             }
         },
         {
-            ...reactHooks.configs['recommended-latest'],
-            files,
-            languageOptions: {
-                globals: {
-                    ...globals.serviceworker,
-                    ...globals.browser
-                }
-            }
+            ...reactHooks.configs.flat['recommended-latest'],
+            name: 'dtrw:react:hooks',
+            files
         },
         {
             name: 'dtrw:react:ts',
