@@ -66,7 +66,8 @@ export function prepareConfig({ mode = 'jest' } = {}) {
                     'jest/prefer-hooks-on-top': 'error',
                     'jest/prefer-mock-promise-shorthand': 'error',
                     'jest/prefer-strict-equal': 'error',
-                    'jest/prefer-todo': 'error'
+                    'jest/prefer-todo': 'error',
+                    'jest/valid-mock-module-path': 'error'
                 }
             }
         ),
