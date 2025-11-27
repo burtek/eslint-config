@@ -29,7 +29,7 @@ export function prepareConfig({ mode = 'jest' } = {}) {
             settings: {
                 jest: {
                     // lie to eslint-plugin-jest that we indeed use jest (vitest has same syntax), otherwise let auto-detect
-                    ...mode === 'vitest' && { version: 30 }
+                    ...mode === 'vitest' && { version: 30, globalPackage: 'vitest' }
                 }
             },
             rules: {
@@ -66,7 +66,8 @@ export function prepareConfig({ mode = 'jest' } = {}) {
                     'jest/prefer-hooks-on-top': 'error',
                     'jest/prefer-mock-promise-shorthand': 'error',
                     'jest/prefer-strict-equal': 'error',
-                    'jest/prefer-todo': 'error'
+                    'jest/prefer-todo': 'error',
+                    'jest/valid-mock-module-path': 'error'
                 }
             }
         ),
