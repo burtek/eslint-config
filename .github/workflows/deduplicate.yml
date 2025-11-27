@@ -31,7 +31,7 @@ jobs:
             return pull.data.head.ref;
 
       - name: Check out the repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ fromJson(steps.github-script.outputs.result) }}
           persist-credentials: false
