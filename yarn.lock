@@ -1971,10 +1971,10 @@ eslint-plugin-jest-dom@5.5.0:
     "@babel/runtime" "^7.16.3"
     requireindex "^1.2.0"
 
-eslint-plugin-jest@29.2.1:
-  version "29.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-29.2.1.tgz#e56c5f79b6475dafa551ce8e762ac25d4bd21ea4"
-  integrity sha512-0WLIezrIxitUGbjMIGwznVzSIp0uFJV0PZ2fiSvpyVcxe+QMXKUt7MRhUpzdbctnnLwiOTOFkACplgB0wAglFw==
+eslint-plugin-jest@29.15.0:
+  version "29.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-29.15.0.tgz#58a5917a88244f7536ae10c68b5bd58d407896f0"
+  integrity sha512-ZCGr7vTH2WSo2hrK5oM2RULFmMruQ7W3cX7YfwoTiPfzTGTFBMmrVIz45jZHd++cGKj/kWf02li/RhTGcANJSA==
   dependencies:
     "@typescript-eslint/utils" "^8.0.0"
 
