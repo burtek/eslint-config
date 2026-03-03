@@ -369,13 +369,13 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.39.3.tgz#c6168736c7e0c43ead49654ed06a4bcb3833363d"
   integrity sha512-1B1VkCq6FuUNlQvlBYb+1jDu/gV297TIs/OeiaSR9l1H27SVW55ONE1e1Vp16NqP683+xEGzxYtv4XCiDPaQiw==
 
-"@eslint/json@0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-0.14.0.tgz#dd4809915e897c439d947b2cd4132950696a6a0c"
-  integrity sha512-rvR/EZtvUG3p9uqrSmcDJPYSH7atmWr0RnFWN6m917MAPx82+zQgPUmDu0whPFG6XTyM0vB/hR6c1Q63OaYtCQ==
+"@eslint/json@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@eslint/json/-/json-1.0.1.tgz#3b4f7225e5ff8c3639ab0dc77eb2f451aa4ab8d8"
+  integrity sha512-bE2nGv8/U+uRvQEJWOgCsZCa65XsCBgxyyx/sXtTHVv0kqdauACLzyp7A1C3yNn7pRaWjIt5acxY+TAbSyIJXw==
   dependencies:
-    "@eslint/core" "^0.17.0"
-    "@eslint/plugin-kit" "^0.4.1"
+    "@eslint/core" "^1.1.0"
+    "@eslint/plugin-kit" "^0.6.0"
     "@humanwhocodes/momoa" "^3.3.10"
     natural-compare "^1.4.0"
 
