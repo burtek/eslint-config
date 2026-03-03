@@ -1,6 +1,6 @@
 /* eslint no-warning-comments: 1 */
 import { defineConfig } from 'eslint/config';
-import cypress from 'eslint-plugin-cypress/flat';
+import cypress from 'eslint-plugin-cypress';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
 
