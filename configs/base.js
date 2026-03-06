@@ -146,6 +146,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                     }
                 ],
                 'no-use-before-define': ['error', { classes: true, functions: false, variables: true }],
+                'no-useless-assignment': 'error',
                 'no-useless-call': 'error',
                 'no-useless-computed-key': 'error',
                 'no-useless-concat': 'error',

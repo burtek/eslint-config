@@ -69,7 +69,8 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                         ignoreTranspilerName: true
                     }
                 ],
-                'react/forward-ref-uses-ref': 'error',
+                // TODO: re-enable once eslint-plugin-react supports ESLint v10 (context.getSourceCode() was removed)
+                'react/forward-ref-uses-ref': 'off',
                 'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
