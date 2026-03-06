@@ -25,7 +25,7 @@ export function prepareConfig() {
                     'testing-library/no-test-id-queries': 'warn',
                     'testing-library/prefer-explicit-assert': 'error',
                     'testing-library/prefer-user-event': 'warn',
-                    'testing-library/prefer-user-event-setup': 'warn'
+                    'testing-library/prefer-user-event-setup': 'error'
                 }
             }
         )
