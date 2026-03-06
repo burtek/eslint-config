@@ -468,6 +468,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                     }
                 ],
                 '@typescript-eslint/no-useless-constructor': 'error',
+                '@typescript-eslint/no-useless-default-assignment': 'error',
                 '@typescript-eslint/no-useless-empty-export': 'error',
                 '@typescript-eslint/no-unnecessary-template-expression': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
