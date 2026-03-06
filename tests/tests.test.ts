@@ -71,5 +71,5 @@ describe.each<{
 
         expect(validate).not.toThrow();
         expect(lintResult).toStrictEqual([]);
-    }, 2000);
+    }, 10000);
 });

@@ -55,7 +55,7 @@
     "scripts": {
         "lint": "eslint {configs,rules}/**/*.js",
         "make-types": "rimraf types && tsc --project tsconfig.build.json",
-        "test": "vitest run tests/tests.test.ts",
+        "test": "vitest run",
         "preversion": "yarn test",
         "push": "git push --follow-tags",
         "prerelease": "yarn test",
