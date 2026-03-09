@@ -54,8 +54,10 @@ export function prepareConfig(providedConfigs = {}, ignores = DEFAULT_IGNORES, b
         if (finalConfig[key] === true) {
             return configFactories[key]();
         }
-        // @ts-expect-error -- TODO: fixme
-        return configFactories[key](finalConfig[key]);
+        // TypeScript can't narrow union function signatures for indexed access types;
+        // this code path is only reached for factories where Config<T> is not `never`
+        // @ts-expect-error -- call is safe: Config<T> is `never` for no-config factories, so this branch is unreachable for them
+        return configFactories[key](/** @type {Config<T>} */(finalConfig[key]));
     }
 
     return defineConfig(
