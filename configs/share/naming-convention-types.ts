@@ -1,73 +1,73 @@
-type PredefinedFormatsString =
-    | 'camelCase'
-    | 'strictCamelCase'
-    | 'PascalCase'
-    | 'StrictPascalCase'
-    | 'snake_case'
-    | 'UPPER_CASE';
+type PredefinedFormatsString
+    = | 'camelCase'
+        | 'strictCamelCase'
+        | 'PascalCase'
+        | 'StrictPascalCase'
+        | 'snake_case'
+        | 'UPPER_CASE';
 
-type UnderscoreOptionsString =
-    | 'forbid'
-    | 'allow'
-    | 'require'
-    | 'requireDouble'
-    | 'allowDouble'
-    | 'allowSingleOrDouble';
+type UnderscoreOptionsString
+    = | 'forbid'
+        | 'allow'
+        | 'require'
+        | 'requireDouble'
+        | 'allowDouble'
+        | 'allowSingleOrDouble';
 
-type SelectorsString =
-    | 'variable'
-    | 'function'
-    | 'parameter'
-    | 'parameterProperty'
-    | 'accessor'
-    | 'enumMember'
-    | 'classMethod'
-    | 'objectLiteralMethod'
-    | 'typeMethod'
-    | 'classProperty'
-    | 'objectLiteralProperty'
-    | 'typeProperty'
-    | 'class'
-    | 'interface'
-    | 'typeAlias'
-    | 'enum'
-    | 'typeParameter'
-    | 'import';
+type SelectorsString
+    = | 'variable'
+        | 'function'
+        | 'parameter'
+        | 'parameterProperty'
+        | 'accessor'
+        | 'enumMember'
+        | 'classMethod'
+        | 'objectLiteralMethod'
+        | 'typeMethod'
+        | 'classProperty'
+        | 'objectLiteralProperty'
+        | 'typeProperty'
+        | 'class'
+        | 'interface'
+        | 'typeAlias'
+        | 'enum'
+        | 'typeParameter'
+        | 'import';
 
-type MetaSelectorsString =
-    | 'default'
-    | 'variableLike'
-    | 'memberLike'
-    | 'typeLike'
-    | 'method'
-    | 'property';
+type MetaSelectorsString
+    = | 'default'
+        | 'variableLike'
+        | 'memberLike'
+        | 'typeLike'
+        | 'method'
+        | 'property';
 type IndividualAndMetaSelectorsString = MetaSelectorsString | SelectorsString;
 
-type ModifiersString =
-    | 'const'
-    | 'readonly'
-    | 'static'
-    | 'public'
-    | 'protected'
-    | 'private'
-    | '#private'
-    | 'abstract'
-    | 'destructured'
-    | 'global'
-    | 'exported'
-    | 'unused'
-    | 'requiresQuotes'
-    | 'override'
-    | 'async'
-    | 'default'
-    | 'namespace';
+type ModifiersString
+    = | 'const'
+        | 'readonly'
+        | 'static'
+        | 'public'
+        | 'protected'
+        | 'private'
+        | '#private'
+        | 'abstract'
+        | 'destructured'
+        | 'global'
+        | 'exported'
+        | 'unused'
+        | 'requiresQuotes'
+        | 'override'
+        | 'async'
+        | 'default'
+        | 'namespace';
 
-type TypeModifiersString =
-    | 'boolean'
-    | 'string'
-    | 'number'
-    | 'function'
-    | 'array';
+type TypeModifiersString
+    = | 'boolean'
+        | 'string'
+        | 'number'
+        | 'function'
+        | 'array';
 
 interface MatchRegex {
     regex: string;
