@@ -37,41 +37,47 @@ export default config(
 
 ### Configuration
 
-The configuration object can contain following keys:
+The `prepareConfig(configs, ignores?, baseConfig?)` function accepts the following arguments:
 
-- jest
-- json
-- lodash
-- node
-- react
-- cypress
-- testing-library
+- **`configs`** – object where each key enables a config module. Set the key to `true` for defaults or provide an options object:
+  - `cypress` – enables Cypress-specific rules for `**/*.cy.*` files (no options)
+  - `jest` – enables Jest/Vitest rules for test files:
+    - `jest: true` — enables with default params (jest mode)
+    - `jest: { mode: 'vitest' }` — configures the plugin to work with Vitest
+  - `json` – enables JSON/JSONC/JSON5 linting:
+    - `json: true` — enables with default params
+    - `json: { additionalFiles: { json?, jsonc?, json5? } }` — treat additional file globs as specific JSON flavors
+  - `lodash` – enables lodash-specific rules (no options)
+  - `node` – enables Node.js-specific rules (no options)
+  - `react` – enables React rules:
+    - `react: true` — enables with default params
+    - `react: { a11y?: boolean, nextjs?: boolean }` — optionally enables accessibility and Next.js rules
+  - `testingLibrary` – enables Testing Library rules for test files (no options)
 
-### TODO: Docs
+- **`ignores`** _(optional)_ – custom ignore patterns. Defaults to `['node_modules/', 'dist/', 'coverage/', '.vercel/']`. Can be an array or a function `(defaults) => string[]`.
 
-<!-- Configuration key | schema | plugins in use | description
+- **`baseConfig`** _(optional)_ – additional options for the base config:
+  - `baseConfig: { nextResolver?: boolean }` — set `nextResolver: false` to use the legacy TypeScript import resolver
 
-- `jest` - if present, enables the `jest` config
-  + `jest: true` enables it with default params
-  + `jest: {...}` allows additional configuration
-    - `jest.mode` can be set to `'vitest'` to make the plugin work with `vitest` library
+### Individual config factories
 
+For more granular control, you can use the individual `configFactories` or named exports directly:
 
+```js
+import { configFactories, prepareReactConfig } from '@dtrw/eslint-config';
 
-## Available main configs
+// Apply only react config
+export default config(...prepareReactConfig({ a11y: true }));
+```
 
- name | notes | extends | Rules sources
-------|-------|---------|--------------
-`eslint-config-base`        | Base config for both JS and TS projects | <ul><li>`@typescript-eslint/eslint-recommended`</li><li>`import/typescript`</li></ul> | <ul><li>`eslint`</li><li>[`typescript-eslint`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)</li><li>[`import`](https://www.npmjs.com/package/eslint-plugin-import)</li><li>[`jest`](https://www.npmjs.com/package/eslint-plugin-jest)</li><li>[`jest-formatting`](https://www.npmjs.com/package/eslint-plugin-jest-formatting)</li><li>[`jsonc`](https://www.npmjs.com/package/eslint-plugin-jsonc)</li><li>[`promise`](https://www.npmjs.com/package/eslint-plugin-promise)</li></ul>
-`eslint-config-react`       | Config for `reactJS` and `react-native` projects | <ul><li>`react-hooks/recommended`</li><li>`@dtrw/eslint-config/eslint-config-base`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-base`</li><li>[`react`](https://www.npmjs.com/package/eslint-plugin-react)</li><li>[`react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)</li></ul>
-`eslint-config-react-a11y`  | Config for `reactJS` projects with additional `a11y` setup | <ul><li>`jsx-a11y/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react`</li><li>[`jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)</li></ul>
-`eslint-config-next`       | Config for `next.js` projects | <ul><li>`@next/next/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react`</li><li>[`@next/next`](https://www.npmjs.com/package/@next/eslint-plugin-next)</li></ul>
-`eslint-config-next-a11y`  | Config for `next.js` projects with additional `a11y` setup | <ul><li>`@next/next/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react-a11y`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react-a11y`</li><li>[`@next/next`](https://www.npmjs.com/package/@next/eslint-plugin-next)</li></ul>
-`eslint-config-node`        | Config for `nodeJS` projects | <ul><li>`n/recommended`</li><li>`security-node/recommended`</li><li>`@dtrw/eslint-config/eslint-config-base`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-base`</li><li>[`n`](https://www.npmjs.com/package/eslint-plugin-n)</li><li>[`security-node`](https://www.npmjs.com/package/eslint-plugin-security-node)</li></ul>
+Available named exports:
+- `prepareConfig` (main entry point)
+- `prepareCypressConfig`
+- `prepareJestConfig`
+- `prepareJsonConfig`
+- `prepareLodashConfig`
+- `prepareNodeConfig`
+- `prepareReactConfig`
+- `prepareTestingLibraryConfig`
+- `configFactories` (object containing all of the above factories)
 
-### Addon configs
-Those configs don't extend any of the above main configs
-
- name | notes | extends | Rules sources
-------|-------|---------|--------------
-`eslint-config-lodash`      | Config for projects making use of `lodash` library | _none_ | <ul><li>[`lodash`](https://www.npmjs.com/package/eslint-plugin-lodash)</li></ul> -->
