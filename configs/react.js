@@ -54,12 +54,105 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 ...react.configs.flat.recommended.rules,
                 ...react.configs.flat['jsx-runtime'].rules,
 
-                '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
-                '@stylistic/jsx-quotes': ['error', 'prefer-double'],
-
-                // TODO: move other rules to stylistic
-                // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3671
+                // JSX formatting rules migrated from eslint-plugin-react to @stylistic
                 // see https://eslint.style/packages/default?filter=jsx
+                '@stylistic/jsx-child-element-spacing': 'error',
+                '@stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+                '@stylistic/jsx-closing-tag-location': 'error',
+                '@stylistic/jsx-curly-brace-presence': 'error',
+                '@stylistic/jsx-curly-newline': [
+                    'error',
+                    {
+                        multiline: 'forbid',
+                        singleline: 'forbid'
+                    }
+                ],
+                '@stylistic/jsx-curly-spacing': [
+                    'error',
+                    {
+                        when: 'never',
+                        allowMultiline: false,
+                        attributes: { when: 'never' },
+                        children: { when: 'never' }
+                    }
+                ],
+                '@stylistic/jsx-equals-spacing': 'error',
+                '@stylistic/jsx-first-prop-new-line': ['error', 'multiprop'],
+                '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
+                '@stylistic/jsx-indent': [
+                    'error',
+                    4,
+                    {
+                        checkAttributes: true,
+                        indentLogicalExpressions: true
+                    }
+                ],
+                '@stylistic/jsx-indent-props': 'error',
+                '@stylistic/jsx-max-props-per-line': [
+                    'error',
+                    {
+                        maximum: {
+                            single: 2,
+                            multi: 1
+                        }
+                    }
+                ],
+                '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
+                '@stylistic/jsx-pascal-case': 'error',
+                '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+                '@stylistic/jsx-self-closing-comp': [
+                    'error',
+                    {
+                        component: true,
+                        html: true
+                    }
+                ],
+                '@stylistic/jsx-tag-spacing': 'error',
+                '@stylistic/jsx-wrap-multilines': [
+                    'error',
+                    {
+                        declaration: 'parens-new-line',
+                        assignment: 'parens-new-line',
+                        return: 'parens-new-line',
+                        arrow: 'parens-new-line',
+                        condition: 'parens-new-line',
+                        logical: 'parens-new-line',
+                        prop: 'parens-new-line'
+                    }
+                ],
+
+                // react/jsx rules NOT available in @stylistic (kept as react/ rules):
+                //   react/jsx-boolean-value       - enforce boolean attribute notation
+                //   react/jsx-filename-extension  - restrict file extensions that may contain JSX
+                //   react/jsx-fragments           - enforce shorthand or standard form for React fragments
+                //   react/jsx-handler-names       - enforce event handler naming conventions
+                //   react/jsx-key                 - require key prop for elements in arrays/iterators
+                //   react/jsx-max-depth           - enforce JSX maximum depth
+                //   react/jsx-no-bind             - prevent usage of .bind() and arrow functions in JSX props
+                //   react/jsx-no-comment-textnodes - prevent comments from being inserted as text nodes
+                //   react/jsx-no-constructed-context-values - prevent construction of values passed through context
+                //   react/jsx-no-duplicate-props  - prevent duplicate props in JSX
+                //   react/jsx-no-leaked-render    - prevent problematic leaked values from being rendered
+                //   react/jsx-no-literals         - prevent usage of string literals in JSX
+                //   react/jsx-no-script-url       - prevent usage of javascript: URLs
+                //   react/jsx-no-target-blank      - prevent target="_blank" without rel="noreferrer"
+                //   react/jsx-no-undef            - disallow undeclared variables in JSX
+                //   react/jsx-no-useless-fragment - disallow unnecessary fragments
+                //   react/jsx-props-no-spread-multi - prevent spreading the same object multiple times
+                //   react/jsx-props-no-spreading  - prevent JSX prop spreading
+                //   react/jsx-sort-default-props  - enforce default props alphabetical sorting
+                //   react/jsx-uses-react          - prevent React from being marked as unused
+                //   react/jsx-uses-vars           - prevent variables used in JSX to be incorrectly marked as unused
+
+                // @stylistic JSX rules exclusive to @stylistic (not in eslint-plugin-react) - already enabled above:
+                //   @stylistic/jsx-function-call-newline - require a newline after each function call argument in JSX
+                //   @stylistic/jsx-quotes              - enforce consistent use of quotes in JSX attributes
+                //   @stylistic/jsx-self-closing-comp   - require self-closing on components/elements without children (replaces react/self-closing-comp)
+                //
+                // additional @stylistic JSX rules not currently enabled to consider:
+                //   @stylistic/jsx-newline             - require or prevent a newline following a JSX element (also: react/jsx-newline)
+                //   @stylistic/jsx-props-no-multi-spaces - disallow multiple spaces between inline JSX props (also: react/jsx-props-no-multi-spaces)
+                //   @stylistic/jsx-sort-props          - enforce props alphabetical sorting (also: react/jsx-sort-props)
 
                 'react/button-has-type': 'warn',
                 'react/display-name': [
@@ -73,54 +166,14 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/hook-use-state': ['error', { allowDestructuredState: true }],
                 'react/iframe-missing-sandbox': 'error',
                 'react/jsx-boolean-value': 'error',
-                'react/jsx-child-element-spacing': 'error',
-                'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
-                'react/jsx-closing-tag-location': 'error',
-                'react/jsx-curly-brace-presence': 'error',
-                'react/jsx-curly-newline': [
-                    'error',
-                    {
-                        multiline: 'forbid',
-                        singleline: 'forbid'
-                    }
-                ],
-                'react/jsx-curly-spacing': [
-                    'error',
-                    {
-                        when: 'never',
-                        allowMultiline: false,
-                        attributes: { when: 'never' },
-                        children: { when: 'never' }
-                    }
-                ],
-                'react/jsx-equals-spacing': 'error',
-                'react/jsx-first-prop-new-line': ['error', 'multiprop'],
                 'react/jsx-fragments': ['error', 'syntax'],
                 'react/jsx-handler-names': ['error', { checkInlineFunction: true }],
-                'react/jsx-indent': [
-                    'error',
-                    4,
-                    {
-                        checkAttributes: true,
-                        indentLogicalExpressions: true
-                    }
-                ],
-                'react/jsx-indent-props': 'error',
                 'react/jsx-key': [
                     'error',
                     {
                         checkFragmentShorthand: true,
                         checkKeyMustBeforeSpread: true,
                         warnOnDuplicates: true
-                    }
-                ],
-                'react/jsx-max-props-per-line': [
-                    'error',
-                    {
-                        maximum: {
-                            single: 2,
-                            multi: 1
-                        }
                     }
                 ],
                 'react/jsx-no-bind': ['warn', { ignoreDOMComponents: true }],
@@ -130,22 +183,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/jsx-props-no-spread-multi': 'error',
                 'react/jsx-no-undef': 'off',
                 'react/jsx-no-useless-fragment': 'error',
-                'react/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
-                'react/jsx-pascal-case': 'error',
-                'react/jsx-tag-spacing': 'error',
                 'react/jsx-uses-vars': 'off',
-                'react/jsx-wrap-multilines': [
-                    'error',
-                    {
-                        declaration: 'parens-new-line',
-                        assignment: 'parens-new-line',
-                        return: 'parens-new-line',
-                        arrow: 'parens-new-line',
-                        condition: 'parens-new-line',
-                        logical: 'parens-new-line',
-                        prop: 'parens-new-line'
-                    }
-                ],
                 'react/no-access-state-in-setstate': 'error',
                 'react/no-array-index-key': 'error',
                 'react/no-danger': 'error',
@@ -162,13 +200,6 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 'react/no-will-update-set-state': 'error',
                 'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
                 'react/prop-types': 'off',
-                'react/self-closing-comp': [
-                    'error',
-                    {
-                        component: true,
-                        html: true
-                    }
-                ],
                 'react/state-in-constructor': 'error',
                 'react/void-dom-elements-no-children': 'error'
             }
