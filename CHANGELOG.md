@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [Unreleased]
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** replace `eslint-plugin-react` and `eslint-plugin-react-hooks` with `@eslint-react/eslint-plugin` ([#629](https://github.com/burtek/eslint-config/issues/629))
+* **engines:** drop Node 20 support — `@eslint-react` v3 requires Node `^22.13.0 || >=24` (see [release notes](https://github.com/Rel1cx/eslint-react/releases/tag/v3.0.0-rc.0))
+
+
 ## [5.10.1](https://github.com/burtek/eslint-config/compare/v5.10.0...v5.10.1) (2025-11-27)
 
 
