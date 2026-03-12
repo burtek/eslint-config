@@ -1930,10 +1930,10 @@ eslint-import-resolver-typescript@^4.0.0:
     tinyglobby "^0.2.14"
     unrs-resolver "^1.7.11"
 
-eslint-json-compat-utils@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-json-compat-utils/-/eslint-json-compat-utils-0.2.1.tgz#32931d42c723da383712f25177a2c57b9ef5f079"
-  integrity sha512-YzEodbDyW8DX8bImKhAcCeu/L31Dd/70Bidx2Qex9OFUtgzXLqtfWL4Hr5fM/aCCB8QUZLuJur0S9k6UfgFkfg==
+eslint-json-compat-utils@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-json-compat-utils/-/eslint-json-compat-utils-0.2.3.tgz#f6ef27e80c750b56cbedb4de67a10b1d47f0a8a7"
+  integrity sha512-RbBmDFyu7FqnjE8F0ZxPNzx5UaptdeS9Uu50r7A+D7s/+FCX+ybiyViYEgFUaFIFqSWJgZRTpL5d8Kanxxl2lQ==
   dependencies:
     esquery "^1.6.0"
 
@@ -1984,17 +1984,17 @@ eslint-plugin-jest@29.15.0:
   dependencies:
     "@typescript-eslint/utils" "^8.0.0"
 
-eslint-plugin-jsonc@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-3.1.1.tgz#1e7ee260943038a67c79d65d73ea76ca4ba1a115"
-  integrity sha512-7TSQO8ZyvOuXWb0sYke3KUSh0DJA4/QviKfuzD3/Cy3XDjtrIrTWQbjb7j/Yy2l/DgwuM+lCS2c/jqJifv5jhg==
+eslint-plugin-jsonc@3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsonc/-/eslint-plugin-jsonc-3.1.2.tgz#b42e7745d644938e498fdbbbc818a3197b914ada"
+  integrity sha512-dopTxdB22iuOkgKyJCupEC5IYBItUT4J/teq1H5ddUObcaYhOURxtJElZczdcYnnKCghNU/vccuyPkliy2Wxsg==
   dependencies:
     "@eslint-community/eslint-utils" "^4.5.1"
     "@eslint/core" "^1.0.1"
     "@eslint/plugin-kit" "^0.6.0"
     "@ota-meshi/ast-token-store" "^0.3.0"
     diff-sequences "^29.6.3"
-    eslint-json-compat-utils "^0.2.1"
+    eslint-json-compat-utils "^0.2.3"
     jsonc-eslint-parser "^3.1.0"
     natural-compare "^1.4.0"
     synckit "^0.11.12"
