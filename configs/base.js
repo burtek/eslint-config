@@ -56,7 +56,6 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 ...resolverSettings
             },
             plugins: {
-                // @ts-expect-error TS mismatch between tseslint and eslint types
                 'import-x': importPlugin,
                 promise
             },
