@@ -1,24 +1,12 @@
 /* eslint no-warning-comments: 1 */
+import eslintReact from '@eslint-react/eslint-plugin';
 import * as next from '@next/eslint-plugin-next';
 import { defineConfig } from 'eslint/config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
-
-const linkComponents = [
-    {
-        name: 'Link',
-        linkAttribute: ['to', 'href']
-    },
-    {
-        name: 'NavLink',
-        linkAttribute: ['to', 'href']
-    }
-];
 
 const files = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 const testFiles = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
@@ -35,7 +23,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:base',
             files,
-            plugins: { react },
+            plugins: { ...eslintReact.configs.all.plugins },
             languageOptions: {
                 parserOptions: {
                     ecmaFeatures: { jsx: true },
@@ -46,45 +34,19 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                     ...globals.browser
                 }
             },
-            settings: {
-                react: { version: 'detect' },
-                linkComponents
-            },
             rules: {
-                ...react.configs.flat.recommended.rules,
-                ...react.configs.flat['jsx-runtime'].rules,
-
-                '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
-                '@stylistic/jsx-quotes': ['error', 'prefer-double'],
-
-                // TODO: move other rules to stylistic
-                // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3671
-                // see https://eslint.style/packages/default?filter=jsx
-
-                'react/button-has-type': 'warn',
-                'react/display-name': [
-                    'error',
-                    {
-                        checkContextObjects: true,
-                        ignoreTranspilerName: true
-                    }
-                ],
-                'react/forward-ref-uses-ref': 'error',
-                'react/hook-use-state': ['error', { allowDestructuredState: true }],
-                'react/iframe-missing-sandbox': 'error',
-                'react/jsx-boolean-value': 'error',
-                'react/jsx-child-element-spacing': 'error',
-                'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
-                'react/jsx-closing-tag-location': 'error',
-                'react/jsx-curly-brace-presence': 'error',
-                'react/jsx-curly-newline': [
+                '@stylistic/jsx-child-element-spacing': 'error',
+                '@stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+                '@stylistic/jsx-closing-tag-location': 'error',
+                '@stylistic/jsx-curly-brace-presence': 'error',
+                '@stylistic/jsx-curly-newline': [
                     'error',
                     {
                         multiline: 'forbid',
                         singleline: 'forbid'
                     }
                 ],
-                'react/jsx-curly-spacing': [
+                '@stylistic/jsx-curly-spacing': [
                     'error',
                     {
                         when: 'never',
@@ -93,28 +55,11 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                         children: { when: 'never' }
                     }
                 ],
-                'react/jsx-equals-spacing': 'error',
-                'react/jsx-first-prop-new-line': ['error', 'multiprop'],
-                'react/jsx-fragments': ['error', 'syntax'],
-                'react/jsx-handler-names': ['error', { checkInlineFunction: true }],
-                'react/jsx-indent': [
-                    'error',
-                    4,
-                    {
-                        checkAttributes: true,
-                        indentLogicalExpressions: true
-                    }
-                ],
-                'react/jsx-indent-props': 'error',
-                'react/jsx-key': [
-                    'error',
-                    {
-                        checkFragmentShorthand: true,
-                        checkKeyMustBeforeSpread: true,
-                        warnOnDuplicates: true
-                    }
-                ],
-                'react/jsx-max-props-per-line': [
+                '@stylistic/jsx-equals-spacing': 'error',
+                '@stylistic/jsx-first-prop-new-line': ['error', 'multiprop'],
+                '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
+                '@stylistic/jsx-indent-props': 'error',
+                '@stylistic/jsx-max-props-per-line': [
                     'error',
                     {
                         maximum: {
@@ -123,18 +68,17 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                         }
                     }
                 ],
-                'react/jsx-no-bind': ['warn', { ignoreDOMComponents: true }],
-                'react/jsx-no-constructed-context-values': 'error',
-                'react/jsx-no-leaked-render': 'warn',
-                'react/jsx-no-script-url': ['error', { includeFromSettings: true }],
-                'react/jsx-props-no-spread-multi': 'error',
-                'react/jsx-no-undef': 'off',
-                'react/jsx-no-useless-fragment': 'error',
-                'react/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
-                'react/jsx-pascal-case': 'error',
-                'react/jsx-tag-spacing': 'error',
-                'react/jsx-uses-vars': 'off',
-                'react/jsx-wrap-multilines': [
+                '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
+                '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+                '@stylistic/jsx-self-closing-comp': [
+                    'error',
+                    {
+                        component: true,
+                        html: true
+                    }
+                ],
+                '@stylistic/jsx-tag-spacing': 'error',
+                '@stylistic/jsx-wrap-multilines': [
                     'error',
                     {
                         declaration: 'parens-new-line',
@@ -146,49 +90,81 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                         prop: 'parens-new-line'
                     }
                 ],
-                'react/no-access-state-in-setstate': 'error',
-                'react/no-array-index-key': 'error',
-                'react/no-danger': 'error',
-                'react/no-deprecated': 'error',
-                'react/no-did-mount-set-state': 'error',
-                'react/no-did-update-set-state': 'error',
-                'react/no-object-type-as-default-prop': 'error',
-                'react/no-redundant-should-component-update': 'error',
-                'react/no-this-in-sfc': 'error',
-                'react/no-typos': 'error',
-                'react/no-unsafe': 'error',
-                'react/no-unused-prop-types': 'error',
-                'react/no-unused-state': 'error',
-                'react/no-will-update-set-state': 'error',
-                'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
-                'react/prop-types': 'off',
-                'react/self-closing-comp': [
-                    'error',
-                    {
-                        component: true,
-                        html: true
-                    }
-                ],
-                'react/state-in-constructor': 'error',
-                'react/void-dom-elements-no-children': 'error'
+
+                '@eslint-react/component-hook-factories': 'error',
+                '@eslint-react/dom/no-dangerously-set-innerhtml-with-children': 'error',
+                '@eslint-react/dom/no-dangerously-set-innerhtml': 'error',
+                '@eslint-react/dom/no-find-dom-node': 'error',
+                '@eslint-react/dom/no-hydrate': 'error',
+                '@eslint-react/dom/no-missing-button-type': 'error',
+                '@eslint-react/dom/no-missing-iframe-sandbox': 'error',
+                '@eslint-react/dom/no-render-return-value': 'error',
+                '@eslint-react/dom/no-render': 'error',
+                '@eslint-react/dom/no-script-url': 'error',
+                '@eslint-react/dom/no-unknown-property': 'error',
+                '@eslint-react/dom/no-unsafe-target-blank': 'error',
+                '@eslint-react/dom/no-void-elements-with-children': 'error',
+                '@eslint-react/error-boundaries': 'error',
+                '@eslint-react/exhaustive-deps': 'error',
+                '@eslint-react/jsx-key-before-spread': 'error',
+                '@eslint-react/jsx-no-comment-textnodes': 'error',
+                '@eslint-react/jsx-shorthand-boolean': 'error',
+                '@eslint-react/jsx-shorthand-fragment': 'error',
+                '@eslint-react/no-access-state-in-setstate': 'error',
+                '@eslint-react/no-array-index-key': 'error',
+                '@eslint-react/no-children-prop': 'error',
+                '@eslint-react/no-component-will-mount': 'error',
+                '@eslint-react/no-component-will-receive-props': 'error',
+                '@eslint-react/no-component-will-update': 'error',
+                '@eslint-react/no-create-ref': 'error',
+                '@eslint-react/no-direct-mutation-state': 'error',
+                '@eslint-react/no-duplicate-key': 'error',
+                '@eslint-react/no-forward-ref': 'error',
+                '@eslint-react/no-leaked-conditional-rendering': 'warn',
+                '@eslint-react/no-missing-component-display-name': 'error',
+                '@eslint-react/no-missing-context-display-name': 'error',
+                '@eslint-react/no-missing-key': 'error',
+                '@eslint-react/no-nested-component-definitions': 'error',
+                '@eslint-react/no-nested-lazy-component-declarations': 'error',
+                '@eslint-react/no-redundant-should-component-update': 'error',
+                '@eslint-react/no-set-state-in-component-did-mount': 'error',
+                '@eslint-react/no-set-state-in-component-did-update': 'error',
+                '@eslint-react/no-set-state-in-component-will-update': 'error',
+                '@eslint-react/no-unsafe-component-will-mount': 'error',
+                '@eslint-react/no-unsafe-component-will-receive-props': 'error',
+                '@eslint-react/no-unsafe-component-will-update': 'error',
+                '@eslint-react/no-unstable-context-value': 'error',
+                '@eslint-react/no-unstable-default-props': 'error',
+                '@eslint-react/no-useless-fragment': 'error',
+                '@eslint-react/rules-of-hooks': 'error',
+                '@eslint-react/set-state-in-effect': 'error',
+                '@eslint-react/use-memo': 'error',
+                '@eslint-react/use-state': 'error'
+
+                // HOOKS - TODO: migrate once implemented/stable in @eslint-react
+                // 'react-hooks/globals': 'error',
+                // 'react-hooks/immutability': 'error',
+                // 'react-hooks/incompatible-library': 'error',
+                // 'react-hooks/purity': 'error',
+                // 'react-hooks/refs': 'error',
+                // 'react-hooks/set-state-in-render': 'error',
             }
-        },
-        {
-            ...reactHooks.configs.flat['recommended-latest'],
-            name: 'dtrw:react:hooks',
-            files
         },
         {
             name: 'dtrw:react:ts',
             files: tsFiles,
-            rules: { '@typescript-eslint/naming-convention': /** @type {any} */(['error']).concat(reactNamingRuleConfig) }
+            rules: {
+                '@eslint-react/no-implicit-key': 'error',
+                '@typescript-eslint/naming-convention': /** @type {any} */(['error']).concat(reactNamingRuleConfig)
+            }
         },
         {
             name: 'dtrw:react:test',
             files: testFiles,
             rules: {
-                'react-hooks/rules-of-hooks': 'off',
-                'react/display-name': 'off'
+                '@eslint-react/rules-of-hooks': 'off',
+                '@eslint-react/no-missing-component-display-name': 'off',
+                '@eslint-react/no-missing-context-display-name': 'off'
             }
         }
     );
