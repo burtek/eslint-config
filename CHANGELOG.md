@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0-alpha.3](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.2...v6.0.0-alpha.3) (2026-03-12)
+
+
+### Bug Fixes
+
+* npmignore list ([897fc97](https://github.com/burtek/eslint-config/commit/897fc97c6faf3383b66b65317eff7414e23845de))
+
 ## [6.0.0-alpha.2](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.1...v6.0.0-alpha.2) (2026-03-12)
 
 
