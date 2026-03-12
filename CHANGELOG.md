@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0-alpha.1](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.0...v6.0.0-alpha.1) (2026-03-12)
+
+
+### Bug Fixes
+
+* fix typescript error ([4fe9fd9](https://github.com/burtek/eslint-config/commit/4fe9fd92b48454b4d67457b17cb5934367b5bd21))
+
 ## [6.0.0-alpha.0](https://github.com/burtek/eslint-config/compare/v5.10.1...v6.0.0-alpha.0) (2026-03-12)
 
 
