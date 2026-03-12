@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0-alpha.2](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.1...v6.0.0-alpha.2) (2026-03-12)
+
+
+### Bug Fixes
+
+* eslint tsconfig root path ([0b35f36](https://github.com/burtek/eslint-config/commit/0b35f362962002647bdd27a76845a1984f44000d))
+
 ## [6.0.0-alpha.1](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.0...v6.0.0-alpha.1) (2026-03-12)
 
 
