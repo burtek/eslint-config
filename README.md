@@ -37,41 +37,113 @@ export default config(
 
 ### Configuration
 
-The configuration object can contain following keys:
+`prepareConfig` accepts up to three arguments:
 
-- jest
-- json
-- lodash
-- node
-- react
-- cypress
-- testing-library
+```ts
+prepareConfig(providedConfigs?, ignores?, baseConfig?)
+```
 
-### TODO: Docs
+| Argument | Type | Default | Description |
+|---|---|---|---|
+| `providedConfigs` | `object` | `{}` | Feature configs to enable (see keys below) |
+| `ignores` | `string[]` or `(defaults: string[]) => string[]` | `['node_modules/', 'dist/', 'coverage/', '.vercel/']` | Glob patterns for files ESLint should ignore. Pass a function to modify the defaults. |
+| `baseConfig` | `object` | — | Experimental options passed to the base config (see [base](#base)) |
 
-<!-- Configuration key | schema | plugins in use | description
+#### `providedConfigs` keys
 
-- `jest` - if present, enables the `jest` config
-  + `jest: true` enables it with default params
-  + `jest: {...}` allows additional configuration
-    - `jest.mode` can be set to `'vitest'` to make the plugin work with `vitest` library
+Each key can be set to `true` to enable the config with default options, or to an options object for additional configuration. All keys are optional.
 
+| Key | Options | Description |
+|---|---|---|
+| `cypress` | _(none)_ | Enables Cypress test linting |
+| `jest` | `{ mode?: 'jest' \| 'vitest' }` | Enables Jest / Vitest test linting |
+| `json` | `{ additionalFiles?: { json?: string[], jsonc?: string[], json5?: string[] } }` | Enables JSON / JSONC / JSON5 linting |
+| `lodash` | _(none)_ | Enables Lodash best-practice rules |
+| `node` | _(none)_ | Enables Node.js-specific rules |
+| `react` | `{ a11y?: boolean, nextjs?: boolean }` | Enables React linting, with optional accessibility and Next.js support |
+| `testingLibrary` | _(none)_ | Enables Testing Library and jest-dom rules |
 
+### Docs
 
-## Available main configs
+#### base
 
- name | notes | extends | Rules sources
-------|-------|---------|--------------
-`eslint-config-base`        | Base config for both JS and TS projects | <ul><li>`@typescript-eslint/eslint-recommended`</li><li>`import/typescript`</li></ul> | <ul><li>`eslint`</li><li>[`typescript-eslint`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)</li><li>[`import`](https://www.npmjs.com/package/eslint-plugin-import)</li><li>[`jest`](https://www.npmjs.com/package/eslint-plugin-jest)</li><li>[`jest-formatting`](https://www.npmjs.com/package/eslint-plugin-jest-formatting)</li><li>[`jsonc`](https://www.npmjs.com/package/eslint-plugin-jsonc)</li><li>[`promise`](https://www.npmjs.com/package/eslint-plugin-promise)</li></ul>
-`eslint-config-react`       | Config for `reactJS` and `react-native` projects | <ul><li>`react-hooks/recommended`</li><li>`@dtrw/eslint-config/eslint-config-base`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-base`</li><li>[`react`](https://www.npmjs.com/package/eslint-plugin-react)</li><li>[`react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)</li></ul>
-`eslint-config-react-a11y`  | Config for `reactJS` projects with additional `a11y` setup | <ul><li>`jsx-a11y/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react`</li><li>[`jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)</li></ul>
-`eslint-config-next`       | Config for `next.js` projects | <ul><li>`@next/next/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react`</li><li>[`@next/next`](https://www.npmjs.com/package/@next/eslint-plugin-next)</li></ul>
-`eslint-config-next-a11y`  | Config for `next.js` projects with additional `a11y` setup | <ul><li>`@next/next/recommended`</li><li>`@dtrw/eslint-config/eslint-config-react-a11y`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-react-a11y`</li><li>[`@next/next`](https://www.npmjs.com/package/@next/eslint-plugin-next)</li></ul>
-`eslint-config-node`        | Config for `nodeJS` projects | <ul><li>`n/recommended`</li><li>`security-node/recommended`</li><li>`@dtrw/eslint-config/eslint-config-base`</li></ul> | <ul><li>All from `@dtrw/eslint-config/eslint-config-base`</li><li>[`n`](https://www.npmjs.com/package/eslint-plugin-n)</li><li>[`security-node`](https://www.npmjs.com/package/eslint-plugin-security-node)</li></ul>
+Always enabled. Applies to all JS and TS files (`**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
 
-### Addon configs
-Those configs don't extend any of the above main configs
+Plugins: [`@eslint/js`](https://www.npmjs.com/package/@eslint/js), [`typescript-eslint`](https://www.npmjs.com/package/typescript-eslint), [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x), [`eslint-plugin-promise`](https://www.npmjs.com/package/eslint-plugin-promise), [`@stylistic/eslint-plugin`](https://www.npmjs.com/package/@stylistic/eslint-plugin)
 
- name | notes | extends | Rules sources
-------|-------|---------|--------------
-`eslint-config-lodash`      | Config for projects making use of `lodash` library | _none_ | <ul><li>[`lodash`](https://www.npmjs.com/package/eslint-plugin-lodash)</li></ul> -->
+`baseConfig` options:
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `nextResolver` | `boolean` | `true` | Use the TypeScript import resolver from `eslint-import-resolver-typescript`. Set to `false` to use the legacy resolver instead. |
+
+#### `cypress`
+
+Applies to Cypress spec files (`**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
+
+Plugins: [`eslint-plugin-cypress`](https://www.npmjs.com/package/eslint-plugin-cypress)
+
+No configuration options.
+
+#### `jest`
+
+Applies to test files (`**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`) and mock files (`**/__mocks__/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
+
+Plugins: [`eslint-plugin-jest`](https://www.npmjs.com/package/eslint-plugin-jest)
+
+Options:
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `mode` | `'jest' \| 'vitest'` | `'jest'` | Set to `'vitest'` to configure the plugin for use with Vitest instead of Jest |
+
+#### `json`
+
+Applies to JSON files. Strict JSON rules apply to `**/*.json` files (except well-known JSONC files such as `tsconfig.json` and `.vscode/**/*.json`). JSONC rules apply to `**/*.jsonc` and known JSONC files. JSON5 rules apply to `**/*.json5`.
+
+Plugins: [`@eslint/json`](https://www.npmjs.com/package/@eslint/json), [`eslint-plugin-jsonc`](https://www.npmjs.com/package/eslint-plugin-jsonc)
+
+Options:
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `additionalFiles.json` | `string[]` | `[]` | Additional glob patterns to treat as strict JSON |
+| `additionalFiles.jsonc` | `string[]` | `[]` | Additional glob patterns to treat as JSONC |
+| `additionalFiles.json5` | `string[]` | `[]` | Additional glob patterns to treat as JSON5 |
+
+#### `lodash`
+
+Applies to all JS and TS files (`**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
+
+Plugins: [`eslint-plugin-lodash`](https://www.npmjs.com/package/eslint-plugin-lodash)
+
+No configuration options.
+
+#### `node`
+
+Applies to all JS and TS files (`**/*.{js,cjs,mjs,ts,cts,mts}`).
+
+Plugins: [`eslint-plugin-n`](https://www.npmjs.com/package/eslint-plugin-n), [`eslint-plugin-security-node`](https://www.npmjs.com/package/eslint-plugin-security-node)
+
+No configuration options.
+
+#### `react`
+
+Applies to all JS and TS files (`**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`). JSX-specific rules additionally apply to `**/*.{jsx,tsx}`.
+
+Plugins: [`@eslint-react/eslint-plugin`](https://www.npmjs.com/package/@eslint-react/eslint-plugin), [`@stylistic/eslint-plugin`](https://www.npmjs.com/package/@stylistic/eslint-plugin) (JSX rules)
+
+Options:
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `a11y` | `boolean` | `false` | Enable accessibility (a11y) rules via [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) |
+| `nextjs` | `boolean` | `false` | Enable Next.js rules via [`@next/eslint-plugin-next`](https://www.npmjs.com/package/@next/eslint-plugin-next) |
+
+#### `testingLibrary`
+
+Applies to test files (`**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
+
+Plugins: [`eslint-plugin-jest-dom`](https://www.npmjs.com/package/eslint-plugin-jest-dom), [`eslint-plugin-testing-library`](https://www.npmjs.com/package/eslint-plugin-testing-library)
+
+No configuration options.
