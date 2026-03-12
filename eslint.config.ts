@@ -14,7 +14,10 @@ export default defineConfig(
         name: 'local-overrides',
         languageOptions: {
             globals: { ...globals.node },
-            parserOptions: { project: 'tsconfig.json' },
+            parserOptions: {
+                project: 'tsconfig.json',
+                tsconfigRootDir: import.meta.dirname
+            },
             sourceType: 'module'
         },
         rules: {
