@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0-alpha.4](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.3...v6.0.0-alpha.4) (2026-03-13)
+
+
+### Features
+
+* enable more rules ([2f652ae](https://github.com/burtek/eslint-config/commit/2f652aee95e038c51529761a6c0f3097afc750a3))
+
 ## [6.0.0-alpha.3](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.2...v6.0.0-alpha.3) (2026-03-12)
 
 
