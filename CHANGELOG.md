@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.0-alpha.5](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.4...v6.0.0-alpha.5) (2026-03-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @eslint-react/eslint-plugin to v3.0.0-rc.2 ([#634](https://github.com/burtek/eslint-config/issues/634)) ([17a62d8](https://github.com/burtek/eslint-config/commit/17a62d8dd1835499ac4e82250dc0c6313579ee2b))
+
 ## [6.0.0-alpha.4](https://github.com/burtek/eslint-config/compare/v6.0.0-alpha.3...v6.0.0-alpha.4) (2026-03-13)
 
 
