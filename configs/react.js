@@ -110,6 +110,9 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/jsx-no-comment-textnodes': 'error',
                 '@eslint-react/jsx-shorthand-boolean': 'error',
                 '@eslint-react/jsx-shorthand-fragment': 'error',
+                '@eslint-react/naming-convention/context-name': 'error',
+                '@eslint-react/naming-convention/id-name': 'error',
+                '@eslint-react/naming-convention/ref-name': 'error',
                 '@eslint-react/no-access-state-in-setstate': 'error',
                 '@eslint-react/no-array-index-key': 'error',
                 '@eslint-react/no-children-prop': 'error',
@@ -120,7 +123,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/no-direct-mutation-state': 'error',
                 '@eslint-react/no-duplicate-key': 'error',
                 '@eslint-react/no-forward-ref': 'error',
-                '@eslint-react/no-leaked-conditional-rendering': 'warn',
+                '@eslint-react/no-leaked-conditional-rendering': 'error',
                 '@eslint-react/no-missing-component-display-name': 'error',
                 '@eslint-react/no-missing-context-display-name': 'error',
                 '@eslint-react/no-missing-key': 'error',
@@ -139,7 +142,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/rules-of-hooks': 'error',
                 '@eslint-react/set-state-in-effect': 'error',
                 '@eslint-react/use-memo': 'error',
-                '@eslint-react/use-state': 'error'
+                '@eslint-react/use-state': 'error',
+                '@eslint-react/web-api/no-leaked-event-listener': 'error',
+                '@eslint-react/web-api/no-leaked-interval': 'error',
+                '@eslint-react/web-api/no-leaked-resize-observer': 'error'
 
                 // HOOKS - TODO: migrate once implemented/stable in @eslint-react
                 // 'react-hooks/globals': 'error',

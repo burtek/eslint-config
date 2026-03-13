@@ -8,7 +8,7 @@
 /.versionrc.json
 /*.md
 /eslint.config.ts
-/vitest.config.js
+/vitest.config.ts
 /tsconfig.*.json
 /tsconfig.json
 /yarn.lock
