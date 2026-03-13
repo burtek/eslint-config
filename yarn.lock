@@ -64,62 +64,62 @@
   resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.12.2.tgz#bccdf615bcf7b6e8db830ec0b8d21c9a25de597b"
   integrity sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==
 
-"@eslint-react/ast@3.0.0-rc.2":
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@eslint-react/ast/-/ast-3.0.0-rc.2.tgz#fbde14514073308dad7340787ec33b9e601e5ab3"
-  integrity sha512-MTzzn6zZ3lTw3rXmGnI/XR/RWi2cxaQPGugfLjZzq/Pt80u5bTt0hYw+YygRtd+ed1NOeLn4KbQa9DrVbVFCog==
+"@eslint-react/ast@3.0.0-rc.3":
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@eslint-react/ast/-/ast-3.0.0-rc.3.tgz#abf53abf985ecb13b5e62e070b1b6ed8942bd355"
+  integrity sha512-uIwvg5P5a0bllt+/Gqzz6b1Jh2sTk+hytZxbK++3KHwbVCKfw8uuDEwH7moOg1mN5p26GuwrQQLU6mPb1fsVYA==
   dependencies:
     "@typescript-eslint/types" canary
     "@typescript-eslint/typescript-estree" canary
     "@typescript-eslint/utils" canary
     string-ts "^2.3.1"
 
-"@eslint-react/core@3.0.0-rc.2":
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@eslint-react/core/-/core-3.0.0-rc.2.tgz#9330817d862734b62e0ce7a8b74b0c21b467a402"
-  integrity sha512-mt5JI2LEfLYYwHWOiS5aOpWbJj0m3amwtBLdjvqDMp3+xV81jujBblIGfUa9HVP9zB3eII2CGkOCAnepYjJR9g==
+"@eslint-react/core@3.0.0-rc.3":
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@eslint-react/core/-/core-3.0.0-rc.3.tgz#d7505b8ac9f8c31c2a984002fb2ed3c79be947e8"
+  integrity sha512-aI5Z1hpbeqHI74xuiDQmpPWxlnJe98iohsz7ZDjE3FSKBef+A+UmXJRoz2fR/uE08FBhKHY9oDor01C1WnyQbQ==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
     ts-pattern "^5.9.0"
 
-"@eslint-react/eslint-plugin@3.0.0-rc.2":
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@eslint-react/eslint-plugin/-/eslint-plugin-3.0.0-rc.2.tgz#ad18014bfee3ce5b6d20ae7765b5a3eb016b078c"
-  integrity sha512-7hwZtKN3tCRRECt1Tyu7lHWIOZEGtXl81rbWWSbet3monXuJxU2oR4e8EKXs4KM/Wc8+LNvxy8avkM3GE3qOMA==
+"@eslint-react/eslint-plugin@3.0.0-rc.3":
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@eslint-react/eslint-plugin/-/eslint-plugin-3.0.0-rc.3.tgz#50b40d27908179a9b867a8d489949b6be3cacac4"
+  integrity sha512-0LYYohKWeMb7ygTLsqJ1pAfG3QFEfd1Jx1IxMDD3PsP4/6XcIRtG2J9NSnsQQoXGpY/mgPlyVK4HPWDKlfKxNg==
   dependencies:
-    "@eslint-react/shared" "3.0.0-rc.2"
+    "@eslint-react/shared" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/type-utils" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
-    eslint-plugin-react-dom "3.0.0-rc.2"
-    eslint-plugin-react-naming-convention "3.0.0-rc.2"
-    eslint-plugin-react-rsc "3.0.0-rc.2"
-    eslint-plugin-react-web-api "3.0.0-rc.2"
-    eslint-plugin-react-x "3.0.0-rc.2"
+    eslint-plugin-react-dom "3.0.0-rc.3"
+    eslint-plugin-react-naming-convention "3.0.0-rc.3"
+    eslint-plugin-react-rsc "3.0.0-rc.3"
+    eslint-plugin-react-web-api "3.0.0-rc.3"
+    eslint-plugin-react-x "3.0.0-rc.3"
     ts-api-utils "^2.4.0"
 
-"@eslint-react/shared@3.0.0-rc.2":
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@eslint-react/shared/-/shared-3.0.0-rc.2.tgz#ebb1313583e4f6ca4f51430b38783405745617c5"
-  integrity sha512-9zKtHJXjU8N08+JTVfzHkYVpfGw5L/UuE0LCL6YGMioEowVqI1iaNuOdEqazrsvl/dMXkSMJboqmrB6kbYEsCQ==
+"@eslint-react/shared@3.0.0-rc.3":
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@eslint-react/shared/-/shared-3.0.0-rc.3.tgz#ed097350bfeb0fdf339101e6b74de81ddb9beb0d"
+  integrity sha512-Z+YQzAxKH7ek7TyxZLX5ZZ84zHiY1iDEuBr3QWPaMBbcBa7cUr6cV1Vmy5hjXCoJSTWuCY8PI6dcmi0s+kUBuw==
   dependencies:
     "@typescript-eslint/utils" canary
     ts-pattern "^5.9.0"
     zod "^4.3.6"
 
-"@eslint-react/var@3.0.0-rc.2":
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@eslint-react/var/-/var-3.0.0-rc.2.tgz#7ce004e9d3f84615e8dd134290ed937bb6fadf4c"
-  integrity sha512-ns6x/szEWe131tvoo+YT0s1GmoxjzZfs3MxE7H58j/GL3KJ97vezEJnq8oEBS7Kccot+oGbdNdByeXK/ZsqtKw==
+"@eslint-react/var@3.0.0-rc.3":
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@eslint-react/var/-/var-3.0.0-rc.3.tgz#6c15815548382d025bce4a582913431a5e8dc819"
+  integrity sha512-A1Ktx6wuDp8r3Eg2CKP4cMGXr6e/EKyQncwyOPFI2ZDJGFGpDZfQ88d0E6/ZWq183xx128Ibp4qZlHOUDL0URQ==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
@@ -1678,30 +1678,30 @@ eslint-plugin-promise@7.2.1:
   dependencies:
     "@eslint-community/eslint-utils" "^4.4.0"
 
-eslint-plugin-react-dom@3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-dom/-/eslint-plugin-react-dom-3.0.0-rc.2.tgz#5cae5cc4b2ff3969cf4a5c3688ccb4504b62b165"
-  integrity sha512-2CuuItFu+elzoeeKjd5q5f1VYbQapod6G+AxZ7VBOVmd3XmqKR4yFNGHINP+PfKVgcpyno0tTWDYu7L5ex3z5g==
+eslint-plugin-react-dom@3.0.0-rc.3:
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-dom/-/eslint-plugin-react-dom-3.0.0-rc.3.tgz#36de420207284fe23a5c39a04cd8b584614d4986"
+  integrity sha512-Vi//aSwBLtbb/Mf2/vgjaiKzfJ7V70QEYEbYumFguBJgf40GQest65VZcmN6i31CKJ/4xjebvp7LPwZTRmBfPg==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/core" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/core" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
     compare-versions "^6.1.1"
     ts-pattern "^5.9.0"
 
-eslint-plugin-react-naming-convention@3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-naming-convention/-/eslint-plugin-react-naming-convention-3.0.0-rc.2.tgz#c0c531b9806fdd987c316571102fd83fb801fdd4"
-  integrity sha512-lQLqzdotp9lqmW0AbEDMFnml8beKx6zOHY3wLO/0aiMaOKxKkp+Ii8OnMO2841O61YwyaGvjShgNUeDgOUngAA==
+eslint-plugin-react-naming-convention@3.0.0-rc.3:
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-naming-convention/-/eslint-plugin-react-naming-convention-3.0.0-rc.3.tgz#1a06f5d98e64d78e424e1169e0764b5fec0ed906"
+  integrity sha512-uVCFvjNzLuyD0VEX5IWOYoLDC68aAW6EQPWVzLUOpP3DMgyDYA1+S4ApqRbGXSk0CoxakqXQS/zKalWXaiTAsA==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/core" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/core" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/type-utils" canary
     "@typescript-eslint/types" canary
@@ -1710,44 +1710,44 @@ eslint-plugin-react-naming-convention@3.0.0-rc.2:
     string-ts "^2.3.1"
     ts-pattern "^5.9.0"
 
-eslint-plugin-react-rsc@3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-rsc/-/eslint-plugin-react-rsc-3.0.0-rc.2.tgz#d6fe9c2b462a5fb48edf92a33a885768d8890098"
-  integrity sha512-aX4wuw5W4a1EuFdPmLOUuFGEFuxGYz4MLuYIh71f98TLYN8w8fh/gowxBPQRxbpnGS7fxnSbIigWPcE7FAe9ig==
+eslint-plugin-react-rsc@3.0.0-rc.3:
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-rsc/-/eslint-plugin-react-rsc-3.0.0-rc.3.tgz#743f6e1ea0a5224709f4f34210efc284f299b72b"
+  integrity sha512-GaMuORbBWXTrEHNbnZTBtjDDMDhR9NlGw5u9m/B6g22om4MXm4u1AoxYprZ+LOmyT6msdXwbQqOtPczCHM8XZg==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/type-utils" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
     ts-pattern "^5.9.0"
 
-eslint-plugin-react-web-api@3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-web-api/-/eslint-plugin-react-web-api-3.0.0-rc.2.tgz#87e6e930b0fbf9f1abdce2ed2dc486705825cc73"
-  integrity sha512-4O5GwRGsGmQ7r0C0sWohtxtwP5LvlRazTKM3UzGB8jQTKGjLsszvKJfUwxT+LRgGxGy8aGfZGKgucbTv+13Z8Q==
+eslint-plugin-react-web-api@3.0.0-rc.3:
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-web-api/-/eslint-plugin-react-web-api-3.0.0-rc.3.tgz#b1cbb1c5a66caee991c93603ccbf55f3d4e7b675"
+  integrity sha512-fB+odAKiN0QM5JI7HzFd0iIl1BG2qB0SfVRh6KW3nK4i0cYeDu8cirPpudFWOuRoVz7kAuTzcpeDEUaKBGCO+A==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/core" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/core" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/types" canary
     "@typescript-eslint/utils" canary
     birecord "^0.1.1"
     ts-pattern "^5.9.0"
 
-eslint-plugin-react-x@3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-x/-/eslint-plugin-react-x-3.0.0-rc.2.tgz#cb1afaa0374c7f8882627e5714e2bf2c64079283"
-  integrity sha512-iIYpUTrPpAvw4k1rL8CYHL2xc2yYedfU6TEj1f8MSTWMze+Omy2Zy6VhNcYXFtzGT41DrwaHCzdlgCuZ8TI+TA==
+eslint-plugin-react-x@3.0.0-rc.3:
+  version "3.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-x/-/eslint-plugin-react-x-3.0.0-rc.3.tgz#3ee71fdf83ea433979d63a87d3d88fba28ee1a29"
+  integrity sha512-s6o8btcrKy/EIyW+V6ArkplaE8tl++f+yV4F0FhBDotG3TmbhVIlJ2R6T0c3DuqTUdsW7+VFHo65MzyiwZ6r6g==
   dependencies:
-    "@eslint-react/ast" "3.0.0-rc.2"
-    "@eslint-react/core" "3.0.0-rc.2"
-    "@eslint-react/shared" "3.0.0-rc.2"
-    "@eslint-react/var" "3.0.0-rc.2"
+    "@eslint-react/ast" "3.0.0-rc.3"
+    "@eslint-react/core" "3.0.0-rc.3"
+    "@eslint-react/shared" "3.0.0-rc.3"
+    "@eslint-react/var" "3.0.0-rc.3"
     "@typescript-eslint/scope-manager" canary
     "@typescript-eslint/type-utils" canary
     "@typescript-eslint/types" canary
