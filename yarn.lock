@@ -1755,10 +1755,10 @@ eslint-plugin-security-node@1.1.4:
   resolved "https://registry.yarnpkg.com/eslint-plugin-security-node/-/eslint-plugin-security-node-1.1.4.tgz#e78dbfa9d4852076d51ca512a28d6b4ead069792"
   integrity sha512-8+agTMb2glNbP1zFhqo/Ixwtz16Hn0TvJW5KgpoHkAzGjDUhQf9iT+D6OgbhvZCMWRKMjc+5FbJ2Lh0UEUz7fQ==
 
-eslint-plugin-testing-library@7.16.1:
-  version "7.16.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-7.16.1.tgz#9378976d98aeaa6a7dd724a46d4e54f7cbbc90b0"
-  integrity sha512-/pCFzJuro/wOq6FCp43DwS3fpCr0hM2gByJAxi8bPdL7DXKdmH3p3BEpVKQkneUxT6T2XbUXG4J+c5GSAm12lA==
+eslint-plugin-testing-library@7.16.2:
+  version "7.16.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-7.16.2.tgz#b59738085db6bb3b2fed0294c70c9098b45bbf90"
+  integrity sha512-8gleGnQXK2ZA3hHwjCwpYTZvM+9VsrJ+/9kDI8CjqAQGAdMQOdn/rJNu7ZySENuiWlGKQWyZJ4ZjEg2zamaRHw==
   dependencies:
     "@typescript-eslint/scope-manager" "^8.56.0"
     "@typescript-eslint/utils" "^8.56.0"
