@@ -5,8 +5,6 @@ import { defineConfig } from 'eslint/config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
 
-import localReactPlugin from '../rules/index.js';
-
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
 
@@ -25,7 +23,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:base',
             files,
-            plugins: { '@eslint-react': eslintReact, '@local': localReactPlugin },
+            plugins: { '@eslint-react': eslintReact },
             languageOptions: {
                 parserOptions: {
                     ecmaFeatures: { jsx: true },

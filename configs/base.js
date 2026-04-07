@@ -9,6 +9,8 @@ import promise from 'eslint-plugin-promise';
 import semver from 'semver';
 import tseslint from 'typescript-eslint';
 
+import localReactPlugin from '../rules/index.js';
+
 import { baseNamingRuleConfig } from './share/naming-config.js';
 
 
@@ -39,7 +41,12 @@ export function prepareConfig({ nextResolver = true } = {}) {
 
     return defineConfig(
         { ignores: ['node_modules'] },
-        { plugins: { '@stylistic': stylisticPlugin } },
+        {
+            plugins: {
+                '@local': localReactPlugin,
+                '@stylistic': stylisticPlugin
+            }
+        },
         {
             name: 'dtrw:base:base',
             files: allFiles,
