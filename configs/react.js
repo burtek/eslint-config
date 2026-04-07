@@ -5,6 +5,8 @@ import { defineConfig } from 'eslint/config';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
 
+import localReactPlugin from '../rules/index.js';
+
 import { reactNamingRuleConfig } from './share/naming-config.js';
 
 
@@ -23,7 +25,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:base',
             files,
-            plugins: { ...eslintReact.configs.all.plugins },
+            plugins: { '@eslint-react': eslintReact, '@eslint-react/kit': localReactPlugin },
             languageOptions: {
                 parserOptions: {
                     ecmaFeatures: { jsx: true },
@@ -92,28 +94,29 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 ],
 
                 '@eslint-react/component-hook-factories': 'error',
-                '@eslint-react/dom-no-dangerously-set-innerhtml-with-children': 'error',
                 '@eslint-react/dom-no-dangerously-set-innerhtml': 'error',
+                '@eslint-react/dom-no-dangerously-set-innerhtml-with-children': 'error',
                 '@eslint-react/dom-no-find-dom-node': 'error',
                 '@eslint-react/dom-no-hydrate': 'error',
                 '@eslint-react/dom-no-missing-button-type': 'error',
                 '@eslint-react/dom-no-missing-iframe-sandbox': 'error',
-                '@eslint-react/dom-no-render-return-value': 'error',
                 '@eslint-react/dom-no-render': 'error',
+                '@eslint-react/dom-no-render-return-value': 'error',
                 '@eslint-react/dom-no-script-url': 'error',
                 '@eslint-react/dom-no-unknown-property': 'error',
                 '@eslint-react/dom-no-unsafe-target-blank': 'error',
                 '@eslint-react/dom-no-void-elements-with-children': 'error',
                 '@eslint-react/error-boundaries': 'error',
                 '@eslint-react/exhaustive-deps': 'error',
-                '@eslint-react/jsx-no-key-after-spread': 'error',
+                '@eslint-react/jsx-no-children-prop': 'error',
                 '@eslint-react/jsx-no-comment-textnodes': 'error',
+                '@eslint-react/jsx-no-key-after-spread': 'error',
+                '@eslint-react/jsx-no-useless-fragment': 'error',
                 '@eslint-react/naming-convention-context-name': 'error',
                 '@eslint-react/naming-convention-id-name': 'error',
                 '@eslint-react/naming-convention-ref-name': 'error',
                 '@eslint-react/no-access-state-in-setstate': 'error',
                 '@eslint-react/no-array-index-key': 'error',
-                '@eslint-react/jsx-no-children-prop': 'error',
                 '@eslint-react/no-component-will-mount': 'error',
                 '@eslint-react/no-component-will-receive-props': 'error',
                 '@eslint-react/no-component-will-update': 'error',
@@ -136,16 +139,17 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/no-unsafe-component-will-update': 'error',
                 '@eslint-react/no-unstable-context-value': 'error',
                 '@eslint-react/no-unstable-default-props': 'error',
-                '@eslint-react/jsx-no-useless-fragment': 'error',
                 '@eslint-react/rules-of-hooks': 'error',
                 '@eslint-react/set-state-in-effect': 'error',
                 '@eslint-react/use-memo': 'error',
                 '@eslint-react/use-state': 'error',
-                '@eslint-react/jsx-no-children-prop-with-children': 'error',
                 '@eslint-react/web-api-no-leaked-event-listener': 'error',
                 '@eslint-react/web-api-no-leaked-interval': 'error',
                 '@eslint-react/web-api-no-leaked-resize-observer': 'error',
-                '@eslint-react/web-api-no-leaked-timeout': 'error'
+                '@eslint-react/web-api-no-leaked-timeout': 'error',
+
+                '@eslint-react/kit/jsx-shorthand-boolean': 'error',
+                '@eslint-react/kit/jsx-shorthand-fragment': 'error'
 
                 // HOOKS - TODO: migrate once implemented/stable in @eslint-react
                 // 'react-hooks/globals': 'error',
@@ -168,9 +172,9 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
             name: 'dtrw:react:test',
             files: testFiles,
             rules: {
-                '@eslint-react/rules-of-hooks': 'off',
                 '@eslint-react/no-missing-component-display-name': 'off',
-                '@eslint-react/no-missing-context-display-name': 'off'
+                '@eslint-react/no-missing-context-display-name': 'off',
+                '@eslint-react/rules-of-hooks': 'off'
             }
         }
     );
