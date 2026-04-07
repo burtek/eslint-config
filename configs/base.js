@@ -39,8 +39,12 @@ export function prepareConfig({ nextResolver = true } = {}) {
 
     return defineConfig(
         { ignores: ['node_modules'] },
-        { plugins: { '@stylistic': stylisticPlugin } },
-        { plugins: { '@local': localPlugin } },
+        {
+            plugins: {
+                '@local': localPlugin,
+                '@stylistic': stylisticPlugin
+            }
+        },
         {
             name: 'dtrw:base:base',
             files: allFiles,
@@ -153,7 +157,6 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 'no-useless-constructor': 'error',
                 'no-useless-rename': 'error',
                 'no-useless-return': 'error',
-                '@local/no-useless-splite': 'error',
                 'no-var': 'error',
                 'no-void': ['error', { allowAsStatement: true }],
                 'no-warning-comments': 'error',
@@ -178,6 +181,8 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 'symbol-description': 'error',
                 'valid-typeof': ['error', { requireStringLiterals: true }],
                 'yoda': ['error', 'never', { exceptRange: true }],
+                
+                '@local/no-useless-splite': 'error',
 
                 ...importPlugin.flatConfigs.recommended.rules,
                 'import-x/no-unresolved': 'off',
