@@ -23,6 +23,7 @@
   "include": [
     "configs/**/*.js",
     "configs/**/*-types.ts",
+    "rules/**/*.js",
     "tests/fixtures",
     "tests/*.ts",
     "*.config.ts",
