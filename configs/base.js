@@ -9,10 +9,10 @@ import promise from 'eslint-plugin-promise';
 import semver from 'semver';
 import tseslint from 'typescript-eslint';
 
+import localPlugin from '../rules/index.js';
+
 import { baseNamingRuleConfig } from './share/naming-config.js';
 
-
-// TODO: need no-splice-add and no-splice-remove
 
 const allFiles = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
@@ -40,6 +40,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
     return defineConfig(
         { ignores: ['node_modules'] },
         { plugins: { '@stylistic': stylisticPlugin } },
+        { plugins: { '@local': localPlugin } },
         {
             name: 'dtrw:base:base',
             files: allFiles,
@@ -152,6 +153,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 'no-useless-constructor': 'error',
                 'no-useless-rename': 'error',
                 'no-useless-return': 'error',
+                '@local/no-useless-splite': 'error',
                 'no-var': 'error',
                 'no-void': ['error', { allowAsStatement: true }],
                 'no-warning-comments': 'error',
