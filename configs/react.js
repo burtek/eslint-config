@@ -25,7 +25,7 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:base',
             files,
-            plugins: { '@eslint-react': eslintReact, '@eslint-react/kit': localReactPlugin },
+            plugins: { '@eslint-react': eslintReact, '@local': localReactPlugin },
             languageOptions: {
                 parserOptions: {
                     ecmaFeatures: { jsx: true },
@@ -148,8 +148,8 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/web-api-no-leaked-resize-observer': 'error',
                 '@eslint-react/web-api-no-leaked-timeout': 'error',
 
-                '@eslint-react/kit/jsx-shorthand-boolean': 'error',
-                '@eslint-react/kit/jsx-shorthand-fragment': 'error'
+                '@local/jsx-shorthand-boolean': 'error',
+                '@local/jsx-shorthand-fragment': 'error'
 
                 // HOOKS - TODO: migrate once implemented/stable in @eslint-react
                 // 'react-hooks/globals': 'error',
