@@ -25,7 +25,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:base',
             files,
-            plugins: { '@eslint-react': eslintReact, '@local': localReactPlugin },
+            plugins: {
+                '@eslint-react': eslintReact,
+                '@local': localReactPlugin
+            },
             languageOptions: {
                 parserOptions: {
                     ecmaFeatures: { jsx: true },
