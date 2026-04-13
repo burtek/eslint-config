@@ -45,7 +45,7 @@ jobs:
           END=$(grep -n "## \[" CHANGELOG.md | head -n 2 | tail -n 1 | cut -d : -f 1)
           awk "NR > $START && NR < $END" CHANGELOG.md | sed -e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba' > ${{ github.workspace }}-CHANGELOG.temp.md
       - name: 'Create a github release'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') }}
