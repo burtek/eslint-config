@@ -1594,12 +1594,12 @@ eslint-json-compat-utils@^0.2.3:
   dependencies:
     esquery "^1.6.0"
 
-eslint-plugin-cypress@6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-6.3.0.tgz#fa90b3c78c880f7b8acecaa65d2a32d51f8c538e"
-  integrity sha512-4M3vgcMYgStgrYJn2uRtyWlAAJsY88//ctDJfBoQE2VtUWuBQ90W1Uiyar8MLQN2Ii52ZsEuzA3OBrnEW8Me/g==
+eslint-plugin-cypress@6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-6.3.1.tgz#b0a4ce9073f39412c3f2b5b8b452a75c1885fec1"
+  integrity sha512-iTJtdIZbyCUlagEI4YlVcwgPFV7X379Qi/upujaD4kvOaQkMvzmpt90vfSnaqgqprp/HPIvhnzv3fdI7mYV4QQ==
   dependencies:
-    globals "^17.4.0"
+    globals "^17.5.0"
 
 eslint-plugin-es-x@^7.8.0:
   version "7.8.0"
@@ -2198,7 +2198,7 @@ glob@^13.0.3:
     minipass "^7.1.3"
     path-scurry "^2.0.2"
 
-globals@17.5.0, globals@^17.4.0:
+globals@17.5.0, globals@^17.5.0:
   version "17.5.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-17.5.0.tgz#a82c641d898f8dfbe0e81f66fdff7d0de43f88c6"
   integrity sha512-qoV+HK2yFl/366t2/Cb3+xxPUo5BuMynomoDmiaZBIdbs+0pYbjfZU+twLhGKp4uCZ/+NbtpVepH5bGCxRyy2g==
