@@ -137,7 +137,6 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/no-unsafe-component-will-update': 'error',
                 '@eslint-react/no-unstable-context-value': 'error',
                 '@eslint-react/no-unstable-default-props': 'error',
-                '@eslint-react/no-unused-state': 'error',
                 '@eslint-react/rules-of-hooks': 'error',
                 '@eslint-react/set-state-in-effect': 'error',
                 '@eslint-react/use-memo': 'error',
