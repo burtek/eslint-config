@@ -93,7 +93,6 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                     }
                 ],
 
-                '@eslint-react/component-hook-factories': 'error',
                 '@eslint-react/dom-no-dangerously-set-innerhtml': 'error',
                 '@eslint-react/dom-no-dangerously-set-innerhtml-with-children': 'error',
                 '@eslint-react/dom-no-find-dom-node': 'error',
@@ -130,7 +129,6 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
                 '@eslint-react/no-missing-key': 'error',
                 '@eslint-react/no-nested-component-definitions': 'error',
                 '@eslint-react/no-nested-lazy-component-declarations': 'error',
-                '@eslint-react/no-redundant-should-component-update': 'error',
                 '@eslint-react/no-set-state-in-component-did-mount': 'error',
                 '@eslint-react/no-set-state-in-component-did-update': 'error',
                 '@eslint-react/no-set-state-in-component-will-update': 'error',
