@@ -2,6 +2,15 @@ name: 'Dispatch release'
 
 on:
   workflow_dispatch:
+    inputs:
+      prerelease:
+        description: 'Prerelease type'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - alpha
 
 permissions:
   contents: write
@@ -23,6 +32,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: 'Release'
-        run: yarn release
+        run: ${{ inputs.prerelease == 'alpha' && 'yarn release:alpha' || 'yarn release' }}
       - name: 'Push'
         run: yarn push
