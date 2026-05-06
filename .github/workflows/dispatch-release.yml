@@ -1,0 +1,28 @@
+name: 'Dispatch release'
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 'Run release'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v6'
+        with:
+          token: ${{ secrets.PAT }}
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
+      - name: 'Configure git'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: 'Release'
+        run: yarn release
+      - name: 'Push'
+        run: yarn push
