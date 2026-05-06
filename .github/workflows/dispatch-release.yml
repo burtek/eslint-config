@@ -1,0 +1,51 @@
+name: 'Dispatch release'
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: 'Prerelease type'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - alpha
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: 'Run checks'
+    if: github.ref == 'refs/heads/master'
+    uses: ./.github/workflows/check-pr.yml
+    with:
+      skip-deduplication: true
+
+  release:
+    name: 'Run release'
+    needs: check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v6'
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+          fetch-tags: true
+      - name: 'Prepare workflow'
+        uses: ./.github/actions/prepare
+      - name: 'Configure git'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: 'Release'
+        run: ${{ inputs.prerelease == 'alpha' && 'yarn release:alpha' || 'yarn release' }}
+      - name: 'Push'
+        run: yarn push
