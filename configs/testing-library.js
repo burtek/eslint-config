@@ -1,5 +1,5 @@
-import jestDom from 'eslint-plugin-jest-dom-ya';
 import { defineConfig } from 'eslint/config';
+import jestDom from 'eslint-plugin-jest-dom-ya';
 import testingLibrary from 'eslint-plugin-testing-library';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
