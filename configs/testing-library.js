@@ -1,5 +1,5 @@
-// import jestDom from 'eslint-plugin-jest-dom';
 import { defineConfig } from 'eslint/config';
+import jestDom from 'eslint-plugin-jest-dom-ya';
 import testingLibrary from 'eslint-plugin-testing-library';
 
 import { extendFlatConfig } from './share/extend-flat-config.js';
@@ -9,13 +9,13 @@ const files = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
     return defineConfig(
-        // extendFlatConfig(
-        //     jestDom.configs['flat/all'],
-        //     {
-        //         name: 'dtrw:testing-lib:jest-dom',
-        //         files
-        //     }
-        // ),
+        extendFlatConfig(
+            jestDom.configs['flat/all'],
+            {
+                name: 'dtrw:testing-lib:jest-dom',
+                files
+            }
+        ),
         extendFlatConfig(
             testingLibrary.configs['flat/react'],
             {
