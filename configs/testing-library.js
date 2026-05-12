@@ -1,4 +1,4 @@
-// import jestDom from 'eslint-plugin-jest-dom';
+import jestDom from 'eslint-plugin-jest-dom-ya';
 import { defineConfig } from 'eslint/config';
 import testingLibrary from 'eslint-plugin-testing-library';
 
@@ -9,13 +9,13 @@ const files = ['**/*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
 
 export function prepareConfig() {
     return defineConfig(
-        // extendFlatConfig(
-        //     jestDom.configs['flat/all'],
-        //     {
-        //         name: 'dtrw:testing-lib:jest-dom',
-        //         files
-        //     }
-        // ),
+        extendFlatConfig(
+            jestDom.configs['flat/all'],
+            {
+                name: 'dtrw:testing-lib:jest-dom',
+                files
+            }
+        ),
         extendFlatConfig(
             testingLibrary.configs['flat/react'],
             {
