@@ -21,6 +21,5 @@
       "matchSourceUrls": ["https://github.com/Rel1cx/eslint-react"],
       "groupName": "Eslint-react monorepo updates"
     }
-  ],
-  "presets"
+  ]
 }
