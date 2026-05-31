@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.0.5](https://github.com/burtek/eslint-config/compare/v6.0.4...v6.0.5) (2026-05-31)
+
+
+### Bug Fixes
+
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo packages to v5.8.5 ([#715](https://github.com/burtek/eslint-config/issues/715)) ([d936298](https://github.com/burtek/eslint-config/commit/d9362986af65789516dc1574a3527c4c40f087db))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo packages to v5.8.8 ([#717](https://github.com/burtek/eslint-config/issues/717)) ([ab781b0](https://github.com/burtek/eslint-config/commit/ab781b05b0a335c76837dc71b4fda0ad27e26bba))
+* **deps:** update dependency @eslint/json to v2 ([#718](https://github.com/burtek/eslint-config/issues/718)) ([4174024](https://github.com/burtek/eslint-config/commit/41740246eaa4a5f2e2618889dab3eef9c9e1a355))
+* **deps:** update dependency eslint-plugin-jsonc to v3.2.0 ([#719](https://github.com/burtek/eslint-config/issues/719)) ([dc7effd](https://github.com/burtek/eslint-config/commit/dc7effd2768f769cdc8932fac83ad15915f970e7))
+* **deps:** update dependency typescript-eslint to v8.60.0 ([#716](https://github.com/burtek/eslint-config/issues/716)) ([92ec1b7](https://github.com/burtek/eslint-config/commit/92ec1b75340ca973b50277aa620f458a26dce34b))
+
+
+### Chores
+
+* **deps:** update dependency eslint to v10.4.1 ([#720](https://github.com/burtek/eslint-config/issues/720)) ([d98cddd](https://github.com/burtek/eslint-config/commit/d98cddd4ba2146cf9c7a0a4cc56e075056043041))
+* **deps:** update dependency semver to v7.8.1 ([#714](https://github.com/burtek/eslint-config/issues/714)) ([1baf6a8](https://github.com/burtek/eslint-config/commit/1baf6a8c03b977bff3e7ceade7bb57a1aa6653d6))
+
 ## [6.0.4](https://github.com/burtek/eslint-config/compare/v6.0.3...v6.0.4) (2026-05-20)
 
 
