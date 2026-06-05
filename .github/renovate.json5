@@ -22,7 +22,8 @@
       "groupName": "@eslint-react monorepo"
     },
     {
-      "changelogUrl": "https://github.com/typescript-eslint/typescript-eslint",
+      // won't fix release notes but adds a link to actual changelog
+      "changelogUrl": "https://github.com/typescript-eslint/typescript-eslint/releases",
       "matchSourceUrls": ["https://github.com/typescript-eslint/typescript-eslint"],
       "groupName": "typescript-eslint monorepo"
     }
