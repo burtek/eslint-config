@@ -19,7 +19,12 @@
     },
     {
       "matchSourceUrls": ["https://github.com/Rel1cx/eslint-react"],
-      "groupName": "@eslint-react monorepo packages"
+      "groupName": "@eslint-react monorepo"
+    },
+    {
+      "changelogUrl": "https://github.com/typescript-eslint/typescript-eslint",
+      "matchSourceUrls": ["https://github.com/typescript-eslint/typescript-eslint"],
+      "groupName": "typescript-eslint monorepo"
     }
   ]
 }
