@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.0](https://github.com/burtek/eslint-config/compare/v6.0.6...v6.1.0) (2026-06-29)
+
+
+### Features
+
+* export typescript-eslint as tseslint ([#747](https://github.com/burtek/eslint-config/issues/747)) ([d1a1aca](https://github.com/burtek/eslint-config/commit/d1a1acacd3d2d07125739c52c16ec5918619ba26))
+
 ## [6.0.6](https://github.com/burtek/eslint-config/compare/v6.0.5...v6.0.6) (2026-06-28)
 
 
