@@ -3,7 +3,7 @@ import { defineConfig } from 'eslint/config';
 import * as jsonc from 'eslint-plugin-jsonc';
 
 
-/** @typedef {Partial<import('@typescript-eslint/utils').TSESLint.SharedConfig.RulesRecord>} Rules  */
+/** @typedef {Partial<import('typescript-eslint').FlatConfig.Rules>} Rules  */
 
 const wellKnownJsonc = [
     '**/tsconfig.json',

@@ -46,7 +46,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
             linterOptions: {
                 reportUnusedDisableDirectives: true,
                 ...semver.satisfies(eslint.Linter.version, '>=9.19.0')
-                    ? /** @satisfies {import('@typescript-eslint/utils').TSESLint.FlatConfig.LinterOptions} */({ reportUnusedInlineConfigs: 'warn' })
+                    ? /** @satisfies {import('typescript-eslint').FlatConfig.LinterOptions} */{ reportUnusedInlineConfigs: 'warn' }
                     : {}
             },
             settings: {
