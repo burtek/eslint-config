@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.2-alpha.1](https://github.com/burtek/eslint-config/compare/v6.1.2-alpha.0...v6.1.2-alpha.1) (2026-07-07)
+
+
+### Bug Fixes
+
+* make-types script ([0451166](https://github.com/burtek/eslint-config/commit/045116630d838800d58b4ee750b93b65445904e8))
+
 ## [6.1.2-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.1...v6.1.2-alpha.0) (2026-07-07)
 
 
