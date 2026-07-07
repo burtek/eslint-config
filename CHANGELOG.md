@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.2-alpha.2](https://github.com/burtek/eslint-config/compare/v6.1.2-alpha.1...v6.1.2-alpha.2) (2026-07-07)
+
+
+### Bug Fixes
+
+* add `--no-git-checks` to `pnpm publish` since we're publishing a tag, not branch ([2eedad7](https://github.com/burtek/eslint-config/commit/2eedad7ae1dff812cfff3273bc20fa8a36df96bc))
+
 ## [6.1.2-alpha.1](https://github.com/burtek/eslint-config/compare/v6.1.2-alpha.0...v6.1.2-alpha.1) (2026-07-07)
 
 
