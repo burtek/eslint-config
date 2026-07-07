@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.2-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.1...v6.1.2-alpha.0) (2026-07-07)
+
+
+### Chores
+
+* migrate to pnpm ([#758](https://github.com/burtek/eslint-config/issues/758)) ([1d2182e](https://github.com/burtek/eslint-config/commit/1d2182ef42994826b98a3a6cc1b09d9d71e82a53))
+
 ## [6.1.1](https://github.com/burtek/eslint-config/compare/v6.1.0...v6.1.1) (2026-07-07)
 
 
