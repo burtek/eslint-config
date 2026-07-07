@@ -24,21 +24,20 @@ jobs:
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v7'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6.0.9
+        with:
+          cache: true
       - name: 'Setup node' # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composites
         uses: actions/setup-node@v6
         with:
-          cache: 'yarn'
           node-version: 24
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@dtrw'
-      - name: 'Prepare workflow'
-        uses: ./.github/actions/prepare
-        with:
-          setupNode: false
+      - name: 'Install dependencies'
+        run: pnpm install --frozen-lockfile
       - name: 'Make .d.ts'
-        run: yarn make-types
+        run: pnpm make-types
       - name: 'Publish package'
-        run: "npm publish --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
+        run: "pnpm publish --provenance --tag ${{ ((contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta')) && 'next') || 'latest' }} --access public"
       - name: Generate Changelog
         run: |
           START=$(grep -n "## \[" CHANGELOG.md | head -n 1 | cut -d : -f 1)
