@@ -81,6 +81,9 @@ importers:
       '@types/semver':
         specifier: ^7.5.8
         version: 7.7.1
+      '@typescript-eslint/utils':
+        specifier: 8.63.0
+        version: 8.63.0(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)
       commit-and-tag-version:
         specifier: ^12.5.0
         version: 12.7.3
