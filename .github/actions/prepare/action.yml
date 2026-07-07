@@ -6,13 +6,12 @@ runs:
   steps:
     - name: Install pnpm
       uses: pnpm/action-setup@v6.0.9
+      with:
+        cache: true
     - name: 'Setup node' # If changing anything here, change it in workflows/release.yml too
       uses: actions/setup-node@v6
       with:
-        cache: 'pnpm'
         node-version: 24
-        registry-url: 'https://registry.npmjs.org'
-        scope: '@dtrw'
     - name: 'Install dependencies'
       run: pnpm install --frozen-lockfile
       shell: bash
