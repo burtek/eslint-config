@@ -14,5 +14,5 @@ runs:
         registry-url: 'https://registry.npmjs.org'
         scope: '@dtrw'
     - name: 'Install dependencies'
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
       shell: bash
