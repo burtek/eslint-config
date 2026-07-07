@@ -12,11 +12,9 @@ This is repository with my `eslint` configs for multiple purposes that are used 
 
 ```bash
 yarn add -D @dtrw/eslint-config@~6.1.0 eslint
-```
-
-or
-
-```bash
+# or
+pnpm add -d @dtrw/eslint-config@~6.1.0 eslint
+# or
 npm i -D @dtrw/eslint-config@~6.1.0 eslint
 ```
 

@@ -20,7 +20,7 @@ jobs:
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Test configs'
-        run: yarn test
+        run: pnpm test
 
   lint-pr:
     name: 'Lint PR'
@@ -31,7 +31,7 @@ jobs:
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Lint configs'
-        run: yarn lint
+        run: pnpm lint
 
   check-deps:
     name: 'Check deps deduplication'
@@ -43,11 +43,7 @@ jobs:
       - name: 'Prepare workflow'
         uses: ./.github/actions/prepare
       - name: 'Deduplicate dependencies'
-        uses: ./.github/actions/deduplicate
-        with:
-          strategy: 'highest'
-      - name: 'Verify yarn.lock is intact'
-        run: git diff --exit-code yarn.lock
+        run: pnpm dedupe --check
       - name: 'Notify of duplicates'
         uses: actions/github-script@v9
         with:
@@ -62,7 +58,7 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '`yarn.lock` is not deduplicated. You can try deduplicating dependencies using `/deduplicate` command'
+                body: '`pnpm-lock.yaml` is not deduplicated. You can try deduplicating dependencies using `/deduplicate` command'
               })
             }
         if: failure()
