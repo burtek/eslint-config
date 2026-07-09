@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.3-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.2...v6.1.3-alpha.0) (2026-07-09)
+
+
+### Bug Fixes
+
+* delete local prerelease tags in cleanup-changelog.sh before full release ([#766](https://github.com/burtek/eslint-config/issues/766)) ([bbf31eb](https://github.com/burtek/eslint-config/commit/bbf31ebb386c2f8041b2ebf4d03d384f88954728))
+
+
+### Chores
+
+* fix CHANGELOG to include prerelease changes ([6026f2c](https://github.com/burtek/eslint-config/commit/6026f2c96ee2562d982b1c9098618fc9566d4ec2))
+
 ## [6.1.2](https://github.com/burtek/eslint-config/compare/v6.1.2-alpha.2...v6.1.2) (2026-07-09)
 
 
