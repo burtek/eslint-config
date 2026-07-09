@@ -289,12 +289,6 @@ All notable changes to this project will be documented in this file. See [commit
 * **deps:** update eslint monorepo to v9.39.3 ([#589](https://github.com/burtek/eslint-config/issues/589)) ([d2bf0ed](https://github.com/burtek/eslint-config/commit/d2bf0ed3905f07dc2167c1560c1f33efa22926c6))
 * **deps:** update eslint monorepo to v9.39.4 ([#620](https://github.com/burtek/eslint-config/issues/620)) ([ba299cd](https://github.com/burtek/eslint-config/commit/ba299cd062fc67b775d3d035f2374ae88d25ce86))
 * reformat package.json ([d14c231](https://github.com/burtek/eslint-config/commit/d14c231a91c94f3efc6cc4432a898afd9cf334f3))
-* **release:** 6.0.0-alpha.0 ([236b628](https://github.com/burtek/eslint-config/commit/236b6287b7075595672869b1580f9ab59e8ce939))
-* **release:** 6.0.0-alpha.1 ([c782039](https://github.com/burtek/eslint-config/commit/c782039cb0320075d85d072770f7c30a39db11ab))
-* **release:** 6.0.0-alpha.2 ([7210c6c](https://github.com/burtek/eslint-config/commit/7210c6cbfbaef46c1960be757318e0c5d0e8c342))
-* **release:** 6.0.0-alpha.3 ([ff81e72](https://github.com/burtek/eslint-config/commit/ff81e72b85284fd7173ce86d9b62bc2122d00c41))
-* **release:** 6.0.0-alpha.4 ([f6b30e2](https://github.com/burtek/eslint-config/commit/f6b30e22ffd24f419a07477ed81a0a82554d8961))
-* **release:** 6.0.0-alpha.5 ([afbaccf](https://github.com/burtek/eslint-config/commit/afbaccf02e09385810b2b5f1709e294a49fc003c))
 * remove alpha versions from changelog ([c603980](https://github.com/burtek/eslint-config/commit/c603980220b1f5444b11aed3de82a083fcc8b084))
 * update Node.js engine requirement to ^20.19.0 || ^22.13.0 || >=24 ([#613](https://github.com/burtek/eslint-config/issues/613)) ([df4c6cd](https://github.com/burtek/eslint-config/commit/df4c6cd29f01a95d576b3f129343ff2ce94570ce))
 
