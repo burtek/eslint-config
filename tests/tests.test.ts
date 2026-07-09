@@ -97,7 +97,7 @@ describe('cleanup-changelog.sh', () => {
         try {
             await fs$.rm(repoPath, { recursive: true, force: true });
         } catch (error) {
-            console.warn(error);
+            console.warn(`Failed to remove temp repo ${repoPath}`, error);
         }
     }
 
@@ -140,7 +140,10 @@ describe('cleanup-changelog.sh', () => {
 
         try {
             execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
-            expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\n');
+            const remainingTags = execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' });
+
+            expect(remainingTags).toBe('v1.0.0\n');
+            expect(remainingTags).not.toContain('alpha');
         } finally {
             await removeTempRepo(repoPath);
         }
