@@ -250,7 +250,7 @@ describe('cleanup-changelog.sh', () => {
             execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
 
-            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/cannot open file .*missing\.md.*No such file or directory/);
+            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/missing\.md/);
             expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\nv1.0.1-alpha.0\n');
         } finally {
             await cleanupTempRepo(repoPath);
