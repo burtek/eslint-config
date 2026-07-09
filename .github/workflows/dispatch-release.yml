@@ -1,4 +1,4 @@
-name: 'Dispatch release'
+name: Dispatch release
 
 on:
   workflow_dispatch:
@@ -6,10 +6,10 @@ on:
       prerelease:
         description: 'Prerelease type'
         required: false
-        default: ''
+        default: stable
         type: choice
         options:
-          - ''
+          - stable
           - alpha
 
 permissions:
@@ -21,31 +21,32 @@ concurrency:
 
 jobs:
   check:
-    name: 'Run checks'
+    name: Run checks
     if: github.ref == 'refs/heads/master'
     uses: ./.github/workflows/check-pr.yml
     with:
       skip-deduplication: true
 
   release:
-    name: 'Run release'
+    name: Run release
     needs: check
+    if: ${{ !cancelled() && (github.ref != 'refs/heads/master' || needs.check.result == 'success') }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v7'
+      - name: Checkout source code
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.PAT }}
           fetch-depth: 0
           fetch-tags: true
-      - name: 'Prepare workflow'
+      - name: Prepare workflow
         uses: ./.github/actions/prepare
-      - name: 'Configure git'
+      - name: Configure git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: 'Release'
-        run: ${{ inputs.prerelease == 'alpha' && 'pnpm release:alpha' || 'pnpm release' }}
-      - name: 'Push'
+      - name: Release
+        run: ${{ case(inputs.prerelease == 'alpha', 'pnpm release:alpha', 'pnpm release') }}
+      - name: Push
         run: pnpm push

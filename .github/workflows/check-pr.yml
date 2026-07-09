@@ -1,4 +1,4 @@
-name: 'Check PR'
+name: Check PR
 
 on:
   workflow_call:
@@ -8,43 +8,43 @@ on:
         type: boolean
   pull_request:
     branches:
-      - 'master'
+      - master
 
 jobs:
   test-pr:
-    name: 'Test PR'
+    name: Test PR
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v7'
-      - name: 'Prepare workflow'
+      - name: Checkout source code
+        uses: actions/checkout@v7
+      - name: Prepare workflow
         uses: ./.github/actions/prepare
-      - name: 'Test configs'
+      - name: Test configs
         run: pnpm test
 
   lint-pr:
-    name: 'Lint PR'
+    name: Lint PR
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v7'
-      - name: 'Prepare workflow'
+      - name: Checkout source code
+        uses: actions/checkout@v7
+      - name: Prepare workflow
         uses: ./.github/actions/prepare
-      - name: 'Lint configs'
+      - name: Lint configs
         run: pnpm lint
 
   check-deps:
-    name: 'Check deps deduplication'
+    name: Check deps deduplication
     runs-on: ubuntu-latest
     if: ${{ !inputs.skip-deduplication }}
     steps:
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v7'
-      - name: 'Prepare workflow'
+      - name: Checkout source code
+        uses: actions/checkout@v7
+      - name: Prepare workflow
         uses: ./.github/actions/prepare
-      - name: 'Deduplicate dependencies'
+      - name: Deduplicate dependencies
         run: pnpm dedupe --check
-      - name: 'Notify of duplicates'
+      - name: Notify of duplicates
         uses: actions/github-script@v9
         with:
           script: |

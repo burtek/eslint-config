@@ -1,9 +1,9 @@
-name: 'Create github and npm releases'
+name: Create github and npm releases
 
 on:
   push:
     tags:
-      - "v*"
+      - v*
 
 permissions:
   id-token: write  # Required for OIDC
@@ -11,13 +11,13 @@ permissions:
 
 jobs:
   check-release:
-    name: 'Check release is good and ready'
+    name: Check release is good and ready
     uses: ./.github/workflows/check-pr.yml
     with:
       skip-deduplication: true
 
   make-release:
-    name: 'Make github and npm releases'
+    name: Make github and npm releases
     runs-on: ubuntu-latest
     needs: check-release
     env:
@@ -26,31 +26,30 @@ jobs:
     steps:
       - name: Verify boolean env.UNSTABLE_RELEASE
         run: echo ${{ env.UNSTABLE_RELEASE == true  }}
-      - name: 'Checkout source code'
-        uses: 'actions/checkout@v7'
+      - name: Checkout source code
+        uses: actions/checkout@v7
       - name: Install pnpm
         uses: pnpm/action-setup@v6.0.9
-        with:
-          cache: true
-      - name: 'Setup node' # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composites
+      - name: Setup node # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composite
         uses: actions/setup-node@v6
         with:
           node-version: 24
-      - name: 'Install dependencies'
+          cache: pnpm
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: 'Make .d.ts'
+      - name: Make .d.ts
         run: pnpm make-types
-      - name: 'Publish package'
-        run: "pnpm publish --no-git-checks --provenance --tag ${{ case(fromJSON(env.UNSTABLE_RELEASE), 'next', 'latest') }} --access public"
+      - name: Publish package
+        run: pnpm publish --no-git-checks --provenance --tag ${{ case(fromJSON(env.UNSTABLE_RELEASE), 'next', 'latest') }} --access public
       - name: Generate Changelog
         run: |
           START=$(grep -n "## \[" CHANGELOG.md | head -n 1 | cut -d : -f 1)
           END=$(grep -n "## \[" CHANGELOG.md | head -n 2 | tail -n 1 | cut -d : -f 1)
           awk "NR > $START && NR < $END" CHANGELOG.md | sed -e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba' > ${{ github.workspace }}-CHANGELOG.temp.md
-      - name: 'Create a github release'
+      - name: Create a github release
         uses: softprops/action-gh-release@v3
         with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ fromJSON(env.UNSTABLE_RELEASE) }}
-          tag_name: "${{ github.ref_name }}"
+          tag_name: ${{ github.ref_name }}
           body_path: ${{ github.workspace }}-CHANGELOG.temp.md

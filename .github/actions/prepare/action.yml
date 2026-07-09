@@ -1,17 +1,16 @@
-name: 'Prepare workflow'
-description: 'Prepare workflow for running tests and linting'
+name: Prepare workflow
+description: Prepare workflow for running tests and linting
 
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Install pnpm
       uses: pnpm/action-setup@v6.0.9
-      with:
-        cache: true
-    - name: 'Setup node' # If changing anything here, change it in workflows/release.yml too
+    - name: Setup node # If changing anything here, change it in workflows/release.yml too
       uses: actions/setup-node@v6
       with:
         node-version: 24
-    - name: 'Install dependencies'
+        cache: pnpm
+    - name: Install dependencies
       run: pnpm install --frozen-lockfile
       shell: bash

@@ -34,10 +34,10 @@ jobs:
           ref: ${{ fromJson(steps.github-script.outputs.result) }}
           persist-credentials: false
 
-      - name: 'Prepare workflow'
+      - name: Prepare workflow
         uses: ./.github/actions/prepare
 
-      - name: 'Deduplicate dependencies'
+      - name: Deduplicate dependencies
         run: pnpm dedupe
 
       - name: Commit changes
