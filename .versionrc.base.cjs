@@ -1,0 +1,27 @@
+module.exports = {
+  types: [
+    { type: 'feat', section: 'Features' },
+    { type: 'fix', section: 'Bug Fixes' },
+    { type: 'chore', section: 'Chores' },
+    { type: 'docs', section: 'Documentation changes:' },
+    { type: 'refactor', hidden: 'Chores' },
+    { type: 'test', hidden: true },
+    { type: 'types', hidden: true }
+  ],
+  packageFiles: [
+    {
+      filename: 'package.json',
+      type: 'json'
+    }
+  ],
+  bumpFiles: [
+    {
+      filename: 'README.md',
+      updater: 'utils/readme-updater.cjs'
+    },
+    {
+      filename: 'package.json',
+      type: 'json'
+    }
+  ]
+};

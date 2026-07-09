@@ -27,5 +27,11 @@ export default defineConfig(
             '@stylistic/quote-props': ['error', 'consistent-as-needed']
         }
     },
+    {
+        files: ['.versionrc.cjs', '.versionrc.*.cjs'],
+        rules: {
+            '@stylistic/indent': ['error', 2]
+        }
+    },
     { ignores: ['index.d.ts'] }
 );

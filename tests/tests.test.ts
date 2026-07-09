@@ -169,7 +169,7 @@ describe('cleanup-changelog.sh', () => {
         const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(changelogWithPrereleaseSection);
 
         try {
-            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            execFileSync(cleanupScriptPath, ['post'], { cwd: repoPath });
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(`# Changelog\n\n${stableReleaseSection}`);
         } finally {
             await cleanupTempRepo(repoPath);
@@ -197,7 +197,7 @@ describe('cleanup-changelog.sh', () => {
         ].join('\n');
 
         try {
-            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            execFileSync(cleanupScriptPath, ['post'], { cwd: repoPath });
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(expected);
         } finally {
             await cleanupTempRepo(repoPath);
@@ -220,7 +220,7 @@ describe('cleanup-changelog.sh', () => {
         ].join('\n');
 
         try {
-            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            execFileSync(cleanupScriptPath, ['post'], { cwd: repoPath });
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(expected);
         } finally {
             await cleanupTempRepo(repoPath);
@@ -228,10 +228,10 @@ describe('cleanup-changelog.sh', () => {
     });
 
     it('deletes local prerelease tags while keeping stable tags', async () => {
-        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(`# Changelog\n\n${stableReleaseSection}`);
+        const { cleanupScriptPath, repoPath } = await createTempGitRepo(`# Changelog\n\n${stableReleaseSection}`);
 
         try {
-            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            execFileSync(cleanupScriptPath, ['pre'], { cwd: repoPath });
             const remainingTags = execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' });
 
             expect(remainingTags).toBe('v1.0.0\n');
@@ -241,7 +241,7 @@ describe('cleanup-changelog.sh', () => {
         }
     });
 
-    it('fails before touching tags when the changelog path is missing', async () => {
+    it('fails when the changelog path is missing', async () => {
         const repoPath = mkdtempSync(join(tmpdir(), 'cleanup-changelog-'));
         const cleanupScriptPath = resolve(process.cwd(), 'cleanup-changelog.sh');
 
@@ -250,7 +250,7 @@ describe('cleanup-changelog.sh', () => {
             execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
 
-            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/missing\.md/);
+            expect(() => execFileSync(cleanupScriptPath, ['post', resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/missing\.md/);
             expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\nv1.0.1-alpha.0\n');
         } finally {
             await cleanupTempRepo(repoPath);
