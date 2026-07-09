@@ -77,6 +77,21 @@ describe.each<{
 });
 
 describe('cleanup-changelog.sh', () => {
+    async function removeTempRepo(repoPath: string) {
+        try {
+            await fs$.rm(repoPath, { recursive: true, force: true });
+        } catch {
+        }
+    }
+
+    function initTempGitRepo(repoPath: string) {
+        execFileSync('git', ['init', '-b', 'main'], { cwd: repoPath });
+        execFileSync('git', ['config', 'user.name', 'Test User'], { cwd: repoPath });
+        execFileSync('git', ['config', 'user.email', 'test@example.com'], { cwd: repoPath });
+        execFileSync('git', ['add', 'README.md'], { cwd: repoPath });
+        execFileSync('git', ['commit', '-m', 'init'], { cwd: repoPath });
+    }
+
     it('removes prerelease sections and local prerelease tags', async () => {
         const repoPath = mkdtempSync(join(tmpdir(), 'cleanup-changelog-'));
         const changelogPath = resolve(repoPath, 'CHANGELOG.md');
@@ -101,11 +116,7 @@ describe('cleanup-changelog.sh', () => {
             await fs$.writeFile(changelogPath, changelogContent, { encoding: 'utf8' });
             await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
 
-            execFileSync('git', ['init'], { cwd: repoPath });
-            execFileSync('git', ['config', 'user.name', 'Test User'], { cwd: repoPath });
-            execFileSync('git', ['config', 'user.email', 'test@example.com'], { cwd: repoPath });
-            execFileSync('git', ['add', 'README.md'], { cwd: repoPath });
-            execFileSync('git', ['commit', '-m', 'init'], { cwd: repoPath });
+            initTempGitRepo(repoPath);
             execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.1'], { cwd: repoPath });
@@ -115,7 +126,25 @@ describe('cleanup-changelog.sh', () => {
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(`# Changelog\n\n${stableReleaseSection}`);
             expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\n');
         } finally {
-            await fs$.rm(repoPath, { recursive: true, force: true });
+            await removeTempRepo(repoPath);
+        }
+    });
+
+    it('fails before touching tags when the changelog path is missing', async () => {
+        const repoPath = mkdtempSync(join(tmpdir(), 'cleanup-changelog-'));
+        const cleanupScriptPath = resolve(process.cwd(), 'cleanup-changelog.sh');
+
+        try {
+            await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
+
+            initTempGitRepo(repoPath);
+            execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
+            execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
+
+            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow();
+            expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\nv1.0.1-alpha.0\n');
+        } finally {
+            await removeTempRepo(repoPath);
         }
     });
 });
