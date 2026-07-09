@@ -58,7 +58,7 @@
     "test": "vitest run tests/tests.test.ts",
     "preversion": "pnpm test",
     "push": "git push --follow-tags",
-    "prerelease": "pnpm test && pnpm changelog:cleanup && git add CHANGELOG.md",
+    "prerelease": "pnpm test",
     "release": "commit-and-tag-version -a",
     "prerelease:alpha": "pnpm test",
     "release:alpha": "commit-and-tag-version --prerelease alpha",

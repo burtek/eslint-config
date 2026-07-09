@@ -23,5 +23,9 @@
       "filename": "package.json",
       "type": "json"
     }
-  ]
+  ],
+  "scripts": {
+    "prechangelog": "./cleanup-changelog.sh",
+    "postchangelog": "./cleanup-changelog.sh"
+  }
 }
