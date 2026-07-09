@@ -77,10 +77,27 @@ describe.each<{
 });
 
 describe('cleanup-changelog.sh', () => {
+    const stableReleaseSection = [
+        '## [1.0.0](https://example.test/compare/v0.9.0...v1.0.0)',
+        '',
+        '* stable change',
+        ''
+    ].join('\n');
+    const changelogWithPrereleaseSection = [
+        '# Changelog',
+        '',
+        '## [1.0.1-alpha.1](https://example.test/compare/v1.0.1-alpha.0...v1.0.1-alpha.1)',
+        '',
+        '* prerelease change',
+        '',
+        stableReleaseSection
+    ].join('\n');
+
     async function removeTempRepo(repoPath: string) {
         try {
             await fs$.rm(repoPath, { recursive: true, force: true });
         } catch {
+            // Best-effort cleanup for temporary test repositories.
         }
     }
 
@@ -92,38 +109,37 @@ describe('cleanup-changelog.sh', () => {
         execFileSync('git', ['commit', '-m', 'init'], { cwd: repoPath });
     }
 
-    it('removes prerelease sections and local prerelease tags', async () => {
+    async function createTempGitRepo(changelogContent: string) {
         const repoPath = mkdtempSync(join(tmpdir(), 'cleanup-changelog-'));
         const changelogPath = resolve(repoPath, 'CHANGELOG.md');
         const cleanupScriptPath = resolve(process.cwd(), 'cleanup-changelog.sh');
-        const stableReleaseSection = [
-            '## [1.0.0](https://example.test/compare/v0.9.0...v1.0.0)',
-            '',
-            '* stable change',
-            ''
-        ].join('\n');
-        const changelogContent = [
-            '# Changelog',
-            '',
-            '## [1.0.1-alpha.1](https://example.test/compare/v1.0.1-alpha.0...v1.0.1-alpha.1)',
-            '',
-            '* prerelease change',
-            '',
-            stableReleaseSection
-        ].join('\n');
+
+        await fs$.writeFile(changelogPath, changelogContent, { encoding: 'utf8' });
+        await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
+        initTempGitRepo(repoPath);
+        execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
+        execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
+        execFileSync('git', ['tag', 'v1.0.1-alpha.1'], { cwd: repoPath });
+
+        return { cleanupScriptPath, changelogPath, repoPath };
+    }
+
+    it('removes prerelease sections from the changelog', async () => {
+        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(changelogWithPrereleaseSection);
 
         try {
-            await fs$.writeFile(changelogPath, changelogContent, { encoding: 'utf8' });
-            await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
-
-            initTempGitRepo(repoPath);
-            execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
-            execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
-            execFileSync('git', ['tag', 'v1.0.1-alpha.1'], { cwd: repoPath });
-
             execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
-
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(`# Changelog\n\n${stableReleaseSection}`);
+        } finally {
+            await removeTempRepo(repoPath);
+        }
+    });
+
+    it('deletes local prerelease tags while keeping stable tags', async () => {
+        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(stableReleaseSection);
+
+        try {
+            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
             expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\n');
         } finally {
             await removeTempRepo(repoPath);
