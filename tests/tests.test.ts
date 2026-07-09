@@ -136,7 +136,7 @@ describe('cleanup-changelog.sh', () => {
     });
 
     it('deletes local prerelease tags while keeping stable tags', async () => {
-        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(stableReleaseSection);
+        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(`# Changelog\n\n${stableReleaseSection}`);
 
         try {
             execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
