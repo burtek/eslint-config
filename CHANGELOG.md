@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file. See [commit
 * **deps:** limit typescript peer dependency to <7.0.0 ([b430125](https://github.com/burtek/eslint-config/commit/b43012540229ef2deda4877d4e1b163ba7881cb5))
 * **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.12.1 ([#762](https://github.com/burtek/eslint-config/issues/762)) ([f743768](https://github.com/burtek/eslint-config/commit/f743768198de92b8b0311c5a285a49790b4cd063))
 * **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.13.2 ([#764](https://github.com/burtek/eslint-config/issues/764)) ([7827924](https://github.com/burtek/eslint-config/commit/7827924bb0b22e0da8bdd0cfefefe114e9611f5b))
+* add `--no-git-checks` to `pnpm publish` since we're publishing a tag, not branch ([2eedad7](https://github.com/burtek/eslint-config/commit/2eedad7ae1dff812cfff3273bc20fa8a36df96bc))
+* make-types script ([0451166](https://github.com/burtek/eslint-config/commit/045116630d838800d58b4ee750b93b65445904e8))
 
 
 ### Chores
@@ -19,6 +21,7 @@ All notable changes to this project will be documented in this file. See [commit
 * **deps:** update pnpm to v11.10.0 ([#759](https://github.com/burtek/eslint-config/issues/759)) ([4708059](https://github.com/burtek/eslint-config/commit/470805986bcf5c7abd238b944bd1a9baeb14e8a3))
 * **github:** update github workflows ([cc4640a](https://github.com/burtek/eslint-config/commit/cc4640ad64bd9f949620e24f1b8cb00110a7ce38))
 * remove alpha release entries from CHANGELOG when doing full release ([ad13709](https://github.com/burtek/eslint-config/commit/ad137090bbc450e3720722c2056e8aeacdf9bd68))
+* migrate to pnpm ([#758](https://github.com/burtek/eslint-config/issues/758)) ([1d2182e](https://github.com/burtek/eslint-config/commit/1d2182ef42994826b98a3a6cc1b09d9d71e82a53))
 
 ## [6.1.1](https://github.com/burtek/eslint-config/compare/v6.1.0...v6.1.1) (2026-07-07)
 
