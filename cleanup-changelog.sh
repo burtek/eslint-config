@@ -7,7 +7,7 @@ if [ "${1:-}" = "pre" ] || [ "${1:-}" = "post" ]; then
   cmd="$1"
   shift
 fi
-file="${2:-CHANGELOG.md}"
+file="${1:-CHANGELOG.md}"
 tmp="${file}.tmp"
 
 # Define hook functions
