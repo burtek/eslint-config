@@ -77,6 +77,7 @@ describe.each<{
 });
 
 describe('cleanup-changelog.sh', () => {
+    const tempRepoReadme = '# temp repo\n';
     const stableReleaseSection = [
         '## [1.0.0](https://example.test/compare/v0.9.0...v1.0.0)',
         '',
@@ -93,7 +94,7 @@ describe('cleanup-changelog.sh', () => {
         stableReleaseSection
     ].join('\n');
 
-    async function removeTempRepo(repoPath: string) {
+    async function cleanupTempRepo(repoPath: string) {
         try {
             await fs$.rm(repoPath, { recursive: true, force: true });
         } catch (error: unknown) {
@@ -104,7 +105,7 @@ describe('cleanup-changelog.sh', () => {
     }
 
     async function initTempGitRepo(repoPath: string) {
-        await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
+        await fs$.writeFile(resolve(repoPath, 'README.md'), tempRepoReadme, { encoding: 'utf8' });
         execFileSync('git', ['init', '-b', 'main'], { cwd: repoPath });
         execFileSync('git', ['config', 'user.name', 'Test User'], { cwd: repoPath });
         execFileSync('git', ['config', 'user.email', 'test@example.com'], { cwd: repoPath });
@@ -133,7 +134,7 @@ describe('cleanup-changelog.sh', () => {
             execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(`# Changelog\n\n${stableReleaseSection}`);
         } finally {
-            await removeTempRepo(repoPath);
+            await cleanupTempRepo(repoPath);
         }
     });
 
@@ -147,7 +148,7 @@ describe('cleanup-changelog.sh', () => {
             expect(remainingTags).toBe('v1.0.0\n');
             expect(remainingTags).not.toContain('alpha');
         } finally {
-            await removeTempRepo(repoPath);
+            await cleanupTempRepo(repoPath);
         }
     });
 
@@ -160,10 +161,10 @@ describe('cleanup-changelog.sh', () => {
             execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
 
-            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/missing\.md/);
+            expect(() => execFileSync(cleanupScriptPath, [resolve(repoPath, 'missing.md')], { cwd: repoPath })).toThrow(/cannot open file .*missing\.md.*No such file or directory/);
             expect(execFileSync('git', ['tag', '-l'], { cwd: repoPath, encoding: 'utf8' })).toBe('v1.0.0\nv1.0.1-alpha.0\n');
         } finally {
-            await removeTempRepo(repoPath);
+            await cleanupTempRepo(repoPath);
         }
     });
 });
