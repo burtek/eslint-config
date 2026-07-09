@@ -93,6 +93,44 @@ describe('cleanup-changelog.sh', () => {
         '',
         stableReleaseSection
     ].join('\n');
+    // Mirrors what commit-and-tag-version generates when doing a full release after a prerelease:
+    // the Chores section contains the prerelease version bump commit alongside real chores
+    const changelogWithReleaseBumpMixedIn = [
+        '# Changelog',
+        '',
+        '## [1.0.1](https://example.test/compare/v1.0.0...v1.0.1)',
+        '',
+        '',
+        '### Bug Fixes',
+        '',
+        '* fix something ([abc1234](https://example.test/commit/abc1234))',
+        '',
+        '',
+        '### Chores',
+        '',
+        '* some chore ([def5678](https://example.test/commit/def5678))',
+        '* **release:** 1.0.1-alpha.0 ([9999999](https://example.test/commit/9999999))',
+        '',
+        stableReleaseSection
+    ].join('\n');
+    // Version where the ONLY chore is the prerelease bump — section should be removed entirely
+    const changelogWithReleaseBumpOnly = [
+        '# Changelog',
+        '',
+        '## [1.0.1](https://example.test/compare/v1.0.0...v1.0.1)',
+        '',
+        '',
+        '### Bug Fixes',
+        '',
+        '* fix something ([abc1234](https://example.test/commit/abc1234))',
+        '',
+        '',
+        '### Chores',
+        '',
+        '* **release:** 1.0.1-alpha.0 ([9999999](https://example.test/commit/9999999))',
+        '',
+        stableReleaseSection
+    ].join('\n');
 
     async function cleanupTempRepo(repoPath: string) {
         try {
@@ -133,6 +171,57 @@ describe('cleanup-changelog.sh', () => {
         try {
             execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
             await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(`# Changelog\n\n${stableReleaseSection}`);
+        } finally {
+            await cleanupTempRepo(repoPath);
+        }
+    });
+
+    it('removes prerelease release-bump commit line from stable release section', async () => {
+        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(changelogWithReleaseBumpMixedIn);
+        const expected = [
+            '# Changelog',
+            '',
+            '## [1.0.1](https://example.test/compare/v1.0.0...v1.0.1)',
+            '',
+            '',
+            '### Bug Fixes',
+            '',
+            '* fix something ([abc1234](https://example.test/commit/abc1234))',
+            '',
+            '',
+            '### Chores',
+            '',
+            '* some chore ([def5678](https://example.test/commit/def5678))',
+            '',
+            stableReleaseSection
+        ].join('\n');
+
+        try {
+            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(expected);
+        } finally {
+            await cleanupTempRepo(repoPath);
+        }
+    });
+
+    it('removes empty section header when prerelease release-bump was the only item', async () => {
+        const { cleanupScriptPath, changelogPath, repoPath } = await createTempGitRepo(changelogWithReleaseBumpOnly);
+        const expected = [
+            '# Changelog',
+            '',
+            '## [1.0.1](https://example.test/compare/v1.0.0...v1.0.1)',
+            '',
+            '',
+            '### Bug Fixes',
+            '',
+            '* fix something ([abc1234](https://example.test/commit/abc1234))',
+            '',
+            stableReleaseSection
+        ].join('\n');
+
+        try {
+            execFileSync(cleanupScriptPath, [changelogPath], { cwd: repoPath });
+            await expect(fs$.readFile(changelogPath, { encoding: 'utf8' })).resolves.toBe(expected);
         } finally {
             await cleanupTempRepo(repoPath);
         }
