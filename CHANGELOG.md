@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [6.1.3-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.2...v6.1.3-alpha.0) (2026-07-09)
+## [6.1.3](https://github.com/burtek/eslint-config/compare/v6.1.2...v6.1.3) (2026-07-09)
 
 
 ### Bug Fixes
@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. See [commit
 ### Chores
 
 * fix CHANGELOG to include prerelease changes ([6026f2c](https://github.com/burtek/eslint-config/commit/6026f2c96ee2562d982b1c9098618fc9566d4ec2))
+* **release:** 6.1.3-alpha.0 ([2d12e7e](https://github.com/burtek/eslint-config/commit/2d12e7e3ceac6fcea4f178db5fdd97fff2f69e61))
 
 ## [6.1.2](https://github.com/burtek/eslint-config/compare/v6.1.2-alpha.2...v6.1.2) (2026-07-09)
 
