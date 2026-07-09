@@ -96,12 +96,13 @@ describe('cleanup-changelog.sh', () => {
     async function removeTempRepo(repoPath: string) {
         try {
             await fs$.rm(repoPath, { recursive: true, force: true });
-        } catch {
-            // Best-effort cleanup for temporary test repositories.
+        } catch (error) {
+            console.warn(error);
         }
     }
 
-    function initTempGitRepo(repoPath: string) {
+    async function initTempGitRepo(repoPath: string) {
+        await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
         execFileSync('git', ['init', '-b', 'main'], { cwd: repoPath });
         execFileSync('git', ['config', 'user.name', 'Test User'], { cwd: repoPath });
         execFileSync('git', ['config', 'user.email', 'test@example.com'], { cwd: repoPath });
@@ -115,8 +116,7 @@ describe('cleanup-changelog.sh', () => {
         const cleanupScriptPath = resolve(process.cwd(), 'cleanup-changelog.sh');
 
         await fs$.writeFile(changelogPath, changelogContent, { encoding: 'utf8' });
-        await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
-        initTempGitRepo(repoPath);
+        await initTempGitRepo(repoPath);
         execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
         execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
         execFileSync('git', ['tag', 'v1.0.1-alpha.1'], { cwd: repoPath });
@@ -151,9 +151,7 @@ describe('cleanup-changelog.sh', () => {
         const cleanupScriptPath = resolve(process.cwd(), 'cleanup-changelog.sh');
 
         try {
-            await fs$.writeFile(resolve(repoPath, 'README.md'), '# temp repo\n', { encoding: 'utf8' });
-
-            initTempGitRepo(repoPath);
+            await initTempGitRepo(repoPath);
             execFileSync('git', ['tag', 'v1.0.0'], { cwd: repoPath });
             execFileSync('git', ['tag', 'v1.0.1-alpha.0'], { cwd: repoPath });
 
