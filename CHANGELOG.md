@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.6](https://github.com/burtek/eslint-config/compare/v6.1.5...v6.1.6) (2026-07-16)
+
+
+### Chores
+
+* fix badge URL in readme-updater ([ea7294b](https://github.com/burtek/eslint-config/commit/ea7294b9cec64e1c01c80380678c1e63836c596d))
+
 ## [6.1.5](https://github.com/burtek/eslint-config/compare/v6.1.4...v6.1.5) (2026-07-16)
 
 
