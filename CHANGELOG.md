@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.5](https://github.com/burtek/eslint-config/compare/v6.1.4...v6.1.5) (2026-07-16)
+
+
+### Bug Fixes
+
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.14.1 ([#771](https://github.com/burtek/eslint-config/issues/771)) ([3d5168f](https://github.com/burtek/eslint-config/commit/3d5168fcfdda2a1fef5209cd180259be404493d5))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.14.5 ([#773](https://github.com/burtek/eslint-config/issues/773)) ([2f309ed](https://github.com/burtek/eslint-config/commit/2f309ed3630eb6d9c3fd91f18e0a7d944fda6068))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.16.1 ([#776](https://github.com/burtek/eslint-config/issues/776)) ([a7cd3cc](https://github.com/burtek/eslint-config/commit/a7cd3cca4e7638e2fdd4851b508bcf590560c1c1))
+* **deps:** update dependency @eslint-react/eslint-plugin to v5.14.6 ([#775](https://github.com/burtek/eslint-config/issues/775)) ([2f2923a](https://github.com/burtek/eslint-config/commit/2f2923a489470bfe25c3f0f90bad65f5fca10c20))
+* **deps:** update dependency @eslint-react/kit to v5.14.6 ([#774](https://github.com/burtek/eslint-config/issues/774)) ([b0daca7](https://github.com/burtek/eslint-config/commit/b0daca7c61aafa19d8ca3bd60c7e042ef9227282))
+* **deps:** update dependency eslint-plugin-cypress to v6.4.3 ([#779](https://github.com/burtek/eslint-config/issues/779)) ([280ca35](https://github.com/burtek/eslint-config/commit/280ca3526352f1134f8b9031bbf3c2c0a487f17b))
+* **deps:** update dependency eslint-plugin-n to v18.2.2 ([#772](https://github.com/burtek/eslint-config/issues/772)) ([a8e7615](https://github.com/burtek/eslint-config/commit/a8e76155debf5eba702167b560f1fc06aee929d0))
+* **deps:** update dependency typescript-eslint to v8.64.0 ([#777](https://github.com/burtek/eslint-config/issues/777)) ([e3dece0](https://github.com/burtek/eslint-config/commit/e3dece084b27a226a73fb9354b6e5c470def49e4))
+
+
+### Chores
+
+* **deps:** update actions/setup-node action to v7 ([#778](https://github.com/burtek/eslint-config/issues/778)) ([faf399a](https://github.com/burtek/eslint-config/commit/faf399aa0ef07e9a3cc7bb01191ab434ea36acf4))
+* **deps:** update dependency eslint to v10.7.0 ([#770](https://github.com/burtek/eslint-config/issues/770)) ([9010f8d](https://github.com/burtek/eslint-config/commit/9010f8d252aaf17a3c01f2e8cf68f1b292ffd026))
+* **deps:** update pnpm to v11.13.1 ([#769](https://github.com/burtek/eslint-config/issues/769)) ([2f6e9b5](https://github.com/burtek/eslint-config/commit/2f6e9b505c6b09ca97b08a82affe8f5675ef98a3))
+* **readme:** add Socket Badge to README ([#780](https://github.com/burtek/eslint-config/issues/780)) ([3a970f0](https://github.com/burtek/eslint-config/commit/3a970f0b1e38ca575c4412f4077713b183f952d5))
+
 ## [6.1.4](https://github.com/burtek/eslint-config/compare/v6.1.3...v6.1.4) (2026-07-09)
 
 
