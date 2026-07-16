@@ -12,6 +12,6 @@ module.exports.writeVersion = function (contents, version) {
         )
         .replaceAll(
             /badge\.socket\.dev\/npm\/package\/@dtrw\/eslint-config\/\d+\.\d+\.\d+\)/g,
-            `badge.socket.dev/npm/package/@dtrw/eslint-config/${newVersion})`
+            `badge.socket.dev/npm/package/@dtrw/eslint-config/${version})`
         );
 };
