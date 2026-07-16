@@ -31,7 +31,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6.0.9
       - name: Setup node # Directly in workflow rather than the one from actions/prepare because OIDC doesn't work in composite
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
