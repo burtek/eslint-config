@@ -38,7 +38,7 @@
     "@types/eslint": "^9.6.1",
     "@types/node": "^24.1.0",
     "@types/semver": "^7.5.8",
-    "commit-and-tag-version": "^12.7.3",
+    "commit-and-tag-version": "^13.0.0",
     "eslint": "^10.3.0",
     "exit-code": "^1.0.2",
     "jiti": "^2.4.2",
