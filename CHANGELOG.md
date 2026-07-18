@@ -2,11 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [6.1.7-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.6...v6.1.7-alpha.0) (2026-07-18)
+## [6.1.7](https://github.com/burtek/eslint-config/compare/v6.1.6...v6.1.7) (2026-07-18)
+
+### Bug Fixes
+
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.17.1 ([#781](https://github.com/burtek/eslint-config/issues/781)) ([a883ae3](https://github.com/burtek/eslint-config/commit/a883ae3882c5a1c08c1ede4795efd2cfaccd9e5c))
 
 ### Chores
 
-* **deps:** update dependency commit-and-tag-version to v13 ([d3c4273](https://github.com/burtek/eslint-config/commit/d3c4273df218f9d85e8462f790eb4450c05f3c39))
+* **deps:** update dependency commit-and-tag-version to v13 ([#783](https://github.com/burtek/eslint-config/issues/783)) ([f0d5d94](https://github.com/burtek/eslint-config/commit/f0d5d940bb5d19b52b2aca4378d827743d04be14))
+* **deps:** update pnpm to v11.14.0 ([#782](https://github.com/burtek/eslint-config/issues/782)) ([52e2c06](https://github.com/burtek/eslint-config/commit/52e2c06b603bf20428846727c88699ac8e644fbb))
 ## [6.1.6](https://github.com/burtek/eslint-config/compare/v6.1.5...v6.1.6) (2026-07-16)
 
 
