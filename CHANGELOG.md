@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [6.1.7-alpha.0](https://github.com/burtek/eslint-config/compare/v6.1.6...v6.1.7-alpha.0) (2026-07-18)
+
+### Chores
+
+* **deps:** update dependency commit-and-tag-version to v13 ([d3c4273](https://github.com/burtek/eslint-config/commit/d3c4273df218f9d85e8462f790eb4450c05f3c39))
 ## [6.1.6](https://github.com/burtek/eslint-config/compare/v6.1.5...v6.1.6) (2026-07-16)
 
 
