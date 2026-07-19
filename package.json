@@ -82,5 +82,5 @@
       "default": "./index.js"
     }
   },
-  "packageManager": "pnpm@11.15.0"
+  "packageManager": "pnpm@11.15.1"
 }
