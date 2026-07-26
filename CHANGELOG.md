@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.0](https://github.com/burtek/eslint-config/compare/v6.1.7...v7.0.0) (2026-07-26)
+
+### ⚠ BREAKING CHANGES
+
+* migrate from eslint-plugin-jsx-a11y to eslint-plugin-jsx-a11y-x (#796)
+
+### Features
+
+* migrate from eslint-plugin-jsx-a11y to eslint-plugin-jsx-a11y-x ([#796](https://github.com/burtek/eslint-config/issues/796)) ([3da4cde](https://github.com/burtek/eslint-config/commit/3da4cde92558abb2de2330ecaa580ee330ffe191))
+
+### Bug Fixes
+
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.17.2 ([#785](https://github.com/burtek/eslint-config/issues/785)) ([274371f](https://github.com/burtek/eslint-config/commit/274371f2aee68f63b7453b4fe85dbeb536fadcc8))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.18.0 ([#787](https://github.com/burtek/eslint-config/issues/787)) ([8e0b829](https://github.com/burtek/eslint-config/commit/8e0b82946cf00ee7344fa63787a735930aab9818))
+* **deps:** update dependency eslint-plugin-jest to v29.16.0 ([#788](https://github.com/burtek/eslint-config/issues/788)) ([d557d6b](https://github.com/burtek/eslint-config/commit/d557d6b267814657a83a1b94ff52dec4eaf10dec))
+* **deps:** update dependency typescript-eslint to v8.65.0 ([#789](https://github.com/burtek/eslint-config/issues/789)) ([c7e3e89](https://github.com/burtek/eslint-config/commit/c7e3e897b28b17ec7ff95db460435c90e73409f8))
+* vulnerable dependencies update ([#795](https://github.com/burtek/eslint-config/issues/795)) ([325aea1](https://github.com/burtek/eslint-config/commit/325aea181b9bbbcf4e664f5944cc7a87025ceeac))
 ## [6.1.7](https://github.com/burtek/eslint-config/compare/v6.1.6...v6.1.7) (2026-07-18)
 
 ### Bug Fixes
