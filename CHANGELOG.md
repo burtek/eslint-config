@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.0.1](https://github.com/burtek/eslint-config/compare/v7.0.0...v7.0.1) (2026-07-26)
+
+### Bug Fixes
+
+* release script ([9507132](https://github.com/burtek/eslint-config/commit/9507132a8011e25f33675369e4fea1771c099f90))
+
+### Documentation changes:
+
+* fix version in README.md ([02eeb89](https://github.com/burtek/eslint-config/commit/02eeb892ff657ed23ef04f6022e6e187564bc210))
 ## [7.0.0](https://github.com/burtek/eslint-config/compare/v6.1.7...v7.0.0) (2026-07-26)
 
 ### ⚠ BREAKING CHANGES
