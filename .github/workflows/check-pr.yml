@@ -6,9 +6,10 @@ on:
       skip-deduplication:
         required: false
         type: boolean
+  merge_group:
+    types: [checks_requested]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   test-pr:
