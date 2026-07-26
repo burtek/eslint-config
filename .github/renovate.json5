@@ -26,6 +26,16 @@
       "changelogUrl": "https://github.com/typescript-eslint/typescript-eslint/releases",
       "matchSourceUrls": ["https://github.com/typescript-eslint/typescript-eslint"],
       "groupName": "typescript-eslint monorepo"
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "ignoreTests": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["UPDATE-MAJOR"]
     }
   ]
 }
