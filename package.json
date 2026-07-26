@@ -59,9 +59,9 @@
     "preversion": "pnpm test",
     "push": "git push --follow-tags",
     "prerelease": "pnpm test",
-    "release": "commit-and-tag-version --config .versionrc.cjs",
+    "release": "commit-and-tag-version --config .versionrc.mjs",
     "prerelease:alpha": "pnpm test",
-    "release:alpha": "commit-and-tag-version --config .versionrc.alpha.cjs",
+    "release:alpha": "commit-and-tag-version --config .versionrc.alpha.mjs",
     "changelog:cleanup": "./cleanup-changelog.sh"
   },
   "homepage": "https://github.com/burtek/eslint-config#readme",
