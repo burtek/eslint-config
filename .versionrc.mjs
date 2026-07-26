@@ -1,6 +1,7 @@
-const base = require('./.versionrc.base.cjs');
+import base from './.versionrc.base.mjs';
 
-module.exports = {
+
+const config = {
   ...base,
   scripts: {
     prechangelog: './cleanup-changelog.sh pre',
@@ -8,3 +9,5 @@ module.exports = {
   },
   commitAll: true
 };
+
+export default config;
