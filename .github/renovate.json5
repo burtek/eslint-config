@@ -36,6 +36,9 @@
     {
       "matchUpdateTypes": ["major"],
       "labels": ["UPDATE-MAJOR"]
+    },
+    {
+      statusCheckWhen: { artifactError: "always" }
     }
   ]
 }
