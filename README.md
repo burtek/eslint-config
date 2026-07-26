@@ -136,7 +136,7 @@ Options:
 
 | Option | Type | Default | Description |
 |---|---|---|---|
-| `a11y` | `boolean` | `false` | Enable accessibility (a11y) rules via [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) |
+| `a11y` | `boolean` | `false` | Enable accessibility (a11y) rules via [`eslint-plugin-jsx-a11y-x`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y-x) |
 | `nextjs` | `boolean` | `false` | Enable Next.js rules via [`@next/eslint-plugin-next`](https://www.npmjs.com/package/@next/eslint-plugin-next) |
 
 #### `testingLibrary`

@@ -22,19 +22,6 @@ declare module 'eslint-plugin-lodash' {
     export default plugin;
 }
 
-declare module 'eslint-plugin-jsx-a11y' {
-    import type { Linter, Rule } from 'eslint';
-
-
-    const plugin: {
-        configs: Record<'recommended' | 'strict', Linter.LegacyConfig>;
-        flatConfigs: Record<'recommended' | 'strict', Linter.Config>;
-        rules: Record<string, Rule.RuleModule>;
-    };
-
-    export default plugin;
-}
-
 declare module 'eslint-plugin-security-node' {
     import type { Linter, Rule } from 'eslint';
 

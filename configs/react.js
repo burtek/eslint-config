@@ -2,7 +2,7 @@
 import eslintReact from '@eslint-react/eslint-plugin';
 import * as next from '@next/eslint-plugin-next';
 import { defineConfig } from 'eslint/config';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import jsxA11y from 'eslint-plugin-jsx-a11y-x';
 import globals from 'globals';
 
 import localReactPlugin from '../rules/index.js';
@@ -187,10 +187,10 @@ export function prepareConfig({ a11y = false, nextjs = false } = {}) {
         {
             name: 'dtrw:react:a11y',
             files: jsxFiles,
-            plugins: { 'jsx-a11y': jsxA11y },
+            plugins: { 'jsx-a11y-x': jsxA11y },
             rules: {
-                ...jsxA11y.flatConfigs.recommended.rules,
-                'jsx-a11y/anchor-ambiguous-text': 'error'
+                ...jsxA11y.configs.recommended.rules,
+                'jsx-a11y-x/anchor-ambiguous-text': 'error'
             }
         }
     );
