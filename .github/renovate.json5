@@ -12,6 +12,7 @@
     "assignees": ["@burtek"]
   },
   "rebaseWhen": "behind-base-branch",
+  "statusCheckWhen": { artifactError: "always" },
   "packageRules": [
     {
       "matchDepTypes": ["peerDependencies"],
@@ -36,9 +37,6 @@
     {
       "matchUpdateTypes": ["major"],
       "labels": ["UPDATE-MAJOR"]
-    },
-    {
-      statusCheckWhen: { artifactError: "always" }
     }
   ]
 }
