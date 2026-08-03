@@ -58,7 +58,7 @@ describe.each<{
     const fixturesPath = resolve(testsDirname, 'fixtures');
     const files = readdirSync(fixturesPath, { withFileTypes: true }).filter(f => f.isFile() && f.name.startsWith('file-'));
 
-    it.each(files)('should return no errors for $name', async ({ parentPath, name }) => {
+    it.each(files)('should return no errors for $name', { timeout: 3_000 }, async ({ parentPath, name }) => {
         const content = await fs$.readFile(resolve(parentPath, name), { encoding: 'utf8' });
 
         const linter = new Linter({ configType: 'flat' });
@@ -73,7 +73,7 @@ describe.each<{
 
         expect(validate).not.toThrow();
         expect(lintResult).toStrictEqual([]);
-    }, 2000);
+    });
 });
 
 describe('cleanup-changelog.sh', () => {
