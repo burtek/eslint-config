@@ -1,7 +1,6 @@
 import { defineConfig } from 'eslint/config';
 
 import { prepareConfig as base } from './base.js';
-import { prepareConfig as cypress } from './cypress.js';
 import { prepareConfig as jest } from './jest.js';
 import { prepareConfig as json } from './json.js';
 import { prepareConfig as lodash } from './lodash.js';
@@ -15,7 +14,6 @@ import { prepareConfig as testingLibrary } from './testing-library.js';
 /** @satisfies {Record<string, (config?: any) => FlatESLintConfig>} */
 export const configFactories = {
     base,
-    cypress,
     jest,
     json,
     lodash,
