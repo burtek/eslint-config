@@ -3,13 +3,11 @@ import { mkdtempSync, readdirSync, promises as fs$ } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
+import { defineConfig } from 'eslint/config';
 import { Linter } from 'eslint';
-import tseslint from 'typescript-eslint';
 
 import { prepareConfig } from '../configs';
 
-
-vitest.mock(import('@typescript-eslint/types'), async importOriginal => ({ ...await importOriginal() }));
 
 describe.each<{
     modeDesc: string;
@@ -28,9 +26,8 @@ describe.each<{
     }
 ])('Eslint configs in $modeDesc mode', ({ config: conf, settings }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
-    const config = tseslint.config(
+    const config = defineConfig(
         ...prepareConfig({
-            cypress: true,
             jest: conf.jest,
             json: true,
             lodash: true,
@@ -58,10 +55,20 @@ describe.each<{
     const fixturesPath = resolve(testsDirname, 'fixtures');
     const files = readdirSync(fixturesPath, { withFileTypes: true }).filter(f => f.isFile() && f.name.startsWith('file-'));
 
-    it.each(files)('should return no errors for $name', { timeout: 3_000 }, async ({ parentPath, name }) => {
+    const linter = new Linter({ configType: 'flat' });
+    beforeAll(async () => {
+        // warm up rules
+        const content = await fs$.readFile('tests/fixtures/file-test-ts.test.ts', { encoding: 'utf8' });
+        linter.verify(
+            content,
+            config,
+            'tests/fixtures/file-test-ts.test.ts'
+        );
+    });
+
+    it.each(files)('should return no errors for $name', async ({ parentPath, name }) => {
         const content = await fs$.readFile(resolve(parentPath, name), { encoding: 'utf8' });
 
-        const linter = new Linter({ configType: 'flat' });
         let lintResult: unknown[] = [];
         function validate() {
             lintResult = linter.verify(

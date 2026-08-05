@@ -54,7 +54,6 @@ Each key can be set to `true` to enable the config with default options, or to a
 
 | Key | Options | Description |
 |---|---|---|
-| `cypress` | _(none)_ | Enables Cypress test linting |
 | `jest` | `{ mode?: 'jest' \| 'vitest' }` | Enables Jest / Vitest test linting |
 | `json` | `{ additionalFiles?: { json?: string[], jsonc?: string[], json5?: string[] } }` | Enables JSON / JSONC / JSON5 linting |
 | `lodash` | _(none)_ | Enables Lodash best-practice rules |
@@ -75,14 +74,6 @@ Plugins: [`@eslint/js`](https://www.npmjs.com/package/@eslint/js), [`typescript-
 | Option | Type | Default | Description |
 |---|---|---|---|
 | `nextResolver` | `boolean` | `true` | Use the TypeScript import resolver from `eslint-import-resolver-typescript`. Set to `false` to use the legacy resolver instead. |
-
-#### `cypress`
-
-Applies to Cypress spec files (`**/*.cy.{js,cjs,mjs,jsx,ts,cts,mts,tsx}`).
-
-Plugins: [`eslint-plugin-cypress`](https://www.npmjs.com/package/eslint-plugin-cypress)
-
-No configuration options.
 
 #### `jest`
 
