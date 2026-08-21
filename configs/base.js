@@ -14,10 +14,7 @@ import { baseNamingRuleConfig } from './share/naming-config.js';
 
 // TODO: need no-splice-add and no-splice-remove
 
-const allFiles = ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'];
-const tsFiles = ['**/*.{ts,cts,mts,tsx}'];
-
-const allImportExtensions = ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.cts', '.mts', '.tsx'];
+const allImportExtensions = tseslint.extensions.jsts.map(e => `.${e}`);
 /**
  * @param {Object} [config]
  * @param {boolean} [config.nextResolver=true]
@@ -42,7 +39,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
         { plugins: { '@stylistic': stylisticPlugin } },
         {
             name: 'dtrw:base:base',
-            files: allFiles,
+            files: [tseslint.globs.jsts],
             linterOptions: {
                 reportUnusedDisableDirectives: true,
                 ...semver.satisfies(eslint.Linter.version, '>=9.19.0')
@@ -294,7 +291,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
         },
         {
             name: 'dtrw:base:ts',
-            files: tsFiles,
+            files: [tseslint.globs.ts],
             plugins: { '@typescript-eslint': tseslint.plugin },
             languageOptions: { parser: tseslint.parser },
             rules: {
