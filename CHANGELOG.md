@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.2](https://github.com/burtek/eslint-config/compare/v7.1.1...v7.1.2) (2026-09-06)
+
+### Bug Fixes
+
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.18.10 ([#840](https://github.com/burtek/eslint-config/issues/840)) ([136f685](https://github.com/burtek/eslint-config/commit/136f68513f2a65889f0c1116528970cd405b529a))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.18.7 ([#835](https://github.com/burtek/eslint-config/issues/835)) ([6e2abc3](https://github.com/burtek/eslint-config/commit/6e2abc31dafce7e511a36d7d7c875c9444bd4515))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.18.8 ([#838](https://github.com/burtek/eslint-config/issues/838)) ([8875e2f](https://github.com/burtek/eslint-config/commit/8875e2fd9ef9e65b97ba8d31cfce3da993ff9a93))
+* **deps:** update [@eslint-react](https://github.com/eslint-react) monorepo to v5.19.0 ([#841](https://github.com/burtek/eslint-config/issues/841)) ([bfb7b85](https://github.com/burtek/eslint-config/commit/bfb7b854280fc9ba335a03bf0af06f5babb03a51))
+* **deps:** update dependency @eslint/json to v2.1.0 ([#834](https://github.com/burtek/eslint-config/issues/834)) ([ce0dc4e](https://github.com/burtek/eslint-config/commit/ce0dc4ee29ace9429196386761d5c1a4bf840ea7))
+* **deps:** update dependency eslint-plugin-jest to v29.16.2 ([#828](https://github.com/burtek/eslint-config/issues/828)) ([eb53887](https://github.com/burtek/eslint-config/commit/eb538875d9df93f90581a4dca32b41dda95f4f60))
+* **deps:** update dependency eslint-plugin-jest to v29.16.5 ([#829](https://github.com/burtek/eslint-config/issues/829)) ([1c6db94](https://github.com/burtek/eslint-config/commit/1c6db9488788e08827cecc6dd1b287c3d21410fb))
+* **deps:** update dependency eslint-plugin-jest to v29.16.6 ([#830](https://github.com/burtek/eslint-config/issues/830)) ([9ee1b0b](https://github.com/burtek/eslint-config/commit/9ee1b0bee1ab154f7d56e4d56556819a2a11977a))
+* **deps:** update dependency eslint-plugin-jsonc to v3.4.2 ([#824](https://github.com/burtek/eslint-config/issues/824)) ([49670a4](https://github.com/burtek/eslint-config/commit/49670a434f2c208e9464120e486496e9d000308d))
+* **deps:** update dependency globals to v17.12.0 ([#833](https://github.com/burtek/eslint-config/issues/833)) ([d13571f](https://github.com/burtek/eslint-config/commit/d13571f69a93bfa4d08ff75caeeb50e45248d1b3))
+* **deps:** update dependency typescript-eslint to v8.68.0 ([#827](https://github.com/burtek/eslint-config/issues/827)) ([c4d1caa](https://github.com/burtek/eslint-config/commit/c4d1caa80a82448aa2c315b35e0a018fb1f4d6cf))
+* **deps:** update dependency typescript-eslint to v8.69.0 ([#831](https://github.com/burtek/eslint-config/issues/831)) ([55f3b51](https://github.com/burtek/eslint-config/commit/55f3b515eba2f3780faed2a0926a08fcb97a0d6b))
+
+### Chores
+
+* add 'dependencies' label for major updates ([9c593b3](https://github.com/burtek/eslint-config/commit/9c593b3aea252e26357c20a6f5fa3bfce705295d))
+* **deps:** update dependency eslint to v10.10.0 ([#837](https://github.com/burtek/eslint-config/issues/837)) ([7868362](https://github.com/burtek/eslint-config/commit/7868362430535e18c8c410c3b544b0677ec4cb7a))
+* **deps:** update dependency eslint to v10.9.1 ([#826](https://github.com/burtek/eslint-config/issues/826)) ([00219bb](https://github.com/burtek/eslint-config/commit/00219bbc96c2a22bdb3716162597c680879217c6))
+* **deps:** update dependency vitest to v5 ([#836](https://github.com/burtek/eslint-config/issues/836)) ([6b5d19c](https://github.com/burtek/eslint-config/commit/6b5d19c5ad8ba5d4d52078314b160a19e8d45326))
+* **deps:** update pnpm to v11.24.0 ([#825](https://github.com/burtek/eslint-config/issues/825)) ([94d46e7](https://github.com/burtek/eslint-config/commit/94d46e74146f6e89fe90330e9bad31762334fb54))
+* **deps:** update pnpm to v12 ([#839](https://github.com/burtek/eslint-config/issues/839)) ([fe23874](https://github.com/burtek/eslint-config/commit/fe238741a37d522081354d30aa9d9b2551a60321))
 ## [7.1.1](https://github.com/burtek/eslint-config/compare/v7.1.0...v7.1.1) (2026-08-21)
 ## [7.1.0](https://github.com/burtek/eslint-config/compare/v7.0.1...v7.1.0) (2026-08-21)
 
