@@ -323,6 +323,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 '@typescript-eslint/ban-ts-comment': 'error',
                 '@typescript-eslint/consistent-generic-constructors': 'error',
                 '@typescript-eslint/consistent-indexed-object-style': 'error',
+                '@typescript-eslint/consistent-return': 'error',
                 '@typescript-eslint/consistent-type-assertions': [
                     'error',
                     {
@@ -396,7 +397,7 @@ export function prepareConfig({ nextResolver = true } = {}) {
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-extraneous-class': 'error',
                 '@typescript-eslint/no-floating-promises': 'error',
-                '@typescript-eslint/consistent-return': 'error',
+                '@typescript-eslint/no-generated-empty-object-type': 'error',
                 '@typescript-eslint/no-implied-eval': 'error',
                 // import-x/consistent-type-specifier-style makes sure we don't inline `type` modifier
                 '@typescript-eslint/no-import-type-side-effects': 'off',
