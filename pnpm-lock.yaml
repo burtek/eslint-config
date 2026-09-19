@@ -203,8 +203,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0))
       eslint-plugin-lodash:
-        specifier: 8.0.0
-        version: 8.0.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0))
+        specifier: 8.1.0
+        version: 8.1.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0))
       eslint-plugin-n:
         specifier: 18.3.0
         version: 18.3.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0))(typescript@6.0.3)
@@ -1203,8 +1203,8 @@ packages:
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
 
-  eslint-plugin-lodash@8.0.0:
-    resolution: {integrity: sha512-7DA8485FolmWRzh+8t4S8Pzin2TTuWfb0ZW3j/2fYElgk82ZanFz8vDcvc4BBPceYdX1p/za+tkbO68maDBGGw==}
+  eslint-plugin-lodash@8.1.0:
+    resolution: {integrity: sha512-2ULyk2quC7j43VADNOJxpmohba5dbIZ34vx/iFx83Gyf3UAexNX0x1UNDUQFbv1j0vCaxDlY9hZlXGfylKaYYw==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: '>=9.0.0'
@@ -2977,7 +2977,7 @@ snapshots:
       language-tags: 1.0.9
       minimatch: 10.2.6
 
-  eslint-plugin-lodash@8.0.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0)):
+  eslint-plugin-lodash@8.1.0(eslint@10.10.0(jiti@2.7.0)(supports-color@5.5.0)):
     dependencies:
       eslint: 10.10.0(jiti@2.7.0)(supports-color@5.5.0)
       lodash: 4.18.1
